@@ -1,0 +1,153 @@
+#!/usr/bin/env node
+/* Vérifie le site compilé dans un vrai navigateur :
+ *   • l'interactivité fonctionne sans React ni CDN
+ *   • aucune requête ne sort vers un domaine tiers
+ *   • le contenu reste lisible JavaScript désactivé
+ * Prérequis : un serveur sur http://localhost:8900 servant docs/. */
+
+import puppeteer from 'puppeteer-core';
+
+const BASE = 'http://localhost:8900';
+const results = [];
+const ok = (n, c, d = '') => results.push({ n, c, d });
+
+const browser = await puppeteer.launch({
+  executablePath: '/snap/bin/chromium',
+  args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+});
+
+/* ── Aucune requête vers l'extérieur ──────────────────────────────────────── */
+{
+  const page = await browser.newPage();
+  const external = new Set();
+  page.on('request', r => {
+    const h = new URL(r.url()).hostname;
+    if (h !== 'localhost' && h !== '127.0.0.1') external.add(h);
+  });
+  for (const route of ['/', '/articles/', '/la-recherche/', '/glossaire/', '/a-propos/',
+                       '/articles/gouvernance-ostrom/']) {
+    await page.goto(BASE + route, { waitUntil: 'networkidle0' });
+  }
+  ok('Aucune requête vers un domaine tiers', external.size === 0,
+     external.size ? [...external].join(', ') : 'toutes les ressources sont locales');
+  await page.close();
+}
+
+/* ── Filtre du glossaire ──────────────────────────────────────────────────── */
+{
+  const page = await browser.newPage();
+  await page.goto(BASE + '/glossaire/', { waitUntil: 'networkidle0' });
+  const total = await page.$$eval('[data-glossterm]', els => els.length);
+  await page.type('[data-ref="filterRef"]', 'ostrom');
+  await new Promise(r => setTimeout(r, 250));
+  const after = await page.$$eval('[data-glossterm]',
+    els => els.filter(e => e.style.display !== 'none').length);
+  // Accent-insensible : « legitimite » doit retrouver « légitimité »
+  await page.$eval('[data-ref="filterRef"]', el => { el.value = ''; });
+  await page.type('[data-ref="filterRef"]', 'legitimite');
+  await new Promise(r => setTimeout(r, 250));
+  const accent = await page.$$eval('[data-glossterm]',
+    els => els.filter(e => e.style.display !== 'none').length);
+  ok('Filtre du glossaire actif', after > 0 && after < total,
+     `${total} termes → ${after} pour « ostrom »`);
+  ok('Filtre insensible aux accents', accent > 0,
+     `${accent} résultat(s) pour « legitimite »`);
+  await page.close();
+}
+
+/* ── Barre de progression de lecture ──────────────────────────────────────── */
+{
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 900 });
+  await page.goto(BASE + '/articles/gouvernance-ostrom/', { waitUntil: 'networkidle0' });
+  const before = await page.$eval('[data-ref="barRef"]', el => el.style.width);
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await new Promise(r => setTimeout(r, 400));
+  const after = await page.$eval('[data-ref="barRef"]', el => parseFloat(el.style.width));
+  ok('Barre de progression de lecture', after > 90, `${before || '0%'} → ${after.toFixed(0)}%`);
+  await page.close();
+}
+
+/* ── Compteurs animés ─────────────────────────────────────────────────────── */
+{
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 900 });
+  await page.goto(BASE + '/', { waitUntil: 'networkidle0' });
+  await page.evaluate(() => {
+    const el = document.querySelector('[data-ref="statEntretiens"]');
+    el.scrollIntoView({ block: 'center' });
+  });
+  await new Promise(r => setTimeout(r, 1800));
+  const vals = await page.evaluate(() =>
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies']
+      .map(n => document.querySelector(`[data-ref="${n}"]`).textContent.trim()));
+  ok('Compteurs à leur valeur finale', vals.join(',') === '13,9,3,2', vals.join(' · '));
+  await page.close();
+}
+
+/* ── Motif de points dessiné ──────────────────────────────────────────────── */
+{
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 900 });
+  await page.goto(BASE + '/', { waitUntil: 'networkidle0' });
+  await new Promise(r => setTimeout(r, 500));
+  const painted = await page.evaluate(() => {
+    const c = document.querySelector('[data-ref="dotsRef"]');
+    if (!c || !c.width) return false;
+    const d = c.getContext('2d').getImageData(0, 0, c.width, Math.min(200, c.height)).data;
+    for (let i = 3; i < d.length; i += 4) if (d[i] > 0) return true;
+    return false;
+  });
+  ok('Motif de points dessiné sur le canvas', painted);
+  await page.close();
+}
+
+/* ── Lisibilité sans JavaScript ───────────────────────────────────────────── */
+{
+  const page = await browser.newPage();
+  await page.setJavaScriptEnabled(false);
+  await page.goto(BASE + '/', { waitUntil: 'domcontentloaded' });
+  const words = await page.evaluate(() => document.body.innerText.trim().split(/\s+/).length);
+  const stats = await page.evaluate(() =>
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies']
+      .map(n => document.querySelector(`[data-ref="${n}"]`).textContent.trim()).join(','));
+  ok('Page lisible sans JavaScript', words > 300, `${words} mots rendus`);
+  ok('Chiffres présents sans JavaScript', stats === '13,9,3,2', stats);
+  await page.close();
+}
+
+/* ── Liens internes tous valides ──────────────────────────────────────────── */
+{
+  const page = await browser.newPage();
+  const routes = ['/', '/articles/', '/la-recherche/', '/glossaire/', '/a-propos/',
+    '/articles/quest-ce-quun-commun-numerique/', '/articles/administration-et-communs/',
+    '/articles/institutionnalisation/', '/articles/gouvernance-ostrom/',
+    '/articles/neuf-initiatives/', '/articles/appropriation-relation/'];
+  const broken = [];
+  const seen = new Set();
+  for (const r of routes) {
+    await page.goto(BASE + r, { waitUntil: 'domcontentloaded' });
+    const hrefs = await page.$$eval('a[href]', els => els.map(e => e.getAttribute('href')));
+    for (const h of hrefs) {
+      if (!h.startsWith('/') || seen.has(h)) continue;
+      seen.add(h);
+      const res = await fetch(BASE + h, { method: 'HEAD' });
+      if (!res.ok) broken.push(`${h} (${res.status})`);
+    }
+  }
+  ok('Tous les liens internes répondent', broken.length === 0,
+     broken.length ? broken.join(', ') : `${seen.size} liens vérifiés`);
+  await page.close();
+}
+
+await browser.close();
+
+/* ── Rapport ──────────────────────────────────────────────────────────────── */
+console.log('\nVérification du site compilé\n');
+let failed = 0;
+for (const { n, c, d } of results) {
+  if (!c) failed++;
+  console.log(`  ${c ? '✓' : '✗'} ${n.padEnd(42)} ${d}`);
+}
+console.log(`\n  ${results.length - failed}/${results.length} contrôles passés\n`);
+process.exit(failed ? 1 : 0);

@@ -1,0 +1,15 @@
+{
+  "name": "communs-numeriques",
+  "version": "1.0.0",
+  "description": "Les Communs Numériques — revue en ligne, communs-numeriques.fr",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build/compile.mjs",
+    "serve": "cd docs && python3 -m http.server 8900",
+    "verify": "node build/verify.mjs"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.13.0"
+  }
+}

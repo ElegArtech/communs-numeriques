@@ -15,3 +15,7 @@ uploads/
 node_modules/
 .DS_Store
 *.log
+
+# ─── Build ──────────────────────────────────────────────────────────────────
+build/preview-*.png
+build/tmp/

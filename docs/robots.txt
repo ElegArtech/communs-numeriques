@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://communs-numeriques.fr/sitemap.xml
