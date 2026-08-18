@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossaire — Les Communs Numériques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="Accueil.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="Accueil.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Accueil</a>
+      <a href="Articles.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Articles</a>
+      <a href="Recherche.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">La recherche</a>
+      <a href="Glossaire.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px">Glossaire</a>
+      <a href="APropos.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<section data-screen-label="En-tête glossaire" style="border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5.5vw,80px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 64px">
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,8vw,120px);line-height:0.96;letter-spacing:-0.015em;margin:0;animation:fadeUp .6s ease both">Glossaire</h1>
+    <div style="display:flex;flex-direction:column;gap:18px;max-width:480px;animation:fadeUp .6s .1s ease both">
+      <p style="margin:0;font-size:16px;line-height:1.7;color:#4A5850;text-wrap:pretty">Les notions qui reviennent dans les articles et le mémoire — de la théorie des communs au vocabulaire du logiciel libre, en passant par la sociologie des organisations. Issu de l'annexe 1 du <a href="Recherche.dc.html">travail de recherche</a>.</p>
+      <input ref="{{ filterRef }}" onInput="{{ onFilter }}" type="text" placeholder="Filtrer les termes…" aria-label="Filtrer les termes" style="width:100%;box-sizing:border-box;background:#FFFFFF;border:1px solid #1E2A23;border-radius:2px;padding:13px 16px;font-family:'Instrument Sans',sans-serif;font-size:15px;color:#1E2A23;outline:none">
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Termes" style="border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px) clamp(40px,5vw,64px)">
+    <p ref="{{ emptyRef }}" style="display:none;font-size:15.5px;color:#8A968D;padding:40px 0 0;margin:0">Aucun terme ne correspond à ce filtre.</p>
+    <div data-glossgroup="A" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">A</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="administration publique" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Administration publique</strong> <span style="color:#4A5850">— ensemble d'institutions (État, collectivités, établissements publics…) chargées de concevoir et d'exécuter les politiques publiques, de gérer les services collectifs et de faire respecter l'intérêt général.</span></p>
+        <p data-glossterm="adullact association developpeurs utilisateurs logiciels libres" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>ADULLACT</strong> <span style="color:#4A5850">— association loi 1901 fondée en 2002. Elle fédère les initiatives open source des administrations françaises et finance la production ou la mutualisation de logiciels libres.</span></p>
+        <p data-glossterm="agentivite" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Agentivité</strong> <span style="color:#4A5850">— faculté qu'ont les acteurs sociaux d'influencer leur environnement et, ce faisant, de remodeler les structures dans lesquelles ils évoluent.</span></p>
+        <p data-glossterm="anssi securite" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>ANSSI</strong> <span style="color:#4A5850">— Agence nationale de la sécurité des systèmes d'information, créée en 2009. Elle définit les politiques de cybersécurité de l'État.</span></p>
+        <p data-glossterm="api application programming interface" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>API</strong> <span style="color:#4A5850">— contrat logiciel qui expose des méthodes d'échange de données et permet à deux applications de dialoguer sans se connaître mutuellement.</span></p>
+        <p data-glossterm="appropriation logique" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Appropriation (logique d')</strong> <span style="color:#4A5850">— voie d'institutionnalisation dans laquelle l'administration prend la main sur un commun numérique et l'intègre pleinement à ses modes de faire.</span></p>
+        <p data-glossterm="audit trail trace" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Audit trail</strong> <span style="color:#4A5850">— trace horodatée répertoriant chaque action ou décision tout au long d'un processus, indispensable pour la reconstitution et la preuve.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="B" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">B</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="bluehats fonctionnaires libre dinum" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>BlueHats</strong> <span style="color:#4A5850">— communauté de fonctionnaires contributeurs ou sympathisants du logiciel libre, animée par la DINUM.</span></p>
+        <p data-glossterm="bureaucratie hierarchie" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Bureaucratie</strong> <span style="color:#4A5850">— organisation régie par la hiérarchie, la spécialisation des tâches, la formalisation des procédures et l'impersonnalité des décisions.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="C" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">C</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="cafdata cnaf open data" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>CAFData</strong> <span style="color:#4A5850">— portail open data maintenu par la Caisse nationale des allocations familiales, permettant la réutilisation des statistiques familiales.</span></p>
+        <p data-glossterm="chatons hebergeurs alternatifs" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>CHATONS</strong> <span style="color:#4A5850">— Collectif des Hébergeurs Alternatifs, Transparents, Ouverts, Neutres et Solidaires&nbsp;: réseau d'associations proposant des services numériques éthiques.</span></p>
+        <p data-glossterm="cloud act loi americaine donnees" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Cloud Act</strong> <span style="color:#4A5850">— loi fédérale américaine de 2018 autorisant les autorités judiciaires à exiger des données auprès d'entreprises américaines, même stockées hors des États-Unis.</span></p>
+        <p data-glossterm="cnam assurance maladie" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>CNAM</strong> <span style="color:#4A5850">— Caisse nationale de l'Assurance Maladie, établissement public pilote du régime général.</span></p>
+        <p data-glossterm="codage thematique analyse qualitative" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Codage thématique</strong> <span style="color:#4A5850">— étape d'analyse qualitative consistant à regrouper les données autour de thèmes récurrents. Le <strong>codebook</strong> en est le dictionnaire interne, garant de la cohérence.</span></p>
+        <p data-glossterm="communs de la connaissance knowledge commons" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Communs de la connaissance</strong> <span style="color:#4A5850">— ressources informationnelles gouvernées collectivement selon des règles partagées [Hess et Ostrom, 2007].</span></p>
+        <p data-glossterm="communs numeriques definition" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Communs numériques</strong> <span style="color:#4A5850">— logiciels, données ou savoirs maintenus et développés de façon ouverte par une communauté.</span></p>
+        <p data-glossterm="communaute de pratique wenger" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Communauté de pratique</strong> <span style="color:#4A5850">— groupe d'acteurs qui apprennent ensemble en résolvant des problèmes communs [Wenger, 1998].</span></p>
+        <p data-glossterm="creative commons licences" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Creative Commons</strong> <span style="color:#4A5850">— organisation qui met à disposition un éventail de licences facilitant le partage et la réutilisation des œuvres.</span></p>
+        <p data-glossterm="csnp commission superieure numerique postes" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>CSNP</strong> <span style="color:#4A5850">— Commission supérieure du numérique et des postes, instance consultative qui éclaire le gouvernement français sur les grandes questions numériques.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="D" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">D</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="decouplage meyer rowan" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Découplage</strong> <span style="color:#4A5850">— situation où les structures officielles affichées par une organisation ne se traduisent pas dans les pratiques réelles [Meyer et Rowan, 1977].</span></p>
+        <p data-glossterm="digital era governance deg" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Digital Era Governance</strong> <span style="color:#4A5850">— modèle post-NPM qui mise sur l'intégration des services, l'holisme et la numérisation [Dunleavy et al., 2005].</span></p>
+        <p data-glossterm="dinum direction interministerielle numerique" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>DINUM</strong> <span style="color:#4A5850">— Direction interministérielle du numérique, service du Premier ministre en charge de la stratégie et de la transformation numériques de l'État.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="E" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">E</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="enclosure boyle propriete intellectuelle" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Enclosure</strong> <span style="color:#4A5850">— appropriation exclusive d'une ressource jusque-là partagée&nbsp;; terme repris par James Boyle pour décrire l'extension excessive de la propriété intellectuelle [Boyle, 2003].</span></p>
+        <p data-glossterm="entrepreneur institutionnel" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Entrepreneur institutionnel</strong> <span style="color:#4A5850">— acteur qui mobilise des ressources pour créer de nouvelles règles du jeu ou transformer celles qui existent.</span></p>
+        <p data-glossterm="etude de cas multiples design" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Étude de cas multiples</strong> <span style="color:#4A5850">— design de recherche qui compare plusieurs cas pour en extraire des régularités et produire une généralisation analytique.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="F" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">F</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="fabmob fabrique des mobilites" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>FabMob (Fabrique des Mobilités)</strong> <span style="color:#4A5850">— association lancée en 2015 pour accélérer l'innovation ouverte dans le domaine des transports.</span></p>
+        <p data-glossterm="forge logicielle gitlab github" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Forge logicielle</strong> <span style="color:#4A5850">— plateforme collaborative (GitLab, GitHub…) combinant gestion de code, suivi de bugs et intégration continue.</span></p>
+        <p data-glossterm="france numerique libre fnl reseau" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>France Numérique Libre (FNL)</strong> <span style="color:#4A5850">— réseau d'agents publics promouvant l'usage et la culture du logiciel libre au sein de l'État et des collectivités.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="G" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">G</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="gafam google apple facebook amazon microsoft" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>GAFAM</strong> <span style="color:#4A5850">— acronyme désignant Google, Apple, Facebook (Meta), Amazon et Microsoft.</span></p>
+        <p data-glossterm="git versions torvalds" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Git</strong> <span style="color:#4A5850">— système de gestion de versions décentralisé, créé par Linus Torvalds en 2005.</span></p>
+        <p data-glossterm="gnu gpl general public license copyleft" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>GNU GPL</strong> <span style="color:#4A5850">— licence copyleft qui garantit à l'utilisateur les quatre libertés fondamentales du logiciel libre.</span></p>
+        <p data-glossterm="gouvernance partagee" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Gouvernance partagée</strong> <span style="color:#4A5850">— dispositif où le pouvoir de décision est réparti entre plusieurs parties prenantes selon des règles explicites.</span></p>
+        <p data-glossterm="gouvernance polycentrique ostrom" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Gouvernance polycentrique</strong> <span style="color:#4A5850">— modèle ostromien où coexistent plusieurs centres autonomes de décision connectés les uns aux autres.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="HI" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">H–I</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="hackathon marathon" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Hackathon</strong> <span style="color:#4A5850">— marathon collaboratif de développement destiné à prototyper rapidement des solutions innovantes.</span></p>
+        <p data-glossterm="institutionnalisation processus" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Institutionnalisation</strong> <span style="color:#4A5850">— processus par lequel des pratiques socialement construites finissent par être perçues comme allant de soi.</span></p>
+        <p data-glossterm="interoperabilite systemes" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Interopérabilité</strong> <span style="color:#4A5850">— aptitude de systèmes hétérogènes à échanger des informations et à fonctionner ensemble sans perte de sens.</span></p>
+        <p data-glossterm="isomorphisme institutionnel dimaggio powell pressions" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Isomorphisme institutionnel</strong> <span style="color:#4A5850">— convergence structurelle des organisations sous l'effet de pressions coercitives, mimétiques ou normatives [DiMaggio et Powell, 1983].</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="L" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">L</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="lamp linux apache mysql php" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>LAMP</strong> <span style="color:#4A5850">— empilement technologique « classique »&nbsp;: Linux / Apache / MySQL / PHP.</span></p>
+        <p data-glossterm="leadership intrapreneurial" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Leadership intrapreneurial</strong> <span style="color:#4A5850">— art de porter des innovations de rupture depuis l'intérieur même de l'organisation.</span></p>
+        <p data-glossterm="legacy systems anciens" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Legacy systems</strong> <span style="color:#4A5850">— systèmes anciens toujours essentiels au fonctionnement d'une entité mais coûteux à maintenir ou à faire évoluer.</span></p>
+        <p data-glossterm="limux munich migration linux" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>LiMux</strong> <span style="color:#4A5850">— programme de migration de la ville de Munich vers Linux, initié en 2003 puis abandonné en 2017.</span></p>
+        <p data-glossterm="logiciel libre libertes" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Logiciel libre</strong> <span style="color:#4A5850">— logiciel dont la licence confère les libertés d'exécution, d'étude, de modification et de redistribution.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="MN" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">M–N</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="matrix protocole messagerie" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Matrix</strong> <span style="color:#4A5850">— protocole ouvert et décentralisé de messagerie instantanée sécurisée, sur lequel repose Tchap.</span></p>
+        <p data-glossterm="mythe rationalise meyer rowan" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Mythe rationalisé</strong> <span style="color:#4A5850">— idée institutionnalisée qui confère une légitimité symbolique à ceux qui l'adoptent [Meyer et Rowan, 1977].</span></p>
+        <p data-glossterm="new public management npm reforme" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>New Public Management</strong> <span style="color:#4A5850">— courant de réforme administrative introduisant les méthodes et la logique de performance du secteur privé dans le secteur public.</span></p>
+        <p data-glossterm="nextcloud stockage partage" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Nextcloud</strong> <span style="color:#4A5850">— alternative open source aux solutions propriétaires de stockage et de partage de fichiers.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="O" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">O</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="open data donnees ouvertes" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Open Data</strong> <span style="color:#4A5850">— principe selon lequel certaines données doivent être accessibles, réutilisables et libres de droits.</span></p>
+        <p data-glossterm="openstreetmap cartographie" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>OpenStreetMap</strong> <span style="color:#4A5850">— projet collaboratif qui produit une cartographie libre du monde entier.</span></p>
+        <p data-glossterm="opsn operateur public services numeriques" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>OPSN</strong> <span style="color:#4A5850">— Opérateur public de services numériques&nbsp;: structure mutualisant le développement et l'hébergement de services numériques pour les collectivités.</span></p>
+        <p data-glossterm="ospo open source program office" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>OSPO</strong> <span style="color:#4A5850">— Open Source Program Office&nbsp;: cellule interne chargée d'orienter, de coordonner et de sécuriser la stratégie open source d'une organisation.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="PR" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">P–R</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="papi point acces public internet" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>PAPI</strong> <span style="color:#4A5850">— Point d'accès public à Internet&nbsp;: espace où les usagers peuvent consulter Internet gratuitement et être accompagnés dans leurs démarches.</span></p>
+        <p data-glossterm="postgresql base de donnees" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>PostgreSQL</strong> <span style="color:#4A5850">— système de gestion de bases de données libre, réputé pour sa robustesse et sa conformité aux standards.</span></p>
+        <p data-glossterm="raisonnement abductif hypothese" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Raisonnement abductif</strong> <span style="color:#4A5850">— démarche consistant à proposer l'hypothèse la plus plausible pour expliquer un ensemble d'observations.</span></p>
+        <p data-glossterm="relation logique cooperation" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Relation (logique de)</strong> <span style="color:#4A5850">— voie d'institutionnalisation dans laquelle l'administration coopère avec un commun externe qu'elle ne contrôle pas.</span></p>
+        <p data-glossterm="replication theorique cas contrastes" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Réplication théorique</strong> <span style="color:#4A5850">— méthode d'étude de cas visant à éprouver la même théorie sur des contextes contrastés.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="S" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px;border-bottom:1px solid #D8DDD3">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">S</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="scic societe cooperative interet collectif" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>SCIC</strong> <span style="color:#4A5850">— Société coopérative d'intérêt collectif&nbsp;: statut hybride qui conjugue gouvernance coopérative et mission d'intérêt général.</span></p>
+        <p data-glossterm="sitiv syndicat intercommunal" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>SITIV</strong> <span style="color:#4A5850">— Syndicat intercommunal des technologies de l'information pour les villes&nbsp;: groupement de communes de la région lyonnaise mutualisant les services numériques.</span></p>
+        <p data-glossterm="souverainete numerique controle" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Souveraineté numérique</strong> <span style="color:#4A5850">— capacité d'un État à contrôler ses infrastructures et ses données stratégiques.</span></p>
+        <p data-glossterm="spip cms libre" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>SPIP</strong> <span style="color:#4A5850">— CMS libre français, conçu à l'origine pour la publication journalistique en ligne.</span></p>
+        <p data-glossterm="startup etat agilite" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Startup d'État</strong> <span style="color:#4A5850">— dispositif français qui transpose l'agilité des start-ups à la création de services publics numériques.</span></p>
+        <p data-glossterm="suite numerique dinum outils collaboratifs" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Suite Numérique</strong> <span style="color:#4A5850">— ensemble d'outils collaboratifs open source proposés par la DINUM aux administrations.</span></p>
+      </div>
+    </div>
+    <div data-glossgroup="TW" style="display:flex;flex-wrap:wrap;gap:8px clamp(24px,4vw,72px);padding:34px 0 10px">
+      <span style="flex:0 0 90px;font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:0.9;color:oklch(0.50 0.12 160)">T–W</span>
+      <div style="flex:1 1 500px;display:flex;flex-direction:column">
+        <p data-glossterm="tchap messagerie etat" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Tchap</strong> <span style="color:#4A5850">— solution de messagerie instantanée sécurisée de l'État, construite sur le protocole Matrix.</span></p>
+        <p data-glossterm="theorie neo institutionnelle tni legitimite" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Théorie néo-institutionnelle</strong> <span style="color:#4A5850">— courant sociologique étudiant la quête de légitimité des organisations via l'adoption de structures et de pratiques standardisées.</span></p>
+        <p data-glossterm="travail institutionnel lawrence suddaby" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Travail institutionnel</strong> <span style="color:#4A5850">— ensemble d'actions délibérées visant à créer, maintenir ou transformer les institutions [Lawrence et Suddaby, 2006].</span></p>
+        <p data-glossterm="triangulation sources methodes" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Triangulation</strong> <span style="color:#4A5850">— manière de croiser plusieurs sources, méthodes ou chercheurs pour fiabiliser un résultat.</span></p>
+        <p data-glossterm="valeur publique moore" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Valeur publique</strong> <span style="color:#4A5850">— critère d'évaluation d'une action publique qui inclut, outre l'efficience, l'équité, la transparence et le bénéfice sociétal [Moore, 1995].</span></p>
+        <p data-glossterm="vendor lock-in dependance fournisseur" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Vendor lock-in</strong> <span style="color:#4A5850">— situation de dépendance technique et contractuelle qui rend coûteux le changement de fournisseur.</span></p>
+        <p data-glossterm="wiki edition collective" style="margin:0;padding:13px 0;border-top:1px solid #EAEDE6;font-size:15.5px;line-height:1.65"><strong>Wiki</strong> <span style="color:#4A5850">— site dont les pages peuvent être créées et éditées facilement et collectivement via un navigateur web.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a href="Articles.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Articles</a>
+        <a href="Recherche.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">La recherche</a>
+        <a href="Glossaire.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Glossaire</a>
+        <a href="APropos.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px" style-hover="color:oklch(0.50 0.12 160)">consulting@alexandre-berge.fr</a>
+        <a href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#8A968D">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.filterRef = React.createRef();
+    this.emptyRef = React.createRef();
+  }
+  renderVals() {
+    return {
+      filterRef: this.filterRef,
+      emptyRef: this.emptyRef,
+      onFilter: () => {
+        const q = (this.filterRef.current ? this.filterRef.current.value : '').trim().toLowerCase();
+        const norm = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const nq = norm(q);
+        let visible = 0;
+        document.querySelectorAll('[data-glossterm]').forEach((el) => {
+          const hay = norm((el.getAttribute('data-glossterm') + ' ' + el.textContent).toLowerCase());
+          const show = !nq || hay.includes(nq);
+          el.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        document.querySelectorAll('[data-glossgroup]').forEach((g) => {
+          const any = Array.from(g.querySelectorAll('[data-glossterm]')).some((el) => el.style.display !== 'none');
+          g.style.display = any ? '' : 'none';
+        });
+        if (this.emptyRef.current) this.emptyRef.current.style.display = visible ? 'none' : 'block';
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

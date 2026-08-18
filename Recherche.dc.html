@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La recherche — Les Communs Numériques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="Accueil.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="Accueil.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Accueil</a>
+      <a href="Articles.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Articles</a>
+      <a href="Recherche.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px">La recherche</a>
+      <a href="Glossaire.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Glossaire</a>
+      <a href="APropos.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div data-screen-label="En-tête recherche" style="position:relative;overflow:hidden;border-bottom:1px solid #1E2A23">
+  <div style="position:relative;max-width:1380px;margin:0 auto;padding:clamp(40px,5vw,72px) clamp(20px,4vw,48px)">
+    <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);animation:fadeUp .5s ease both">Le travail de recherche · Mémoire</span>
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,5.4vw,74px);line-height:1.04;letter-spacing:-0.01em;margin:24px 0 0;max-width:1100px;text-wrap:balance;animation:fadeUp .6s .06s ease both">Les facteurs d'institutionnalisation des communs numériques <em style="font-style:italic;color:oklch(0.50 0.12 160)">au sein de l'administration</em></h1>
+    <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(20px,2.2vw,25px);line-height:1.42;color:#4A5850;margin:24px 0 0;max-width:840px;text-wrap:pretty;animation:fadeUp .6s .12s ease both">Quelles conditions permettent à un commun numérique de s'ancrer durablement dans les routines administratives, au-delà de l'expérimentation — tout en préservant sa logique de partage&nbsp;?</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 40px;margin-top:34px;padding-top:22px;border-top:1px solid #1E2A23;animation:fadeUp .6s .18s ease both">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px;font-size:13.5px;color:#4A5850">
+        <span><strong style="color:#1E2A23">Alexandre Berge</strong></span>
+        <span style="color:#B9C4B6">·</span>
+        <span>Executive Master 2 MSIC</span>
+        <span style="color:#B9C4B6">·</span>
+        <span>Dir. Miguel Liottier</span>
+        <span style="color:#B9C4B6">·</span>
+        <span>Soutenu le 10 juillet 2025</span>
+      </div>
+      <a href="assets/memoire-communs-numeriques-berge-2025.pdf" download style="display:inline-flex;align-items:center;gap:10px;background:#1E2A23;color:#FAFAF6;text-decoration:none;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;padding:15px 24px;border-radius:2px;transition:background .2s ease" style-hover="background:oklch(0.42 0.11 162);color:#FAFAF6">Télécharger le PDF — 124 p.</a>
+    </div>
+  </div>
+</div>
+<div style="position:relative;height:88px;border-bottom:1px solid #1E2A23;background-image:radial-gradient(circle, rgba(30,42,35,0.13) 1px, transparent 1.4px);background-size:20px 20px;overflow:hidden" aria-hidden="true">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 1200 88" preserveAspectRatio="xMidYMid slice"><circle cx="140" cy="44" r="18" fill="#127552" opacity="0.85"></circle><circle cx="200" cy="44" r="18" fill="none" stroke="#127552" stroke-width="1.6"></circle><circle cx="260" cy="44" r="18" fill="none" stroke="#1E2A23" stroke-width="1.2" stroke-dasharray="3 4"></circle><circle cx="1030" cy="44" r="10" fill="#1E2A23"></circle></svg>
+</div>
+
+<section data-screen-label="Problématique" style="border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5.5vw,76px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:32px 64px">
+    <div style="flex:1 1 380px;max-width:640px">
+      <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">La problématique</span>
+      <p style="font-family:'Instrument Serif',serif;font-size:clamp(24px,2.8vw,34px);line-height:1.28;margin:20px 0 0;text-wrap:pretty">Quels sont les facteurs clés qui expliquent l'institutionnalisation des communs numériques au sein de l'administration publique française&nbsp;?</p>
+      <p style="font-size:15.5px;line-height:1.7;color:#4A5850;margin:20px 0 0;text-wrap:pretty">Le terme « facteurs » désigne les conditions qui, réunies, ancrent durablement un commun dans les routines administratives tout en préservant sa logique de partage. L'écart entre la promesse technique et la greffe organisationnelle nourrit toute la recherche&nbsp;: l'essentiel ne se joue pas dans la ligne de code, mais dans l'appropriation institutionnelle.</p>
+    </div>
+    <div style="flex:1 1 380px;border-left:1px solid #D8DDD3;padding-left:clamp(24px,3vw,48px)">
+      <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#8A968D">Quatre sous-questions</span>
+      <div style="display:flex;flex-direction:column;margin-top:18px">
+        <div style="display:flex;gap:16px;padding:14px 0;border-top:1px solid #D8DDD3;font-size:14.5px;line-height:1.6;color:#2A362F"><span style="font-family:'Instrument Serif',serif;color:oklch(0.50 0.12 160);flex:0 0 34px">SQ1</span><span>Comment les pressions isomorphiques et la quête de légitimité influencent-elles l'adoption des communs&nbsp;?</span></div>
+        <div style="display:flex;gap:16px;padding:14px 0;border-top:1px solid #D8DDD3;font-size:14.5px;line-height:1.6;color:#2A362F"><span style="font-family:'Instrument Serif',serif;color:oklch(0.50 0.12 160);flex:0 0 34px">SQ2</span><span>Quels types de travail institutionnel (création, maintien, disruption) les acteurs déploient-ils, et avec quels résultats&nbsp;?</span></div>
+        <div style="display:flex;gap:16px;padding:14px 0;border-top:1px solid #D8DDD3;font-size:14.5px;line-height:1.6;color:#2A362F"><span style="font-family:'Instrument Serif',serif;color:oklch(0.50 0.12 160);flex:0 0 34px">SQ3</span><span>La mise en œuvre des principes de gouvernance d'Ostrom affecte-t-elle la capacité d'un commun à s'institutionnaliser&nbsp;?</span></div>
+        <div style="display:flex;gap:16px;padding:14px 0;border-top:1px solid #D8DDD3;font-size:14.5px;line-height:1.6;color:#2A362F"><span style="font-family:'Instrument Serif',serif;color:oklch(0.50 0.12 160);flex:0 0 34px">SQ4</span><span>Comment facteurs contextuels, organisationnels et de ressources interagissent-ils pour façonner les trajectoires observées&nbsp;?</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Méthode" style="border-bottom:1px solid #1E2A23;background-image:radial-gradient(circle, rgba(30,42,35,0.09) 1px, transparent 1.4px);background-size:22px 22px">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5.5vw,76px) clamp(20px,4vw,48px)">
+    <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">La démarche</span>
+    <div style="display:flex;flex-wrap:wrap;margin-top:26px;border-top:1px solid #1E2A23">
+      <div style="flex:1 1 300px;padding:26px clamp(18px,2.5vw,40px) 6px 0">
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:25px;margin:0">Étude de cas multiples</h2>
+        <p style="font-size:15px;line-height:1.68;color:#4A5850;margin:10px 0 0;text-wrap:pretty">Neuf initiatives contrastées — nationales et locales, techniques et organisationnelles, anciennes et récentes — comparées selon un principe de réplication théorique&nbsp;: chaque cas prend sens en regard des autres.</p>
+      </div>
+      <div style="flex:1 1 300px;border-left:1px solid #D8DDD3;padding:26px clamp(18px,2.5vw,40px) 6px clamp(18px,2.5vw,40px)">
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:25px;margin:0">Treize entretiens semi-directifs</h2>
+        <p style="font-size:15px;line-height:1.68;color:#4A5850;margin:10px 0 0;text-wrap:pretty">Responsables de services publics, figures du logiciel libre, chercheurs, experts et porteurs de projets — croisés avec l'analyse documentaire (schémas directeurs, rapports, délibérations) pour trianguler les résultats.</p>
+      </div>
+      <div style="flex:1 1 300px;border-left:1px solid #D8DDD3;padding:26px 0 6px clamp(18px,2.5vw,40px)">
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:25px;margin:0">Démarche abductive</h2>
+        <p style="font-size:15px;line-height:1.68;color:#4A5850;margin:10px 0 0;text-wrap:pretty">Des allers-retours constants entre terrain et théorie, un codage thématique outillé (codebook, matrices inter-cas, audit trail) et trois cadres croisés&nbsp;: théorie néo-institutionnelle, travail institutionnel, principes d'Ostrom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Le mémoire partie par partie" style="border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5.5vw,76px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px 48px">
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.8vw,48px);line-height:1.08;margin:0">Le mémoire, partie par partie</h2>
+      <span style="font-size:13px;color:#8A968D">Version publique — 124 pages</span>
+    </div>
+    <div style="margin-top:32px;border-top:1px solid #1E2A23">
+      <div style="display:flex;flex-wrap:wrap;gap:12px clamp(24px,4vw,64px);padding:30px 0;border-bottom:1px solid #D8DDD3">
+        <div style="flex:0 0 220px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#9AA79B">p. 8-10</span><span style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.15">Introduction</span></div>
+        <p style="flex:1 1 420px;font-size:15.5px;line-height:1.7;color:#4A5850;margin:0;text-wrap:pretty">Un impératif de modernisation sous haute pression&nbsp;: efficience et valeur publique cohabitent sans toujours s'accorder, entre infrastructures vétustes, inclusion numérique et souveraineté. Les communs numériques s'esquissent comme une troisième voie — mais leur ancrage se heurte à l'inertie bureaucratique. La problématique est posée&nbsp;: un problème de greffe institutionnelle plus que de technique.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px clamp(24px,4vw,64px);padding:30px 0;border-bottom:1px solid #D8DDD3">
+        <div style="flex:0 0 220px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#9AA79B">Partie I · p. 11-40</span><span style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.15">L'état de l'art</span></div>
+        <p style="flex:1 1 420px;font-size:15.5px;line-height:1.7;color:#4A5850;margin:0;text-wrap:pretty">Trois volets&nbsp;: l'administration face à l'impératif de performance numérique (silos, vendor lock-in, capitalisation défaillante, cadre juridique en mutation)&nbsp;; le paradigme des communs, de Hardin à Ostrom puis aux communs de la connaissance, avec ses mécanismes de production entre pairs et ses modèles de gouvernance&nbsp;; et le concept d'institutionnalisation, lu à travers la théorie néo-institutionnelle, le travail institutionnel et les principes d'Ostrom. La revue débouche sur trois catégories de facteurs potentiels et la question de recherche.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px clamp(24px,4vw,64px);padding:30px 0;border-bottom:1px solid #D8DDD3">
+        <div style="flex:0 0 220px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#9AA79B">Partie II · p. 41-55</span><span style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.15">Le cadre méthodologique</span></div>
+        <p style="flex:1 1 420px;font-size:15.5px;line-height:1.7;color:#4A5850;margin:0;text-wrap:pretty">Positionnement épistémologique et approche qualitative, design par étude de cas multiples, considérations éthiques et accès au terrain. Échantillonnage raisonné, instruments de collecte, triangulation&nbsp;; puis le dispositif d'analyse&nbsp;: cadre abductif, techniques de codage, comparaisons inter-cas, critères de rigueur et limites assumées.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px clamp(24px,4vw,64px);padding:30px 0;border-bottom:1px solid #D8DDD3">
+        <div style="flex:0 0 220px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#9AA79B">Partie III · p. 56-94</span><span style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.15">Résultats et discussion</span></div>
+        <p style="flex:1 1 420px;font-size:15.5px;line-height:1.7;color:#4A5850;margin:0;text-wrap:pretty">Le cœur empirique&nbsp;: caractérisation des neuf cas et de leurs gouvernances, analyse des trajectoires (phases, points de bascule, formes d'ancrage — partielle, découplée, substantielle, abandon), identification des facteurs et des résistances, stratégies des acteurs. La discussion articule les résultats aux trois cadres théoriques, propose un modèle dual d'institutionnalisation (appropriation / relation) et débouche sur des préconisations managériales et stratégiques.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px clamp(24px,4vw,64px);padding:30px 0;border-bottom:1px solid #D8DDD3">
+        <div style="flex:0 0 220px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#9AA79B">p. 95-98</span><span style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.15">Conclusion</span></div>
+        <p style="flex:1 1 420px;font-size:15.5px;line-height:1.7;color:#4A5850;margin:0;text-wrap:pretty">La réponse à la problématique&nbsp;: les facteurs dépendent de la forme d'institutionnalisation visée. Pour l'appropriation, soutien politique, ressources pérennes et leadership interne priment&nbsp;; pour la relation, culture de l'ouverture, agilité des processus et respect de l'autonomie des communautés. Suivent les apports, les limites (périmètre français, matériaux déclaratifs, temporalité courte) et les perspectives — dont l'extension aux communs d'intelligence artificielle.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px clamp(24px,4vw,64px);padding:30px 0">
+        <div style="flex:0 0 220px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#9AA79B">p. 99-124</span><span style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.15">Bibliographie &amp; annexes</span></div>
+        <p style="flex:1 1 420px;font-size:15.5px;line-height:1.7;color:#4A5850;margin:0;text-wrap:pretty">La bibliographie complète (articles, ouvrages, rapports, législation, thèses) et six annexes&nbsp;: <a href="Glossaire.dc.html">glossaire</a>, limites méthodologiques et contremesures, guide d'entretien semi-directif, grille de codage, matrices inter-cas, audit trail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Téléchargement" style="background:oklch(0.25 0.05 168);border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(48px,6vw,84px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px 64px;align-items:flex-start">
+      <div style="flex:1 1 420px;max-width:720px">
+        <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.78 0.09 160)">Texte intégral</span>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1.12;margin:20px 0 0;color:#F4F7F2;text-wrap:balance">Lire le mémoire <em style="font-style:italic;color:oklch(0.78 0.09 160)">en accès libre</em></h2>
+        <p style="font-size:15.5px;line-height:1.7;color:rgba(244,247,242,0.78);margin:20px 0 0;text-wrap:pretty">La version publique compte 124 pages&nbsp;: texte intégral, bibliographie et annexes méthodologiques. Les retranscriptions des treize entretiens (p. 125-206 de la version soutenue) sont confidentielles et n'y figurent pas, conformément aux engagements pris auprès des personnes interrogées.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:28px">
+          <a href="assets/memoire-communs-numeriques-berge-2025.pdf" download style="display:inline-flex;align-items:center;gap:10px;background:#F4F7F2;color:#1E2A23;text-decoration:none;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;padding:15px 24px;border-radius:2px;transition:background .2s ease" style-hover="background:oklch(0.78 0.09 160);color:#1E2A23">Télécharger le PDF (124 p.)</a>
+          <a href="mailto:consulting@alexandre-berge.fr" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#F4F7F2;text-decoration:none;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;padding:14px 24px;border-radius:2px;border:1px solid rgba(244,247,242,0.4);transition:border-color .2s ease" style-hover="border-color:#F4F7F2;color:#F4F7F2">Échanger sur ces travaux</a>
+        </div>
+      </div>
+      <div style="flex:1 1 340px;max-width:480px;border-left:1px solid rgba(231,238,232,0.25);padding-left:clamp(24px,3vw,48px)">
+        <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(231,238,232,0.55)">Pour citer ce travail</span>
+        <p style="font-family:'Instrument Serif',serif;font-size:17px;line-height:1.55;color:#F4F7F2;margin:16px 0 0">Berge A., <em>Les facteurs d'institutionnalisation des communs numériques au sein de l'administration</em>, mémoire d'Executive Master 2 MSIC, dir. M. Liottier, soutenu le 10 juillet 2025.</p>
+        <p style="font-size:13px;line-height:1.6;color:rgba(231,238,232,0.55);margin:18px 0 0">L'université n'entend donner aucune approbation ni improbation aux opinions émises dans ce mémoire&nbsp;: elles doivent être considérées comme propres à leur auteur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Prolonger" style="border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,48px)">
+    <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">Prolonger la lecture</span>
+    <div style="margin-top:24px;border-top:1px solid #1E2A23">
+      <a href="article-appropriation-relation.dc.html" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 40px;padding:24px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+        <span style="flex:0 0 200px;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#8A968D">Les résultats en 9 min</span>
+        <span style="flex:1 1 380px;font-family:'Instrument Serif',serif;font-size:clamp(20px,2.2vw,26px);line-height:1.25">Appropriation ou relation&nbsp;: deux voies pour ancrer les communs</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:24px">→</span>
+      </a>
+      <a href="article-neuf-initiatives.dc.html" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 40px;padding:24px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+        <span style="flex:0 0 200px;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#8A968D">Le terrain en 10 min</span>
+        <span style="flex:1 1 380px;font-family:'Instrument Serif',serif;font-size:clamp(20px,2.2vw,26px);line-height:1.25">Neuf initiatives françaises à la loupe</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:24px">→</span>
+      </a>
+      <a href="Glossaire.dc.html" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 40px;padding:24px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+        <span style="flex:0 0 200px;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#8A968D">Les notions clés</span>
+        <span style="flex:1 1 380px;font-family:'Instrument Serif',serif;font-size:clamp(20px,2.2vw,26px);line-height:1.25">Le glossaire du mémoire, de « administration publique » à « wiki »</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:24px">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a href="Articles.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Articles</a>
+        <a href="Recherche.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">La recherche</a>
+        <a href="Glossaire.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Glossaire</a>
+        <a href="APropos.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px" style-hover="color:oklch(0.50 0.12 160)">consulting@alexandre-berge.fr</a>
+        <a href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#8A968D">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+</body>
+</html>
