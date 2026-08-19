@@ -140,6 +140,31 @@ const browser = await puppeteer.launch({
   await page.close();
 }
 
+/* ── Redirections : cibles valides, aucune boucle ─────────────────────────── */
+{
+  const { redirects } = await import('./site.config.mjs');
+  const casses = [];
+  for (const [ancienne, nouvelle] of Object.entries(redirects)) {
+    if (ancienne === nouvelle) { casses.push(`${ancienne} boucle sur elle-même`); continue; }
+    const src = await fetch(BASE + ancienne);
+    if (!src.ok) { casses.push(`${ancienne} absente (${src.status})`); continue; }
+    const html = await src.text();
+    const cible = (html.match(/url=([^"]+)"/) || [, ''])[1];
+    if (cible === ancienne) { casses.push(`${ancienne} pointe sur elle-même`); continue; }
+    const dst = await fetch(BASE + nouvelle, { method: 'HEAD' });
+    if (!dst.ok) casses.push(`${ancienne} → ${nouvelle} (${dst.status})`);
+  }
+  ok('Redirections valides, sans boucle', casses.length === 0,
+     casses.length ? casses.join(' · ') : `${Object.keys(redirects).length} anciennes URLs redirigées`);
+}
+
+/* ── L'accueil n'a pas été écrasé par une redirection ─────────────────────── */
+{
+  const html = await (await fetch(BASE + '/')).text();
+  ok("Page d'accueil intacte", html.includes('Les Communs <em') && !html.includes('http-equiv="refresh"'),
+     `${(html.length / 1024).toFixed(1)} Ko`);
+}
+
 await browser.close();
 
 /* ── Rapport ──────────────────────────────────────────────────────────────── */

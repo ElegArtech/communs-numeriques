@@ -18,7 +18,7 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { site, pages, linkMap } from './site.config.mjs';
+import { site, pages, linkMap, redirects } from './site.config.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..');
@@ -148,6 +148,7 @@ function assemble(page, { title, styles, body }, hoverCss) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(page.desc)}">
 <meta name="author" content="${esc(site.author)}">
+${site.noindex ? '<meta name="robots" content="noindex, nofollow">' : '<meta name="robots" content="index, follow">'}
 <link rel="canonical" href="${url}">
 <meta property="og:type" content="${page.type}">
 <meta property="og:site_name" content="${esc(site.name)}">
@@ -260,8 +261,9 @@ ${footer}
 `);
 }
 
-writeFileSync(join(OUT, 'robots.txt'),
-  `User-agent: *\nAllow: /\n\nSitemap: ${site.origin}/sitemap.xml\n`);
+writeFileSync(join(OUT, 'robots.txt'), site.noindex
+  ? `# Site en préparation : contenu provisoire, indexation fermée.\nUser-agent: *\nDisallow: /\n`
+  : `User-agent: *\nAllow: /\n\nSitemap: ${site.origin}/sitemap.xml\n`);
 writeFileSync(join(OUT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -269,4 +271,45 @@ ${pages.map(p => `  <url><loc>${site.origin}${p.route}</loc><priority>${p.priori
 </urlset>
 `);
 
-console.log(`\n  ${pages.length} pages · ${hoverRules.size} règles :hover · ${warnings} avertissement(s)`);
+// Validation Google Search Console, héritée du site précédent
+writeFileSync(join(OUT, site.googleVerification),
+  `google-site-verification: ${site.googleVerification}\n`);
+
+// Redirections depuis les anciennes URLs. GitHub Pages ne sait pas répondre 301 :
+// on sert une page de renvoi qui porte le canonical vers la nouvelle adresse,
+// ce que les moteurs interprètent comme une redirection permanente.
+let nbRedirections = 0;
+for (const [ancienne, nouvelle] of Object.entries(redirects)) {
+  const cible = site.origin + nouvelle;
+  const chemin = ancienne.endsWith('/') ? join(OUT, ancienne, 'index.html') : join(OUT, ancienne);
+  if (existsSync(chemin)) {
+    console.log(`  ✗ redirection ignorée : ${ancienne} écraserait une page du site`);
+    warnings++;
+    continue;
+  }
+  mkdirSync(dirname(chemin), { recursive: true });
+  writeFileSync(chemin, `<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Page déplacée — ${esc(site.name)}</title>
+<link rel="canonical" href="${cible}">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=${nouvelle}">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;text-align:center;padding:24px}a{color:#127552}</style>
+</head>
+<body>
+<div>
+<p style="font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#4A5850;margin:0 0 14px">Cette page a déménagé</p>
+<p style="font-family:'Instrument Serif',serif;font-size:28px;margin:0 0 18px">Redirection en cours…</p>
+<p style="margin:0;font-size:15px;color:#4A5850">Si rien ne se passe, <a href="${nouvelle}">suivez ce lien</a>.</p>
+</div>
+</body>
+</html>
+`);
+  nbRedirections++;
+}
+
+console.log(`\n  ${pages.length} pages · ${nbRedirections} redirections · ${hoverRules.size} règles :hover · ${warnings} avertissement(s)`);
+console.log(site.noindex ? '  ⚠  noindex actif : le site ne sera pas indexé par les moteurs' : '  indexation ouverte');

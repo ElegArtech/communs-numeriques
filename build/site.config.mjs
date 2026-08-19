@@ -12,6 +12,36 @@ export const site = {
   licence: 'CC BY-SA 4.0',
   licenceUrl: 'https://creativecommons.org/licenses/by-sa/4.0/deed.fr',
   pdf: '/memoire-communs-numeriques-berge-2025.pdf',
+
+  // Tant que les articles définitifs ne sont pas en ligne, le site est visible
+  // mais fermé aux moteurs de recherche. Passer à false pour ouvrir l'indexation.
+  noindex: true,
+
+  // Fichier de validation Google Search Console, hérité du site précédent.
+  googleVerification: 'googlea6937b2d0e8f4a2d.html',
+};
+
+// Anciennes URLs du site (architecture en trois piliers, en ligne jusqu'en juin
+// 2026) → nouvelles routes. Le contenu de ces pages n'ayant pas été archivé, la
+// correspondance est établie par proximité de sujet ; les pages sans équivalent
+// pointent vers la liste des articles.
+// Note : pas d'entrée pour /index.html — GitHub Pages sert cette adresse
+// depuis le même fichier que /, une redirection y serait une boucle.
+export const redirects = {
+  '/apropos.html': '/a-propos/',
+  '/contact.html': '/a-propos/',
+  '/comprendre/index.html': '/articles/',
+  '/comprendre/introduction-communs-numeriques.html': '/articles/quest-ce-quun-commun-numerique/',
+  '/comprendre/tragedie-communs-numeriques-revisitee.html': '/articles/quest-ce-quun-commun-numerique/',
+  '/comprendre/gouvernance-communs-numeriques.html': '/articles/gouvernance-ostrom/',
+  '/comprendre/financer-communs-numeriques-scikit-learn.html': '/articles/',
+  '/veille/index.html': '/articles/',
+  '/veille/europe-souverainete-numerique-communs.html': '/articles/',
+  '/veille/europe-consultation-open-source-souverainete.html': '/articles/',
+  '/recherche/index.html': '/la-recherche/',
+  '/recherche/memoire.html': '/la-recherche/',
+  '/recherche/memoire/bibliographie/': '/la-recherche/',
+  '/recherche/memoire/pdf/': '/memoire-communs-numeriques-berge-2025.pdf',
 };
 
 // Chaque entrée : fichier source → route publique + métadonnées de partage.

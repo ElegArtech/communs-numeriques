@@ -1,4 +1,3 @@
+# Site en préparation : contenu provisoire, indexation fermée.
 User-agent: *
-Allow: /
-
-Sitemap: https://communs-numeriques.fr/sitemap.xml
+Disallow: /
