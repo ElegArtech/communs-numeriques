@@ -6,6 +6,9 @@
  * Prérequis : un serveur sur http://localhost:8900 servant docs/. */
 
 import puppeteer from 'puppeteer-core';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const BASE = 'http://localhost:8900';
 const results = [];
@@ -202,6 +205,32 @@ const browser = await puppeteer.launch({
   const actif = await page.$$eval('.memoire-sommaire a.actif', els => els.length);
   ok('Sommaire latéral qui suit la lecture', actif === 1, `${actif} entrée surlignée`);
   await page.close();
+}
+
+/* ── Contraste : aucun gris sous le seuil WCAG AA en couleur de texte ─────── */
+{
+  // Sur le fond #FAFAF6 ces trois gris donnent 2,94:1, 2,40:1 et 1,73:1,
+  // pour un minimum requis de 4,5:1 (3:1 pour le grand texte).
+  const bannis = ['#8A968D', '#9AA79B', '#B9C4B6'];
+  const racine = join(dirname(fileURLToPath(import.meta.url)), '..', 'docs');
+  const fichiers = [];
+  (function parcourir(d) {
+    for (const e of readdirSync(d)) {
+      const p = join(d, e);
+      if (statSync(p).isDirectory()) parcourir(p);
+      else if (e.endsWith('.html')) fichiers.push(p);
+    }
+  })(racine);
+  const fautifs = [];
+  for (const f of fichiers) {
+    const contenu = readFileSync(f, 'utf8');
+    for (const g of bannis) {
+      const n = (contenu.match(new RegExp('color:' + g, 'gi')) || []).length;
+      if (n) fautifs.push(`${f.replace(racine, '')} ${g} ×${n}`);
+    }
+  }
+  ok('Contraste du texte conforme WCAG AA', fautifs.length === 0,
+     fautifs.length ? fautifs.slice(0, 3).join(' · ') : `${fichiers.length} pages contrôlées`);
 }
 
 await browser.close();

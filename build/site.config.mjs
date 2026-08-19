@@ -132,6 +132,22 @@ export const pages = [
     section: 'Résultats',
     desc: "Deux voies pour ancrer un commun numérique dans l'administration : l'appropriation, où l'État pilote et contrôle, et la relation, où il contribue à un collectif qu'il ne dirige pas. Chacune a ses facteurs de réussite.",
   },
+
+  // ── Pages légales ─────────────────────────────────────────────────────────
+  {
+    src: 'MentionsLegales.dc.html',
+    route: '/mentions-legales/',
+    type: 'website',
+    priority: '0.2',
+    desc: "Éditeur, hébergement, licences des contenus (CC BY-SA 4.0) et du code (MIT), confidentialité des entretiens de recherche, droit de réponse.",
+  },
+  {
+    src: 'Confidentialite.dc.html',
+    route: '/confidentialite/',
+    type: 'website',
+    priority: '0.2',
+    desc: "Ce site ne dépose aucun cookie, ne mesure pas son audience et ne charge aucune ressource externe. Ce qui est enregistré, par qui, et vos droits au titre du RGPD.",
+  },
 ];
 
 // Réécriture des liens internes : ancien fichier → nouvelle route.
