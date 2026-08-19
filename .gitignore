@@ -19,5 +19,4 @@ node_modules/
 # ─── Build ──────────────────────────────────────────────────────────────────
 build/preview-*.png
 build/tmp/
-build/memoire.json
 build/tmp/

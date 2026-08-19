@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conclusion — Le mémoire — Les Communs Numériques</title>
+<meta name="description" content="Réponse à la problématique, apports et limites de la recherche, perspectives et recommandations.">
+<meta name="author" content="Alexandre Berge">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://communs-numeriques.fr/memoire/conclusion/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Les Communs Numériques">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Conclusion — Le mémoire">
+<meta property="og:description" content="Réponse à la problématique, apports et limites de la recherche, perspectives et recommandations.">
+<meta property="og:url" content="https://communs-numeriques.fr/memoire/conclusion/">
+<meta property="og:image" content="https://communs-numeriques.fr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+.hv1:hover{color:#1E2A23 !important}
+.hv2:hover{color:oklch(0.42 0.11 162) !important}
+.hv3:hover{color:oklch(0.50 0.12 160) !important}
+.hv4:hover{color:oklch(0.42 0.11 162) !important;transform:translateX(6px) !important}
+.hv5:hover{animation-play-state:paused !important}
+.hv6:hover{background:oklch(0.78 0.09 160) !important;color:#1E2A23 !important}
+.hv7:hover{border-color:#F4F7F2 !important;color:#F4F7F2 !important}
+.hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
+.hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
+.hv10:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
+.hv11:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv12:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv13:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv14:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+</style>
+<style>
+.memoire-grille{display:grid;grid-template-columns:minmax(0,264px) minmax(0,1fr);gap:clamp(32px,5vw,72px);
+  max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.memoire-sommaire{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 96px);
+  overflow-y:auto;padding:32px 0 40px;scrollbar-width:thin}
+.memoire-sommaire a[data-ancre].actif{color:#1E2A23 !important;font-weight:600}
+.memoire-sommaire summary{display:none}
+@media (max-width:900px){
+  .memoire-grille{grid-template-columns:minmax(0,1fr)}
+  .memoire-sommaire{position:static;max-height:none;padding:20px 0 0;
+    border-bottom:1px solid #D8DDD3;margin-bottom:8px}
+  .memoire-sommaire summary{display:block;cursor:pointer;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;color:#1E2A23;padding:14px 0;list-style:none}
+  .memoire-sommaire summary::after{content:' ▾';color:#127552}
+  .memoire-sommaire details[open] summary::after{content:' ▴'}
+  .memoire-sommaire > details > div{padding-bottom:18px}
+}
+</style>
+</head>
+<body>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px">Accueil</a>
+      <a class="hv1" href="/articles/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Articles</a>
+      <a class="hv1" href="/la-recherche/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px;transition:color .2s ease">La recherche</a>
+      <a class="hv1" href="/glossaire/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Glossaire</a>
+      <a class="hv1" href="/a-propos/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:70;background:transparent">
+  <div data-ref="barRef" style="height:100%;width:0;background:#127552"></div>
+</div>
+
+<div class="memoire-grille">
+  <nav class="memoire-sommaire" aria-label="Sommaire du mémoire">
+    <details open>
+      <summary>Sommaire du mémoire</summary>
+      <div>
+        <a href="/memoire/" style="display:block;text-decoration:none;font-family:'Instrument Serif',serif;
+           font-size:19px;line-height:1.25;color:#1E2A23;padding-bottom:14px;border-bottom:1px solid #D8DDD3;margin-bottom:4px">
+          Le mémoire</a>
+        
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/introduction/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Introduction
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie I</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/1-1-performance-sous-contraintes/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Des performances numériques sous contraintes
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-2-paradigme-des-communs/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Le paradigme des communs numériques
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-3-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        L'institutionnalisation, élément central de l'ancrage
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie II</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/2-1-design-de-la-recherche/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Design de la recherche
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-2-dispositif-empirique/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Dispositif empirique
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-3-traitement-analyse-limites/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Traitement, analyse et limites
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie III</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/3-1-les-neuf-cas/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Caractérisation des initiatives étudiées
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-2-dynamiques-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Analyse des dynamiques d'institutionnalisation
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-3-discussion-et-implications/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Discussion des résultats et implications
+      </a></li></ul>
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/conclusion/" aria-current="page"
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#1E2A23;font-weight:600;
+                border-left:2px solid #127552;padding-left:10px;margin-left:-12px">
+        Conclusion
+      </a><ul style="margin:8px 0 4px;padding:0 0 0 12px;list-style:none;border-left:1px solid #D8DDD3"><li style="margin:0 0 6px"><a href="#principaux-resultats-et-reponse-a-la-problematique" data-ancre="principaux-resultats-et-reponse-a-la-problematique"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">Principaux résultats et réponse à la problématique</a></li><li style="margin:0 0 6px"><a href="#apports-et-limites-de-la-recherche" data-ancre="apports-et-limites-de-la-recherche"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">Apports et limites de la recherche</a></li><li style="margin:0 0 6px"><a href="#perspectives-de-recherche-et-recommandations" data-ancre="perspectives-de-recherche-et-recommandations"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">Perspectives de recherche et recommandations</a></li></ul></li><li style="margin:0 0 10px">
+      <a href="/memoire/bibliographie/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Bibliographie
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Annexes</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/1-glossaire/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 1 — Glossaire
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/2-limites-methodologiques/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 2 — Limites méthodologiques et contremesures
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/3-guide-entretien/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 3 — Guide d'entretien semi-directif
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/4-grille-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 4 — Grille de codage
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/5-matrices-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 5 — Matrices de codage inter-cas
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/6-audit-trail/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 6 — Audit trail
+      </a></li></ul>
+        <a href="/memoire-communs-numeriques-berge-2025.pdf" style="display:inline-block;margin-top:26px;font-size:12px;letter-spacing:.1em;
+           text-transform:uppercase;font-weight:600;color:#1E2A23;text-decoration:none;
+           border-bottom:2px solid #127552;padding-bottom:3px">PDF · 124 p.</a>
+      </div>
+    </details>
+  </nav>
+
+  <main style="padding:clamp(28px,4vw,56px) 0 clamp(56px,7vw,96px);min-width:0">
+    <nav aria-label="Fil d'Ariane" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+         font-weight:600;color:#5A685F;margin-bottom:26px">
+      <a href="/la-recherche/" style="color:#5A685F;text-decoration:none">La recherche</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/memoire/" style="color:#5A685F;text-decoration:none">Le mémoire</a>
+      
+    </nav>
+
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,5vw,54px);
+        line-height:1.06;letter-spacing:-.015em;margin:0 0 18px;color:#1E2A23;text-wrap:balance">
+      Conclusion</h1>
+    <p style="margin:0 0 6px;font-size:16px;line-height:1.65;color:#4A5850;max-width:60ch">Réponse à la problématique, apports et limites de la recherche, perspectives et recommandations.</p>
+    <hr style="border:0;border-top:1px solid #1E2A23;margin:30px 0 34px">
+
+    <article style="max-width:72ch">
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’administration publique traverse des tensions structurelles sans précédent. La pression à la performance s’intensifie, l’exigence de transparence grandit, l’impératif de souveraineté technologique s’impose <span style="color:#5A685F">[Jin, 2024 ; Pohle et Thiel, 2020]</span>. Les communs numériques émergent dans ce contexte comme une alternative de transformation socio-technique et institutionnelle <span style="color:#5A685F">[Shulz, 2021b]</span>. Ces travaux ont cherché à identifier les conditions permettant à ces communs de s’ancrer durablement dans l’administration, au-delà de l’expérimentation, pour devenir des pratiques reconnues, soutenues et pérennes.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette conclusion suit trois mouvements. Elle synthétise les principaux résultats de l’enquête pour répondre à la question de recherche. Elle examine ensuite les apports et les limites du travail. Elle ouvre enfin des perspectives pour la recherche et l’action publique.</p>
+<h2 id="principaux-resultats-et-reponse-a-la-problematique" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.2;letter-spacing:-.01em;margin:64px 0 20px;color:#1E2A23;scroll-margin-top:84px"><a href="#principaux-resultats-et-reponse-a-la-problematique" style="color:inherit;text-decoration:none">Principaux résultats et réponse à la problématique</a></h2>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La problématique posée (quels sont les facteurs d’institutionnalisation des communs numériques dans l’administration publique ?) trouve sa réponse dans l’identification de plusieurs facteurs complémentaires. L’analyse menée révèle toutefois que le concept même d’« institutionnalisation dans l’administration » exige une redéfinition. Loin d’être un processus unique, il recouvre deux logiques distinctes, voire opposées avec l’institutionnalisation-appropriation et l’institutionnalisation-relation <span style="color:#5A685F">[ENT-002 ; ENT-012]</span>. La tension et la complémentarité entre ces deux formes constituent la réponse à la question de recherche.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La première forme, l’institutionnalisation-appropriation, correspond à la création ou à l’internalisation d’un commun par une entité publique <span style="color:#5A685F">[ENT-005]</span>. Des initiatives comme La Suite Numérique <span style="color:#5A685F">[ENT-005]</span> ou le portail CAFData <span style="color:#5A685F">[ENT-010]</span> illustrent cette volonté de l’administration de piloter directement une ressource perçue comme stratégique. Les facteurs de succès de cette démarche restent ceux identifiés classiquement avec un socle stratégique favorable, un portage politique fort, et des ressources internes pérennes <span style="color:#5A685F">[Loon et Toshkov, 2015]</span>. L’enquête empirique révèle cependant, s’appuyant sur des critiques issues de l’écosystème du logiciel libre <span style="color:#5A685F">[ENT-013]</span>, un risque majeur de cette approche. En devenant une « institution d’État », le commun risque de perdre ce qui fait son essence qu’une gouvernance communautaire autonome et une capacité d’innovation organique constituent <span style="color:#5A685F">[Jemielniak, 2016]</span>. La ressource devient alors un service public ouvert, mais pas nécessairement un commun au sens d’Ostrom <span style="color:#5A685F">[ENT-013]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La seconde forme, plus subtile mais tout aussi structurante, est l’institutionnalisation-relation <span style="color:#5A685F">[ENT-001 ; ENT-003]</span>. L’État n’internalise pas le commun, mais institutionnalise sa relation avec des communs externes <span style="color:#5A685F">[ENT-006]</span>. Son rôle change. Il devient un contributeur stratégique, un facilitateur et un garant de l’écosystème <span style="color:#5A685F">[Krewer et Warso, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette logique se traduit par des actions concrètes.</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Contribuer aux communs existants par le biais de ses agents <span style="color:#5A685F">[ENT-005]</span> ou en finançant directement des briques logicielles critiques, pour parer aux défaillances du marché <span style="color:#5A685F">[ENT- 013]</span>.</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Faciliter leur développement en adaptant le cadre juridique et réglementaire pour garantir un environnement non-intrusif, par exemple via une commande publique plus agile <span style="color:#5A685F">[ENT- 003 ; ENT-008]</span>.</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Soutenir leur pérennité en finançant des fondations ou des associations qui portent ces communs (comme l’ADEME avec la FabMob <span style="color:#5A685F">[ENT-011]</span>).</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans cette perspective, l’État n’institutionnalise pas « le » commun, mais la pratique de collaboration avec les communs <span style="color:#5A685F">[ENT-006]</span>. Les facteurs clés diffèrent alors avec une culture de l’ouverture <span style="color:#5A685F">[ENT-007]</span>, des compétences pour interagir avec des communautés externes <span style="color:#5A685F">[ENT- 001]</span>, et des mécanismes de financement indirects et agiles <span style="color:#5A685F">[ENT-011]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les facteurs d’institutionnalisation des communs numériques dans l’administration publique dépendent donc de la forme d’institutionnalisation visée. Pour une appropriation réussie, les facteurs classiques (soutien politique, ressources, leadership interne) sont prépondérants. Pour une relation durable, les facteurs les plus importants sont la culture de l’ouverture, l’agilité des processus et la capacité à agir comme un partenaire respectueux de l’autonomie des communautés. L’enracinement durable des communs dans l’action publique ne naît pas d’une seule voie, mais de la capacité de l’administration à jouer habilement sur ces deux registres <span style="color:#5A685F">[ENT-002]</span>. Piloter en interne ce qui est stratégiquement indispensable, tout en soutenant et en contribuant à l’écosystème externe qui constitue la véritable force d’innovation du modèle <span style="color:#5A685F">[Benkler, 2006]</span>. L’expérimentation cesse d’être une parenthèse pour devenir une composante légitime et pérenne du patrimoine numérique public à cette condition.</p>
+<h2 id="apports-et-limites-de-la-recherche" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.2;letter-spacing:-.01em;margin:64px 0 20px;color:#1E2A23;scroll-margin-top:84px"><a href="#apports-et-limites-de-la-recherche" style="color:inherit;text-decoration:none">Apports et limites de la recherche</a></h2>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce travail s’inscrit à l’intersection de trois champs rarement réunis dans la littérature académique avec la transformation numérique de l’action publique, la théorie des communs numériques et les approches néo-institutionnelles de l’innovation. Le cadre d’analyse repose sur une articulation originale de trois grilles de lecture que sont la dynamique des pressions institutionnelles formalisée par DiMaggio et Powell <span style="color:#5A685F">[DiMaggio et Powell, 1983]</span>, le concept de travail institutionnel forgé par Lawrence et Suddaby <span style="color:#5A685F">[Lawrence et Suddaby, 2006]</span>, et les principes de gouvernance partagée développés par Ostrom <span style="color:#5A685F">[Ostrom, 1990]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">En croisant ces approches, les travaux permettent de penser ensemble ce qui, habituellement, est traité de manière séparée :</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>La contrainte et l’initiative,</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Les routines structurelles et l’émergence,</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>L’inertie des normes et la plasticité des acteurs.</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce croisement théorique éclaire comment une innovation fondée sur des logiques d’ouverture et de coopération, en l’occurrence un commun numérique, peut, dans un environnement réputé rigide, franchir les étapes nécessaires à sa légitimation. Certains agents réformateurs jouent ici un rôle décisif. Ce sont eux qui traduisent des concepts parfois abstrait comme la souveraineté numérique en dispositifs concrets, avec l’appui de communautés engagées <span style="color:#5A685F">[Ben Slimane, 2019]</span>. L’un des apports de cette approche est justement de documenter ces alliances. L’exemple d’un acteur qui porte un projet de mutualisation inter-administrations, jusqu’à faire de l’ouverture du code une pratique banale, en dit long sur les dynamiques de transformation au sein d’une organisation encore profondément bureaucratique <span style="color:#5A685F">[ENT-006]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Sur le plan pratique, les résultats prennent la forme d’une matrice de facteurs. Il ne s’agit pas d’un modèle rigide, mais d’un outil de lecture qui aide les porteurs de projets à repérer les conditions d’un ancrage réussi avec la présence d’un soutien hiérarchique clair <span style="color:#5A685F">[ENT-001]</span>, mise en récit des bénéfices pour le service rendu <span style="color:#5A685F">[ENT-011]</span>, reconnaissance du travail collaboratif <span style="color:#5A685F">[ENT-007]</span>, sécurisation des ressources dans le temps <span style="color:#5A685F">[ENT-003]</span>. Ces éléments, souvent connus intuitivement des praticiens, trouvent ici une formalisation utile pour le pilotage. Ils rejoignent une tendance plus large. Les communs numériques sont de plus en plus explicitement intégrés aux instruments d’action publique à mesure que l’État s’approprie la dynamique. Le Ministère chargé du Renouveau démocratique <span style="color:#5A685F">[Ministère chargé du Renouveau démocratique, 2024]</span> en fait un levier d’innovation et de souveraineté. La Commission supérieure du numérique et des postes appelle à les reconnaître comme des « communs d’intérêt général » et à instituer des partenariats Public- Communs <span style="color:#5A685F">[CSNP, 2023]</span>. Cette orientation confirme que l’État peut produire autrement.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cela dit, plusieurs limites doivent être reconnues. D’abord, le périmètre empirique est restreint. L’analyse porte sur quelques cas français, dont les résultats ne peuvent être transposés tels quels dans d’autres configurations administratives ou culturelles. Ensuite, les matériaux mobilisés, entretiens semi-directifs, analyse documentaire, sont issus de récits portés en majorité par des acteurs impliqués dans les projets. Leur parole, bien que précieuse, peut comporter un biais d’auto- légitimation. Ce sont d’abord les réussites qui sont valorisées, et plus rarement les blocages <span style="color:#5A685F">[ENT- 002]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Un troisième point tient à la temporalité. L’institutionnalisation est un processus de long terme <span style="color:#5A685F">[Tolbert et Zucker, 1996]</span>, or plusieurs initiatives étudiées sont encore en phase de démarrage ou de stabilisation. Il est donc trop tôt pour juger de leur pérennité. Enfin, le choix d’embrasser un spectre de facteurs relativement large implique un arbitrage. Certains d’entre eux auraient mérité un traitement plus approfondi. Ces réserves ne diminuent pas la portée des enseignements, mais appellent à leur prolongement. L’analyse gagnerait à être consolidée par d’autres terrains, dans d’autres administrations, et à se déployer dans le temps, afin d’observer ce que deviennent ces communs une fois le porteur de projet parti, les budgets votés et l’attention médiatique retombée.</p>
+<h2 id="perspectives-de-recherche-et-recommandations" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.2;letter-spacing:-.01em;margin:64px 0 20px;color:#1E2A23;scroll-margin-top:84px"><a href="#perspectives-de-recherche-et-recommandations" style="color:inherit;text-decoration:none">Perspectives de recherche et recommandations</a></h2>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">À l’issue de ce travail, il apparaît clairement que faire entrer les communs numériques dans le quotidien des administrations ne se décrète pas. Mais on peut créer les conditions pour que cela devienne possible.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Une première piste consiste à ancrer ces pratiques dans les routines de l’action publique. Cela suppose de les faire apparaître explicitement dans les documents de pilotage (plans de transformation numérique, schémas directeurs des systèmes d’information, feuilles de route interministérielles). Autrement dit, leur donner une place non résiduelle dans les priorités de modernisation <span style="color:#5A685F">[ENT-001 ; ENT-012]</span>. Ce cadrage peut être renforcé par des évolutions réglementaires, comme la reconnaissance juridique d’un « commun numérique d’intérêt général » <span style="color:#5A685F">[CSNP, 2023]</span> ou l’introduction de clauses types dans les marchés publics encourageant les solutions ouvertes <span style="color:#5A685F">[ENT-008]</span>. Mais au-delà des textes, c’est une organisation concrète qu’il faut mettre en place. Des cellules dédiées, à l’image des « Open Source Program Offices » (OSPO), pourraient coordonner les contributions, accompagner les équipes et sécuriser les démarches <span style="color:#5A685F">[Shrivastava et Korkmaz, 2024]</span>. Ce type de structure concrétise que les communs ne sont plus une expérimentation marginale, mais un choix stratégique assumé <span style="color:#5A685F">[ENT-009]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La deuxième priorité est culturelle. Rien ne changera en profondeur sans une montée en compétences et en compréhension. Former les agents aux enjeux des communs numériques ne relève pas d’un luxe ou d’un supplément d’âme. C’est une condition pour éviter l’incompréhension ou la défiance <span style="color:#5A685F">[ENT-006]</span>. Ces notions doivent être intégrées dans les formations initiales et continues, notamment pour les cadres et les professionnels du numérique <span style="color:#5A685F">[ENT-001]</span>. Mais il faut aller plus loin en valorisant les initiatives internes, en encourageant les démarches collectives, en permettant aux agents de contribuer à des projets libres <span style="color:#5A685F">[ENT-005 ; ENT-007]</span>. Car une culture ne change pas par décret, mais par exposition progressive à de nouvelles façons de faire. Les retours d’expérience d’administrations pionnières, les réseaux comme les BlueHats <span style="color:#5A685F">[ENT-013]</span> ou les associations comme l’ADULLACT <span style="color:#5A685F">[ENT-003]</span> jouent ici un rôle essentiel pour partager des outils, mais surtout une posture.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Sur le plan académique, plusieurs chantiers mériteraient d’être poursuivis. D’abord, l’évaluation des effets concrets des communs numériques reste à approfondir. Leur impact sur la performance, la qualité du service, la transparence ou les économies budgétaires demeure encore peu mesuré <span style="color:#5A685F">[ENT-004]</span>. Des recherches quantitatives ou mixtes, élargies à un plus grand nombre de cas, permettraient de consolider ou d’infirmer certaines hypothèses formulées ici. Ensuite, l’irruption de nouveaux enjeux, comme l’intelligence artificielle, la sobriété numérique ou les communs de données massives, invite à prolonger la réflexion sur les mécanismes d’institutionnalisation. Peut- on appliquer aux communs d’intelligence artificielle les mêmes cadres que pour les logiciels ? Cette question conditionne les choix à venir dans les stratégies numériques publiques.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Au fond, institutionnaliser un commun numérique, ce n’est pas cocher une case ou signer une convention. C’est engager une dynamique où se croisent vision politique, organisation souple et engagement collectif <span style="color:#5A685F">[ENT-002 ; ENT-011]</span>. La promesse est exigeante, mais elle n’est pas hors d’atteinte. Car derrière les communs, il y a l’idée d’un numérique public coproduit, plus lisible, plus réutilisable, plus aligné sur l’intérêt général. Lorsqu’elle contribue activement à des ressources ouvertes, l’administration ne modernise pas seulement ses outils, mais elle reconfigure son contrat social <span style="color:#5A685F">[Dulong de Rosnay et Stalder, 2020]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Deux précautions, toutefois, doivent être rappelées. D’abord, ce mémoire se fonde essentiellement sur le cas français. Sa transposition à d’autres contextes institutionnels reste à documenter. Ensuite, les matériaux sont majoritairement déclaratifs, issus d’entretiens, et peuvent refléter le point de vue des acteurs les plus impliqués ou convaincus. Un biais d’optimisme est donc possible, sinon probable.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les signaux sont là. Ce que montrent les initiatives observées, ce que suggèrent les entretiens, c’est la possibilité d’une administration plus ouverte, plus apprenante, plus réactive. Une administration qui ne se contente plus de commander des solutions, mais qui apprend à les construire collectivement, pour et avec la société.</p>
+    </article>
+
+    <nav style="display:flex;justify-content:space-between;gap:24px;margin-top:64px;padding-top:26px;
+         border-top:1px solid #1E2A23"><a href="/memoire/3-3-discussion-et-implications/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Précédent</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        ← Discussion des résultats et implications</span></a><a href="/memoire/bibliographie/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;text-align:right">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Suivant</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        Bibliographie →</span></a></nav>
+  </main>
+</div>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a class="hv3" href="/articles/" style="color:#1E2A23;text-decoration:none">Articles</a>
+        <a class="hv3" href="/la-recherche/" style="color:#1E2A23;text-decoration:none">La recherche</a>
+        <a class="hv3" href="/glossaire/" style="color:#1E2A23;text-decoration:none">Glossaire</a>
+        <a class="hv3" href="/a-propos/" style="color:#1E2A23;text-decoration:none">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a class="hv3" href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px">consulting@alexandre-berge.fr</a>
+        <a class="hv3" href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#8A968D">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+<script>/* Remplace le runtime Claude Design (React + ReactDOM + Babel, ~3 Mo depuis un CDN)
+   par l'équivalent en JavaScript natif. Aucune dépendance, aucune requête réseau.
+   Le site reste entièrement lisible si ce script ne s'exécute pas. */
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ref = function (name) { return document.querySelector('[data-ref="' + name + '"]'); };
+
+  /* ── Barre de progression de lecture (articles) ───────────────────────── */
+  var bar = ref('barRef');
+  if (bar) {
+    var onScroll = function () {
+      var e = document.documentElement;
+      var p = e.scrollTop / Math.max(1, e.scrollHeight - e.clientHeight);
+      bar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Motif de points animé (couverture d'accueil) ─────────────────────── */
+  var canvas = ref('dotsRef');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var gap = parseInt(canvas.getAttribute('data-densite') || '30', 10);
+    var animate = canvas.getAttribute('data-anime') !== 'false' && !reduced;
+    var w = 0, h = 0, raf = 0;
+
+    var resize = function () {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    var draw = function (t) {
+      ctx.clearRect(0, 0, w, h);
+      var cx = w * 0.82, cy = h * 0.18;
+      for (var x = gap / 2; x < w; x += gap) {
+        for (var y = gap / 2; y < h; y += gap) {
+          var d = Math.hypot(x - cx, y - cy);
+          var k = Math.max(0, Math.sin(d * 0.015 - t * 0.001));
+          ctx.beginPath();
+          ctx.arc(x, y, 1.0 + 1.4 * k, 0, 6.2832);
+          ctx.fillStyle = 'rgba(18,117,82,' + (0.05 + 0.22 * k).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      if (animate) raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () { resize(); if (!animate) draw(600); })
+        .observe(canvas.parentElement);
+    } else {
+      window.addEventListener('resize', function () { resize(); if (!animate) draw(600); });
+    }
+    if (animate) raf = requestAnimationFrame(draw); else draw(600);
+  }
+
+  /* ── Compteurs animés (accueil) ───────────────────────────────────────── */
+  /* Les valeurs finales sont déjà dans le HTML : sans JS, rien ne manque. */
+  if (!reduced && window.IntersectionObserver) {
+    var counters = [];
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies'].forEach(function (n) {
+      var el = ref(n);
+      if (el) counters.push([el, parseInt(el.textContent.trim(), 10)]);
+    });
+    if (counters.length) {
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (done || !entries.some(function (e) { return e.isIntersecting; })) return;
+        done = true;
+        io.disconnect();
+        var start = performance.now(), dur = 1400;
+        var tick = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          counters.forEach(function (c) { c[0].textContent = String(Math.round(c[1] * ease)); });
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      io.observe(counters[0][0]);
+    }
+  }
+
+  /* ── Filtre du glossaire ──────────────────────────────────────────────── */
+  var filter = ref('filterRef');
+  if (filter) {
+    var empty = ref('emptyRef');
+    var norm = function (s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+    var apply = function () {
+      var q = norm(filter.value.trim());
+      var visible = 0;
+      document.querySelectorAll('[data-glossterm]').forEach(function (el) {
+        var hay = norm(el.getAttribute('data-glossterm') + ' ' + el.textContent);
+        var show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.querySelectorAll('[data-glossgroup]').forEach(function (g) {
+        var any = Array.prototype.some.call(
+          g.querySelectorAll('[data-glossterm]'),
+          function (el) { return el.style.display !== 'none'; }
+        );
+        g.style.display = any ? '' : 'none';
+      });
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    };
+    filter.addEventListener('input', apply);
+    if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
+  }
+})();
+</script>
+</body>
+</html>

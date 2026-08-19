@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caractérisation des initiatives étudiées — Le mémoire — Les Communs Numériques</title>
+<meta name="description" content="Présentation comparée des neuf cas, configurations de gouvernance et écosystèmes d'acteurs, origines et contexte initial.">
+<meta name="author" content="Alexandre Berge">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://communs-numeriques.fr/memoire/3-1-les-neuf-cas/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Les Communs Numériques">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Caractérisation des initiatives étudiées — Le mémoire">
+<meta property="og:description" content="Présentation comparée des neuf cas, configurations de gouvernance et écosystèmes d'acteurs, origines et contexte initial.">
+<meta property="og:url" content="https://communs-numeriques.fr/memoire/3-1-les-neuf-cas/">
+<meta property="og:image" content="https://communs-numeriques.fr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+.hv1:hover{color:#1E2A23 !important}
+.hv2:hover{color:oklch(0.42 0.11 162) !important}
+.hv3:hover{color:oklch(0.50 0.12 160) !important}
+.hv4:hover{color:oklch(0.42 0.11 162) !important;transform:translateX(6px) !important}
+.hv5:hover{animation-play-state:paused !important}
+.hv6:hover{background:oklch(0.78 0.09 160) !important;color:#1E2A23 !important}
+.hv7:hover{border-color:#F4F7F2 !important;color:#F4F7F2 !important}
+.hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
+.hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
+.hv10:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
+.hv11:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv12:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv13:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv14:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+</style>
+<style>
+.memoire-grille{display:grid;grid-template-columns:minmax(0,264px) minmax(0,1fr);gap:clamp(32px,5vw,72px);
+  max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.memoire-sommaire{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 96px);
+  overflow-y:auto;padding:32px 0 40px;scrollbar-width:thin}
+.memoire-sommaire a[data-ancre].actif{color:#1E2A23 !important;font-weight:600}
+.memoire-sommaire summary{display:none}
+@media (max-width:900px){
+  .memoire-grille{grid-template-columns:minmax(0,1fr)}
+  .memoire-sommaire{position:static;max-height:none;padding:20px 0 0;
+    border-bottom:1px solid #D8DDD3;margin-bottom:8px}
+  .memoire-sommaire summary{display:block;cursor:pointer;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;color:#1E2A23;padding:14px 0;list-style:none}
+  .memoire-sommaire summary::after{content:' ▾';color:#127552}
+  .memoire-sommaire details[open] summary::after{content:' ▴'}
+  .memoire-sommaire > details > div{padding-bottom:18px}
+}
+</style>
+</head>
+<body>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px">Accueil</a>
+      <a class="hv1" href="/articles/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Articles</a>
+      <a class="hv1" href="/la-recherche/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px;transition:color .2s ease">La recherche</a>
+      <a class="hv1" href="/glossaire/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Glossaire</a>
+      <a class="hv1" href="/a-propos/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:70;background:transparent">
+  <div data-ref="barRef" style="height:100%;width:0;background:#127552"></div>
+</div>
+
+<div class="memoire-grille">
+  <nav class="memoire-sommaire" aria-label="Sommaire du mémoire">
+    <details open>
+      <summary>Sommaire du mémoire</summary>
+      <div>
+        <a href="/memoire/" style="display:block;text-decoration:none;font-family:'Instrument Serif',serif;
+           font-size:19px;line-height:1.25;color:#1E2A23;padding-bottom:14px;border-bottom:1px solid #D8DDD3;margin-bottom:4px">
+          Le mémoire</a>
+        
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/introduction/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Introduction
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie I</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/1-1-performance-sous-contraintes/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Des performances numériques sous contraintes
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-2-paradigme-des-communs/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Le paradigme des communs numériques
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-3-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        L'institutionnalisation, élément central de l'ancrage
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie II</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/2-1-design-de-la-recherche/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Design de la recherche
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-2-dispositif-empirique/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Dispositif empirique
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-3-traitement-analyse-limites/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Traitement, analyse et limites
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie III</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/3-1-les-neuf-cas/" aria-current="page"
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#1E2A23;font-weight:600;
+                border-left:2px solid #127552;padding-left:10px;margin-left:-12px">
+        Caractérisation des initiatives étudiées
+      </a><ul style="margin:8px 0 4px;padding:0 0 0 12px;list-style:none;border-left:1px solid #D8DDD3"><li style="margin:0 0 6px"><a href="#3-1-1-presentation-comparee-des-cas-etudies" data-ancre="3-1-1-presentation-comparee-des-cas-etudies"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">3.1.1. Présentation comparée des cas étudiés</a></li><li style="margin:0 0 6px"><a href="#3-1-2-analyse-des-configurations-de-gouvernance-et-des-ecosy" data-ancre="3-1-2-analyse-des-configurations-de-gouvernance-et-des-ecosy"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">3.1.2. Analyse des configurations de gouvernance et des écosystèmes d’acteurs</a></li><li style="margin:0 0 6px"><a href="#3-1-3-origines-des-initiatives-et-contexte-initial" data-ancre="3-1-3-origines-des-initiatives-et-contexte-initial"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">3.1.3. Origines des initiatives et contexte initial</a></li></ul></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-2-dynamiques-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Analyse des dynamiques d'institutionnalisation
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-3-discussion-et-implications/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Discussion des résultats et implications
+      </a></li></ul>
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/conclusion/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Conclusion
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/bibliographie/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Bibliographie
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Annexes</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/1-glossaire/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 1 — Glossaire
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/2-limites-methodologiques/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 2 — Limites méthodologiques et contremesures
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/3-guide-entretien/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 3 — Guide d'entretien semi-directif
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/4-grille-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 4 — Grille de codage
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/5-matrices-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 5 — Matrices de codage inter-cas
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/6-audit-trail/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 6 — Audit trail
+      </a></li></ul>
+        <a href="/memoire-communs-numeriques-berge-2025.pdf" style="display:inline-block;margin-top:26px;font-size:12px;letter-spacing:.1em;
+           text-transform:uppercase;font-weight:600;color:#1E2A23;text-decoration:none;
+           border-bottom:2px solid #127552;padding-bottom:3px">PDF · 124 p.</a>
+      </div>
+    </details>
+  </nav>
+
+  <main style="padding:clamp(28px,4vw,56px) 0 clamp(56px,7vw,96px);min-width:0">
+    <nav aria-label="Fil d'Ariane" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+         font-weight:600;color:#5A685F;margin-bottom:26px">
+      <a href="/la-recherche/" style="color:#5A685F;text-decoration:none">La recherche</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/memoire/" style="color:#5A685F;text-decoration:none">Le mémoire</a>
+      <span aria-hidden="true"> / </span><span style="color:#1E2A23">Partie III</span>
+    </nav>
+
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,5vw,54px);
+        line-height:1.06;letter-spacing:-.015em;margin:0 0 18px;color:#1E2A23;text-wrap:balance">
+      3.1. Caractérisation des initiatives de communs numériques étudiées et de leurs contextes</h1>
+    <p style="margin:0 0 6px;font-size:16px;line-height:1.65;color:#4A5850;max-width:60ch">Présentation comparée des neuf cas, configurations de gouvernance et écosystèmes d'acteurs, origines et contexte initial.</p>
+    <hr style="border:0;border-top:1px solid #1E2A23;margin:30px 0 34px">
+
+    <article style="max-width:72ch">
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Conformément à la logique de réplication exposée, le corpus juxtapose neuf initiatives afin de multiplier les contrastes susceptibles de révéler les facteurs d’institutionnalisation. La diversité des personnes interrogées offre un appui solide pour l’analyse. Leurs trajectoires, leurs positions et leurs angles d’approche permettent de confronter des lectures complémentaires, parfois dissonantes, du même objet. Le tableau présenté après ce paragraphe précise pour chaque interlocuteur son rattachement institutionnel et le champ principal d’intervention.</p>
+<h3 id="3-1-1-presentation-comparee-des-cas-etudies" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-1-presentation-comparee-des-cas-etudies" style="color:inherit;text-decoration:none">3.1.1. Présentation comparée des cas étudiés</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’analyse des facteurs d’institutionnalisation s’appuie sur des situations concrètes. Chacune d’elles est ancrée dans un contexte précis, avec ses contraintes, ses équilibres, ses trajectoires. Le choix a été fait de comparer ces cas, non pour les aligner, mais pour éclairer leur diversité.</p>
+<h4 id="3-1-1-1-eventail-et-justification-de-la-diversite-des-cas-se" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-1-1-eventail-et-justification-de-la-diversite-des-cas-se" style="color:inherit;text-decoration:none">3.1.1.1. Éventail et justification de la diversité des cas sélectionnés</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Neuf initiatives ont été retenues comme corpus central. À cela s’ajoutent plusieurs expériences mentionnées en entretien, qui complètent l’image. L’ensemble donne une vue d’ensemble raisonnablement large, sans sacrifier la profondeur.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">En ouverture, deux communs à portée nationale, impulsés par l’État. La Suite Numérique, pilotée par la DINUM, propose des outils collaboratifs libres en alternative aux suites bureautiques propriétaires <span style="color:#5A685F">[La Suite Numérique, 2025]</span>. La plateforme CAFData, de la CNAF, rend publiques plus de 1 700 séries statistiques sur les prestations sociales <span style="color:#5A685F">[CNAF, 2025]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">À l’échelle locale, d’autres configurations apparaissent. L’ADULLACT, créée en 2002, porte la mutualisation de logiciels métiers pour les collectivités. Le SITIV, dans la région lyonnaise, agit comme opérateur public mutualisé <span style="color:#5A685F">[ADULLACT, 2023 ; SITIV, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Deux villes prolongent cette dynamique. Brest s’appuie depuis les années 1990 sur une culture de coopération, à travers les points d’accès publics et la plateforme @-brest.net <span style="color:#5A685F">[Brest, 2025]</span>. Échirolles, depuis 2021, engage une migration vers le libre dans le cadre de sa stratégie « Échirolles Numérique Libre » <span style="color:#5A685F">[Ville d’Échirolles, 2021]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le panorama inclut aussi des initiatives à vocation sectorielle ou communautaire. La Fabrique des Mobilités organise l’ouverture de ressources dans le domaine des transports <span style="color:#5A685F">[FabMob, 2025]</span>. Le réseau France Numérique Libre, né en 2025, fédère des responsables informatiques publics engagés dans le logiciel libre <span style="color:#5A685F">[FNL, 2025]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce corpus couvre un spectre large avec des actions pilotées par l’État, des dynamiques locales, des communs techniques ou plus organisationnels, des expériences anciennes et des chantiers récents. Il ne s’agit pas de classer mais d’observer. De voir ce qui se répète, ce qui résiste, ce qui se transforme. C’est cette variété qui permet de repérer des logiques transversales, sans dissoudre ce qui fait la singularité de chaque cas.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’approche repose sur un principe de réplication théorique. Chaque cas ne vaut pas en soi. Il prend sens en regard des autres. Ce va-et-vient permet de tester les hypothèses, de les déplacer, parfois de les contredire. C’est ainsi que se construit le regard porté sur l’institutionnalisation : par comparaison, par résonance, sans jamais chercher une forme unique.</p>
+<h4 id="3-1-1-2-caracteristiques-cles-et-objectifs-des-communs-numer" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-1-2-caracteristiques-cles-et-objectifs-des-communs-numer" style="color:inherit;text-decoration:none">3.1.1.2. Caractéristiques clés et objectifs des communs numériques étudiés</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Chacune des initiatives retenues présente des caractéristiques propres quant à la nature du commun mobilisé et aux objectifs poursuivis.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La Suite Numérique de la DINUM</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Annoncée en 2023, la Suite Numérique est un ensemble d’outils collaboratifs open source mis à la disposition des agents publics. Son objectif affiché est de remplacer les suites bureautiques et services collaboratifs fournis par les grands acteurs américains par des alternatives souveraines et ouvertes. Conçue pour l’administration et « ouverte aux communs », la Suite Numérique intègre des logiciels libres existants (messagerie instantanée Tchap basée sur Matrix, suite bureautique en ligne, etc.), fédérés au sein d’une plateforme unifiée. L’objectif central est de garantir l’autonomie numérique de l’État et de ses administrations <span style="color:#5A685F">[DINUM, 2024 ; La Suite Numérique, 2025]</span></p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Association des Développeurs et Utilisateurs de Logiciels Libres pour l’Administration et les Collectivités (ADULLACT)</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Fondée en 2002, l’ADULLACT regroupe des collectivités territoriales et d’autres acteurs publics autour d’une mission de promotion et de mutualisation des logiciels libres dans les administrations locales. Son principe fondateur, résumé par le slogan « L’argent public ne doit payer qu’une fois », est d’éviter que chaque collectivité n’achète ou ne développe de son côté des solutions propriétaires coûteuses, là où un effort commun en logiciel libre peut aboutir à une solution partagée <span style="color:#5A685F">[ADULLACT, 2023]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Syndicat Intercommunal des Technologies de l’Information pour les Villes (SITIV)</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le SITIV est né d’une alliance entre plusieurs communes de la métropole lyonnaise. Il fonctionne comme un opérateur public à part entière, mais pensé dès l’origine dans une logique de mutualisation. Grâce au soutien du plan France Relance, son programme « Territoire Numérique Ouvert » propose aux communes adhérentes une suite d’outils collaboratifs libres, une alternative aux solutions propriétaires. L’idée est de remplacer les logiciels propriétaires par des solutions open source, pensées et déployées avec les communes adhérentes. Ce modèle repose sur une mutualisation horizontale qui permet à chaque collectivité de contribuer à un socle commun, façonné collectivement selon des besoins partagés <span style="color:#5A685F">[SITIV, 2025]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ville d’Échirolles (Isère)</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Située dans la métropole grenobloise, cette commune d’un peu plus de 37 000 habitants s’impose aujourd’hui comme une référence nationale en matière de numérique souverain. En 2021, elle adopte un schéma directeur intitulé « Échirolles Numérique Libre ». Ce document n’annonce pas simplement une orientation. Il planifie la migration quasi complète du système d’information vers des outils libres et des infrastructures maîtrisées. L’initiative repose sur deux leviers essentiels avec un portage politique assumé, et une équipe interne capable de suivre, adapter, et faire évoluer les choix techniques. Ici, le discours sur la souveraineté numérique trouve une traduction concrète, à l’échelle d’une ville <span style="color:#5A685F">[Ville d’Échirolles, 2021]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ville de Brest (Finistère)</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">À Brest, le numérique se pense tôt, et surtout autrement. Dès la fin des années 1990, sous l’impulsion de Michel Briand, alors adjoint au maire, la ville s’engage dans une série de projets ancrés dans le territoire. Loin des logiques d’équipement centralisé, il s’agit de rendre le numérique accessible, compréhensible et partageable. Les PAPI (points d’accès publics à Internet) voient le jour, suivis par la plateforme participative @-brest.net, pensée comme un espace éditorial collaboratif. Ce choix ne répond pas seulement à un impératif d’inclusion. Il traduit une vision politique du numérique comme vecteur de lien social, d’émancipation, et de culture commune <span style="color:#5A685F">[Briand et Brunet, 2017]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Fabrique des Mobilités (FabMob)</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Née en 2015, la Fabrique des Mobilités ne relève ni d’une collectivité ni d’une administration. C’est une structure hybride, associative, qui réunit des acteurs publics, des entreprises, des chercheurs et des citoyens autour d’un objectif visant à produire ensemble des ressources numériques pour la mobilité durable. Logiciels, jeux de données, documentations, tout est pensé pour être réutilisable, ouvert, et accessible à ceux qui souhaitent innover sans repartir de zéro. La FabMob montre que les communs numériques peuvent émerger là où se rencontrent plusieurs mondes (institutions, start-ups, collectivités) pour peu qu’un cadre de confiance et de partage soit installé <span style="color:#5A685F">[FabMob, 2022]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">France Numérique Libre (FNL)</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Lancé le 1er avril 2025, FNL est un réseau de responsables informatiques d’administrations publiques engagés en faveur du logiciel libre. Son objectif est de constituer une communauté de pratique entre professionnels du numérique public, pour partager des retours d’expérience, des ressources et des bonnes pratiques autour des logiciels libres et de la souveraineté numérique. FNL se caractérise par une dynamique ascendante (« bottom-up »). Ce cas illustre comment un commun peut émerger d’une initiative spontanée de praticiens, en construisant progressivement une identité collective et des ressources partagées <span style="color:#5A685F">[FNL, 2025]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">CAFData</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Mis à jour en 2025, le portail Open Data de la Caisse nationale des allocations familiales donne accès à plus de 1 700 séries statistiques, regroupées dans 124 jeux couvrant l’ensemble des prestations versées par la branche Famille. Les informations publiées sont ouvertes, réutilisables sans restriction, accompagnées d’outils pour en faciliter la lecture (visualisations, filtres thématiques, accès par API). Le portail ne vise pas seulement la transparence. Il cherche à susciter des usages, à faire entrer d’autres acteurs dans la boucle, au-delà de la seule institution <span style="color:#5A685F">[Banque des Territoires, 2025; Acteurs Publics, 2025]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">CNAM - Open First</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Formalisé dans le Schéma Directeur des Système d’Information de l’Assurance maladie en 2017 <span style="color:#5A685F">[CNAM, 2017]</span> et réitéré dans le même livrable en 2023 <span style="color:#5A685F">[CNAM, 2023]</span> prône de privilégier en poursuivant les objectifs suivants : « offre de solutions à l’état de l’art, adoption de technologies et de standards ouverts, meilleure maîtrise des budgets ». Ce choix vise explicitement à s’affranchir de « l’hégémonie imposée par les GAFAM ».</p>
+<h4 id="3-1-1-3-positionnement-typologique-initial-des-cas" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-1-3-positionnement-typologique-initial-des-cas" style="color:inherit;text-decoration:none">3.1.1.3. Positionnement typologique initial des cas</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Derrière les spécificités de chaque initiative, les situations observées révèlent des formes récurrentes d’institutionnalisation. L’analyse croisée des trajectoires et des récits recueillis <span style="color:#5A685F">[ENT- 01 à ENT-13]</span> ne fait pas émerger un schéma unifié, mais plutôt deux manières bien distinctes par lesquelles l’administration publique tente d’intégrer les communs numériques dans son action. Cette opposition de démarches s’est dessinée au fil des terrains. Elle structure désormais le cadre d’analyse retenu pour la suite. Ces deux logiques seront désignées sous les termes d’institutionnalisation par appropriation et d’institutionnalisation par relation.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Institutionnalisation par appropriation</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans ce premier cas de figure, l’administration prend la main sur la ressource. Elle en devient le pilote. Elle choisit les priorités, définit les modalités de développement, mobilise les moyens techniques, internes ou délégués. L’ouverture du code est actée, mais la gouvernance reste encadrée par des règles internes à la structure publique. Ce modèle repose sur une volonté explicite de garder la maîtrise de la solution, souvent motivée par des enjeux de souveraineté ou par la sensibilité des usages concernés. Le programme interministériel d’outils collaboratifs et le portail de données conçu par un organisme national en offrent deux exemples significatifs. Ici, le commun numérique se transforme en infrastructure stratégique, gérée en régie ou sous forte supervision.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Institutionnalisation par relation</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La seconde modalité suit une logique différente. L’administration ne cherche pas à absorber la ressource, mais à construire un lien durable avec un commun déjà existant ou en émergence. Le rapport de force s’efface au profit d’une dynamique de coopération. La structure publique devient contributrice, partenaire ou soutien actif. Le code, la documentation, les décisions sont partagés dans un cadre qui dépasse la seule organisation publique. Cette approche suppose une posture d’ouverture, un travail de médiation, et une capacité à composer avec des temporalités et des logiques collectives. Elle apparaît plus facilement là où l’enjeu porte sur la mutualisation, la souplesse ou la valorisation d’expertises distribuées. Des exemples comme l’ADULLACT, le SITIV, ou encore les collectivités de Brest et d’Échirolles illustrent des formes abouties de cette relation d’interdépendance entre commun et administration.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette distinction ne relève pas d’un choix conceptuel abstrait. Elle structure les tensions, les leviers d’action et les zones d’incertitude observées sur le terrain. Elle permet aussi de mieux comprendre ce que produit, concrètement, chaque type d’arrangement : en matière d’engagement des acteurs, de gouvernance, de diffusion, mais aussi de valeur publique créée.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le tableau qui suit positionne chaque cas analysé selon cette grille de lecture. Il ne s’agit pas d’un classement figé, mais d’un repère analytique pour éclairer les logiques d’institutionnalisation à l’œuvre.</p>
+
+<figure style="margin:44px 0">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #1E2A23">
+    <table style="width:100%;border-collapse:collapse;min-width:min(100%,560px)">
+      <thead><tr><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Initiative</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Type de commun</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Niveau</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Porteurs</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Objectifs</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Maturité</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Voie d’institutionnalisation</p></th></tr></thead>
+      <tbody><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Suite Numérique (DINUM)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Logiciels</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">National</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">DINUM</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Souveraineté et autonomie numériques</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">En cours de diffusion et de légitimation</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Appropriation</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ADULLACT</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Logiciels mutualisés, commun de méthode</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Inter-organisationnel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Collectivités territoriales</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Mutualiser coûts et développements</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Diffusé / ancré</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Relation</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">SITIV – Territoire Numérique Ouvert</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Infrastructure, services mutualisés</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Territorial</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Communes membres du SITIV</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Mutualisation horizontale</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Diffusé / ancré</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Relation</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ville d’Échirolles</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Politique publique, logiciels</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Territorial</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Municipalité et DSI</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Autonomie technologique et maîtrise des coûts</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ancré</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Relation</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ville de Brest</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Communauté, communs de connaissance, infrastructure</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Territorial</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Municipalité et tissu associatif</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Appropriation sociale du numérique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ancré</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Relation</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Fabrique des Mobilités (FabMob)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Connaissance, méthode, données et logiciels</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Sectoriel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ADEME</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Innovation ouverte en mobilité</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Diffusé / ancré</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Relation</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">France Numérique Libre (FNL)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Communauté de pratique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Inter-organisationnel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Agents publics</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Partage d’expériences IT libre</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Émergent</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Relation</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CAFData</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Données</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">National</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CNAF</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Transparence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Diffusé</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Appropriation</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Open First</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Logiciels libres</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">National</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CNAM</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Souveraineté et autonomie numériques</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Diffusé</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Appropriation</p></td></tr></tbody>
+    </table>
+  </div>
+  <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:#4A5850">
+    <span style="font-weight:600;color:#1E2A23">Tableau 10</span> — Synthèse comparative des positionnements de chaque cas étudié
+    <span style="display:block;margin-top:6px;font-style:italic">Le libellé de la dernière colonne est tronqué dans le PDF (« …alisation ») : restitué en « Voie d’institutionnalisation ».</span>
+  </figcaption>
+</figure>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Penser ces dynamiques à travers une typologie évite l’écueil d’une lecture trop homogène. Chaque voie répond à des contraintes, des cultures et des configurations organisationnelles propres. L’analyse comparée des cas permettra d’identifier ce qui favorise l’un ou l’autre de ces choix. C’est à cette condition qu’une réponse rigoureuse pourra être apportée à la question centrale du mémoire.</p>
+<h3 id="3-1-2-analyse-des-configurations-de-gouvernance-et-des-ecosy" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-2-analyse-des-configurations-de-gouvernance-et-des-ecosy" style="color:inherit;text-decoration:none">3.1.2. Analyse des configurations de gouvernance et des écosystèmes d’acteurs</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La longévité d’un commun ne tient pas à sa seule utilité. Elle repose sur la manière dont il est gouverné, et sur l’énergie que ses acteurs y investissent. Elinor Ostrom l’avait formulé sans détour, bâtir une institution collective viable demande plus que des intentions, il faut des règles lisibles, partagées, et une implication réelle des parties prenantes <span style="color:#5A685F">[Ostrom, 1990]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans les terrains observés, ces deux éléments reviennent systématiquement. Quand la gouvernance est claire et la communauté active, le commun s’installe dans la durée. À l’inverse, une gouvernance floue ou trop centrée sur un noyau réduit rend l’ensemble vulnérable. Ce qui frappe, en revanche, c’est la diversité des formes. Les modèles de décision varient, les rapports entre porteurs publics, contributeurs techniques et usagers aussi. Cette hétérogénéité n’est pas un défaut. Elle permet de distinguer plusieurs manières de faire commun dans le cadre spécifique du secteur public.</p>
+<h4 id="3-1-2-1-structures-de-decision-processus-et-gestion-des-ress" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-2-1-structures-de-decision-processus-et-gestion-des-ress" style="color:inherit;text-decoration:none">3.1.2.1. Structures de décision, processus et gestion des ressources</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les formes de gouvernance rencontrées varient fortement d’un projet à l’autre, entre cadres formels et organisations plus souples. L’ADULLACT, par exemple, fonctionne selon un modèle associatif classique avec assemblée générale, conseil d’administration, élus représentant les collectivités <span style="color:#5A685F">[ADULLACT, 2023]</span>. Cette configuration garantit une légitimité institutionnelle. À l’autre bout du spectre, France Numérique Libre (FNL) opère dans un registre plus horizontal. Sa gouvernance s’appuie sur un noyau de DSI investis dans le libre, qui coopèrent librement, en s’appuyant sur l’infrastructure de l’ADULLACT mais sans se fondre dans son organigramme <span style="color:#5A685F">[FNL, 2025]</span>. L’ensemble forme un équilibre singulier, souple, assumé comme tel.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Entre ces pôles apparaissent des formes hybrides. La Suite Numérique, portée par la DINUM, est pilotée centralement par une équipe interne, avec une évolution envisagée vers une gouvernance élargie sous forme de fondation <span style="color:#5A685F">[ENT-005]</span>. CAFData, développé par la CNAF, est géré en interne tout en associant la communauté scientifique via un comité consultatif <span style="color:#5A685F">[ENT-010]</span>. Des structures comme le SITIV illustrent une forme de gouvernance partagée. Chaque collectivité membre y prend part aux choix, sans hiérarchie dominante <span style="color:#5A685F">[ENT-009]</span>. Ailleurs, certaines initiatives ont choisi de s’émanciper pour élargir leur pilotage. C’est le cas de la Fabrique des Mobilités, qui a gagné en autonomie institutionnelle pour ouvrir son périmètre décisionnel <span style="color:#5A685F">[ENT-011]</span>. À Brest, les premiers communs numériques ont vu le jour dans un cadre encore différent, animé par le tissu associatif local, selon une logique de répartition horizontale des rôles <span style="color:#5A685F">[ENT-007]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les logiques de décision diffèrent sensiblement d’un projet à l’autre. Certains privilégient une conduite verticale, pilotée par l’institution, c’est le cas, par exemple, de la DINUM <span style="color:#5A685F">[ENT-005]</span> ou de la CNAF <span style="color:#5A685F">[ENT-010]</span>. D’autres s’ouvrent à des formes plus délibératives. À la Fabrique des Mobilités, la co-construction passe par des ateliers collaboratifs <span style="color:#5A685F">[ENT-011]</span>. FNL avance par ajustements entre pairs, sans hiérarchie formelle <span style="color:#5A685F">[ENT-001]</span>. L’ADEME, de son côté, a testé les appels à communs avec des problématiques définies collectivement, en amont, par les parties prenantes elles-mêmes <span style="color:#5A685F">[ENT-011]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Enfin, la question du financement structure la stabilité du commun. Certains projets reposent sur des lignes budgétaires internes, comme CAFData <span style="color:#5A685F">[ENT-010]</span> ou la Suite Numérique <span style="color:#5A685F">[La Suite Numérique, 2025]</span>. D’autres s’appuient sur des subventions ciblées, comme c’est le cas à la Fabrique des Mobilités <span style="color:#5A685F">[FabMob, 2022]</span>. L’ADULLACT combine, pour sa part, des cotisations d’adhérents et des prestations techniques <span style="color:#5A685F">[ADULLACT, 2023]</span>. Le SITIV, quant à lui, fonctionne grâce aux contributions versées par ses communes membres <span style="color:#5A685F">[SITIV, 2024]</span>. À cela s’ajoute un soutien plus diffus. Des collectivités orientent leur commande publique vers des solutions ouvertes, soutenant ainsi indirectement l’écosystème du libre, sans financement direct <span style="color:#5A685F">[Ville d’Échirolles, 2021]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La question des ressources humaines revient continuellement. Il ne suffit pas d’avoir une bonne idée, encore faut-il libérer du temps et trouver les bons profils pour la faire avancer. Mobiliser des agents sur un projet transversal, qui échappe aux circuits classiques, reste difficile en raison du cloisonnement en silos et des routines défensives propres aux organisations bureaucratiques <span style="color:#5A685F">[Crozier, 1963]</span>. Pour surmonter ces inerties, les porteurs de projet doivent souvent « contourner l’organigramme », voire s’en affranchir. Cette démarche s’apparente au « travail institutionnel » <span style="color:#5A685F">[Lawrence et Suddaby, 2006]</span>, par lequel des acteurs cherchent activement à créer de nouvelles pratiques en marge des structures établies. À Échirolles, sans des recrues sensibles à la culture open source, rien n’aurait pris <span style="color:#5A685F">[ENT-001]</span>. L’adhésion ne se décrète pas, elle s’incarne dans les personnes qu’on place au bon endroit. Pour la Suite Numérique, la DINUM a réuni une équipe aux profils variés mariant culture du logiciel libre et méthodes agiles <span style="color:#5A685F">[ENT-005]</span>.</p>
+
+<figure style="margin:44px 0">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #1E2A23">
+    <table style="width:100%;border-collapse:collapse;min-width:min(100%,560px)">
+      <thead><tr><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Cas / Initiative</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Modèle de gouvernance</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Structure de décision</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Financement principal</p></th></tr></thead>
+      <tbody><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Suite Numérique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Porté par l’institution</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Équipe interne DINUM</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Budget public interne</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ADULLACT</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Partenariat public-communauté</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Conseil d’administration et communauté</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Cotisations, prestations, subventions</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">SITIV</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Partenariat public-communauté</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Comité syndical</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Contributions des communes</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ville d’Échirolles</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Porté par l’institution</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Pilotage municipal</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Budget municipal</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ville de Brest</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Délégué / écosystémique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Associations locales, groupes mixtes</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Subventions municipales</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Fabrique des Mobilités</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Délégué / écosystémique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Association</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Subventions ADEME, mécénat</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">France Numérique Libre</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Délégué / écosystémique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Consensus horizontal</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Soutien indirect, bénévolat</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CAFData</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Porté par l’institution</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Pilotage CNAF et comité consultatif</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Budget interne</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CNAM – Open First</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Porté par l’institution</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Pilotage DSI interne</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Budget interne</p></td></tr></tbody>
+    </table>
+  </div>
+  <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:#4A5850">
+    <span style="font-weight:600;color:#1E2A23">Tableau 11</span> — Synthèse des modèles de gouvernance observés
+    <span style="display:block;margin-top:6px;font-style:italic">Deux relevés sur l’original : le libellé de la dernière colonne est tronqué (« …principal »), restitué en « Financement principal » ; et « Open Fisrt » est une coquille du mémoire, corrigée en « Open First » conformément au tableau 10.</span>
+  </figcaption>
+</figure>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’analyse comparée fait apparaître des formes de gouvernance très contrastées. Certaines initiatives sont pilotées entièrement en interne, d’autres s’organisent autour de dispositifs largement distribués. Ce choix de modèle ne vient pas seul. Il conditionne, ou accompagne, les modalités de financement et les régimes de licence. Les communs portés par des institutions publiques s’appuient généralement sur des budgets dédiés. À l’inverse, les projets communautaires puisent dans des ressources plus variées (dons, prestations, soutien militant) et privilégient des licences plus ouvertes. Il n’y a pas de configuration standard. Chaque commun se façonne à partir d’un équilibre local entre objectifs, acteurs impliqués et leviers disponibles.</p>
+<h4 id="3-1-2-2-dynamiques-des-ecosystemes" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-2-2-dynamiques-des-ecosystemes" style="color:inherit;text-decoration:none">3.1.2.2. Dynamiques des écosystèmes</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La dynamique d’un commun numérique ne repose pas uniquement sur son architecture technique. Elle tient d’abord à l’écosystème humain qui l’anime, et à la manière dont la gouvernance se construit au fil du temps <span style="color:#5A685F">[Ostrom, 1990]</span>. Dans les cas observés, plusieurs leviers reviennent de manière récurrente.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le rôle d’une figure motrice s’avère déterminant. Qu’il s’agisse d’un élu convaincu, d’un directeur de service ou d’un technicien engagé dans le logiciel libre, cette personne joue souvent un rôle d’accélérateur <span style="color:#5A685F">[ENT-012 ; ENT-006]</span>. Elle porte le projet, fédère, ouvre des portes. Sans ce type de « champion », la bascule reste fragile <span style="color:#5A685F">[Loon et Toshkov, 2015]</span>. À Brest <span style="color:#5A685F">[ENT-007]</span>, à Échirolles <span style="color:#5A685F">[ENT-001]</span> ou dans le cadre de la Fabrique des Mobilités <span style="color:#5A685F">[ENT-011]</span>, cette figure a fait la différence. Ben Slimane (2019) parle ici d’« entrepreneur institutionnel », quelqu’un qui ne se contente pas d’agir, mais cherche à peser sur l’environnement pour permettre au projet d’exister <span style="color:#5A685F">[Ben Slimane, 2019]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’équipe interne est loin d’être un simple exécutant. Là où les services numériques sont sensibilisés à l’open source, les projets avancent plus sereinement <span style="color:#5A685F">[ENT-001 ; ENT-008]</span>. Dans de nombreuses collectivités, cela implique de redéfinir le rôle des équipes. Ne plus seulement gérer une infrastructure, mais aussi contribuer à un commun <span style="color:#5A685F">[ENT-001]</span>. Cette transition suppose de nouveaux outils, des pratiques de développement plus ouvertes, mais aussi une manière différente de travailler en réseau, avec transparence <span style="color:#5A685F">[Mergel, 2015]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le soutien politique reste un facteur critique <span style="color:#5A685F">[ENT-001 ; ENT-007]</span>. À Brest, l’implication directe de l’élu local Michel Briand a permis de maintenir une continuité, au-delà des changements de mandat <span style="color:#5A685F">[ENT-007 ; Briand et Brunet, 2017]</span>. C’est l’engagement explicite d’un élu, en lien avec les services, qui a permis d’ancrer plusieurs initiatives dans une approche coopérative. À l’inverse, un désengagement brutal ou l’absence d’appui clair suffit souvent à briser l’élan <span style="color:#5A685F">[ENT-012]</span>. Ce qui fait la différence, ce n’est pas tant l’outil ou la méthode, que la continuité de l’engagement porté par les décideurs <span style="color:#5A685F">[Loon et Toshkov, 2015]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Mais l’équation dépasse souvent l’échelle d’une seule organisation. Mutualiser entre administrations peut générer des effets positifs mais confronte aussi à des cultures différentes, des temporalités administratives non alignées <span style="color:#5A685F">[ENT-009 ; ENT-003]</span>. L’histoire de la Base Adresse Nationale le montre bien avec des tensions sur l’ouverture des données et un basculement vers une reprise en main étatique <span style="color:#5A685F">[Shulz, 2021a]</span>. À l’inverse, la création de structures comme les OPSN (Opérateurs Publics de Services Numériques) permet d’ancrer la coopération dans un cadre plus stable <span style="color:#5A685F">[ENT-009]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les partenariats avec le secteur privé jouent un rôle croissant <span style="color:#5A685F">[ENT-008 ; ENT-011]</span>. Contrairement à l’image d’un commun purement autogéré, la réalité montre une forte hybridation. Des prestataires sont mobilisés pour le développement, le support, l’accompagnement <span style="color:#5A685F">[ENT-008 ; ENT-009]</span>. La Fabrique des Mobilités associe industriels et jeunes pousses à sa gouvernance <span style="color:#5A685F">[ENT-011]</span>. L’ouverture à de nouveaux partenaires permet d’élargir le champ d’action, mais elle fait surgir une question délicate qui est de savoir jusqu’où peut-on aller avec des acteurs privés sans brouiller les lignes <span style="color:#5A685F">[ENT-006 ; ENT-013]</span>. Ce qui est en jeu, c’est la capacité à préserver l’intérêt général sans fermer la porte aux ressources que ces partenariats peuvent apporter.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La communauté d’utilisateurs et contributeurs demeure centrale <span style="color:#5A685F">[Ostrom, 1990 ; Benkler, 2006]</span>. Certaines se montrent dynamiques, FNL a fédéré des dizaines de DSI partageant outils et retours d’expérience <span style="color:#5A685F">[ENT-001]</span>. D’autres restent cantonnées à un cercle restreint, tel CAFData s’adressant aux chercheurs <span style="color:#5A685F">[ENT-010]</span>. Un frein récurrent tient à la difficulté de mobiliser, dans la durée, des contributeurs extérieurs <span style="color:#5A685F">[ENT-005 ; ENT-012]</span>. L’image encore trop institutionnelle de certains projets ou l’absence de reconnaissance pour les apports individuels limitent l’engagement <span style="color:#5A685F">[ENT- 005]</span>. Nombre d’initiatives open source issues du secteur public ne parviennent pas à bénéficier de ces dynamiques, justement parce qu’elles en reproduisent peu les conditions d’ouverture <span style="color:#5A685F">[Linåker et al., 2023]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Plusieurs structures viennent en appui pour maintenir la dynamique. L’ADULLACT joue un rôle de mutualisation <span style="color:#5A685F">[ENT-003]</span>, tandis que la DINUM apporte des outils et un appui méthodologique ciblé <span style="color:#5A685F">[ENT-005 ; ENT-013]</span>. Les « Fabriques » proposent un cadre souple, pensé pour faire coopérer des acteurs divers sans ajouter de nouvelles couches institutionnelles <span style="color:#5A685F">[ENT-011]</span>. Mais ces arrangements restent fragiles <span style="color:#5A685F">[ENT-002]</span>. Dans chaque commun observé, l’équilibre entre collaboration et frictions s’ajuste en permanence. Si de fortes dynamiques de mutualisation émergent, des vulnérabilités persistent avec dépendance aux financements publics <span style="color:#5A685F">[ENT-009]</span>, concentration des savoir-faire, recours nécessaire aux prestataires <span style="color:#5A685F">[ENT-003]</span>.</p>
+<h4 id="3-1-2-3-grille-d-analyse-des-modeles-de-gouvernance-dans-le-" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-2-3-grille-d-analyse-des-modeles-de-gouvernance-dans-le-" style="color:inherit;text-decoration:none">3.1.2.3. Grille d’analyse des modèles de gouvernance dans le secteur public</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les cas étudiés révèlent trois manières distinctes d’organiser la gouvernance d’un commun numérique dans le secteur public. Chacune correspond à un positionnement spécifique de l’institution, à des équilibres différents entre contrôle, ouverture et délégation.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Modèle porté par l’institution</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans cette première configuration, l’administration prend en charge l’ensemble du dispositif. Elle pilote le projet, en assume le financement, fixe les orientations et garde la main sur les choix stratégiques <span style="color:#5A685F">[ENT-010]</span>. La gouvernance reste interne, les marges de participation extérieure sont faibles, souvent réduites à des consultations formelles. Des exemples comme CAFData <span style="color:#5A685F">[ENT-010]</span> ou la phase initiale de la stratégie de la CNAM <span style="color:#5A685F">[ENT-008]</span> incarnent ce modèle. Il présente des avantages évidents : un alignement fort avec les objectifs de la structure porteuse, une capacité d’arbitrage rapide et un suivi rigoureux des livrables. Mais ce verrouillage institutionnel limite les apports extérieurs, freine la structuration d’une communauté et tend à isoler la ressource de ses conditions réelles d’usage <span style="color:#5A685F">[ENT-013]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Modèle de partenariat public-communauté</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans ce second cas, la gouvernance repose sur une co-construction. L’acteur public conserve l’initiative, mais partage les décisions structurantes avec une communauté externe. Ce partage peut concerner aussi bien les orientations que le développement et les usages <span style="color:#5A685F">[ENT-003]</span>. Plusieurs projets soutenus par l’ADULLACT fonctionnent selon cette logique <span style="color:#5A685F">[ENT-003]</span>. Ce modèle élargit la légitimité du commun, renforce sa capacité d’adaptation et ouvre un espace de contribution où peuvent s’exprimer des besoins variés <span style="color:#5A685F">[Dulong de Rosnay et Stalder, 2020]</span>. Il oblige cependant l’administration à changer de posture. Il ne s’agit plus seulement de piloter, mais d’accepter de composer. La reconnaissance du pouvoir d’agir d’acteurs non institutionnels devient une condition de réussite <span style="color:#5A685F">[ENT-006]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Modèle délégué ou écosystémique</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans certaines situations, le rôle de l’institution se limite à l’impulsion initiale. Une fois le projet lancé, elle transfère la gouvernance à une structure autonome qui en assure le développement et la pérennité <span style="color:#5A685F">[ENT-011]</span>. C’est la configuration observée dans le cas de la Fabrique des Mobilités <span style="color:#5A685F">[ENT-011]</span>. D’abord portée par l’ADEME, l’initiative est devenue une entité indépendante, avec sa propre gouvernance. Ce type de modèle favorise l’appropriation par les communautés, renforce leur autonomie et peut soutenir une dynamique de long terme <span style="color:#5A685F">[Fuster Morell, 2010]</span>. Mais il n’est pas exempt de risques. Lorsqu’aucune instance reconnue ne peut trancher, les désaccords bloquent plus facilement. La gouvernance devient plus vulnérable <span style="color:#5A685F">[Jemielniak, 2016]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans la réalité, peu d’initiatives se laissent enfermer dans un seul modèle. Les configurations évoluent, souvent par glissements progressifs. Une administration peut commencer seule, ouvrir peu à peu sa gouvernance, et se retirer partiellement lorsque les communautés gagnent en maturité. Le parcours de la Suite Numérique en témoigne <span style="color:#5A685F">[ENT-005]</span>. L’initiative est née dans un cadre institutionnel classique. Elle s’est progressivement déplacée vers une forme plus distribuée, sans jamais se couper totalement de la structure d’origine.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce que dessine cette évolution, c’est un déplacement du rôle de l’administration. De simple utilisatrice, elle devient partenaire. Elle contribue au commun sans en freiner l’auto-organisation. C’est une bascule vers un partenariat Public-Commun fondé sur des relations de confiance, dans lequel l’administration joue un rôle de facilitateur, non d’ordonnateur <span style="color:#5A685F">[Vesco et Busso, 2024]</span>. Encore faut-il que cette posture soit assumée. Elle suppose de reconnaître les communs comme des ressources d’intérêt général, d’ouvrir les cadres juridiques à des formes de co-gouvernance, et de construire les interfaces nécessaires entre institutions publiques et communautés contributives <span style="color:#5A685F">[Krewer et Warso, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">C’est dans ce sens que s’oriente l’avis rendu en 2023 par le Conseil scientifique du numérique public <span style="color:#5A685F">[CSNP, 2023]</span>. Il appelle à dépasser la logique de consultation ponctuelle pour faire des communs un levier d’innovation ouverte à part entière, à la fois gouvernés collectivement et ancrés dans les politiques publiques.</p>
+<h3 id="3-1-3-origines-des-initiatives-et-contexte-initial" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-3-origines-des-initiatives-et-contexte-initial" style="color:inherit;text-decoration:none">3.1.3. Origines des initiatives et contexte initial</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La création d’un commun numérique au sein de l’administration publique naît de la conjonction de multiples facteurs, d’opportunités saisies et d’initiatives individuelles décisives. L’association ADULLACT, fondée en 2002, est apparue lorsque des collectivités ont constaté qu’elles avaient des besoins logiciels redondants et ont choisi de mutualiser leurs développements, avec le principe fondateur que « l’argent public ne doit payer qu’une fois » <span style="color:#5A685F">[ADULLACT, 2022]</span>. À Brest, dans les années 1990, les premiers points d’accès public à Internet (PAPI) ne sont pas sortis de nulle part. Leur mise en place répondait à une volonté explicite. Ouvrir le numérique à tous, depuis les quartiers, et en faire un outil d’inclusion plus que d’expertise <span style="color:#5A685F">[Briand et Brunet, 2017]</span>. Comme dans d’autres cas, c’est la conjonction d’un besoin concret et d’une impulsion politique claire qui a rendu possible l’émergence d’un commun numérique. Cette section revient sur ces moments d’amorce avec les conditions locales, les premières structures mises en place, et l’effet du contexte technique et social sur la dynamique initiale.</p>
+<h4 id="3-1-3-1-declencheurs-motivations-et-demarrage-des-projets" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-3-1-declencheurs-motivations-et-demarrage-des-projets" style="color:inherit;text-decoration:none">3.1.3.1. Déclencheurs, motivations et démarrage des projets</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les cas analysés révèlent une origine rarement linéaire. Les communs numériques émergent souvent à la croisée de plusieurs déclencheurs. L’un des plus récurrents reste l’insatisfaction face à l’existant. Quand aucun outil métier mutualisé ne répondait aux besoins des collectivités, l’ADULLACT a vu le jour en 2002 <span style="color:#5A685F">[ADULLACT, 2022]</span>. Ailleurs, c’est la dépendance croissante à des fournisseurs verrouillés qui a joué le rôle d’électrochoc. La CNAM, par exemple, a opté pour une stratégie « Open First » dans l’espoir de desserrer l’étau propriétaire <span style="color:#5A685F">[ENT-008]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Certaines démarches trouvent leur origine dans un choix politique clair. À Échirolles, la ville s’est dotée en 2021 d’un schéma directeur baptisé « Échirolles Numérique Libre » <span style="color:#5A685F">[Ville d’Échirolles, 2021]</span>, porté par une volonté explicite de reconquérir une forme d’autonomie numérique. À Brest, l’élan est plus ancien. Dès la fin des années 1990, la municipalité a lancé les PAPI et mis en place un réseau local pour encourager la participation active des habitants. Dans les deux cas, l’ouverture n’est pas seulement technique. Elle s’inscrit dans une vision politique assumée.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La Fabrique des Mobilités, née en 2015 d’une initiative de l’ADEME, illustre une démarche de « coopétition » visant à mutualiser les efforts sur des solutions d’intérêt général <span style="color:#5A685F">[ENT-011]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La présence de véritables « entrepreneurs institutionnels » s’avère décisive <span style="color:#5A685F">[Ben Slimane, 2019]</span>. À l’origine de l’ADULLACT, quelques directeurs des systèmes d’information ont mutualisé leurs efforts en faveur du logiciel libre <span style="color:#5A685F">[ENT-003]</span>. À Brest, Michel BRIAND, ancien élu local, a créé un service dédié au numérique citoyen et fédéré les services municipaux, les associations locales et les acteurs du libre <span style="color:#5A685F">[Briand et Brunet, 2017]</span>. Ces individus s’appuient sur leur réseau, bousculent les routines institutionnelles et transforment une vision en actions concrètes, incarnant ce que Lawrence et Suddaby qualifient de « work aimed at creating institutions » <span style="color:#5A685F">[Lawrence et Suddaby, 2006]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La conjoncture générale peut également jouer un rôle facilitateur. Au cours des années 2010, l’écosystème open source a atteint une maturité technique rendant crédible l’utilisation de logiciels libres robustes dans le secteur public <span style="color:#5A685F">[Loon et Toshkov, 2015]</span>. La Loi pour une République numérique de 2016 a donné une base juridique à la priorité aux logiciels libres <span style="color:#5A685F">[France, 2016]</span>. La pandémie de Covid-19 a accéléré la demande d’outils collaboratifs souverains, tandis que les scandales liés à la confidentialité des données ont renforcé les arguments en faveur de l’indépendance numérique <span style="color:#5A685F">[Pohle et Thiel, 2020]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’existence de financements ciblés a permis à certains projets de voir le jour. La Fabrique des Mobilités a d’abord reçu le soutien de l’ADEME dans le cadre du Programme d’Investissements d’Avenir « Ville durable », avant d’être relancée par les Appels à communs en 2021 <span style="color:#5A685F">[ENT-011]</span>. Ces derniers, construits à partir de besoins identifiés collectivement, ont permis de montrer qu’une démarche horizontale, dès les premières étapes, pouvait structurer des dynamiques solides <span style="color:#5A685F">[ENT- 011]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le lancement s’opère presque toujours dans un périmètre étroit, avec peu de moyens mais beaucoup d’énergie. À Brest <span style="color:#5A685F">[ENT-007]</span>, à Échirolles <span style="color:#5A685F">[ENT-001]</span>, dans certains ministères <span style="color:#5A685F">[ENT- 013]</span>, le point de départ est souvent le même avec une poignée d’élus qui y croient, quelques agents qui s’investissent, un ou deux partenaires extérieurs qui accompagnent. À Brest, l’implication du tissu associatif a été décisive. L’association Infini a fourni l’hébergement, mais aussi un appui technique constant <span style="color:#5A685F">[ENT-007]</span>. Cette logique de démarrage modeste, par petits pas, se retrouve ailleurs. Plusieurs initiatives ont préféré expérimenter à petite échelle avant de généraliser. La DINUM, par exemple, a testé une version pilote de Nextcloud en mode « startup d’État », avant de l’étendre progressivement <span style="color:#5A685F">[ENT-005]</span>.</p>
+<h4 id="3-1-3-2-environnement-organisationnel-et-politique-initial" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-3-2-environnement-organisationnel-et-politique-initial" style="color:inherit;text-decoration:none">3.1.3.2. Environnement organisationnel et politique initial</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le contexte dans lequel un commun numérique émerge n’est jamais neutre. L’environnement politique et organisationnel dans lequel il prend forme influe directement sur ses premiers pas <span style="color:#5A685F">[ENT-002 ; ENT-012]</span>. Dans certains cas, l’initiative trouve un terreau favorable. Ailleurs, elle bute d’emblée sur des inerties plus marquées ou des configurations moins réceptives <span style="color:#5A685F">[ENT-009]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La culture organisationnelle constitue un facteur structurant <span style="color:#5A685F">[ENT-006]</span>. Une culture de coopération, d’ouverture ou d’innovation interne facilite l’apparition d’un commun <span style="color:#5A685F">[ENT-007]</span>. À Brest, dès les années 1990, les services municipaux travaillaient en réseau dans le prolongement de la politique de démocratie locale. À Échirolles, le DSI porteur du projet diffusait une culture « libriste » dès son arrivée <span style="color:#5A685F">[ENT-001]</span>. À l’inverse, une culture administrative rigide freine l’innovation <span style="color:#5A685F">[ENT-008]</span>. La bureaucratie, marquée par l’aversion au risque et le cloisonnement en silos, se prête mal à l’émergence de projets transversaux <span style="color:#5A685F">[Crozier, 1963]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La question des compétences revient vite sur la table. Pour faire vivre un commun numérique, il ne suffit pas d’avoir une idée <span style="color:#5A685F">[ENT-004]</span>. Il faut savoir coder dans un environnement ouvert, animer une communauté, gérer collectivement les droits d’usage <span style="color:#5A685F">[ENT-003]</span>. Autant de savoir-faire rarement présents en interne <span style="color:#5A685F">[ENT-009]</span>. À Échirolles, faute de développeur maison, la ville a dû recruter un ingénieur avec ce profil spécifique, condition sine qua non pour avancer <span style="color:#5A685F">[ENT-001]</span>. Ce manque concerne aussi la capacité à fédérer un réseau et à animer des contributeurs. Là où ces profils font défaut, les projets progressent plus lentement <span style="color:#5A685F">[ENT-005]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le soutien hiérarchique et politique constitue un troisième levier décisif <span style="color:#5A685F">[ENT-001 ; ENT-011]</span>. À Échirolles, l’adjoint au maire a bénéficié d’un appui explicite du maire <span style="color:#5A685F">[ENT-001]</span>. L’objectif du « 100 % logiciels libres » a été inscrit dans la stratégie municipale et les moyens nécessaires alloués <span style="color:#5A685F">[Ville d’Échirolles, 2021]</span>. Au niveau national, la Fabrique des Mobilités n’aurait pas vu le jour sans le soutien de la direction de l’ADEME <span style="color:#5A685F">[ENT-011]</span>. Sans soutien politique, ou en cas de revirement, les communs numériques restent fragiles, comme l’illustre l’abandon de LiMux à Munich en 2017 après un changement de majorité <span style="color:#5A685F">[Silic et Back, 2017]</span>.</p>
+<h4 id="3-1-3-3-influence-du-contexte-socio-technique-et-economique-" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#3-1-3-3-influence-du-contexte-socio-technique-et-economique-" style="color:inherit;text-decoration:none">3.1.3.3. Influence du contexte socio-technique et économique initial</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Au-delà de l’organisation et des acteurs, des facteurs contextuels plus larges influencent la genèse des communs numériques observés.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce qui peut être tenté dépend souvent de l’état des outils disponibles au moment où le projet démarre. À Brest, autour de 2001–2002, c’est la simplicité d’usage de SPIP et la stabilité de la pile LAMP qui ont permis d’avancer vite <span style="color:#5A685F">[ENT-007]</span>. Pour la Suite Numérique, ce sont des briques comme Nextcloud, OnlyOffice ou Mattermost qui ont servi de point d’appui. Miser sur des logiciels libres déjà éprouvés a permis de gagner du temps, de contenir les incertitudes, et de concentrer l’énergie sur l’assemblage plutôt que sur la mise au point <span style="color:#5A685F">[ENT-005]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Un autre levier, souvent décisif, tient à l’environnement communautaire. Lorsqu’un projet peut s’appuyer sur une base active de développeurs ou d’usagers, il démarre avec un avantage net. Dans le cas de l’ADULLACT, ce sont des informaticiens territoriaux qui, dès les débuts, ont contribué bénévolement via la forge <span style="color:#5A685F">[ENT-003]</span>. À Brest, c’est l’association Infini qui a joué le rôle de passerelle avec hébergement offert, lien maintenu avec la communauté libriste locale <span style="color:#5A685F">[ENT-007]</span>. Au-delà de ces cas précis, les réseaux comme France Numérique Libre créent des effets d’échelle, en mutualisant les besoins, les ressources et parfois même les compétences <span style="color:#5A685F">[ENT-001]</span>. Mais pas de commun sans communauté <span style="color:#5A685F">[Lijster, 2022]</span>, et sans confiance, sans forme de réciprocité, la structure ne tient pas <span style="color:#5A685F">[Henry et Dietz, 2011]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’acculturation numérique des acteurs impliqués influe fortement sur la facilité d’acceptation d’un commun <span style="color:#5A685F">[ENT-006]</span>. À la DGI, les agents utilisaient déjà Linux, facilitant leur engagement <span style="color:#5A685F">[ENT- 008]</span>. En revanche, le manque de culture numérique, en particulier chez certains élus, fait obstacle <span style="color:#5A685F">[ENT-003 ; ENT-006]</span>. Beaucoup de responsables locaux ignorent les principes des communs avec licences libres, collaboration ouverte qui sont autant de notions abstraites pour eux <span style="color:#5A685F">[ENT-009]</span>. Enfin, les conditions économiques et les modes de financement initiaux pèsent lourdement sur la genèse <span style="color:#5A685F">[ENT-002]</span>. Certains communs ont bénéficié d’un financement d’amorçage dédié (Fabrique des Mobilités via l’ADEME <span style="color:#5A685F">[ENT-011]</span>), d’autres ont reposé sur le bénévolat (ADULLACT <span style="color:#5A685F">[ENT- 003]</span>). Paradoxalement, des contraintes budgétaires peuvent inciter à adopter des communs, certaines collectivités se tournant vers des solutions libres moins coûteuses <span style="color:#5A685F">[ENT-001]</span>. La question de la pérennité est toutefois souvent négligée lors du lancement <span style="color:#5A685F">[Franquesa et Navarro, 2017]</span>.</p>
+
+<figure style="margin:44px 0">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #1E2A23">
+    <table style="width:100%;border-collapse:collapse;min-width:min(100%,560px)">
+      <thead><tr><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Type de cas / initiative (genèse)</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Principaux déclencheurs</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Contexte organisationnel initial</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Contexte socio-technique / économique initial</p></th></tr></thead>
+      <tbody><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Initiative locale « bottom-up » / pionnière (ex. : Brest)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Vision politique (démocratie locale, participation)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Insatisfaction (fracture numérique)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Entrepreneur institutionnel (élu)</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Culture de coopération existante</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Espace de liberté politique</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Moyens initiaux limités</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Appui du tissu associatif</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Maturité des premiers outils libres (SPIP)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Écosystème militant local actif (Infini)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Faible acculturation numérique générale</li></ul></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Initiative locale « top-down » / planifiée (ex. : Échirolles)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Volonté politique forte</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Entrepreneur institutionnel</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Insatisfaction</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Soutien hiérarchique explicite</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Expérience antérieure du DSI</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Besoin de montée en compétences internes</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Écosystème libriste structuré (ADULLACT)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Offre de prestataires open source</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Contexte de méfiance à l’égard des GAFAM</li></ul></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Programme national « top-down » (ex. : Suite Numérique, CAFData, CNAM)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Volonté politique</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Crise ou opportunité (Covid, Cloud Act)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Alignement stratégique (État plateforme)</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Impulsion centrale (DINUM, CNAF)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Compétences internes à mobiliser ou recruter</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Résistances au changement (habitudes)</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Maturité des briques open source existantes</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Besoin d’outils collaboratifs souverains</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Pression des GAFAM</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Cadre légal</li></ul></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Réseau mutualiste / inter-organisationnel (ex. : ADULLACT, SITIV)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Insatisfaction (coûts, redondance)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Besoin de mutualisation</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Entrepreneurs institutionnels (DSI, élus pionniers)</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Culture de coopération inter-organisationnelle</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Besoin de structuration (SCIC pour ADULLACT)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Hétérogénéité des membres</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Écosystème open source en structuration</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Marché du libre naissant</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Soutien financier public ponctuel (plan de relance pour le SITIV)</li></ul></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Communauté sectorielle / écosystème de pratique (ex. : FabMob, FNL)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Besoin d’innovation ouverte sectorielle</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Volonté de partage (FNL)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Impulsion d’un acteur pivot (ADEME pour FabMob)</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Flexibilité (association FabMob, réseau informel FNL)</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Animation communautaire intensive nécessaire</li></ul></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><ul style="margin:0;padding-left:1.1em;list-style:none"><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Données et outils ouverts disponibles</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Réseaux d’acteurs préexistants</li><li style="position:relative;margin:0 0 .35em">
+            <span style="position:absolute;left:-1.1em;color:#127552">•</span>Besoin de financement d’amorçage</li></ul></td></tr></tbody>
+    </table>
+  </div>
+  <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:#4A5850">
+    <span style="font-weight:600;color:#1E2A23">Tableau 12</span> — Facteurs contextuels initiaux et déclencheurs des communs numériques selon le type d’initiative
+    
+  </figcaption>
+</figure>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce tableau montre que, malgré la diversité des situations, certains facteurs déclencheurs reviennent fréquemment, comme l’insatisfaction vis-à-vis de l’existant ou la présence d’entrepreneurs institutionnels. La maturité des technologies libres et l’appui d’un écosystème s’avèrent souvent déterminants. Les initiatives « bottom-up » comme Brest ont bénéficié d’une plus grande liberté d’expérimentation mais avec des moyens contraints, tandis que les programmes nationaux « top- down » disposent d’un appui politique et financier plus conséquent mais affrontent plus de résistances internes. Ces conditions de départ constituent un point de départ qui influence fortement les premières étapes.</p>
+    </article>
+
+    <nav style="display:flex;justify-content:space-between;gap:24px;margin-top:64px;padding-top:26px;
+         border-top:1px solid #1E2A23"><a href="/memoire/2-3-traitement-analyse-limites/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Précédent</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        ← Traitement, analyse et limites</span></a><a href="/memoire/3-2-dynamiques-institutionnalisation/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;text-align:right">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Suivant</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        Analyse des dynamiques d'institutionnalisation →</span></a></nav>
+  </main>
+</div>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a class="hv3" href="/articles/" style="color:#1E2A23;text-decoration:none">Articles</a>
+        <a class="hv3" href="/la-recherche/" style="color:#1E2A23;text-decoration:none">La recherche</a>
+        <a class="hv3" href="/glossaire/" style="color:#1E2A23;text-decoration:none">Glossaire</a>
+        <a class="hv3" href="/a-propos/" style="color:#1E2A23;text-decoration:none">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a class="hv3" href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px">consulting@alexandre-berge.fr</a>
+        <a class="hv3" href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#8A968D">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+<script>/* Remplace le runtime Claude Design (React + ReactDOM + Babel, ~3 Mo depuis un CDN)
+   par l'équivalent en JavaScript natif. Aucune dépendance, aucune requête réseau.
+   Le site reste entièrement lisible si ce script ne s'exécute pas. */
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ref = function (name) { return document.querySelector('[data-ref="' + name + '"]'); };
+
+  /* ── Barre de progression de lecture (articles) ───────────────────────── */
+  var bar = ref('barRef');
+  if (bar) {
+    var onScroll = function () {
+      var e = document.documentElement;
+      var p = e.scrollTop / Math.max(1, e.scrollHeight - e.clientHeight);
+      bar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Motif de points animé (couverture d'accueil) ─────────────────────── */
+  var canvas = ref('dotsRef');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var gap = parseInt(canvas.getAttribute('data-densite') || '30', 10);
+    var animate = canvas.getAttribute('data-anime') !== 'false' && !reduced;
+    var w = 0, h = 0, raf = 0;
+
+    var resize = function () {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    var draw = function (t) {
+      ctx.clearRect(0, 0, w, h);
+      var cx = w * 0.82, cy = h * 0.18;
+      for (var x = gap / 2; x < w; x += gap) {
+        for (var y = gap / 2; y < h; y += gap) {
+          var d = Math.hypot(x - cx, y - cy);
+          var k = Math.max(0, Math.sin(d * 0.015 - t * 0.001));
+          ctx.beginPath();
+          ctx.arc(x, y, 1.0 + 1.4 * k, 0, 6.2832);
+          ctx.fillStyle = 'rgba(18,117,82,' + (0.05 + 0.22 * k).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      if (animate) raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () { resize(); if (!animate) draw(600); })
+        .observe(canvas.parentElement);
+    } else {
+      window.addEventListener('resize', function () { resize(); if (!animate) draw(600); });
+    }
+    if (animate) raf = requestAnimationFrame(draw); else draw(600);
+  }
+
+  /* ── Compteurs animés (accueil) ───────────────────────────────────────── */
+  /* Les valeurs finales sont déjà dans le HTML : sans JS, rien ne manque. */
+  if (!reduced && window.IntersectionObserver) {
+    var counters = [];
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies'].forEach(function (n) {
+      var el = ref(n);
+      if (el) counters.push([el, parseInt(el.textContent.trim(), 10)]);
+    });
+    if (counters.length) {
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (done || !entries.some(function (e) { return e.isIntersecting; })) return;
+        done = true;
+        io.disconnect();
+        var start = performance.now(), dur = 1400;
+        var tick = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          counters.forEach(function (c) { c[0].textContent = String(Math.round(c[1] * ease)); });
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      io.observe(counters[0][0]);
+    }
+  }
+
+  /* ── Filtre du glossaire ──────────────────────────────────────────────── */
+  var filter = ref('filterRef');
+  if (filter) {
+    var empty = ref('emptyRef');
+    var norm = function (s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+    var apply = function () {
+      var q = norm(filter.value.trim());
+      var visible = 0;
+      document.querySelectorAll('[data-glossterm]').forEach(function (el) {
+        var hay = norm(el.getAttribute('data-glossterm') + ' ' + el.textContent);
+        var show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.querySelectorAll('[data-glossgroup]').forEach(function (g) {
+        var any = Array.prototype.some.call(
+          g.querySelectorAll('[data-glossterm]'),
+          function (el) { return el.style.display !== 'none'; }
+        );
+        g.style.display = any ? '' : 'none';
+      });
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    };
+    filter.addEventListener('input', apply);
+    if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le paradigme des communs numériques — Le mémoire — Les Communs Numériques</title>
+<meta name="description" content="Fondements théoriques de Hardin à Ostrom, mécanismes de production collaborative, pertinence stratégique pour l'action publique.">
+<meta name="author" content="Alexandre Berge">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://communs-numeriques.fr/memoire/1-2-paradigme-des-communs/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Les Communs Numériques">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Le paradigme des communs numériques — Le mémoire">
+<meta property="og:description" content="Fondements théoriques de Hardin à Ostrom, mécanismes de production collaborative, pertinence stratégique pour l'action publique.">
+<meta property="og:url" content="https://communs-numeriques.fr/memoire/1-2-paradigme-des-communs/">
+<meta property="og:image" content="https://communs-numeriques.fr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+.hv1:hover{color:#1E2A23 !important}
+.hv2:hover{color:oklch(0.42 0.11 162) !important}
+.hv3:hover{color:oklch(0.50 0.12 160) !important}
+.hv4:hover{color:oklch(0.42 0.11 162) !important;transform:translateX(6px) !important}
+.hv5:hover{animation-play-state:paused !important}
+.hv6:hover{background:oklch(0.78 0.09 160) !important;color:#1E2A23 !important}
+.hv7:hover{border-color:#F4F7F2 !important;color:#F4F7F2 !important}
+.hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
+.hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
+.hv10:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
+.hv11:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv12:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv13:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv14:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+</style>
+<style>
+.memoire-grille{display:grid;grid-template-columns:minmax(0,264px) minmax(0,1fr);gap:clamp(32px,5vw,72px);
+  max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.memoire-sommaire{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 96px);
+  overflow-y:auto;padding:32px 0 40px;scrollbar-width:thin}
+.memoire-sommaire a[data-ancre].actif{color:#1E2A23 !important;font-weight:600}
+.memoire-sommaire summary{display:none}
+@media (max-width:900px){
+  .memoire-grille{grid-template-columns:minmax(0,1fr)}
+  .memoire-sommaire{position:static;max-height:none;padding:20px 0 0;
+    border-bottom:1px solid #D8DDD3;margin-bottom:8px}
+  .memoire-sommaire summary{display:block;cursor:pointer;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;color:#1E2A23;padding:14px 0;list-style:none}
+  .memoire-sommaire summary::after{content:' ▾';color:#127552}
+  .memoire-sommaire details[open] summary::after{content:' ▴'}
+  .memoire-sommaire > details > div{padding-bottom:18px}
+}
+</style>
+</head>
+<body>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px">Accueil</a>
+      <a class="hv1" href="/articles/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Articles</a>
+      <a class="hv1" href="/la-recherche/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px;transition:color .2s ease">La recherche</a>
+      <a class="hv1" href="/glossaire/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Glossaire</a>
+      <a class="hv1" href="/a-propos/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:70;background:transparent">
+  <div data-ref="barRef" style="height:100%;width:0;background:#127552"></div>
+</div>
+
+<div class="memoire-grille">
+  <nav class="memoire-sommaire" aria-label="Sommaire du mémoire">
+    <details open>
+      <summary>Sommaire du mémoire</summary>
+      <div>
+        <a href="/memoire/" style="display:block;text-decoration:none;font-family:'Instrument Serif',serif;
+           font-size:19px;line-height:1.25;color:#1E2A23;padding-bottom:14px;border-bottom:1px solid #D8DDD3;margin-bottom:4px">
+          Le mémoire</a>
+        
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/introduction/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Introduction
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie I</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/1-1-performance-sous-contraintes/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Des performances numériques sous contraintes
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-2-paradigme-des-communs/" aria-current="page"
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#1E2A23;font-weight:600;
+                border-left:2px solid #127552;padding-left:10px;margin-left:-12px">
+        Le paradigme des communs numériques
+      </a><ul style="margin:8px 0 4px;padding:0 0 0 12px;list-style:none;border-left:1px solid #D8DDD3"><li style="margin:0 0 6px"><a href="#1-2-1-fondements-theoriques-du-libre-acces-a-la-gouvernance-" data-ancre="1-2-1-fondements-theoriques-du-libre-acces-a-la-gouvernance-"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">1.2.1. Fondements théoriques : du libre accès à la gouvernance collective des ressources</a></li><li style="margin:0 0 6px"><a href="#1-2-2-mecanismes-de-production-collaborative-et-modeles-de-g" data-ancre="1-2-2-mecanismes-de-production-collaborative-et-modeles-de-g"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">1.2.2. Mécanismes de production collaborative et modèles de gouvernance des communs numériques</a></li><li style="margin:0 0 6px"><a href="#1-2-3-la-pertinence-strategique-des-communs-numeriques-pour-" data-ancre="1-2-3-la-pertinence-strategique-des-communs-numeriques-pour-"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">1.2.3. La pertinence stratégique des communs numériques pour l’administration publique</a></li></ul></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-3-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        L'institutionnalisation, élément central de l'ancrage
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie II</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/2-1-design-de-la-recherche/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Design de la recherche
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-2-dispositif-empirique/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Dispositif empirique
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-3-traitement-analyse-limites/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Traitement, analyse et limites
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie III</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/3-1-les-neuf-cas/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Caractérisation des initiatives étudiées
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-2-dynamiques-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Analyse des dynamiques d'institutionnalisation
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-3-discussion-et-implications/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Discussion des résultats et implications
+      </a></li></ul>
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/conclusion/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Conclusion
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/bibliographie/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Bibliographie
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Annexes</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/1-glossaire/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 1 — Glossaire
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/2-limites-methodologiques/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 2 — Limites méthodologiques et contremesures
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/3-guide-entretien/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 3 — Guide d'entretien semi-directif
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/4-grille-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 4 — Grille de codage
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/5-matrices-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 5 — Matrices de codage inter-cas
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/6-audit-trail/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 6 — Audit trail
+      </a></li></ul>
+        <a href="/memoire-communs-numeriques-berge-2025.pdf" style="display:inline-block;margin-top:26px;font-size:12px;letter-spacing:.1em;
+           text-transform:uppercase;font-weight:600;color:#1E2A23;text-decoration:none;
+           border-bottom:2px solid #127552;padding-bottom:3px">PDF · 124 p.</a>
+      </div>
+    </details>
+  </nav>
+
+  <main style="padding:clamp(28px,4vw,56px) 0 clamp(56px,7vw,96px);min-width:0">
+    <nav aria-label="Fil d'Ariane" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+         font-weight:600;color:#5A685F;margin-bottom:26px">
+      <a href="/la-recherche/" style="color:#5A685F;text-decoration:none">La recherche</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/memoire/" style="color:#5A685F;text-decoration:none">Le mémoire</a>
+      <span aria-hidden="true"> / </span><span style="color:#1E2A23">Partie I</span>
+    </nav>
+
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,5vw,54px);
+        line-height:1.06;letter-spacing:-.015em;margin:0 0 18px;color:#1E2A23;text-wrap:balance">
+      1.2. Le paradigme des communs numériques : fondements, mécanismes et pertinence pour l’action publique</h1>
+    <p style="margin:0 0 6px;font-size:16px;line-height:1.65;color:#4A5850;max-width:60ch">Fondements théoriques de Hardin à Ostrom, mécanismes de production collaborative, pertinence stratégique pour l'action publique.</p>
+    <hr style="border:0;border-top:1px solid #1E2A23;margin:30px 0 34px">
+
+    <article style="max-width:72ch">
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">On parle beaucoup « d’open source », « d’open data », « d’API ouvertes ». Toutes ces étiquettes renvoient, en réalité, à une même famille d’idées, celle des communs numériques <span style="color:#5A685F">[Dulong de Rosnay et Stalder, 2020]</span>. Le concept prolonge une intuition vieille comme les pâturages médiévaux. Lorsqu’une ressource est gérée collectivement, elle peut profiter durablement à tous <span style="color:#5A685F">[Ostrom, 1990]</span>. À l’ère du cloud et du code partagé, cette intuition change d’échelle. La ressource n’est plus l’herbe d’un champ, mais une ligne de programme, une base cartographique ou un jeu de données météo <span style="color:#5A685F">[Hess et Ostrom, 2007]</span>.</p>
+<h3 id="1-2-1-fondements-theoriques-du-libre-acces-a-la-gouvernance-" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-1-fondements-theoriques-du-libre-acces-a-la-gouvernance-" style="color:inherit;text-decoration:none">1.2.1. Fondements théoriques : du libre accès à la gouvernance collective des ressources</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Tout a commencé par la scène, devenue classique, de la « tragédie » décrite par Garrett Hardin en 1968, un pâturage collectif, chacun ajoutant une bête de trop, et la ressource finit exsangue <span style="color:#5A685F">[Hardin, 1968]</span>. Vingt ans plus tard, Elinor Ostrom retourne la carte. Ses enquêtes montrent des communautés capables de fixer des règles, de surveiller leur application et de sanctionner les tricheurs <span style="color:#5A685F">[Ostrom, 1990]</span>. Le principal enseignement repose sur le triptyque indissociable d’une ressource clairement délimitée, d’un groupe d’usagers identifié et de règles négociées et adaptées au contexte.</p>
+<h4 id="1-2-1-1-de-la-tragedie-des-communs-a-la-gestion-collective-d" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-1-1-de-la-tragedie-des-communs-a-la-gestion-collective-d" style="color:inherit;text-decoration:none">1.2.1.1. De la « tragédie des communs » à la gestion collective des ressources</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’idée de « communs » émerge donc à la fin des années 1960. Tout part d’une publication signée par le biologiste Garrett Hardin « The Tragedy of the Commons » <span style="color:#5A685F">[Hardin, 1968]</span>. Hardin plante le décor d’un simple pâturage ouvert à tous. Que se passe-t-il si chaque éleveur y ajoute une bête de plus pour maximiser son profit ? À court terme, chacun gagne. À long terme, le champ est rasé. Autrement dit, l’absence de règles collectives transforme l’avantage individuel en catastrophe collective. La ressource se meurt d’avoir été trop convoitée.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette vision pessimiste est contredite par les travaux d’Elinor Ostrom. Politologue, Ostrom reçoit le prix Nobel d’économie en 2009 pour ses recherches sur les communs. Dans son ouvrage « Governing the Commons », elle s’appuie sur de nombreuses études de cas (systèmes d’irrigation, pêcheries, forêts communales, etc.) pour démontrer qu’il est possible d’échapper à la tragédie annoncée <span style="color:#5A685F">[Ostrom, 1990]</span>. Ostrom déplace le projecteur. Le problème n’est pas la mise en commun en soi, mais l’absence de règles. Un bien commun viable n’est jamais un « no man’s land » ouvert sans contrôle. C’est une ressource dont un groupe clairement identifié fixe et fait respecter les usages. D’où la distinction, décisive, qu’elle propose, à savoir que le libre accès (open access), où chacun prélève à sa guise et où rien n’empêche la ruée, à l’encontre la propriété commune, où les usagers se reconnaissent des droits, mais aussi des devoirs, et où une gouvernance partagée arbitre les conflits et sanctionne les abus. C’est cette architecture locale de règles, plus que la taille du pâturage ou le type de ressource, qui conditionne la durabilité du commun. Autrement dit, contrairement aux prédictions de Hardin, les faits montrent que des communautés peuvent coopérer pour gérer raisonnablement une ressource commune sur le long terme, à condition d’établir des règles d’usage, de surveillance et de sanction acceptées par les usagers <span style="color:#5A685F">[Ostrom, 1990]</span>.</p>
+<h4 id="1-2-1-2-principes-de-la-gouvernance-partagee" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-1-2-principes-de-la-gouvernance-partagee" style="color:inherit;text-decoration:none">1.2.1.2. Principes de la gouvernance partagée</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">En observant une irrigation en Espagne, une pêcherie au Japon ou une forêt alpine, Ostrom repère, à chaque fois, le même socle de règles qui fait tenir le collectif. On sait qui a le droit d’entrer, on s’est entendu sur la limite du territoire, on décide ensemble, on surveille les usages au quotidien, on gradue les sanctions au lieu de prôner d’emblée l’exclusion, et l’on dispose d’un petit tribunal maison pour régler les litiges <span style="color:#5A685F">[Ostrom, 1990]</span>. Broca et Coriat en proposent un condensé en trois briques. D’abord une ressource que l’on partage, ensuite une communauté qui accepte un jeu de droits et de devoirs, enfin une gouvernance qui veille à ce que ces règles vivent et s’ajustent <span style="color:#5A685F">[Broca et Coriat, 2015]</span>. Si l’un des trois éléments manque, le « commun » n’est plus qu’un mot creux. Autrement dit, un bien commun n’est pas qu’une ressource librement accessible. C’est avant tout un système socio-technique dans lequel une communauté d’acteurs s’organise pour définir et faire respecter des règles d’accès, d’usage et de préservation de la ressource <span style="color:#5A685F">[Birkinbine, 2018]</span>. À l’origine, ce modèle des communs s’est construit sur des exemples concrets et matériels. Des pêcheries, des systèmes d’irrigation, des forêts partagées. Des ressources que plusieurs utilisent, mais qui s’épuisent si on ne les gère pas. Dès que l’usage de l’un empiète sur celui de l’autre, ce qu’on appelle la rivalité, il faut des règles. Et ces règles ne peuvent pas venir seulement du marché ou de l’État, car trop rigides et trop éloignées du terrain <span style="color:#5A685F">[Ostrom, 1990]</span>. C’est là qu’émerge cette « troisième voie », une gestion collective, portée par les usagers eux-mêmes. Le défi n’est pas d’empêcher l’accès, mais de le rendre soutenable. Car exclure certains usagers coûte cher ou paraît injuste, et laisser tout ouvert sans limite conduit à la surexploitation. Il faut donc trouver un équilibre, inventer des arrangements locaux, souples mais solides. C’est cette capacité d’auto- organisation, ni privatisée, ni nationalisée, que les travaux d’Ostrom ont mis en lumière, à partir d’observations patientes, loin des modèles abstraits.</p>
+<h4 id="1-2-1-3-des-communs-materiels-aux-communs-de-la-connaissance" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-1-3-des-communs-materiels-aux-communs-de-la-connaissance" style="color:inherit;text-decoration:none">1.2.1.3. Des communs matériels aux communs de la connaissance</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">À partir des années 2000, la réflexion sur les communs s’étend aux ressources immatérielles, les informations et la connaissance en particulier. Elinor Ostrom, en collaboration avec Charlotte Hess, explore alors le concept de communs de la connaissance (« knowledge commons ») <span style="color:#5A685F">[Hess et Ostrom, 2007]</span>. Cette extension conceptuelle est nécessaire car les ressources informationnelles présentent des caractéristiques très différentes des communs physiques. Elles sont non rivales, l’usage par une personne n’empêche pas un autre usage simultané, et peuvent être reproduites à coût quasi nul. Contrairement à un puits ou à un pâturage, une feuille de calcul ou une idée ne s’érode pas parce qu’on la consulte. Elle s’abîme plutôt par négligence. L’information stagne, se démode, finit par induire en erreur si personne ne la corrige ou ne l’enrichit. D’où la mise en garde de Charlotte Hess. La connaissance reste « a shared resource that is vulnerable to social dilemmas » <span style="color:#5A685F">[Hess et Ostrom, 2007]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le tableau ci-dessous synthétise les distinctions fondamentales entre les communs matériels traditionnels et les communs numériques, en soulignant les enjeux spécifiques liés à la nature immatérielle de ces derniers.</p>
+
+<figure style="margin:44px 0">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #1E2A23">
+    <table style="width:100%;border-collapse:collapse;min-width:min(100%,560px)">
+      <thead><tr><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Caractéristique</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Communs matériels</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Communs numériques</p></th></tr></thead>
+      <tbody><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Nature de la ressource</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Tangible, finie</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Immatérielle, informationnelle</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Rivalité</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Élevée (l’usage par l’un réduit la part pour autrui)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Faible ou nulle (l’usage par l’un n’empêche pas celui d’autrui)</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Excluabilité</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Difficile ou coûteuse (accès libre difficile à restreindre)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Possible artificiellement (DRM, licences restrictives)</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Risque principal</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Surexploitation (« tragédie des communs »)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Sous-production ou sous-contribution, enclosure (appropriation)</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Priorité de gouvernance</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Réguler l’accès et l’usage pour éviter l’épuisement</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Stimuler la contribution, assurer l’ouverture et la pérennité</p></td></tr></tbody>
+    </table>
+  </div>
+  <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:#4A5850">
+    <span style="font-weight:600;color:#1E2A23">Tableau 3</span> — Comparaison entre communs matériels et communs numériques
+    
+  </figcaption>
+</figure>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ces nouvelles caractéristiques déplacent les risques. Le danger principal n’est plus la surexploitation, mais au contraire la sous-production (faute de contributeurs motivés) et l’enclosure <span style="color:#5A685F">[Franquesa et Navarro, 2017 ; Greco et Floridi, 2004]</span>. Le terme d’enclosure, emprunté à l’histoire des terres communales britanniques privatisées, a été repris par James Boyle pour décrire l’extension excessive du champ de la propriété intellectuelle <span style="color:#5A685F">[Boyle, 2003]</span>. Dans le monde numérique, un brevet logiciel ou une licence restrictive suffisent à recréer une barrière artificielle autour d’une ressource pourtant partageable à l’infini <span style="color:#5A685F">[Broca et Coriat, 2015]</span>. C’est précisément pour contrer ce risque d’appropriation que les licences libres ont été conçues. Elles utilisent le droit d’auteur non pas pour restreindre, mais pour garantir des libertés (utiliser, modifier, redistribuer), marquant le basculement d’une logique de propriété à une logique de partage. Le cadre juridique devient ainsi un pilier du commun, assurant que ce qui a été partagé ne pourra être refermé <span style="color:#5A685F">[Broca et Coriat, 2015]</span>. La définition même du « commun numérique » ne fait cependant pas consensus. Certains auteurs proposent une approche large, tandis que d’autres tiennent à une ligne plus exigeante <span style="color:#5A685F">[Maurel, 2019]</span>. On ne peut parler de commun que si une communauté identifiable prend en charge la ressource, la maintient et en fixe les règles. Cette lecture, qui distingue radicalement les communs des plateformes de « l’économie collaborative » <span style="color:#5A685F">[Broca et Coriat, 2015]</span>, est celle retenue dans ce mémoire. Elle s’articule autour du triptyque déjà évoqué (une ressource, une communauté et des règles de gouvernance) <span style="color:#5A685F">[Hess et Ostrom, 2007]</span>.</p>
+<h3 id="1-2-2-mecanismes-de-production-collaborative-et-modeles-de-g" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-2-mecanismes-de-production-collaborative-et-modeles-de-g" style="color:inherit;text-decoration:none">1.2.2. Mécanismes de production collaborative et modèles de gouvernance des communs numériques</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La vitalité d’un commun ne tient pas uniquement à son principe fondateur. Elle dépend aussi de la manière dont il organise la contribution, protège la ressource et arbitre les décisions. Cette section déroule successivement trois éclairages. Le paradigme de la production entre pairs, qui mobilise une intelligence collective distribuée. Les leviers techniques et juridiques (outils collaboratifs, licences ouvertes) indispensables pour encadrer la participation. La diversité des modèles de gouvernance, depuis l’auto-organisation communautaire jusqu’aux formes d’appui institutionnel qui garantissent, sur la durée, coordination et qualité.</p>
+<h4 id="1-2-2-1-la-production-collaborative-a-l-ere-du-numerique" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-2-1-la-production-collaborative-a-l-ere-du-numerique" style="color:inherit;text-decoration:none">1.2.2.1. La production collaborative à l’ère du numérique</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Avec le Web, un nouveau type de production est apparu, décentralisé, souple, souvent bénévole. Des acteurs dispersés, sans hiérarchie formelle, qui s’organisent eux-mêmes pour construire des ressources communes. Benkler a forgé une expression pour décrire ce phénomène, « commons- based peer production » <span style="color:#5A685F">[Benkler, 2006]</span>. Ce modèle repose sur une coordination horizontale, sans marché ni plan centralisé. Pas d’entreprise, pas d’institution pilote, et pourtant des résultats que ni l’une ni l’autre n’aurait su produire seules, ou du moins, pas avec la même ampleur ni la même agilité. Ce mode d’organisation ne ressemble ni au marché, où le jeu des prix pilote la production, ni au modèle hiérarchique où un chef fixe la feuille de route. Ici, tout part d’une envie, apprendre, partager, se faire un nom ou simplement résoudre un problème qui nous tient à cœur. Chacun s’invite selon ses compétences, les résultats sont laissés en accès libre, et la communauté se charge de faire tourner l’ensemble <span style="color:#5A685F">[Benkler, 2006]</span>. On en voit la preuve tous les jours avec Wikipédia, bâtie par des milliers de bénévoles dispersés sur la planète, ou GNU/Linux, né d’un étudiant finlandais avant de devenir un système d’exploitation mondialement reconnu. Leur point commun c’est une coordination sans patron, pourtant capable de délivrer un produit souvent aussi solide, voire plus, que ceux issus d’organisations traditionnelles <span style="color:#5A685F">[Benkler, 2006]</span>. Plus largement, le Web met en réseau savoirs et individus. Un bug signalé sur un dépôt Git, une traduction ajoutée dans un wiki, un jeu de données enrichi par une association locale forment autant de micro-contributions qui, agrégées, fabriquent un bien public informationnel de haute tenue. Ce modèle du « bazar » se caractérise par un développement itératif, ouvert et concurrent d’idées. « Given enough eyeballs, all bugs are shallow », résumait ainsi Raymond pour vanter l’avantage du logiciel libre ouvert aux contributions externes <span style="color:#5A685F">[Raymond, 1999]</span>. En effet, plus la communauté de contributeurs est large et diverse, plus la probabilité de détecter et résoudre rapidement les problèmes est grande, et plus la capacité d’innover et d’améliorer en continu la ressource commune augmente. En contrepartie, cette richesse contributive rend indispensable la mise en place de mécanismes de coordination afin de garantir la cohérence de l’ensemble. Ce besoin de structure renvoie directement aux mécanismes de gouvernance que nous aborderons plus loin. Au préalable, il faut souligner que la production collaborative elle-même n’est possible que grâce à certains outils techniques et cadres juridiques spécifiques qui la facilitent et la pérennisent.</p>
+<h4 id="1-2-2-2-outils-collaboratifs-et-licences-ouvertes" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-2-2-outils-collaboratifs-et-licences-ouvertes" style="color:inherit;text-decoration:none">1.2.2.2. Outils collaboratifs et licences ouvertes</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les outils collaboratifs ne font pas tout, mais sans eux, rien ne tient. Des plateformes Git, permettent à des dizaines, parfois des centaines, de contributeurs de travailler sur un même logiciel sans perdre le fil. Chacun voit ce que l’autre modifie, propose une correction, discute une ligne de code. Le mécanisme est rodé. Wikipédia repose sur le même principe, mais appliqué aux textes. D’autres s’attaquent aux données avec OpenStreetMap pour la cartographie, Open Food Facts pour les produits alimentaires. Dans tous les cas, ces outils intègrent des fonctions de relecture, de suivi des erreurs, de débat en ligne. C’est ce qui permet à une communauté, sans hiérarchie formelle, de produire quelque chose qui tient la route. Ce n’est pas la technologie qui remplace l’organisation, c’est elle qui rend possible une organisation distribuée à grande échelle <span style="color:#5A685F">[Benkler, 2006]</span>. Quand les coûts de coordination tombent, la coopération devient praticable, même à distance, même entre inconnus. En parallèle, les licences libres et les régimes juridiques ouverts constituent le socle légal indispensable garantissant la nature commune de la ressource. Par défaut, les créations intellectuelles sont couvertes par des droits exclusifs (le droit d’auteur en particulier) qui en restreignent l’usage par des tiers. Les licences ouvertes (GNU GPL, BSD, Creative Commons, Open Database License, etc.) renversent cette logique. Elles accordent à tous le droit d’utiliser, de modifier et de redistribuer la ressource, souvent à condition que les œuvres dérivées soient partagées aux mêmes conditions (clause de partage à l’identique) afin de maintenir le bien dans le giron commun. Les licences ouvertes préviennent donc l’appropriation unilatérale d’un travail collectif par un acteur et garantissent la pérennité du partage. Chacun peut contribuer sans crainte de voir son apport confisqué, et chacun bénéficie en retour des améliorations continues apportées par autrui <span style="color:#5A685F">[Broca et Coriat, 2015]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Rendre le code, les contenus ou les jeux de données publics ne se limite pas à « montrer son travail ». C’est offrir à quiconque la possibilité d’ouvrir le capot, de vérifier la mécanique et, si besoin, de resserrer un boulon. Cette auditabilité permanente nourrit la confiance. Chacun peut constater la qualité du commun et signaler une faille avant qu’elle ne dérive en incident <span style="color:#5A685F">[Dulong de Rosnay et Stalder, 2020]</span>. Mais il demeure le principal problème que beaucoup utilisent, peu contribuent <span style="color:#5A685F">[Marsan et al., 2012]</span>. Pour éviter que le commun ne se transforme en self-service gratuit, les communautés mêlent reconnaissance symbolique (tableaux d’honneur, badges, invitations à des hackathons), obligations contractuelles (clause de réciprocité dans les licences), et dispositifs plus ludiques, tels que des « bug bounties » où la chasse au défaut est récompensée <span style="color:#5A685F">[Scekic et al., 2013]</span>. L’enjeu consiste à faire sentir que toute amélioration profite immédiatement à tous, y compris, et surtout, à celui qui vient de l’apporter. Elles valorisent les contributeurs méritants (systèmes de réputation, statuts de contributeur de confiance, etc.), organisent des événements pour souder la communauté (ateliers, hackathons, rencontres), et s’appuient sur des structures tierces de soutien (fondations, associations) offrant financements, infrastructures ou médiation. L’ensemble de ces leviers techniques, juridiques et humains prépare le terrain aux différents modèles de gouvernance, qui visent justement à structurer la communauté et à répartir les responsabilités pour assurer la viabilité du commun.</p>
+<h4 id="1-2-2-3-auto-organisation-et-modeles-de-gouvernance-des-comm" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-2-3-auto-organisation-et-modeles-de-gouvernance-des-comm" style="color:inherit;text-decoration:none">1.2.2.3. Auto-organisation et modèles de gouvernance des communs numériques</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Sous leur surface apparemment libre et foisonnante, les communs numériques fonctionnent rarement en totale autogestion. Ils s’appuient sur une ingénierie de gouvernance, plus ou moins formalisée, qui fixe les rôles, régule la circulation des idées et tranche les différends <span style="color:#5A685F">[Schweik et Kitsing, 2010]</span>. Dans la plupart des projets, un noyau de contributeurs définit en amont la répartition des responsabilités avec certains qui se contentent d’apporter des corrections ponctuelles, d’autres qui assurent la modération des échanges, quelques-uns qui maintiennent l’architecture technique, et un cercle restreint qui dispose du pouvoir d’administrer le dépôt ou la plateforme <span style="color:#5A685F">[Jemielniak, 2016]</span>. Les propositions d’ajout, qu’il s’agisse d’une nouvelle fonction logicielle ou d’un article de wiki, suivent le plus souvent une chaîne de relecture avec dépôt de la contribution, discussion ouverte, validation (ou refus) selon des critères explicités dans une charte ou un code de conduite. Les décisions collectives empruntent des modalités variées, recherche de consensus sur un fil de discussion, vote pondéré par l’historique d’implication, ou arbitrage final confié à un « benevolent dictator » reconnu pour son expertise. L’exposé public de ces règles vise un double objectif, faciliter la coopération et prévenir les dérives de comportement <span style="color:#5A685F">[Dulong de Rosnay et Stalder, 2020]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Wikipédia offre l’illustration la plus commentée avec des administrateurs élus par la communauté disposent d’outils de blocage, tandis que les principes de neutralité et de vérifiabilité encadrent chaque ajout <span style="color:#5A685F">[Jemielniak, 2016]</span>. Les projets de logiciel libre, eux, s’organisent selon des logiques parfois méritocratiques, l’influence grandit avec la qualité et la fréquence des contributions, parfois plus démocratiques, lorsque les choix stratégiques font l’objet d’un scrutin ouvert à tous les inscrits <span style="color:#5A685F">[Schweik et Kitsing, 2010 ; Henttonen et al., 2024]</span>. Derrière la diversité des formes, le même fil conducteur se dessine. Sans règles claires pour répartir les tâches, accueillir les nouveaux venus et résoudre les conflits, le commun perdrait vite en cohérence et en robustesse <span style="color:#5A685F">[Ostrom, 1990]</span>. D’autres encore s’organisent autour d’un leader charismatique suivant le modèle du « Benevolent Dictator for Life », à l’instar un temps de Linus Torvalds pour Linux, un chef de projet tranchant en dernier ressort tout en étant à l’écoute de la communauté <span style="color:#5A685F">[Raymond, 1999]</span>. Dans tous les cas de figure, un socle de règles explicites et une organisation minimale restent indispensables. Sans ces repères, difficile d’aligner les contributions et de préserver la cohérence du projet <span style="color:#5A685F">[Krewer et Warso, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Parallèlement, un autre pan de la gouvernance fixe les droits et devoirs des utilisateurs externes avec licences, modalités de réutilisation, devoirs de partage à l’identique, éventuelles restrictions de périmètre. Elle se concrétise principalement par le choix de la licence, qui fait office de contrat social entre les créateurs du commun et la société. La licence précise ce que chacun peut ou ne peut pas faire avec la ressource. La gouvernance externe inclut également les efforts destinés à protéger le commun contre une appropriation abusive. Par exemple, l’exigence que les œuvres dérivées restent sous licence libre garantit que le commun ne sera pas capturé par une entité privée cherchant à bâtir un service propriétaire concurrent à partir de celui-ci <span style="color:#5A685F">[Broca et Coriat, 2015]</span>. De même, certaines communautés n’hésitent pas à prendre des mesures juridiques ou techniques pour se défendre contre le plagiat ou l’extraction de données à grande échelle non coopérative, tout en encourageant une réutilisation loyale au bénéfice de tous <span style="color:#5A685F">[Dulong de Rosnay et Stalder, 2020]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Il faut relever que nombre de communs numériques s’adossent à des structures institutionnelles pour soutenir leur gouvernance. Associations loi 1901, fondations, consortiums informels, ces entités juridiques peuvent détenir l’infrastructure, recueillir des dons ou subventions, représenter la communauté auprès d’acteurs externes, et assurer une forme de pérennité indépendante des individus <span style="color:#5A685F">[Krewer et Warso, 2024]</span>. Par exemple, la Wikimedia Foundation appuie les projets Wikimédia (dont Wikipédia) en fournissant les serveurs et en collectant des fonds, tandis que la communauté des rédacteurs conserve l’essentiel des pouvoirs éditoriaux. OpenStreetMap offre un exemple parlant de ce glissement progressif. La fondation adossée au projet assure l’hébergement des serveurs, l’organisation de conférences et la collecte de fonds, tandis que les grandes orientations restent tranchées par des contributeurs élus. Cette configuration brouille la frontière entre la spontanéité communautaire et la structuration institutionnelle. À mesure qu’un commun grandit, l’ajout de règles formelles et de moyens financiers peut devenir indispensable, à condition de préserver l’esprit d’ouverture et d’inclusivité qui l’a fait naître <span style="color:#5A685F">[Fuster Morell, 2010]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ces cheminements illustrent un modèle de gouvernance souple, calibré pour des ressources informationnelles ouvertes par nature. Ni marchands ni purement étatiques, les communs numériques incarnent un troisième pôle dont la capacité à conjuguer agilité collective et pérennité institutionnelle retient de plus en plus l’attention des décideurs publics <span style="color:#5A685F">[Dulong de Rosnay et Stalder, 2020 ; Raymond et Kouper, 2023 ; Shulz, 2024c]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La section suivante examine la pertinence stratégique de ce paradigme des communs numériques pour l’administration publique.</p>
+<h3 id="1-2-3-la-pertinence-strategique-des-communs-numeriques-pour-" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-3-la-pertinence-strategique-des-communs-numeriques-pour-" style="color:inherit;text-decoration:none">1.2.3. La pertinence stratégique des communs numériques pour l’administration publique</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Après l’analyse de leurs fondements et de leurs mécanismes, il convient d’évaluer la portée des communs numériques pour l’administration publique. Les communs numériques intriguent la puissance publique pour une raison simple. Ils combinent créativité citoyenne et intérêt général. Ces ressources partagées agissent d’abord comme un laboratoire d’innovation ouverte. La diversité des profils qui s’y croisent engendre un flux d’idées difficile à reproduire derrière les murs d’une direction informatique <span style="color:#5A685F">[Mergel et Desouza, 2013 ; Allen et Potts, 2016]</span>. Outre l’innovation, le modèle des communs apporte un gain d’efficacité car mutualiser le code ou la donnée évite de réinventer la roue et réduit la dépendance aux licences propriétaires <span style="color:#5A685F">[Loon et Toshkov, 2015 ; Linåker et al., 2023]</span>. À la clé, un service public plus réactif, des coûts mieux maîtrisés et une capacité accrue à répondre aux enjeux collectifs <span style="color:#5A685F">[Bryson et al., 2014]</span>.</p>
+<h4 id="1-2-3-1-les-atouts-des-communs-pour-l-action-publique" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-3-1-les-atouts-des-communs-pour-l-action-publique" style="color:inherit;text-decoration:none">1.2.3.1. Les atouts des communs pour l’action publique</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Un commun numérique peut « apporter des solutions, faire évoluer les usages et coordonner des initiatives en faveur de l’intérêt général » <span style="color:#5A685F">[CSNP, 2023]</span>. De même, dans les domaines de la santé ou de l’environnement, le partage ouvert de données et d’outils, au travers de plateformes participatives de suivi épidémiologique ou des communs de données sur la qualité de l’air, peut accélérer la réponse publique en profitant des contributions extérieures (communautés scientifiques, associations, citoyens) <span style="color:#5A685F">[Janssen et al., 2012 ; Loonen et al., 2021]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les communs numériques constituent aussi un accélérateur d’efficacité pour le secteur public. Au lieu que chaque collectivité finance son propre outil, parfois quasi identique à celui de la voisine, la logique du partage pousse à piocher dans un même « catalogue » de ressources déjà éprouvées <span style="color:#5A685F">[Mergel, 2015 ; Henttonen et al., 2024]</span>. Qu’un service informatique municipal publie sous licence libre son application de gestion des inscriptions scolaires, et d’autres villes peuvent la reprendre, l’adapter, puis reverser leurs améliorations. Les doublons tombent, les budgets respirent et les délais fondent. La maintenance évolue, elle, en amélioration continue, portée par un cercle d’utilisateurs-contributeurs toujours plus large <span style="color:#5A685F">[Silic et Back, 2017]</span>. À l’inverse, un écosystème fermé enferme chaque acheteur dans une licence onéreuse et dans le calendrier d’un fournisseur unique, c’est le cœur du phénomène de « vendor lock-in » <span style="color:#5A685F">[Opara-Martins et al., 2016]</span>. Un commun bien géré peut être à la fois libre d’accès, aisément réutilisable et de haute qualité grâce à l’effort collectif, un atout précieux pour des services publics cherchant à innover sous contrainte de moyens <span style="color:#5A685F">[Krewer et Warso, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Enfin, les communs numériques portent une valeur sociale et une légitimité particulières dans la poursuite de l’intérêt général. Gérés collectivement, les communs numériques poursuivent d’abord des finalités d’utilité publique. La recherche du profit n’y occupe qu’une place secondaire, lorsqu’elle existe <span style="color:#5A685F">[Benkler, 2006 ; Fuchs, 2021]</span>. Cette orientation se reflète dans leur gouvernance (ouverte, participative, lisible) <span style="color:#5A685F">[Raymond et Kouper, 2023]</span>. Une plateforme dont le code, les règles de décision et les jeux de données sont accessibles inspire plus facilement confiance qu’un service piloté à huis clos <span style="color:#5A685F">[Nicolini et Caron, 2024]</span>. Un algorithme budgétaire publié sur une forge partagée, par exemple, peut être audité par des chercheurs ou des associations de défense des droits. La transparence algorithmique cesse alors d’être un vœu pieux et devient une pratique vérifiable <span style="color:#5A685F">[Mission Bothorel, 2020]</span>. Sur le terrain, la mobilisation d’habitants autour d’un commun, qu’il s’agisse de co-concevoir un outil pédagogique ou d’enrichir une base d’adresses, cela transforme des usagers en coproducteurs <span style="color:#5A685F">[Shulz, 2024c]</span>. Cette implication renforce la pertinence des politiques publiques et favorise leur appropriation locale. L’association d’une efficacité opérationnelle accrue à un surcroît de légitimité démocratique fait des communs un levier de premier ordre pour l’administration <span style="color:#5A685F">[Benington, 2007 ; Benmohamed et al., 2024]</span>.</p>
+<h4 id="1-2-3-2-souverainete-numerique-et-independance-technologique" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-3-2-souverainete-numerique-et-independance-technologique" style="color:inherit;text-decoration:none">1.2.3.2. Souveraineté numérique et indépendance technologique</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce n’est pas seulement une question de performance. Ce qui est en jeu, c’est le contrôle. S’appuyer sur des solutions techniques conçues hors d’Europe, dans des conditions opaques, expose les administrations à une dépendance difficile à gérer <span style="color:#5A685F">[Pohle et Thiel, 2020 ; Fratini et al., 2024]</span>. À l’inverse, les communs numériques, logiciels libres, référentiels ouverts, systèmes partagés, offrent un point d’appui pour reprendre la maîtrise de ce qui structure l’action publique <span style="color:#5A685F">[Krewer et Warso, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ils ne bloquent pas l’accès. Ils ne figent pas l’usage. Ils peuvent être relus, modifiés, redéployés sans autorisation d’un tiers <span style="color:#5A685F">[Heron et al., 2013]</span>. Rien n’y enferme l’usager. Et rien n’oblige à suivre le calendrier d’un éditeur. Le rapport de force change. L’administration n’est plus contrainte de négocier sous pression <span style="color:#5A685F">[Zhu et Zhou, 2012 ; Opara-Martins et al., 2016]</span>. Ces ressources ne cherchent pas à capturer. Elles s’inscrivent souvent dans des structures à but non lucratif (associations, fondations, coopératives). Pour la CSNP, « le renouveau et le changement d’échelle des communs numériques en Europe présente une occasion unique de créer une souveraineté numérique européenne non prédatrice, en s’appuyant sur l’intelligence collective et la mise en réseau des connaissances » <span style="color:#5A685F">[CSNP, 2023]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce n’est pas qu’une idée. C’est déjà en cours. Stocker des données dans un format ouvert, utiliser un logiciel libre, c’est s’assurer qu’aucun prestataire ne pourra bloquer l’accès ni imposer ses conditions, car le code est accessible, auditable, modifiable à tout moment <span style="color:#5A685F">[Mitchell, 2022 ; Linåker et al., 2023]</span>. Lorsqu’un ministère affecte des équipes à LibreOffice, Linux ou OpenStreetMap, il ne finance pas une boîte noire. Il renforce un commun maintenu collectivement <span style="color:#5A685F">[Shrivastava et Korkmaz, 2024]</span>. L’autonomie est préservée, les ressources restent publiques et l’investissement bénéficie à tous <span style="color:#5A685F">[Abiteboul et Bancilhon, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce type de socle facilite l’émergence d’un écosystème local. Rien n’empêche une collectivité, une entreprise, un service public de s’y greffer. Pas de barrière contractuelle, pas de verrou propriétaire <span style="color:#5A685F">[Korkmaz et al., 2024]</span>. Chacun peut s’approprier l’outil, proposer des évolutions, mutualiser les efforts.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La souveraineté touche aussi à la sécurité. Un outil largement utilisé, ouvert, relu, corrige ses failles plus vite qu’un système fermé. Là où les solutions propriétaires cachent les problèmes, les communs les rendent visibles <span style="color:#5A685F">[Silic et al., 2015 ; Cox, 2019]</span>. L’ANSSI l’a confirmé. La publication du code ne rend pas un système plus fragile. Elle le rend vérifiable <span style="color:#5A685F">[Mission Bothorel, 2020]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Mais tout cela ne tient que si l’administration s’engage. Utiliser un commun ne suffit pas. Il faut l’entretenir, y contribuer, le faire évoluer en fonction des besoins <span style="color:#5A685F">[Shrivastava et Korkmaz, 2024]</span>. Sans implication réelle, le levier reste théorique. C’est là que se pose la question de l’institutionnalisation. Comment stabiliser ces relations entre administrations et communautés ? Comment les inscrire dans la durée ? <span style="color:#5A685F">[Vesco et Busso, 2024]</span>.</p>
+<h4 id="1-2-3-3-vers-des-partenariats-public-communs" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-2-3-3-vers-des-partenariats-public-communs" style="color:inherit;text-decoration:none">1.2.3.3. Vers des partenariats Public-Communs</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Consciente des bénéfices potentiels des communs numériques, l’administration publique française a amorcé une réflexion sur les moyens de les soutenir et de les pérenniser <span style="color:#5A685F">[Mabi, 2023]</span>. L’idée directrice est de passer d’une posture d’utilisateur occasionnel à celle de partenaire à part entière des communs, en établissant de véritables partenariats Public-Communs <span style="color:#5A685F">[Vesco et Busso, 2024]</span>. Pour les membres de la CSNP, il est important que le développement des communs numériques « s’appuie sur la puissance publique » en développant de tels partenariats, afin de regagner en souveraineté tout en renforçant le modèle numérique européen <span style="color:#5A685F">[CSNP, 2023]</span>. Cela implique que l’État et les collectivités participent aux communautés, financent en partie les efforts communs et adaptent leur cadre juridique pour faciliter l’essor de communs d’intérêt général <span style="color:#5A685F">[Krewer et Warso, 2024]</span>. Faire reconnaître, noir sur blanc, qu’un commun numérique relève de « l’intérêt général » changerait la donne. Le statut deviendrait clair, les questions de copyright partagé et de responsabilité cesseraient d’être des zones grises, et l’on pourrait mobiliser des budgets publics sans soupçon de favoritisme <span style="color:#5A685F">[Maurel, 2019]</span>. La Commission supérieure du numérique et des postes <span style="color:#5A685F">[CSNP, 2023]</span> défend cette idée. Traiter certaines ressources logicielles ou certains jeux de données comme on traite une route ou un réseau d’eau potable, c’est-à-dire comme des infrastructures collectives qu’il faut entretenir et financer <span style="color:#5A685F">[Raymond et Kouper, 2023]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Encore faut-il que l’administration joue vraiment le jeu. Le rapport Bothorel sur l’ouverture des codes sources de l’État est explicite <span style="color:#5A685F">[Mission Bothorel, 2020]</span>. Tant que les agents ne contribuent pas eux-mêmes, tant que les Git ministériels restent privés et que les échanges avec les communautés libres se limitent à des vœux pieux, l’élan retombera <span style="color:#5A685F">[Mergel, 2015 ; Shulz, 2024b]</span>. Le rapport suggère donc la création d’un « Open Source Program Office » (OSPO) interministériel avec une petite équipe chargée de repérer les projets stratégiques, d’aider les services à publier leur code et, surtout, de maintenir un dialogue continu avec l’écosystème BlueHats et les forges Git publiques. Autrement dit, passer d’un usage passif du libre à une contribution active et organisée, condition sine qua non pour que l’État cesse d’acheter éternellement ce qu’il pourrait, collectivement, construire et améliorer <span style="color:#5A685F">[Henttonen et al., 2024]</span>. Cette recommandation a été mise en œuvre dès 2021, avec la création d’une Mission logiciels libres et communs numériques à la DINUM (Direction interministérielle du numérique), qui anime le réseau BlueHats des agents publics contributeurs du libre <span style="color:#5A685F">[Ministère chargé du Renouveau démocratique, 2024]</span>. Il s’agit d’un pas important vers une administration contributrice, qui ne se contente plus de consommer des logiciels libres ou des communs de connaissances, mais investit du temps, des compétences et des financements dans leur développement <span style="color:#5A685F">[Henttonen et al., 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Un troisième levier réside dans le soutien économique et organisationnel aux communs. Si les communs numériques apportent de la valeur publique, ils restent fragiles sans modèles économiques pérennes <span style="color:#5A685F">[Franquesa et Navarro, 2017 ; Greco et Floridi, 2004]</span>. Les pouvoirs publics peuvent donc intervenir pour combler ce manque par des subventions, des marchés publics adaptés, des appels à projets dédiés aux communs, ou encore la mise à disposition de ressources <span style="color:#5A685F">[Loonen et al., 2021]</span>. La CSNP souligne à cet égard la nécessité « d’encourager les financements appropriés » pour le développement et la pérennité des communs numériques, en reconnaissant la spécificité de leurs modèles économiques <span style="color:#5A685F">[CSNP, 2023]</span>. Cela suppose aussi une meilleure compréhension, par l’administration, de ces modèles souvent hybrides (mélange de bénévolat, de prestations de service autour du commun, de mécénat, etc.), afin d’y intervenir de manière judicieuse sans étouffer la dynamique communautaire <span style="color:#5A685F">[Duverger et Georges, 2021 ; Henttonen et al., 2024]</span>. En renforçant de telles synergies, l’administration publique peut espérer institutionnaliser progressivement les communs numériques comme des partenaires à part entière de l’action publique, tout en respectant ce qui fait leur essence (autonomie de la communauté, gouvernance partagée) <span style="color:#5A685F">[Shulz, 2024c]</span>. L’enjeu, au terme du processus, consiste à faire émerger un écosystème où les communs et les institutions publiques se nourrissent l’un l’autre avec ouverture, agilité et transparence d’un côté, capacité d’entraînement, financement et pérennité de l’autre <span style="color:#5A685F">[Krewer et Warso, 2024]</span>. Pris dans son ensemble, le paradigme des communs numériques fournit ainsi un prisme robuste. S’appuyant sur la théorie de la gestion collective des ressources, il décrit des modes de production entre pairs et éclaire leur portée stratégique <span style="color:#5A685F">[Hess et Ostrom, 2007 ; Benkler, 2006]</span>. Autant d’éléments qui invitent à reconfigurer l’action publique pour l’adapter aux réalités de l’ère numérique <span style="color:#5A685F">[Dunleavy et al., 2005 ; Jin, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">En s’inspirant de ces fondements et en s’impliquant dans ces communs, l’administration peut non seulement tirer parti d’outils et de connaissances partagés de haute qualité, mais aussi renforcer la confiance citoyenne et sa propre souveraineté technologique <span style="color:#5A685F">[Bryson et al., 2014 ; Raymond et Kouper, 2023]</span>. La présente section a ainsi posé les bases conceptuelles et pratiques du sujet. Les développements ultérieurs du mémoire pourront s’attacher à identifier plus finement les facteurs d’institutionnalisation des communs numériques dans l’administration publique, c’est-à-dire les conditions, obstacles et catalyseurs qui déterminent la réussite de cette rencontre entre l’État et les communs <span style="color:#5A685F">[Altayar, 2019 ; Hwang, 2023]</span>.</p>
+    </article>
+
+    <nav style="display:flex;justify-content:space-between;gap:24px;margin-top:64px;padding-top:26px;
+         border-top:1px solid #1E2A23"><a href="/memoire/1-1-performance-sous-contraintes/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Précédent</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        ← Des performances numériques sous contraintes</span></a><a href="/memoire/1-3-institutionnalisation/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;text-align:right">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Suivant</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        L'institutionnalisation, élément central de l'ancrage →</span></a></nav>
+  </main>
+</div>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a class="hv3" href="/articles/" style="color:#1E2A23;text-decoration:none">Articles</a>
+        <a class="hv3" href="/la-recherche/" style="color:#1E2A23;text-decoration:none">La recherche</a>
+        <a class="hv3" href="/glossaire/" style="color:#1E2A23;text-decoration:none">Glossaire</a>
+        <a class="hv3" href="/a-propos/" style="color:#1E2A23;text-decoration:none">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a class="hv3" href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px">consulting@alexandre-berge.fr</a>
+        <a class="hv3" href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#8A968D">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+<script>/* Remplace le runtime Claude Design (React + ReactDOM + Babel, ~3 Mo depuis un CDN)
+   par l'équivalent en JavaScript natif. Aucune dépendance, aucune requête réseau.
+   Le site reste entièrement lisible si ce script ne s'exécute pas. */
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ref = function (name) { return document.querySelector('[data-ref="' + name + '"]'); };
+
+  /* ── Barre de progression de lecture (articles) ───────────────────────── */
+  var bar = ref('barRef');
+  if (bar) {
+    var onScroll = function () {
+      var e = document.documentElement;
+      var p = e.scrollTop / Math.max(1, e.scrollHeight - e.clientHeight);
+      bar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Motif de points animé (couverture d'accueil) ─────────────────────── */
+  var canvas = ref('dotsRef');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var gap = parseInt(canvas.getAttribute('data-densite') || '30', 10);
+    var animate = canvas.getAttribute('data-anime') !== 'false' && !reduced;
+    var w = 0, h = 0, raf = 0;
+
+    var resize = function () {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    var draw = function (t) {
+      ctx.clearRect(0, 0, w, h);
+      var cx = w * 0.82, cy = h * 0.18;
+      for (var x = gap / 2; x < w; x += gap) {
+        for (var y = gap / 2; y < h; y += gap) {
+          var d = Math.hypot(x - cx, y - cy);
+          var k = Math.max(0, Math.sin(d * 0.015 - t * 0.001));
+          ctx.beginPath();
+          ctx.arc(x, y, 1.0 + 1.4 * k, 0, 6.2832);
+          ctx.fillStyle = 'rgba(18,117,82,' + (0.05 + 0.22 * k).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      if (animate) raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () { resize(); if (!animate) draw(600); })
+        .observe(canvas.parentElement);
+    } else {
+      window.addEventListener('resize', function () { resize(); if (!animate) draw(600); });
+    }
+    if (animate) raf = requestAnimationFrame(draw); else draw(600);
+  }
+
+  /* ── Compteurs animés (accueil) ───────────────────────────────────────── */
+  /* Les valeurs finales sont déjà dans le HTML : sans JS, rien ne manque. */
+  if (!reduced && window.IntersectionObserver) {
+    var counters = [];
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies'].forEach(function (n) {
+      var el = ref(n);
+      if (el) counters.push([el, parseInt(el.textContent.trim(), 10)]);
+    });
+    if (counters.length) {
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (done || !entries.some(function (e) { return e.isIntersecting; })) return;
+        done = true;
+        io.disconnect();
+        var start = performance.now(), dur = 1400;
+        var tick = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          counters.forEach(function (c) { c[0].textContent = String(Math.round(c[1] * ease)); });
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      io.observe(counters[0][0]);
+    }
+  }
+
+  /* ── Filtre du glossaire ──────────────────────────────────────────────── */
+  var filter = ref('filterRef');
+  if (filter) {
+    var empty = ref('emptyRef');
+    var norm = function (s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+    var apply = function () {
+      var q = norm(filter.value.trim());
+      var visible = 0;
+      document.querySelectorAll('[data-glossterm]').forEach(function (el) {
+        var hay = norm(el.getAttribute('data-glossterm') + ' ' + el.textContent);
+        var show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.querySelectorAll('[data-glossgroup]').forEach(function (g) {
+        var any = Array.prototype.some.call(
+          g.querySelectorAll('[data-glossterm]'),
+          function (el) { return el.style.display !== 'none'; }
+        );
+        g.style.display = any ? '' : 'none';
+      });
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    };
+    filter.addEventListener('input', apply);
+    if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
+  }
+})();
+</script>
+</body>
+</html>

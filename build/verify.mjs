@@ -165,6 +165,45 @@ const browser = await puppeteer.launch({
      `${(html.length / 1024).toFixed(1)} Ko`);
 }
 
+/* ── Mémoire : toutes les pages, figures et tableaux ──────────────────────── */
+{
+  const { racine, chapitres } = await import('./memoire.config.mjs');
+  const routes = [racine, ...chapitres.map(c => racine + c.slug + '/')];
+  const absentes = [];
+  for (const r of routes) {
+    const res = await fetch(BASE + r, { method: 'HEAD' });
+    if (!res.ok) absentes.push(`${r} (${res.status})`);
+  }
+  ok('Toutes les pages du mémoire répondent', absentes.length === 0,
+     absentes.length ? absentes.join(', ') : `${routes.length} pages`);
+
+  let tableaux = 0, figures = 0, mots = 0;
+  for (const r of routes.slice(1)) {
+    const html = await (await fetch(BASE + r)).text();
+    tableaux += (html.match(/<table/g) || []).length;
+    figures += (html.match(/Figure [1-4]<\/span>/g) || []).length;
+    mots += html.replace(/<[^>]+>/g, ' ').split(/\s+/).length;
+  }
+  ok('Les 16 tableaux sont rendus', tableaux === 16, `${tableaux} tableaux`);
+  ok('Les 4 figures sont rendues', figures === 4, `${figures} figures`);
+  ok('Volume de texte du mémoire', mots > 50000, `${mots.toLocaleString('fr-FR')} mots (balises exclues)`);
+}
+
+/* ── Le sommaire suit la lecture ──────────────────────────────────────────── */
+{
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 900 });
+  await page.goto(BASE + '/memoire/1-3-institutionnalisation/', { waitUntil: 'networkidle0' });
+  await page.evaluate(() => {
+    const h = document.querySelectorAll('h3[id]');
+    if (h.length > 1) h[h.length - 1].scrollIntoView({ block: 'center' });
+  });
+  await new Promise(r => setTimeout(r, 600));
+  const actif = await page.$$eval('.memoire-sommaire a.actif', els => els.length);
+  ok('Sommaire latéral qui suit la lecture', actif === 1, `${actif} entrée surlignée`);
+  await page.close();
+}
+
 await browser.close();
 
 /* ── Rapport ──────────────────────────────────────────────────────────────── */

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispositif empirique — Le mémoire — Les Communs Numériques</title>
+<meta name="description" content="Échantillonnage raisonné, instruments de collecte, triangulation et validité interne.">
+<meta name="author" content="Alexandre Berge">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://communs-numeriques.fr/memoire/2-2-dispositif-empirique/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Les Communs Numériques">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Dispositif empirique — Le mémoire">
+<meta property="og:description" content="Échantillonnage raisonné, instruments de collecte, triangulation et validité interne.">
+<meta property="og:url" content="https://communs-numeriques.fr/memoire/2-2-dispositif-empirique/">
+<meta property="og:image" content="https://communs-numeriques.fr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+.hv1:hover{color:#1E2A23 !important}
+.hv2:hover{color:oklch(0.42 0.11 162) !important}
+.hv3:hover{color:oklch(0.50 0.12 160) !important}
+.hv4:hover{color:oklch(0.42 0.11 162) !important;transform:translateX(6px) !important}
+.hv5:hover{animation-play-state:paused !important}
+.hv6:hover{background:oklch(0.78 0.09 160) !important;color:#1E2A23 !important}
+.hv7:hover{border-color:#F4F7F2 !important;color:#F4F7F2 !important}
+.hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
+.hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
+.hv10:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
+.hv11:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv12:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv13:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv14:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+</style>
+<style>
+.memoire-grille{display:grid;grid-template-columns:minmax(0,264px) minmax(0,1fr);gap:clamp(32px,5vw,72px);
+  max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.memoire-sommaire{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 96px);
+  overflow-y:auto;padding:32px 0 40px;scrollbar-width:thin}
+.memoire-sommaire a[data-ancre].actif{color:#1E2A23 !important;font-weight:600}
+.memoire-sommaire summary{display:none}
+@media (max-width:900px){
+  .memoire-grille{grid-template-columns:minmax(0,1fr)}
+  .memoire-sommaire{position:static;max-height:none;padding:20px 0 0;
+    border-bottom:1px solid #D8DDD3;margin-bottom:8px}
+  .memoire-sommaire summary{display:block;cursor:pointer;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;color:#1E2A23;padding:14px 0;list-style:none}
+  .memoire-sommaire summary::after{content:' ▾';color:#127552}
+  .memoire-sommaire details[open] summary::after{content:' ▴'}
+  .memoire-sommaire > details > div{padding-bottom:18px}
+}
+</style>
+</head>
+<body>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px">Accueil</a>
+      <a class="hv1" href="/articles/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Articles</a>
+      <a class="hv1" href="/la-recherche/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px;transition:color .2s ease">La recherche</a>
+      <a class="hv1" href="/glossaire/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Glossaire</a>
+      <a class="hv1" href="/a-propos/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:70;background:transparent">
+  <div data-ref="barRef" style="height:100%;width:0;background:#127552"></div>
+</div>
+
+<div class="memoire-grille">
+  <nav class="memoire-sommaire" aria-label="Sommaire du mémoire">
+    <details open>
+      <summary>Sommaire du mémoire</summary>
+      <div>
+        <a href="/memoire/" style="display:block;text-decoration:none;font-family:'Instrument Serif',serif;
+           font-size:19px;line-height:1.25;color:#1E2A23;padding-bottom:14px;border-bottom:1px solid #D8DDD3;margin-bottom:4px">
+          Le mémoire</a>
+        
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/introduction/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Introduction
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie I</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/1-1-performance-sous-contraintes/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Des performances numériques sous contraintes
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-2-paradigme-des-communs/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Le paradigme des communs numériques
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-3-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        L'institutionnalisation, élément central de l'ancrage
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie II</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/2-1-design-de-la-recherche/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Design de la recherche
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-2-dispositif-empirique/" aria-current="page"
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#1E2A23;font-weight:600;
+                border-left:2px solid #127552;padding-left:10px;margin-left:-12px">
+        Dispositif empirique
+      </a><ul style="margin:8px 0 4px;padding:0 0 0 12px;list-style:none;border-left:1px solid #D8DDD3"><li style="margin:0 0 6px"><a href="#2-2-1-echantillonnage-raisonne-opportuniste-et-perimetre-des" data-ancre="2-2-1-echantillonnage-raisonne-opportuniste-et-perimetre-des"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">2.2.1. Échantillonnage raisonné opportuniste et périmètre des cas</a></li><li style="margin:0 0 6px"><a href="#2-2-2-instruments-de-collecte" data-ancre="2-2-2-instruments-de-collecte"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">2.2.2. Instruments de collecte</a></li><li style="margin:0 0 6px"><a href="#2-2-3-triangulation-et-validite-interne" data-ancre="2-2-3-triangulation-et-validite-interne"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">2.2.3. Triangulation et validité interne</a></li></ul></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-3-traitement-analyse-limites/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Traitement, analyse et limites
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie III</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/3-1-les-neuf-cas/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Caractérisation des initiatives étudiées
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-2-dynamiques-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Analyse des dynamiques d'institutionnalisation
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-3-discussion-et-implications/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Discussion des résultats et implications
+      </a></li></ul>
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/conclusion/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Conclusion
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/bibliographie/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Bibliographie
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Annexes</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/1-glossaire/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 1 — Glossaire
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/2-limites-methodologiques/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 2 — Limites méthodologiques et contremesures
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/3-guide-entretien/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 3 — Guide d'entretien semi-directif
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/4-grille-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 4 — Grille de codage
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/5-matrices-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 5 — Matrices de codage inter-cas
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/6-audit-trail/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 6 — Audit trail
+      </a></li></ul>
+        <a href="/memoire-communs-numeriques-berge-2025.pdf" style="display:inline-block;margin-top:26px;font-size:12px;letter-spacing:.1em;
+           text-transform:uppercase;font-weight:600;color:#1E2A23;text-decoration:none;
+           border-bottom:2px solid #127552;padding-bottom:3px">PDF · 124 p.</a>
+      </div>
+    </details>
+  </nav>
+
+  <main style="padding:clamp(28px,4vw,56px) 0 clamp(56px,7vw,96px);min-width:0">
+    <nav aria-label="Fil d'Ariane" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+         font-weight:600;color:#5A685F;margin-bottom:26px">
+      <a href="/la-recherche/" style="color:#5A685F;text-decoration:none">La recherche</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/memoire/" style="color:#5A685F;text-decoration:none">Le mémoire</a>
+      <span aria-hidden="true"> / </span><span style="color:#1E2A23">Partie II</span>
+    </nav>
+
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,5vw,54px);
+        line-height:1.06;letter-spacing:-.015em;margin:0 0 18px;color:#1E2A23;text-wrap:balance">
+      2.2. Dispositif empirique</h1>
+    <p style="margin:0 0 6px;font-size:16px;line-height:1.65;color:#4A5850;max-width:60ch">Échantillonnage raisonné, instruments de collecte, triangulation et validité interne.</p>
+    <hr style="border:0;border-top:1px solid #1E2A23;margin:30px 0 34px">
+
+    <article style="max-width:72ch">
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette section décrit le dispositif empirique qui soutient l’investigation sur les communs numériques dans l’administration publique. La logique de cas multiples exige un arrimage précis entre cadres théoriques et sources empiriques afin d’isoler les mécanismes d’institutionnalisation. Après avoir présenté les modalités de sélection, le texte détaille les instruments mobilisés pour la collecte des entretiens, des documents et des observations in situ. Enfin une attention particulière est portée à la triangulation qui protège la validité interne du protocole. Le lecteur dispose ainsi d’une vue complète sur l’origine des matériaux analytiques et sur leur articulation opérationnelle.</p>
+<h3 id="2-2-1-echantillonnage-raisonne-opportuniste-et-perimetre-des" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#2-2-1-echantillonnage-raisonne-opportuniste-et-perimetre-des" style="color:inherit;text-decoration:none">2.2.1. Échantillonnage raisonné opportuniste et périmètre des cas</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La constitution du corpus repose sur un échantillonnage raisonné opportuniste. Toutes les personnes occupant un rôle clé dans une initiative de commun numérique public et ayant accepté un entretien entre le 2 mai et le 5 juin 2025 ont été interrogées. L’objectif n’était pas de représenter statistiquement l’ensemble du champ, mais de réunir, dans le délai imparti, un faisceau de points de vue contrastés capable d’éclairer les mécanismes d’institutionnalisation. Cette stratégie diffère d’une saturation théorique car au lieu d’ajouter des cas jusqu’à ce qu’aucune information nouvelle n’émerge, la fenêtre de collecte a été fixée apriori et capitalisé sur chaque ouverture de terrain disponible.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Phase 1 Cartographie initiale</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Une veille documentaire systématique réalisée et documentée dans Obsidian a permis d’identifier une dizaine de projets publics mentionnés dans des rapports officiels, des schémas directeurs ou des articles spécialisés. Chaque entrée a été décrite par des métadonnées normalisées (type de ressource, année, niveau d’action). Parallèlement, pour chaque initiative identifiée comme potentiellement pertinente, une première collecte de documents publics accessibles a été effectuée pour préparer la prise de contact et évaluer la richesse informationnelle du cas.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Phase 2 Accès et faisabilité</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Vingt‑deux sollicitations personnalisées ont été envoyées aux responsables pressentis. Treize réponses positives ont été reçues et neuf terrains distincts ont pu être confirmés dans le créneau disponible.</p>
+
+<figure style="margin:44px 0">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #1E2A23">
+    <table style="width:100%;border-collapse:collapse;min-width:min(100%,560px)">
+      <thead><tr><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">ID</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Fonction de l’interviewé (anonymisée)</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Organisation / Initiative</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Date</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Durée (min)</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Mode</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Statut transcription</p></th></tr></thead>
+      <tbody><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-001</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Directeur de la stratégie numérique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ville d’Échirolles / FNL</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">02/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">92</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-002</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Chercheur en sciences sociales</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CNRS</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">05/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">68</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-003</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Dirigeant d’association</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ADULLACT</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">07/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">116</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">présentiel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-004</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Dirigeant de société de conseil</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Inno³</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">08/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">54</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-005</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Responsable de projet</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Suite Numérique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">12/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">98</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">présentiel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-006</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Enseignante-chercheuse</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Sciences Po Paris</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">12/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">58</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-007</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ancien élu local</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ville de Brest</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">18/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">50</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-008</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ancien DSI d’organisme public</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CNAM / Open First</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">22/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">65</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-009</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Dirigeant d’opérateur public</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">SITIV</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">22/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">60</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-010</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">DSI</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CNAF / CAFData</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">22/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">40</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-011</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Chef de projet</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ADEME / FabMob</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">26/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">55</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">visioconférence</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-012</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Sociologue</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CNRS</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">28/05/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">55</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">présentiel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-013</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Responsable de mission</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">DINUM</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">05/06/2025</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">50</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">présentiel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">vérifiée</p></td></tr></tbody>
+    </table>
+  </div>
+  <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:#4A5850">
+    <span style="font-weight:600;color:#1E2A23">Tableau 8</span> — Liste des interviews
+    
+  </figcaption>
+</figure>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les neuf initiatives retenues couvrent trois niveaux d’action (national, inter‑territorial, communal) et quatre catégories de ressource (logiciel, donnée, connaissance, infrastructure).</p>
+
+<figure style="margin:44px 0">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #1E2A23">
+    <table style="width:100%;border-collapse:collapse;min-width:min(100%,560px)">
+      <thead><tr><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">N°</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Initiative</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Niveau</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Ressource principale</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Entretiens</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Exemples de documents mobilisés</p></th></tr></thead>
+      <tbody><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">1</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Suite Numérique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">National</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Logiciel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-005, ENT-013</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">DINUM Feuille de route, Rapport d’activité</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">2</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ADULLACT</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Inter-collectivités</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Logiciel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-003</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Site adullact.org, CR AG 2024</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">3</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">SITIV (OPSN)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Intercommunal</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Infrastructure</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-009</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Site sitiv.fr, Rapport activité 2023</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">4</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ville d’Échirolles</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Commune</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Logiciel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-001</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Schéma Directeur Échirolles Numérique Libre, Interview N. Vivant</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">5</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Ville de Brest</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Commune</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Connaissance</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-007</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Article Briand et Brunet 2017</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">6</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Fabrique des Mobilités</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Sectoriel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Connaissance et données</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-011</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Site FabMob, Statuts FabMob, Wiki ADEME</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">7</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">France Numérique Libre</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Réseau agents</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Communauté de pratique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-001</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Site FNL, Communiqué de presse FNL</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">8</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CAFData</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">National</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Données</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-010</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Site data.caf.fr, articles presse spécialisée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">9</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">CNAM (Open First)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">National</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Logiciel</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">ENT-008</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Schéma Directeur Assurance Maladie</p></td></tr></tbody>
+    </table>
+  </div>
+  <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:#4A5850">
+    <span style="font-weight:600;color:#1E2A23">Tableau 9</span> — Synthèse comparative des types de communs numériques étudiés
+    
+  </figcaption>
+</figure>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Phase 3 Clôture du terrain</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La phase de collecte a été close au 5 juin 2025 lorsque la dernière disponibilité confirmée a été honorée. Aucune nouvelle sollicitation n’était possible avant la date butoir fixée pour ce mémoire. Adéquation à la problématique</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les neuf cas offrent un contraste suffisant pour étudier les facteurs d’institutionnalisation dans des contextes variés. Ils couvrent quatre combinaisons à savoir logiciel national, données ouvertes nationales, mutualisation logicielle territoriale, et communs de connaissance ou d’infrastructure. Cette diversité permet de tester les propositions issues du cadre néo‑institutionnel et du travail institutionnel.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Limites reconnues</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La sur‑représentation de collectivités territoriales peut refléter des enjeux budgétaires spécifiques. Le biais pro‑logiciel libre est également probable, les répondants favorables étant plus enclins à participer. Ces limites sont détaillées dans la table « Limites et contremesures » en annexe 2.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le corpus ainsi obtenu constitue néanmoins une base empirique cohérente avec l’objet d’un mémoire de master et suffisante pour dégager des enseignements sur les facteurs d’institutionnalisation des communs numériques dans l’administration publique française.</p>
+<h3 id="2-2-2-instruments-de-collecte" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#2-2-2-instruments-de-collecte" style="color:inherit;text-decoration:none">2.2.2. Instruments de collecte</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’enquête combine entretiens semi‑directifs et analyse documentaire afin de construire un matériau empirique cohérent dans une logique abductive <span style="color:#5A685F">[Dubois et Gadde, 2002]</span>. Les entretiens donnent accès aux rationalités d’action des acteurs impliqués dans l’institutionnalisation des communs numériques. Les documents publics complètent ces récits, parfois les contredisent, et limitent ainsi le biais d’auto‑justification fréquemment observé dans les administrations <span style="color:#5A685F">[Baxter et al., 2023]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Sélection opportuniste des interlocuteurs</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les treize entretiens ont été réalisés avec toutes les personnes qui ont accepté la sollicitation dans la fenêtre temporelle disponible. Ce choix répond à une stratégie dite d’échantillonnage raisonné opportuniste, présentée précédemment. Le critère principal réside dans la position des répondants. Chaque acteur devait occuper un rôle clé dans la conception, la gestion ou l’usage d’un commun numérique. L’objectif est de mobiliser les voix accessibles qui éclairent directement la question de recherche.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Architecture du guide</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le guide d’entretien s’articule autour de quatre blocs thématiques.</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Trajectoire de l’initiative</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Gouvernance du commun</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Ressources et modèle socio‑économique</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Facteurs d’institutionnalisation et résistances</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Chaque bloc se décline en questions ouvertes invitant à la narration d’épisodes concrets plutôt qu’à des opinions abstraites. Cette approche facilite l’identification des mécanismes d’isomorphisme <span style="color:#5A685F">[DiMaggio et Powell, 1983]</span> ou de découplage <span style="color:#5A685F">[Meyer et Rowan, 1977]</span>. Le guide a été affiné après les deux premiers échanges sans ajout de nouveau thème, ce qui garantit la comparabilité inter‑cas et la traçabilité du protocole.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Gestion des entretiens dans Obsidian</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les enregistrements audio ont été transcrits automatiquement puis vérifiés manuellement dans Obsidian. Chaque transcription comporte un bloc contenant identifiant, date, durée, cas, codes saillants et statut de relecture. Une requête affiche la liste des entretiens validés. Cette automatisation assure le suivi du corpus sans dépendre d’un contrôle de saturation.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Constitution du corpus documentaire</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’institutionnalisation d’un commun laisse de nombreuses traces écrites (statuts associatifs, délibérations, rapports parlementaires ou d’activité, schémas directeurs, feuilles de route, contenus de sites web officiels, articles scientifiques ou de presse spécialisée). La sélection de ces documents pour chaque cas étudié suit deux critères :</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Pertinence directe pour la question de recherche</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Capacité à trianguler ou contredire une information recueillie en entretien</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Chaque document fait l’objet d’une fiche synthèse reprenant type, source, date, lien et ancrage réglementaire éventuel. Le champ « statut » signale si la source a déjà été mobilisée dans l’analyse. Ce système répond à la recommandation de Yin (2018) concernant la chaîne de preuves.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Articulation entre entretiens et documents</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La mise en miroir systématique des propos et des sources écrites constitue un levier central de validité interne. Lorsqu’une divergence apparaît, un mémo réflexif est créé immédiatement. Par exemple, un discours sur l’objectif de migration vers 100% libre de la ville d’Échirolles a été confronté au contenu du Schéma Directeur « Échirolles Numérique Libre » <span style="color:#5A685F">[Ville d’Échirolles, 2021]</span>, afin d’identifier les arbitrages nécessaires pour certains outils métiers spécifiques, révélant ainsi une tension entre l’idéal et les contraintes opérationnelles. Cette procédure renforce l’analyse des facteurs organisationnels et de la capacité d’adaptation des acteurs.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Limites et garanties</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le recours à un seul enquêteur écarte la triangulation des observateurs. Le biais de désirabilité reste possible. Deux parades sont mises en œuvre :</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Recherche systématique de sources tierces (presse spécialisée, rapports de contrôle)</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Relances orientées vers des exemples factuels plutôt que des déclarations de principe</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les données demeurent stockées localement, les participants sont pseudonymisés, et les initiatives restent nommées car elles sont documentées par des sources publiques vérifiables. Ce dispositif assure à la fois la conformité éthique et la cohérence avec la méthodologie raisonnée opportuniste adoptée.</p>
+<h3 id="2-2-3-triangulation-et-validite-interne" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#2-2-3-triangulation-et-validite-interne" style="color:inherit;text-decoration:none">2.2.3. Triangulation et validité interne</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La logique de réplication exige de croiser toutes les données empiriques pour sécuriser l’inférence causale relative aux facteurs d’institutionnalisation. Trois formes de vérification se complètent. Triangulation des données</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La base empirique réunit treize entretiens semi-directifs et un corpus documentaire. Chaque cas repose sur au moins un entretien et un document public de référence (rapport d’activité, délibération, feuille de route, statuts). Les informations issues de ces sources sont systématiquement confrontées.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Triangulation méthodologique</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le codage thématique s’appuie sur une grille issue du cadre néo-institutionnel. Obsidian génère des tables qui relient codes, citations et mémos analytiques. Cette visualisation continue permet de suivre les convergences. La comparaison de matrices intra-cas et inter-cas nourrit le raisonnement abductif <span style="color:#5A685F">[Dubois et Gadde, 2002]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Triangulation théorique</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Chaque catégorie empirique est relue à la lumière de la théorie des communs, de la théorie néo- institutionnelle et des travaux sur la souveraineté numérique. Cette pluralité réduit le risque d’enfermement dans une lecture unique <span style="color:#5A685F">[Lincoln et Guba, 1985]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dispositif de triangulation des sources</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les transcriptions d’entretiens et les fiches documentaires sont stockées dans un environnement unique. Des métadonnées normalisées (date, type, cas, codes) facilitent les recoupements. Des requêtes automatisées produisent des matrices qui croisent facteurs d’analyse, cas et sources.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Exemple de matrice générée :</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Facteur « Contexte_Politique » et cas « Ville d’Échirolles »</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>ENT-001 (entretien) : 02/05/2025 - Intensité ✓✓✓</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Schéma Directeur 2021 (document) : Octobre 2021 – Confirmation</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Critères de validation empirique</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Une proposition analytique n’est retenue qu’après confirmation par au moins deux sources indépendantes. Lorsqu’un facteur repose sur une seule source, un complément documentaire ou un nouvel entretien est conduit.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Logique d’agrégation et contrôle de cohérence</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le raisonnement applique le « pattern matching » <span style="color:#5A685F">[Yin, 2018]</span>. Une hypothèse est validée uniquement lorsque deux indices empiriques et un ancrage théorique convergent.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dispositif réflexif et biais de l’enquêteur</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Un journal réflexif mis à jour après chaque session de codage consigne décisions, doutes et actions correctives. Ce suivi limite le biais de confirmation <span style="color:#5A685F">[Klein et Myers, 1999]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Effets sur la validité interne</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La combinaison des trois triangulations et du contrôle de cohérence consolide la chaîne d’évidence <span style="color:#5A685F">[Yin, 2018]</span>. L’« audit trail » exportable ouvre la voie à un examen externe.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Limites et ajustements</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’étude repose sur un seul enquêteur, ce qui exclut la triangulation des observateurs. Les documents proviennent majoritairement des organisations étudiées ou de leurs publications publiques. Des sources tierces (rapports de la Cour des comptes, avis de la CSNP, presse spécialisée, littérature académique) complètent l’analyse afin d’atténuer l’auto-représentation.</p>
+    </article>
+
+    <nav style="display:flex;justify-content:space-between;gap:24px;margin-top:64px;padding-top:26px;
+         border-top:1px solid #1E2A23"><a href="/memoire/2-1-design-de-la-recherche/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Précédent</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        ← Design de la recherche</span></a><a href="/memoire/2-3-traitement-analyse-limites/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;text-align:right">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Suivant</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        Traitement, analyse et limites →</span></a></nav>
+  </main>
+</div>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a class="hv3" href="/articles/" style="color:#1E2A23;text-decoration:none">Articles</a>
+        <a class="hv3" href="/la-recherche/" style="color:#1E2A23;text-decoration:none">La recherche</a>
+        <a class="hv3" href="/glossaire/" style="color:#1E2A23;text-decoration:none">Glossaire</a>
+        <a class="hv3" href="/a-propos/" style="color:#1E2A23;text-decoration:none">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a class="hv3" href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px">consulting@alexandre-berge.fr</a>
+        <a class="hv3" href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#8A968D">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+<script>/* Remplace le runtime Claude Design (React + ReactDOM + Babel, ~3 Mo depuis un CDN)
+   par l'équivalent en JavaScript natif. Aucune dépendance, aucune requête réseau.
+   Le site reste entièrement lisible si ce script ne s'exécute pas. */
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ref = function (name) { return document.querySelector('[data-ref="' + name + '"]'); };
+
+  /* ── Barre de progression de lecture (articles) ───────────────────────── */
+  var bar = ref('barRef');
+  if (bar) {
+    var onScroll = function () {
+      var e = document.documentElement;
+      var p = e.scrollTop / Math.max(1, e.scrollHeight - e.clientHeight);
+      bar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Motif de points animé (couverture d'accueil) ─────────────────────── */
+  var canvas = ref('dotsRef');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var gap = parseInt(canvas.getAttribute('data-densite') || '30', 10);
+    var animate = canvas.getAttribute('data-anime') !== 'false' && !reduced;
+    var w = 0, h = 0, raf = 0;
+
+    var resize = function () {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    var draw = function (t) {
+      ctx.clearRect(0, 0, w, h);
+      var cx = w * 0.82, cy = h * 0.18;
+      for (var x = gap / 2; x < w; x += gap) {
+        for (var y = gap / 2; y < h; y += gap) {
+          var d = Math.hypot(x - cx, y - cy);
+          var k = Math.max(0, Math.sin(d * 0.015 - t * 0.001));
+          ctx.beginPath();
+          ctx.arc(x, y, 1.0 + 1.4 * k, 0, 6.2832);
+          ctx.fillStyle = 'rgba(18,117,82,' + (0.05 + 0.22 * k).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      if (animate) raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () { resize(); if (!animate) draw(600); })
+        .observe(canvas.parentElement);
+    } else {
+      window.addEventListener('resize', function () { resize(); if (!animate) draw(600); });
+    }
+    if (animate) raf = requestAnimationFrame(draw); else draw(600);
+  }
+
+  /* ── Compteurs animés (accueil) ───────────────────────────────────────── */
+  /* Les valeurs finales sont déjà dans le HTML : sans JS, rien ne manque. */
+  if (!reduced && window.IntersectionObserver) {
+    var counters = [];
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies'].forEach(function (n) {
+      var el = ref(n);
+      if (el) counters.push([el, parseInt(el.textContent.trim(), 10)]);
+    });
+    if (counters.length) {
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (done || !entries.some(function (e) { return e.isIntersecting; })) return;
+        done = true;
+        io.disconnect();
+        var start = performance.now(), dur = 1400;
+        var tick = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          counters.forEach(function (c) { c[0].textContent = String(Math.round(c[1] * ease)); });
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      io.observe(counters[0][0]);
+    }
+  }
+
+  /* ── Filtre du glossaire ──────────────────────────────────────────────── */
+  var filter = ref('filterRef');
+  if (filter) {
+    var empty = ref('emptyRef');
+    var norm = function (s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+    var apply = function () {
+      var q = norm(filter.value.trim());
+      var visible = 0;
+      document.querySelectorAll('[data-glossterm]').forEach(function (el) {
+        var hay = norm(el.getAttribute('data-glossterm') + ' ' + el.textContent);
+        var show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.querySelectorAll('[data-glossgroup]').forEach(function (g) {
+        var any = Array.prototype.some.call(
+          g.querySelectorAll('[data-glossterm]'),
+          function (el) { return el.style.display !== 'none'; }
+        );
+        g.style.display = any ? '' : 'none';
+      });
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    };
+    filter.addEventListener('input', apply);
+    if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
+  }
+})();
+</script>
+</body>
+</html>

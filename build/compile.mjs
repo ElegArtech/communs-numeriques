@@ -19,6 +19,7 @@ import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } fr
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site, pages, linkMap, redirects } from './site.config.mjs';
+import { racine as memoireRacine, chapitres } from './memoire.config.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..');
@@ -268,6 +269,8 @@ writeFileSync(join(OUT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(p => `  <url><loc>${site.origin}${p.route}</loc><priority>${p.priority}</priority></url>`).join('\n')}
+  <url><loc>${site.origin}${memoireRacine}</loc><priority>0.9</priority></url>
+${chapitres.map(c => `  <url><loc>${site.origin}${memoireRacine}${c.slug}/</loc><priority>0.7</priority></url>`).join('\n')}
 </urlset>
 `);
 

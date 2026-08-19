@@ -682,5 +682,393 @@
    ]
   ],
   "note": "La source « [ENT-01] » de l’original est écrite « [ENT-001] » ici, par cohérence avec la codification employée dans tout le mémoire."
+ },
+ {
+  "num": "A2",
+  "legende": "Limites méthodologiques et contremesures mises en œuvre",
+  "colonnes": [
+   "Catégorie",
+   "Limite identifiée",
+   "Description",
+   "Contremesures mises en œuvre"
+  ],
+  "rangs": [
+   [
+    "Échantillonnage",
+    "Périmètre géographique restreint",
+    "Focalisation sur 9 initiatives françaises uniquement",
+    "• Transparence des choix de sélection\n• Invitation à répliquer dans d’autres contextes"
+   ],
+   [
+    "Échantillonnage",
+    "Sur-représentation territoriale",
+    "Surreprésentation des collectivités territoriales",
+    "• Diversification par niveaux (national, territorial, sectoriel)"
+   ],
+   [
+    "Échantillonnage",
+    "Biais pro-logiciel libre",
+    "Répondants favorables plus enclins à participer (seuls 2 entretiens critiques : ENT-010, ENT-013)",
+    "• Recherche active de voix critiques\n• Triangulation avec sources tierces"
+   ],
+   [
+    "Échantillonnage",
+    "Généralisation statistique limitée",
+    "Sélection raisonnée contre représentativité statistique",
+    "• Logique de réplication théorique"
+   ],
+   [
+    "Échantillonnage",
+    "Taille d’échantillon",
+    "13 entretiens pour 9 cas, échantillon limité",
+    "• Compensation par la profondeur contextuelle\n• Triangulation documentaire"
+   ],
+   [
+    "Collecte de données",
+    "Enquêteur unique",
+    "Absence d’accord inter-juge",
+    "• Traçabilité complète des décisions\n• « Audit trail » détaillé"
+   ],
+   [
+    "Collecte de données",
+    "Triangulation observateurs",
+    "Recours à un seul enquêteur",
+    "• Triangulation des sources (entretiens + documents + sources tierces)"
+   ],
+   [
+    "Collecte de données",
+    "Biais de désirabilité",
+    "Risque de réponses socialement acceptables",
+    "• Questions orientées vers des exemples factuels\n• Relances sur les difficultés"
+   ],
+   [
+    "Collecte de données",
+    "Sources organisationnelles",
+    "Documents provenant majoritairement des organisations étudiées",
+    "• Complément par sources tierces (Cour des comptes, presse spécialisée, littérature académique)"
+   ],
+   [
+    "Collecte de données",
+    "Caractère déclaratif",
+    "Entretiens reposant sur les déclarations des acteurs",
+    "• Confrontation des propos aux documents\n• Recherche de contradictions"
+   ],
+   [
+    "Collecte de données",
+    "Temporalité limitée",
+    "Institutionnalisation = processus long terme, initiatives parfois récentes",
+    "• Documentation des phases\n• Suivi évolutif quand possible\n• Prudence interprétative"
+   ],
+   [
+    "Analyse",
+    "Relecture externe absente",
+    "Risque d’angle mort analytique",
+    "• Journal réflexif ; explicitation des choix\n• Mise à disposition de l’audit trail"
+   ],
+   [
+    "Analyse",
+    "Outil de codage unique",
+    "Usage exclusif d’Obsidian sans codage collaboratif",
+    "• Transparence du système\n• Exportabilité des données\n• Traçabilité des requêtes"
+   ],
+   [
+    "Analyse",
+    "Biais de confirmation",
+    "Risque d’enfermement dans une lecture unique",
+    "• Triangulation théorique (TNI + TTI + Ostrom)\n• Recherche active de cas déviants"
+   ]
+  ]
+ },
+ {
+  "num": "A5-1",
+  "legende": "Matrice des codes saillants. Intensité : ✓ faible, ✓✓ modéré, ✓✓✓ fort, – code absent.",
+  "colonnes": [
+   "Code",
+   "ENT-001",
+   "ENT-002",
+   "ENT-003",
+   "ENT-004",
+   "ENT-005",
+   "ENT-006",
+   "ENT-007",
+   "ENT-008",
+   "ENT-009",
+   "ENT-010",
+   "ENT-011",
+   "ENT-012",
+   "ENT-013"
+  ],
+  "rangs": [
+   [
+    "Leadership_Intrapreneur",
+    "✓✓✓",
+    "✓✓✓",
+    "✓✓✓",
+    "–",
+    "✓✓✓",
+    "✓✓✓",
+    "✓✓✓",
+    "✓",
+    "–",
+    "–",
+    "✓✓✓",
+    "✓✓✓",
+    "✓✓✓"
+   ],
+   [
+    "Cadre_Reglementaire",
+    "–",
+    "✓✓",
+    "✓✓",
+    "✓✓",
+    "✓✓✓",
+    "–",
+    "–",
+    "✓✓✓",
+    "✓✓✓",
+    "✓✓✓",
+    "✓✓✓",
+    "✓✓",
+    "✓"
+   ],
+   [
+    "Alignement_Strategique",
+    "–",
+    "–",
+    "✓✓✓",
+    "✓✓✓",
+    "✓✓✓",
+    "–",
+    "✓✓",
+    "✓✓✓",
+    "✓",
+    "✓✓",
+    "✓✓",
+    "–",
+    "✓"
+   ],
+   [
+    "Modele_Eco",
+    "✓✓✓",
+    "–",
+    "✓✓✓",
+    "✓✓",
+    "–",
+    "–",
+    "–",
+    "✓✓✓",
+    "✓",
+    "✓✓",
+    "✓✓",
+    "✓✓",
+    "✓✓✓"
+   ],
+   [
+    "Contexte_Politique",
+    "✓✓✓",
+    "✓✓✓",
+    "–",
+    "–",
+    "–",
+    "✓✓✓",
+    "–",
+    "✓",
+    "–",
+    "–",
+    "–",
+    "✓✓✓",
+    "✓"
+   ],
+   [
+    "Culture_Partage",
+    "–",
+    "✓✓",
+    "–",
+    "✓✓✓",
+    "–",
+    "✓✓✓",
+    "✓✓✓",
+    "–",
+    "–",
+    "–",
+    "✓✓",
+    "–",
+    "–"
+   ],
+   [
+    "Gouvernance_Partagee",
+    "–",
+    "✓✓",
+    "–",
+    "✓✓",
+    "–",
+    "✓✓",
+    "–",
+    "–",
+    "✓✓",
+    "–",
+    "–",
+    "–",
+    "–"
+   ],
+   [
+    "Vitalite_Communaute",
+    "✓✓✓",
+    "–",
+    "–",
+    "–",
+    "✓✓",
+    "✓✓✓",
+    "✓✓",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–"
+   ],
+   [
+    "Valeur_Usage",
+    "–",
+    "–",
+    "✓✓✓",
+    "–",
+    "–",
+    "–",
+    "✓",
+    "–",
+    "–",
+    "–",
+    "–",
+    "✓✓✓",
+    "–"
+   ],
+   [
+    "Competence_Technique",
+    "✓✓✓",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "✓✓",
+    "–",
+    "–",
+    "–"
+   ],
+   [
+    "Qualite_Tech",
+    "–",
+    "–",
+    "–",
+    "–",
+    "✓✓✓",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–"
+   ],
+   [
+    "Support_Infr",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "✓✓",
+    "–",
+    "–",
+    "–"
+   ],
+   [
+    "Confiance_Sociale",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "–",
+    "✓",
+    "–",
+    "–",
+    "–",
+    "–"
+   ]
+  ]
+ },
+ {
+  "num": "A5-2",
+  "legende": "Fréquence des codes dans les codes saillants",
+  "colonnes": [
+   "Code",
+   "Nb occurrences",
+   "Entretiens concernés"
+  ],
+  "rangs": [
+   [
+    "Leadership_Intrapreneur",
+    "10",
+    "ENT-001, 002, 003, 005, 006, 007, 008, 011, 012, 013"
+   ],
+   [
+    "Cadre_Reglementaire",
+    "10",
+    "ENT-002, 003, 004, 005, 008, 009, 010, 011, 012, 013"
+   ],
+   [
+    "Alignement_Strategique",
+    "9",
+    "ENT-003, 004, 005, 007, 008, 009, 010, 011, 013"
+   ],
+   [
+    "Modele_Eco",
+    "9",
+    "ENT-001, 003, 004, 008, 009, 010, 011, 012, 013"
+   ],
+   [
+    "Contexte_Politique",
+    "6",
+    "ENT-001, 002, 006, 008, 012, 013"
+   ],
+   [
+    "Culture_Partage",
+    "5",
+    "ENT-002, 004, 006, 007, 011"
+   ],
+   [
+    "Gouvernance_Partagee",
+    "4",
+    "ENT-002, 004, 006, 009"
+   ],
+   [
+    "Vitalite_Communaute",
+    "4",
+    "ENT-001, 005, 006, 007"
+   ],
+   [
+    "Valeur_Usage",
+    "3",
+    "ENT-003, 007, 012"
+   ],
+   [
+    "Competence_Technique",
+    "2",
+    "ENT-001, 010"
+   ]
+  ],
+  "note": "Les trois codes n’apparaissant qu’une fois (Qualite_Tech, Support_Infr, Confiance_Sociale) ne figurent pas dans ce relevé de fréquence de l’original."
  }
 ]

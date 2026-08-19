@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Des performances numériques sous contraintes — Le mémoire — Les Communs Numériques</title>
+<meta name="description" content="Quête de performance et valeur publique, limites structurelles des systèmes d'information publics, spécificités du contexte administratif.">
+<meta name="author" content="Alexandre Berge">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://communs-numeriques.fr/memoire/1-1-performance-sous-contraintes/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Les Communs Numériques">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Des performances numériques sous contraintes — Le mémoire">
+<meta property="og:description" content="Quête de performance et valeur publique, limites structurelles des systèmes d'information publics, spécificités du contexte administratif.">
+<meta property="og:url" content="https://communs-numeriques.fr/memoire/1-1-performance-sous-contraintes/">
+<meta property="og:image" content="https://communs-numeriques.fr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+.hv1:hover{color:#1E2A23 !important}
+.hv2:hover{color:oklch(0.42 0.11 162) !important}
+.hv3:hover{color:oklch(0.50 0.12 160) !important}
+.hv4:hover{color:oklch(0.42 0.11 162) !important;transform:translateX(6px) !important}
+.hv5:hover{animation-play-state:paused !important}
+.hv6:hover{background:oklch(0.78 0.09 160) !important;color:#1E2A23 !important}
+.hv7:hover{border-color:#F4F7F2 !important;color:#F4F7F2 !important}
+.hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
+.hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
+.hv10:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
+.hv11:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv12:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv13:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv14:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+</style>
+<style>
+.memoire-grille{display:grid;grid-template-columns:minmax(0,264px) minmax(0,1fr);gap:clamp(32px,5vw,72px);
+  max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.memoire-sommaire{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 96px);
+  overflow-y:auto;padding:32px 0 40px;scrollbar-width:thin}
+.memoire-sommaire a[data-ancre].actif{color:#1E2A23 !important;font-weight:600}
+.memoire-sommaire summary{display:none}
+@media (max-width:900px){
+  .memoire-grille{grid-template-columns:minmax(0,1fr)}
+  .memoire-sommaire{position:static;max-height:none;padding:20px 0 0;
+    border-bottom:1px solid #D8DDD3;margin-bottom:8px}
+  .memoire-sommaire summary{display:block;cursor:pointer;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;color:#1E2A23;padding:14px 0;list-style:none}
+  .memoire-sommaire summary::after{content:' ▾';color:#127552}
+  .memoire-sommaire details[open] summary::after{content:' ▴'}
+  .memoire-sommaire > details > div{padding-bottom:18px}
+}
+</style>
+</head>
+<body>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px">Accueil</a>
+      <a class="hv1" href="/articles/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Articles</a>
+      <a class="hv1" href="/la-recherche/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px;transition:color .2s ease">La recherche</a>
+      <a class="hv1" href="/glossaire/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Glossaire</a>
+      <a class="hv1" href="/a-propos/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:70;background:transparent">
+  <div data-ref="barRef" style="height:100%;width:0;background:#127552"></div>
+</div>
+
+<div class="memoire-grille">
+  <nav class="memoire-sommaire" aria-label="Sommaire du mémoire">
+    <details open>
+      <summary>Sommaire du mémoire</summary>
+      <div>
+        <a href="/memoire/" style="display:block;text-decoration:none;font-family:'Instrument Serif',serif;
+           font-size:19px;line-height:1.25;color:#1E2A23;padding-bottom:14px;border-bottom:1px solid #D8DDD3;margin-bottom:4px">
+          Le mémoire</a>
+        
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/introduction/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Introduction
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie I</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/1-1-performance-sous-contraintes/" aria-current="page"
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#1E2A23;font-weight:600;
+                border-left:2px solid #127552;padding-left:10px;margin-left:-12px">
+        Des performances numériques sous contraintes
+      </a><ul style="margin:8px 0 4px;padding:0 0 0 12px;list-style:none;border-left:1px solid #D8DDD3"><li style="margin:0 0 6px"><a href="#1-1-1-la-quete-de-performance-et-l-ambition-de-valeur-publiq" data-ancre="1-1-1-la-quete-de-performance-et-l-ambition-de-valeur-publiq"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">1.1.1. La quête de performance et l’ambition de valeur publique</a></li><li style="margin:0 0 6px"><a href="#1-1-2-les-limites-structurelles-et-fonctionnelles-des-system" data-ancre="1-1-2-les-limites-structurelles-et-fonctionnelles-des-system"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">1.1.2. Les limites structurelles et fonctionnelles des systèmes d’information publics</a></li><li style="margin:0 0 6px"><a href="#1-1-3-specificites-du-contexte-administratif-et-incidences-s" data-ancre="1-1-3-specificites-du-contexte-administratif-et-incidences-s"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">1.1.3. Spécificités du contexte administratif et incidences sur la transformation numérique</a></li></ul></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-2-paradigme-des-communs/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Le paradigme des communs numériques
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-3-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        L'institutionnalisation, élément central de l'ancrage
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie II</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/2-1-design-de-la-recherche/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Design de la recherche
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-2-dispositif-empirique/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Dispositif empirique
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-3-traitement-analyse-limites/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Traitement, analyse et limites
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie III</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/3-1-les-neuf-cas/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Caractérisation des initiatives étudiées
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-2-dynamiques-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Analyse des dynamiques d'institutionnalisation
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-3-discussion-et-implications/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Discussion des résultats et implications
+      </a></li></ul>
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/conclusion/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Conclusion
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/bibliographie/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Bibliographie
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Annexes</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/1-glossaire/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 1 — Glossaire
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/2-limites-methodologiques/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 2 — Limites méthodologiques et contremesures
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/3-guide-entretien/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 3 — Guide d'entretien semi-directif
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/4-grille-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 4 — Grille de codage
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/5-matrices-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 5 — Matrices de codage inter-cas
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/6-audit-trail/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 6 — Audit trail
+      </a></li></ul>
+        <a href="/memoire-communs-numeriques-berge-2025.pdf" style="display:inline-block;margin-top:26px;font-size:12px;letter-spacing:.1em;
+           text-transform:uppercase;font-weight:600;color:#1E2A23;text-decoration:none;
+           border-bottom:2px solid #127552;padding-bottom:3px">PDF · 124 p.</a>
+      </div>
+    </details>
+  </nav>
+
+  <main style="padding:clamp(28px,4vw,56px) 0 clamp(56px,7vw,96px);min-width:0">
+    <nav aria-label="Fil d'Ariane" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+         font-weight:600;color:#5A685F;margin-bottom:26px">
+      <a href="/la-recherche/" style="color:#5A685F;text-decoration:none">La recherche</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/memoire/" style="color:#5A685F;text-decoration:none">Le mémoire</a>
+      <span aria-hidden="true"> / </span><span style="color:#1E2A23">Partie I</span>
+    </nav>
+
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,5vw,54px);
+        line-height:1.06;letter-spacing:-.015em;margin:0 0 18px;color:#1E2A23;text-wrap:balance">
+      1.1. Des performances numériques sous contraintes et une nécessité d’optimisation</h1>
+    <p style="margin:0 0 6px;font-size:16px;line-height:1.65;color:#4A5850;max-width:60ch">Quête de performance et valeur publique, limites structurelles des systèmes d'information publics, spécificités du contexte administratif.</p>
+    <hr style="border:0;border-top:1px solid #1E2A23;margin:30px 0 34px">
+
+    <article style="max-width:72ch">
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La transformation numérique est désormais indissociable de la quête de performance et de création de valeur au sein des administrations publiques. Pourtant, cette ambition se heurte à de fortes contraintes managériales, technologiques et institutionnelles. Celles-ci obligent à repenser en continu les modes d’action et à optimiser les systèmes en place.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce diagnostic comporte plusieurs volets. Il vise d’abord à comprendre la quête de performance et les attentes accrues en matière de valeur publique. Il s’attache ensuite à identifier les limites structurelles et fonctionnelles des systèmes d’information publics. Enfin, il prend en compte les spécificités du contexte administratif et leurs incidences sur la conduite du changement. Ce diagnostic révèle le décalage entre l’impératif de modernisation numérique et les réalités du terrain. Il ouvre ainsi la voie à l’exploration de nouvelles approches, comme celle des communs numériques.</p>
+<h3 id="1-1-1-la-quete-de-performance-et-l-ambition-de-valeur-publiq" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-1-la-quete-de-performance-et-l-ambition-de-valeur-publiq" style="color:inherit;text-decoration:none">1.1.1. La quête de performance et l’ambition de valeur publique</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Au tournant des années 2000, l’informatique administrative n’était encore qu’un enjeu d’optimisation technique <span style="color:#5A685F">[Carcenac, 2001]</span>. Un quart de siècle plus tard, elle constitue un sujet de performance publique pour l’État. Moderniser les services n’est plus un luxe ni même un simple facteur d’économie. C’est la condition de la confiance citoyenne <span style="color:#5A685F">[Loukis et al., 2019]</span>. L’administration chemine donc sur une crête étroite. Elle doit prouver qu’elle sait mieux dépenser, tout en démontrant que ses réformes produisent de la « valeur publique » <span style="color:#5A685F">[Bryson et al., 2014]</span>, une notion qui ne se laisse réduire ni à la rapidité d’un guichet ni au taux d’usage d’un portail.</p>
+<h4 id="1-1-1-1-une-modernisation-sous-triple-pression" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-1-1-une-modernisation-sous-triple-pression" style="color:inherit;text-decoration:none">1.1.1.1. Une modernisation sous triple pression</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Sur le front politique, la Déclaration de Tallinn a érigé le « numérique par défaut » en critère de bonne gouvernance. Chaque pays signataire s’engage à fournir des services dématérialisés, interopérables et transparents <span style="color:#5A685F">[Tallinn Declaration, 2017]</span>. Parallèlement, la rhétorique de la rigueur budgétaire transforme la performance en synonyme d’efficience. Un service est jugé performant lorsqu’il accomplit la même mission pour un coût unitaire moindre, voire lorsqu’il permet de nouvelles réductions d’effectifs <span style="color:#5A685F">[Bezes, 2020]</span>. Le calcul semble simple. L’automatisation promet des gains budgétaires, mais la ligne d’investissement (réseaux, cybersécurité, formation des agents, conduite du changement) pèse sur le budget dès la première année, tandis que les économies ne se concrétisent qu’à moyen terme <span style="color:#5A685F">[Bosio et al., 2023]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">À cet écart temporel s’ajoute désormais une contrainte d’ordre sociétal. L’ergonomie raffinée et la personnalisation développées par les grandes plateformes privées font vieillir prématurément la plupart des démarches administratives <span style="color:#5A685F">[Morgeson et Mithas, 2009]</span>. Chaque fois qu’un usager ressaisit une information déjà détenue par l’État, il perçoit un « écart d’expérience nourrie par la comparaison implicite avec sa banque en ligne ou son opérateur mobile. Plus récemment, il a été montré que l’absence de personnalisation et de dialogue en temps réel figure parmi les principaux freins à la satisfaction citoyenne <span style="color:#5A685F">[Chan et al., 2021]</span>. L’interactivité continue des plateformes alimente, chez les citoyens, l’attente d’un dialogue quasi instantané avec les institutions. L’utilisateur n’écrit plus au service public. Il s’attend à converser avec lui <span style="color:#5A685F">[Jin, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ces trois vecteurs, agenda politique, discipline financière et horizon d’attentes citoyennes, convergent pour révéler les limites des routines bureaucratiques. Le temps consacré par de nombreux agents à contourner des logiciels vieillissants, les redondances de saisie dues au cloisonnement des bases de données ou encore la multiplication de nomenclatures incompatibles deviennent insoutenables dès lors qu’ils sont visibles d’un grand public habitué à la fluidité du cloud <span style="color:#5A685F">[Shulz, 2021b]</span>. À ce stade, l’introduction de technologies isolées ne suffit plus. C’est le modèle d’organisation même qui doit évoluer. C’est précisément la promesse avancée par les communs numériques, dont l’architecture ouverte et la gouvernance partagée invitent à redéfinir la performance publique <span style="color:#5A685F">[CSNP, 2023]</span>.</p>
+<h4 id="1-1-1-2-au-dela-de-l-efficience-mesurer-la-valeur-publique" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-1-2-au-dela-de-l-efficience-mesurer-la-valeur-publique" style="color:inherit;text-decoration:none">1.1.1.2. Au-delà de l’efficience : mesurer la valeur publique</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Depuis les travaux de Moore, la question de ce que produit vraiment l’action publique a pris un autre tournant <span style="color:#5A685F">[Moore, 1995]</span>. Il ne s’agit plus seulement de réduire un coût ou de raccourcir un délai. D’autres critères entrent en ligne de compte comme ce qu’une politique permet, ce qu’elle soutient, ce qu’elle change pour les citoyens. La valeur publique, dans ce cadre, ne se résume pas à un calcul économique. Elle se lit dans l’impact démocratique, dans l’équité d’accès, dans la capacité à produire de la confiance ou à renforcer le pouvoir d’agir local <span style="color:#5A685F">[Moore, 1995 ; Benington, 2007 ; Bryson et al., 2014]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce déplacement oblige à revoir les instruments. Les tableaux de bord classiques, délais moyens, coûts unitaires, ne suffisent plus. Ils sont dépassés dès lors qu’on s’intéresse à ce que l’action publique rend possible. Les indicateurs deviennent composites. On y retrouve la part des démarches accomplies par des publics peu connectés, le nombre de réutilisations de jeux de données ouverts, ou encore la manière dont les citoyens contribuent à l’élaboration de services <span style="color:#5A685F">[Benmohamed et al., 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les politiques d’Open Data illustrent bien ce changement de regard. Publier une base ne suffit pas. Encore faut-il qu’elle vive. Une donnée n’a de valeur qu’à condition d’être réemployée <span style="color:#5A685F">[Benmohamed et al., 2024]</span>. Cela suppose des liens actifs entre institutions, développeurs, chercheurs ou associations. Le contenu seul ne suffit pas. La circulation compte tout autant.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Mais pour que cette circulation ait lieu, encore faut-il que les données soient lisibles. Compréhensibles, accessibles, exploitables. La transparence ne produit rien sans des relais capables d’en organiser la réception <span style="color:#5A685F">[Janssen et al., 2012]</span>. Journalistes de données, médiateurs civiques, structures intermédiaires jouent ici un rôle central. Sans eux, le potentiel reste latent.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans cette perspective, la valeur publique n’est pas une simple conséquence de l’action. Elle se co- construit. Elle dépend de ce que l’État met en place, mais aussi de la manière dont l’écosystème s’en empare <span style="color:#5A685F">[Janssen et al., 2012]</span>. Le volume de données libérées compte peu si l’écosystème reste passif.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Et ce changement rejaillit sur les arbitrages. Réduire le délai d’instruction d’un permis ne dit rien si la démarche reste illisible, ou inaccessible sur mobile. À l’inverse, une interface plus claire, même au prix d’un processus interne légèrement plus long, peut produire plus d’adhésion. La performance ne se joue pas sur un seul axe <span style="color:#5A685F">[Halling et Baekgaard, 2024]</span>. Elle oblige à composer. À trancher, parfois, entre des valeurs qui ne vont pas toujours dans le même sens.</p>
+<h4 id="1-1-1-3-du-new-public-management-a-la-digital-era-governance" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-1-3-du-new-public-management-a-la-digital-era-governance" style="color:inherit;text-decoration:none">1.1.1.3. Du New Public Management à la Digital Era Governance</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans les années 1990, le New Public Management (NPM) a imposé le langage de la performance chiffrée et la logique contractuelle inspirée du secteur privé <span style="color:#5A685F">[Bezes, 2020]</span>. Cette mécanique a permis de clarifier les responsabilités et de traquer des sources d’inefficacité, mais elle a aussi encouragé un pilotage en silos. Chaque entité poursuivait son indicateur, quitte à ignorer les externalités négatives pour l’usager. Ce morcellement atteint rapidement ses limites, car dès qu’un service requiert la coopération de plusieurs directions, la « concurrence interne » ralentit la solution au lieu de l’accélérer <span style="color:#5A685F">[Dunleavy et al., 2005]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Face à ces impasses, la Digital Era Governance a été théorisée <span style="color:#5A685F">[Dunleavy et al., 2005]</span>. Il s’agit d’un modèle fondé sur la réintégration des services autour des parcours utilisateurs, la mutualisation des infrastructures et des données, la mise en réseau d’administrations qui demeurent distinctes juridiquement mais partagent des ressources numériques. Au centre de ce paradigme se trouve la figure de l’« usager-coproducteur », celui qui, grâce aux interfaces ouvertes, signale une erreur sur son état civil, enrichit un référentiel géographique ou développe une application tierce connectée aux API publiques. Cette participation active est le moyen de dépasser la logique de « citoyen-client » héritée du NPM. L’individu devient partie prenante de la création de valeur publique <span style="color:#5A685F">[Benington, 2007]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’un des principaux verrous relève de la culture professionnelle. La primauté accordée à la continuité de service valorise « l’outil qui a déjà fait ses preuves » et dissuade les équipes d’explorer des solutions ouvertes encore perfectibles. Ce réflexe de prudence est désigné comme un « conservatisme structurel », jugé plus bloquant que les obstacles techniques proprement dits <span style="color:#5A685F">[Lindgren et van Veenstra, 2018]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ces verrous expliquent pourquoi les initiatives numériques les plus audacieuses (portails « dite le nous une foi », bases d’adresse co-éditées avec les collectivités, plateformes de paiement mutualisées) restent souvent marginales ou expérimentales <span style="color:#5A685F">[CSNP, 2023]</span>. Elles démontrent la faisabilité d’un État en réseau, mais peinent à se généraliser faute d’un cadre institutionnel et culturel adapté.</p>
+
+<figure style="margin:44px 0">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #1E2A23">
+    <table style="width:100%;border-collapse:collapse;min-width:min(100%,560px)">
+      <thead><tr><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Critère</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">New Public Management (NPM)</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Digital Era Governance (DEG)</p></th></tr></thead>
+      <tbody><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Focus principal</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Efficience interne, réduction des coûts, fragmentation</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Valeur publique, intégration des services, orientation usager/citoyen</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Rôle du citoyen</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Client, consommateur de services</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Coproducteur, citoyen engagé, partenaire</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Approche technologique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Automatisation des processus existants, externalisation</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Transformation numérique, réingénierie des processus, État plateforme</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Structure organisationnelle</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Agences autonomes, concurrence interne, silos</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Collaboration inter-organisationnelle, réseaux, gouvernance intégrée</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Indicateurs clés</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Quantitatifs, performance par unité</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Multidimensionnels (équité, transparence, participation, durabilité)</p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Limites pour le numérique</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Vision étroite de la performance, silos persistants, faible agilité</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Coordination difficile, nécessité de nouvelles compétences</p></td></tr></tbody>
+    </table>
+  </div>
+  <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:#4A5850">
+    <span style="font-weight:600;color:#1E2A23">Tableau 1</span> — Comparaison des paradigmes du New Public Management (NPM) et de la Digital Era Governance (DEG)
+    
+  </figcaption>
+</figure>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La progression du discours sur la « valorisation numérique » reste abstraite tant que l’on ne confronte pas l’ambition aux capacités effectives. Quelques ordres de grandeur récents suffisent à prendre la mesure de l’écart. Ils éclairent la modernisation des services publics sous l’angle tangible des crédits et des effectifs et confirment que l’injonction de performance se déploie dans un environnement budgétaire contraint alors même que la demande d’e‑services explose.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Licences Microsoft et L’État dépense annuellement plusieurs dizaines <span style="color:#5A685F">[Sénat, 2019]</span> Oracle pour l’État (hors de millions d’euros en licences propriétaires, dont <span style="color:#5A685F">[Sénat, 2022]</span></p>
+
+<figure style="margin:44px 0">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #1E2A23">
+    <table style="width:100%;border-collapse:collapse;min-width:min(100%,560px)">
+      <thead><tr><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Poste observé</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Montant ou ratio annuel</p></th><th style="text-align:left;vertical-align:bottom;padding:12px 16px;border-bottom:1.5px solid #1E2A23;font-size:13px;letter-spacing:.04em;font-weight:600"><p style="margin:0 0 .45em">Source</p></th></tr></thead>
+      <tbody><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Licences Microsoft et Oracle pour l’État (hors opérateurs)</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">L’État dépense annuellement plusieurs dizaines de millions d’euros en licences propriétaires, dont environ 7,1 millions d’euros pour le seul ministère de l’Intérieur.</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em"><span style="color:#5A685F">[Sénat, 2019]</span> <span style="color:#5A685F">[Sénat, 2022]</span></p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Licences bureautiques et serveurs, ville de Voiron</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Près de 360 k€ prévus en 2025, contre 0 € en 2021 ; cumul de près de 900 k€ sur quatre ans.</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em"><span style="color:#5A685F">[Ville de Voiron, 2025]</span></p></td></tr><tr><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Dépenses logicielles et équipements informatiques, exemple du CHU de Lille</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em">Le CHU de Lille a investi environ 7,5 M€ en 2023 pour ses logiciels et équipements informatiques.</p></td><td style="text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid #D8DDD3;font-size:14.5px;line-height:1.55"><p style="margin:0 0 .45em"><span style="color:#5A685F">[CHU de Lille, 2024]</span></p></td></tr></tbody>
+    </table>
+  </div>
+  <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:#4A5850">
+    <span style="font-weight:600;color:#1E2A23">Tableau 2</span> — Echantillon restreint de coûts et impacts des dépenses IT propriétaires dans le secteur public
+    
+  </figcaption>
+</figure>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ces chiffres posent un paradoxe désormais structurel. Les charges logicielles et la volumétrie des services numériques augmentent à un rythme soutenu alors que les plafonds de dépenses de fonctionnement, fixés par la loi de programmation des finances publiques 2023‑2027, évoluent en dessous de l’inflation <span style="color:#5A685F">[France, 2023]</span>. Dans le même laps de temps, la pénurie de compétences informatiques s’installe. Les administrations sont donc invitées à produire davantage de services numériques avec des budgets qui stagnent et des équipes réduites.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La section suivante examine les conséquences techniques et organisationnelles de cette tension, depuis l’interopérabilité défaillante jusqu’au verrouillage propriétaire qui pèse sur les systèmes d’information publics.</p>
+<h3 id="1-1-2-les-limites-structurelles-et-fonctionnelles-des-system" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-2-les-limites-structurelles-et-fonctionnelles-des-system" style="color:inherit;text-decoration:none">1.1.2. Les limites structurelles et fonctionnelles des systèmes d’information publics</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les ambitions affichées se heurtent à des terrains bien plus rigides qu’il n’y paraît. Des systèmes techniques vétustes, des liens verrouillés avec des prestataires privés, une culture qui documente peu, qui transmet mal, et qui préfère refaire plutôt que réutiliser <span style="color:#5A685F">[Liarte et al., 2024 ; Jin, 2024 ; Nicolini et Caron, 2024]</span>. Si l’on veut comprendre où bloquent les réformes, et pourquoi les communs numériques peuvent ouvrir des marges, c’est ici qu’il faut regarder <span style="color:#5A685F">[Linåker et al., 2023]</span>.</p>
+<h4 id="1-1-2-1-une-interoperabilite-defaillante-dans-un-paysage-de-" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-2-1-une-interoperabilite-defaillante-dans-un-paysage-de-" style="color:inherit;text-decoration:none">1.1.2.1. Une interopérabilité défaillante dans un paysage de silos</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La circulation des données reste limitée. Dans les ministères, elle passe encore trop souvent par des bricolages, des reprises manuelles, des contournements <span style="color:#5A685F">[IGAS, 2019]</span>. Chacun a son application, sa base, ses formats. Rien n’a été pensé pour se parler <span style="color:#5A685F">[Sadeghi et al., 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’interopérabilité, ce n’est pas juste un problème de tuyaux. Ce sont des écarts sur le sens des données, sur les façons de les organiser, sur les droits d’accès, sur les priorités. Un millefeuille technique, sémantique, organisationnel, juridique <span style="color:#5A685F">[Bokolo, 2024]</span>. L’image d’un service fluide s’effondre dès la première friction <span style="color:#5A685F">[Halling et Baekgaard, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce n’est pas une erreur de parcours mais une trajectoire. Pendant longtemps, chaque administration a développé ses outils en silo. Le résultat est que les mêmes informations circulent dans dix fichiers différents, actualisées ici, figées ailleurs, et l’usager doit redonner ce qu’il a déjà donné <span style="color:#5A685F">[Cour des comptes, 2020 ; IGAS, 2019]</span>. Le principe du « Dites-le-nous une fois » ? Un affichage, car en pratique, ça ne suit pas <span style="color:#5A685F">[Halling et Baekgaard, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Un cadre commun a été posé, les API sont promues, dans les textes du moins <span style="color:#5A685F">[Tallinn Declaration, 2017]</span>. Et dans certaines villes, certaines plateformes, ça fonctionne. On peut connecter sans tout fusionner <span style="color:#5A685F">[Bokolo, 2024]</span>. Mais la vraie résistance n’est pas là. Elle tient au pouvoir que donne l’accès exclusif à une base. La partager, c’est renoncer à ce levier. Beaucoup préfèrent s’en tenir là, même lorsque l’ouverture est techniquement possible <span style="color:#5A685F">[Janssen et al., 2012]</span>. Tant que garder la main vaudra plus que faciliter l’usage, l’interopérabilité restera marginale. Pas pour des raisons techniques mais pour des raisons de territoire <span style="color:#5A685F">[Liarte et al., 2024]</span>.</p>
+<h4 id="1-1-2-2-le-verrou-du-vendor-lock-in-et-l-inertie-des-systeme" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-2-2-le-verrou-du-vendor-lock-in-et-l-inertie-des-systeme" style="color:inherit;text-decoration:none">1.1.2.2. Le verrou du vendor lock-in et l’inertie des systèmes hérités</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Au cloisonnement des systèmes s’ajoute un autre verrou, moins visible mais tout aussi contraignant qu’est la dépendance aux éditeurs. Ce que la littérature anglo-saxonne désigne sous le terme de « vendor lock-in », c’est cette situation où une organisation reste enfermée dans une technologie propriétaire, non pas parce qu’elle la juge performante, mais parce que le coût de sortie s’avère plus lourd que l’immobilisme <span style="color:#5A685F">[Zhu et Zhou, 2012 ; Opara-Martins et al., 2016]</span>. C’est un « piège » budgétaire, entretenu par des suites bureautiques ou des ERP propriétaires qui grèvent les finances publiques année après année <span style="color:#5A685F">[Mitchell, 2022]</span>. Le cas de la ville de Munich reste emblématique. Malgré un projet structuré de migration vers le libre (LiMux), les effets conjugués de pressions commerciales et de coûts de retour si élevés ont fini par inverser la trajectoire <span style="color:#5A685F">[Silic et Back, 2017]</span>. Mais la dépendance ne se limite pas aux technologies récentes. Elle est aussi ancrée dans l’histoire longue des systèmes dits « legacy ». Des logiciels devenus inaccessibles, non pas faute de documentation, mais parce que plus personne n’ose intervenir dans un code dont les auteurs sont partis depuis longtemps <span style="color:#5A685F">[Mitchell, 2022]</span>. Ce manque de visibilité sur les règles métiers et l’absence de capacité de maintien à moyen terme est qualifié de « boîtes noires » <span style="color:#5A685F">[Liarte et al., 2024]</span>. Il y aussi cet autre symptôme que les rares techniciens encore capables d’intervenir partent à la retraite <span style="color:#5A685F">[Cox, 2019]</span>. Chaque tentative de modernisation devient un chantier lourd, coûteux, chronophage. Et pendant ce temps, l’essentiel des budgets de maintenance continue de s’épuiser sur ces structures vieillissantes <span style="color:#5A685F">[Cour des comptes, 2020]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La circulaire de 2012 <span style="color:#5A685F">[France, 2012]</span> et la Loi pour une République numérique de 2016 <span style="color:#5A685F">[France, 2016]</span> ont posé des bases. Elles ont tenté d’ouvrir une voie plus favorable au logiciel libre <span style="color:#5A685F">[Broca et Coriat, 2015]</span>. Mais la réalité reste plus complexe. Choisir une solution libre ne se résume pas à remplacer un contrat de licence par un autre <span style="color:#5A685F">[Mitchell, 2022]</span>. Sans conduite du changement, sans montée en compétence, sans financement adapté, l’administration prend le risque de substituer une dépendance à une autre. Plus diffuse, moins visible, mais bien réelle. Cette fois, non plus à un éditeur, mais à une communauté de développement qu’elle ne gouverne pas <span style="color:#5A685F">[Loon et Toshkov, 2015]</span>.</p>
+<h4 id="1-1-2-3-capitalisation-defaillante-et-methodes-de-projet-ina" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-2-3-capitalisation-defaillante-et-methodes-de-projet-ina" style="color:inherit;text-decoration:none">1.1.2.3. Capitalisation défaillante et méthodes de projet inadaptées</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Des outils existent déjà, payés par des fonds publics, mais rarement repris. Chaque structure relance son propre projet, même quand des solutions comparables sont disponibles. La culture reste celle du sur-mesure, du développement maison <span style="color:#5A685F">[Liarte et al., 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">À la fragmentation technique s’ajoute le fait que le savoir s’érode par manque de documentation et de relais. Ceux qui arrivent ne savent plus ce que les autres savaient. Et on recommence, encore <span style="color:#5A685F">[Cour des comptes, 2020 ; Neumann et al., 2024]</span>. On appelle ça agilité, mais derrière, les marges sont étroites. Tout est contractuel. Le cadre est figé. Les promesses d’adaptation masquent surtout une rigidité imposée par la chaîne de commande <span style="color:#5A685F">[Baxter et al., 2023]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les conséquences sont doubles. Ça prend du temps. Et ça coûte plus cher <span style="color:#5A685F">[Halling et Baekgaard, 2024]</span>. Rien d’étonnant. Quand les résultats se font attendre, les soutiens s’effritent. Les projets ouverts sont jugés risqués. Et sans financement stable, les équipes internes se réduisent. Alors l’administration fait ce qu’elle sait faire en externalisant, et retombe sur les mêmes prestataires, avec les mêmes blocages <span style="color:#5A685F">[Liarte et al., 2024]</span>. C’est un enchaînement bien connu avec des briques qui ne s’imbriquent pas, des outils qui s’ignorent et des contrats verrouillés. Et personne pour reprendre ce qui existe déjà. Le numérique public en France avance comme ça, par empilements sans lien <span style="color:#5A685F">[Mission Bothorel, 2020]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les communs numériques, eux, reposent sur une logique inverse. Le socle est ouvert et les efforts sont partagés. Le code se transmet et les compétences aussi. Pas besoin de tout reconstruire à chaque fois <span style="color:#5A685F">[Krewer et Warso, 2024 ; Henttonen et al., 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La suite du travail analysera comment cette dynamique pourrait s’implanter dans les structures publiques. Et ce qu’il faut aligner pour qu’elle s’y installe durablement.</p>
+<h3 id="1-1-3-specificites-du-contexte-administratif-et-incidences-s" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-3-specificites-du-contexte-administratif-et-incidences-s" style="color:inherit;text-decoration:none">1.1.3. Spécificités du contexte administratif et incidences sur la transformation numérique</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’administration, avec ses strates hiérarchiques, ses textes réglementaires et sa culture du service public, n’est pas une entreprise. Ce décalage façonne le sort d’un projet, celui des communs numériques comme n’importe quel autre. Selon l’épaisseur des procédures, l’appétit de collaboration et la latitude juridique du moment, la même idée peut s’enraciner ou se faner <span style="color:#5A685F">[Nicolini et Caron, 2024]</span>.</p>
+<h4 id="1-1-3-1-culture-bureaucratique-et-resistance-au-changement" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-3-1-culture-bureaucratique-et-resistance-au-changement" style="color:inherit;text-decoration:none">1.1.3.1. Culture bureaucratique et résistance au changement</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’appareil d’État reste, dans ses fondations, fidèle à la charpente hiérarchique soigneusement emboîtée avec une division méthodique des tâches, une centralité du règlement <span style="color:#5A685F">[Bezes, 2020]</span>. Ce cadre garantit une forme d’ordre, de continuité, d’équité aussi. Mais il génère une inertie redoutable. Les routines installées, les fameuses « zones d’incertitude », protègent les agents plus qu’elles ne protègent l’institution. Et toute réforme devient suspecte dès lors qu’elle dérange cet équilibre <span style="color:#5A685F">[Crozier, 1963]</span>. Depuis, peu de choses ont changé sur ce point. Les projets numériques ne butent pas sur la technique, mais sur la culture interne. Ce n’est pas un manque de savoir-faire, c’est un attachement aux règles implicites, aux manières de faire qu’on ne discute pas <span style="color:#5A685F">[Liarte et al., 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">À l’échelle d’une direction, le réflexe est simple. Garder la main. Sur les outils, les données, les protocoles. Dès qu’un projet implique d’ouvrir une API ou de faire circuler l’information au-delà de son périmètre, la méfiance revient. On redoute d’exposer ce qu’on considère comme un levier d’influence interne <span style="color:#5A685F">[Liarte et al., 2024]</span>. À cela s’ajoute une prudence ancrée. Mieux vaut un système ancien mais éprouvé qu’une solution nouvelle encore incertaine. Cela caractérise une aversion au risque devenue réflexe collectif <span style="color:#5A685F">[Marsan et al., 2012]</span>. Et même lorsque l’impulsion vient d’en haut, elle se dilue. La verticalité du système fragmente les consignes, les renvoie à des entités autonomes qui avancent à leur rythme, ou pas du tout.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans ce cadre, les communs numériques arrivent en décalage. Ouvrir un code source, inviter des contributeurs extérieurs, co-administrer une base avec des acteurs non institutionnels, tout cela remet en cause le fonctionnement habituel. La logique du contrôle cède la place à celle du partage. Et ce n’est pas neutre, car dès qu’il s’agit d’intégrer des dynamiques externes, le réflexe de protection revient <span style="color:#5A685F">[Mabi, 2023]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Créer une forge partagée entre ministères, par exemple, suppose une confiance interservices qui reste, aujourd’hui encore, rare <span style="color:#5A685F">[Liarte et al., 2024]</span>. Cela ne veut pas dire que rien ne bouge. Des îlots émergent avec de jeunes agents publics, formés au libre, à l’agilité, à la contribution. Une autre culture, plus ouverte, tente de s’installer <span style="color:#5A685F">[Mergel, 2015]</span>. Mais l’héritage pèse. Les directives passent, parfois, sans s’appliquer. Les procédures changent, sans qu’on ose les activer. Ce type de résistance ne fait pas grand bruit. Elle s’exprime dans les lenteurs, dans les silences, dans les versions minimales des projets. Pour l’éviter, il ne suffit pas d’annoncer le changement. Il faut former, accompagner, reconnaître les pratiques qui le rendent possible. Et valoriser, surtout, celles et ceux qui tentent déjà de le faire <span style="color:#5A685F">[Liarte et al., 2024]</span>.</p>
+<h4 id="1-1-3-2-un-cadre-juridique-en-mutation-levier-indispensable-" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-3-2-un-cadre-juridique-en-mutation-levier-indispensable-" style="color:inherit;text-decoration:none">1.1.3.2. Un cadre juridique en mutation, levier indispensable de l’institutionnalisation</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Rien ne se fait sans un minimum de cadre. Pour que les communs numériques puissent s’enraciner, encore faut-il que l’environnement juridique ne les rende ni risqués, ni invisibles. En France, plusieurs jalons ont été posés. Un arrêt en particulier, Région Picardie, Conseil d’État, 2011, a marqué un tournant <span style="color:#5A685F">[France Conseil d’État, 2011]</span>. Il autorise explicitement une administration à exiger, dans un marché public, le recours à un logiciel libre donné, sans que cela soit considéré comme une atteinte à la concurrence. La logique est simple. Un code ouvert, par définition, reste accessible à tous. Le juge a acté ce raisonnement. Pour beaucoup d’acheteurs publics, c’est ce signal qui a fait tomber une barrière jusque-là plus culturelle que juridique <span style="color:#5A685F">[Loon et Toshkov, 2015]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’année suivante, Matignon a suivi le mouvement. La circulaire du 19 septembre 2012 <span style="color:#5A685F">[France, 2012]</span> invite les services de l’État à examiner systématiquement les options libres dans leurs projets d’équipement numérique. Dans la pratique, cela a donné naissance à des outils très concrets, comme le « clausier Open Source ». Ce document, conçu pour les juristes marchés publics, propose des clauses types permettant à l’administration de garder la main sur le code qu’elle fait développer. L’objectif est de pouvoir ensuite le publier sous licence libre, sans friction juridique. L’orientation serait d’éviter que des logiciels financés sur fonds publics ne soient privatisés par défaut, et les replacer dans un espace partagé, sous gouvernance publique ou collective <span style="color:#5A685F">[Broca et Coriat, 2015]</span>. Pas simplement pour des raisons de principe, mais pour garantir leur réutilisation, leur auditabilité, et leur adaptation dans le temps.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le législateur a entériné cette dynamique avec l’article 16 de la Loi pour une République numérique <span style="color:#5A685F">[France, 2016]</span>, qui invite les collectivités à privilégier logiciels libres et formats ouverts pour garantir pérennité et indépendance, et fait donc du commun numérique une solution pleinement légitime, susceptible d’être choisie non plus par militantisme, mais au titre de la bonne gestion publique <span style="color:#5A685F">[Silic et Back, 2017]</span>.</p>
+<h4 id="1-1-3-3-gouvernance-multi-niveaux-et-enjeux-de-souverainete-" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:36px 0 12px;color:#1E2A23;scroll-margin-top:84px"><a href="#1-1-3-3-gouvernance-multi-niveaux-et-enjeux-de-souverainete-" style="color:inherit;text-decoration:none">1.1.3.3. Gouvernance multi-niveaux et enjeux de souveraineté numérique</a></h4>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La question technologique ne se joue plus dans une seule arène. L’État, les collectivités, Bruxelles, et même des communautés plus ou moins structurées de contributeurs, chacun pose ses conditions. La loi SREN de 2024 en donne un bon exemple <span style="color:#5A685F">[France, 2024]</span>. En exigeant que les données sensibles soient hébergées sur le territoire national, elle superpose une contrainte juridique à la modernisation technique. Il ne s’agit plus seulement d’efficacité, mais de souveraineté. Garder les données là où s’exerce la loi nationale, éviter les effets de bords de juridictions tierces, dans le cadre d’une « stratégie défensive » <span style="color:#5A685F">[Fratini et al., 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans ce paysage fragmenté, les communs numériques jouent un rôle de médiation. Ce ne sont pas des solutions miracles, mais des points d’accroche avec du code réutilisable, des infrastructures ouvertes, une gouvernance que personne ne possède vraiment <span style="color:#5A685F">[Krewer et Warso, 2024]</span>. Il y a plusieurs exemples (Linux, PostgreSQL, OpenStreetMap) mais aussi des modules sectoriels développés pour le service public <span style="color:#5A685F">[Abiteboul et Bancilhon, 2024]</span>. Leur force est qu’ils ne dépendent d’aucun éditeur unique.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette logique se traduit concrètement sur le terrain. Certaines collectivités adoptent des logiciels libres pour éviter d’être captives, tout en restant dans les clous des doctrines nationales. À l’inverse, des outils portés localement remontent parfois à l’échelon central, une fois éprouvés. Le principe repose sur une circulation à double sens, du terrain vers le sommet et inversement. Sur le papier, l’idée d’un dépôt de code ouvert aux contributions a de quoi séduire. Dans les faits, l’élan se brise souvent net. Ce type de dispositif heurte de plein fouet deux réflexes profondément installés que sont le contrôle hiérarchique et la rétention d’information <span style="color:#5A685F">[Mitchell, 2022 ; Shulz, 2024b]</span>. Nombre de tentatives de forge partagée entre administrations aboutissent au même constat que sans un minimum de confiance entre services, la plateforme reste une coquille vide, peuplée de dépôts sans vie <span style="color:#5A685F">[Liarte et al., 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">À ce stade, la souveraineté numérique ne peut plus être définie uniquement comme un attribut de l’État. Elle se construit par strates avec des accords, des licences, des plateformes ouvertes où l’initiative vient parfois d’en bas. Les plaidoyers transnationaux de la société civile contribuent aujourd’hui à infléchir la régulation <span style="color:#5A685F">[Dulong de Rosnay et Stalder, 2020]</span>. Ce sont eux qui mettent en tension le cadre légal et les usages, souvent en avance sur les discours officiels. L’État, dans ce contexte, garde la main. Mais il ne peut plus tout faire seul. Une partie de sa capacité d’action passe désormais par des communs auxquels il participe sans forcément les diriger. Ce déplacement n’efface pas la responsabilité publique, mais redéfinit ses conditions d’exercice.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">L’administration évolue dans un environnement composite. Entre l’inertie des structures, la plasticité du droit, et une souveraineté numérique qui se redessine en continu, les marges de manœuvre ne sont jamais stables. Ces tensions modèlent les politiques numériques sans toujours les verrouiller <span style="color:#5A685F">[Bezes, 2020 ; Jin, 2024]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Instaurer durablement des communs numériques suppose de naviguer dans cet entrelacs. Il faudra composer avec l’habitus bureaucratique, tirer parti d’un droit qui, sur ce sujet, bouge enfin, et créer des passerelles entre les différents niveaux de gouvernance. L’objectif, au fond, reste simple, c’est de reprendre prise sur les outils, sans retomber dans les vieux réflexes de contrôle. Mais entre l’intention et l’ancrage, il reste un écart à combler.</p>
+    </article>
+
+    <nav style="display:flex;justify-content:space-between;gap:24px;margin-top:64px;padding-top:26px;
+         border-top:1px solid #1E2A23"><a href="/memoire/introduction/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Précédent</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        ← Introduction</span></a><a href="/memoire/1-2-paradigme-des-communs/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;text-align:right">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Suivant</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        Le paradigme des communs numériques →</span></a></nav>
+  </main>
+</div>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a class="hv3" href="/articles/" style="color:#1E2A23;text-decoration:none">Articles</a>
+        <a class="hv3" href="/la-recherche/" style="color:#1E2A23;text-decoration:none">La recherche</a>
+        <a class="hv3" href="/glossaire/" style="color:#1E2A23;text-decoration:none">Glossaire</a>
+        <a class="hv3" href="/a-propos/" style="color:#1E2A23;text-decoration:none">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a class="hv3" href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px">consulting@alexandre-berge.fr</a>
+        <a class="hv3" href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#8A968D">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+<script>/* Remplace le runtime Claude Design (React + ReactDOM + Babel, ~3 Mo depuis un CDN)
+   par l'équivalent en JavaScript natif. Aucune dépendance, aucune requête réseau.
+   Le site reste entièrement lisible si ce script ne s'exécute pas. */
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ref = function (name) { return document.querySelector('[data-ref="' + name + '"]'); };
+
+  /* ── Barre de progression de lecture (articles) ───────────────────────── */
+  var bar = ref('barRef');
+  if (bar) {
+    var onScroll = function () {
+      var e = document.documentElement;
+      var p = e.scrollTop / Math.max(1, e.scrollHeight - e.clientHeight);
+      bar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Motif de points animé (couverture d'accueil) ─────────────────────── */
+  var canvas = ref('dotsRef');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var gap = parseInt(canvas.getAttribute('data-densite') || '30', 10);
+    var animate = canvas.getAttribute('data-anime') !== 'false' && !reduced;
+    var w = 0, h = 0, raf = 0;
+
+    var resize = function () {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    var draw = function (t) {
+      ctx.clearRect(0, 0, w, h);
+      var cx = w * 0.82, cy = h * 0.18;
+      for (var x = gap / 2; x < w; x += gap) {
+        for (var y = gap / 2; y < h; y += gap) {
+          var d = Math.hypot(x - cx, y - cy);
+          var k = Math.max(0, Math.sin(d * 0.015 - t * 0.001));
+          ctx.beginPath();
+          ctx.arc(x, y, 1.0 + 1.4 * k, 0, 6.2832);
+          ctx.fillStyle = 'rgba(18,117,82,' + (0.05 + 0.22 * k).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      if (animate) raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () { resize(); if (!animate) draw(600); })
+        .observe(canvas.parentElement);
+    } else {
+      window.addEventListener('resize', function () { resize(); if (!animate) draw(600); });
+    }
+    if (animate) raf = requestAnimationFrame(draw); else draw(600);
+  }
+
+  /* ── Compteurs animés (accueil) ───────────────────────────────────────── */
+  /* Les valeurs finales sont déjà dans le HTML : sans JS, rien ne manque. */
+  if (!reduced && window.IntersectionObserver) {
+    var counters = [];
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies'].forEach(function (n) {
+      var el = ref(n);
+      if (el) counters.push([el, parseInt(el.textContent.trim(), 10)]);
+    });
+    if (counters.length) {
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (done || !entries.some(function (e) { return e.isIntersecting; })) return;
+        done = true;
+        io.disconnect();
+        var start = performance.now(), dur = 1400;
+        var tick = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          counters.forEach(function (c) { c[0].textContent = String(Math.round(c[1] * ease)); });
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      io.observe(counters[0][0]);
+    }
+  }
+
+  /* ── Filtre du glossaire ──────────────────────────────────────────────── */
+  var filter = ref('filterRef');
+  if (filter) {
+    var empty = ref('emptyRef');
+    var norm = function (s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+    var apply = function () {
+      var q = norm(filter.value.trim());
+      var visible = 0;
+      document.querySelectorAll('[data-glossterm]').forEach(function (el) {
+        var hay = norm(el.getAttribute('data-glossterm') + ' ' + el.textContent);
+        var show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.querySelectorAll('[data-glossgroup]').forEach(function (g) {
+        var any = Array.prototype.some.call(
+          g.querySelectorAll('[data-glossterm]'),
+          function (el) { return el.style.display !== 'none'; }
+        );
+        g.style.display = any ? '' : 'none';
+      });
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    };
+    filter.addEventListener('input', apply);
+    if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
+  }
+})();
+</script>
+</body>
+</html>

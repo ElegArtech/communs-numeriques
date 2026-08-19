@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Traitement, analyse et limites — Le mémoire — Les Communs Numériques</title>
+<meta name="description" content="Cadre abductif, techniques de codage et comparaisons inter-cas, critères de rigueur et limites assumées.">
+<meta name="author" content="Alexandre Berge">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://communs-numeriques.fr/memoire/2-3-traitement-analyse-limites/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Les Communs Numériques">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Traitement, analyse et limites — Le mémoire">
+<meta property="og:description" content="Cadre abductif, techniques de codage et comparaisons inter-cas, critères de rigueur et limites assumées.">
+<meta property="og:url" content="https://communs-numeriques.fr/memoire/2-3-traitement-analyse-limites/">
+<meta property="og:image" content="https://communs-numeriques.fr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+.hv1:hover{color:#1E2A23 !important}
+.hv2:hover{color:oklch(0.42 0.11 162) !important}
+.hv3:hover{color:oklch(0.50 0.12 160) !important}
+.hv4:hover{color:oklch(0.42 0.11 162) !important;transform:translateX(6px) !important}
+.hv5:hover{animation-play-state:paused !important}
+.hv6:hover{background:oklch(0.78 0.09 160) !important;color:#1E2A23 !important}
+.hv7:hover{border-color:#F4F7F2 !important;color:#F4F7F2 !important}
+.hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
+.hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
+.hv10:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
+.hv11:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv12:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv13:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv14:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+</style>
+<style>
+.memoire-grille{display:grid;grid-template-columns:minmax(0,264px) minmax(0,1fr);gap:clamp(32px,5vw,72px);
+  max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.memoire-sommaire{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 96px);
+  overflow-y:auto;padding:32px 0 40px;scrollbar-width:thin}
+.memoire-sommaire a[data-ancre].actif{color:#1E2A23 !important;font-weight:600}
+.memoire-sommaire summary{display:none}
+@media (max-width:900px){
+  .memoire-grille{grid-template-columns:minmax(0,1fr)}
+  .memoire-sommaire{position:static;max-height:none;padding:20px 0 0;
+    border-bottom:1px solid #D8DDD3;margin-bottom:8px}
+  .memoire-sommaire summary{display:block;cursor:pointer;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;color:#1E2A23;padding:14px 0;list-style:none}
+  .memoire-sommaire summary::after{content:' ▾';color:#127552}
+  .memoire-sommaire details[open] summary::after{content:' ▴'}
+  .memoire-sommaire > details > div{padding-bottom:18px}
+}
+</style>
+</head>
+<body>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px">Accueil</a>
+      <a class="hv1" href="/articles/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Articles</a>
+      <a class="hv1" href="/la-recherche/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px;transition:color .2s ease">La recherche</a>
+      <a class="hv1" href="/glossaire/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Glossaire</a>
+      <a class="hv1" href="/a-propos/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:70;background:transparent">
+  <div data-ref="barRef" style="height:100%;width:0;background:#127552"></div>
+</div>
+
+<div class="memoire-grille">
+  <nav class="memoire-sommaire" aria-label="Sommaire du mémoire">
+    <details open>
+      <summary>Sommaire du mémoire</summary>
+      <div>
+        <a href="/memoire/" style="display:block;text-decoration:none;font-family:'Instrument Serif',serif;
+           font-size:19px;line-height:1.25;color:#1E2A23;padding-bottom:14px;border-bottom:1px solid #D8DDD3;margin-bottom:4px">
+          Le mémoire</a>
+        
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/introduction/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Introduction
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie I</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/1-1-performance-sous-contraintes/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Des performances numériques sous contraintes
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-2-paradigme-des-communs/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Le paradigme des communs numériques
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/1-3-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        L'institutionnalisation, élément central de l'ancrage
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie II</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/2-1-design-de-la-recherche/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Design de la recherche
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-2-dispositif-empirique/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Dispositif empirique
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/2-3-traitement-analyse-limites/" aria-current="page"
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#1E2A23;font-weight:600;
+                border-left:2px solid #127552;padding-left:10px;margin-left:-12px">
+        Traitement, analyse et limites
+      </a><ul style="margin:8px 0 4px;padding:0 0 0 12px;list-style:none;border-left:1px solid #D8DDD3"><li style="margin:0 0 6px"><a href="#2-3-1-cadre-analytique-et-demarche-abductive" data-ancre="2-3-1-cadre-analytique-et-demarche-abductive"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">2.3.1. Cadre analytique et démarche abductive</a></li><li style="margin:0 0 6px"><a href="#2-3-2-techniques-de-codage-et-comparaisons-inter-cas" data-ancre="2-3-2-techniques-de-codage-et-comparaisons-inter-cas"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">2.3.2. Techniques de codage et comparaisons inter cas</a></li><li style="margin:0 0 6px"><a href="#2-3-3-criteres-de-rigueur-et-limites-methodologiques" data-ancre="2-3-3-criteres-de-rigueur-et-limites-methodologiques"
+               style="display:block;text-decoration:none;color:#5A685F;font-size:12.5px;line-height:1.45">2.3.3. Critères de rigueur et limites méthodologiques</a></li></ul></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Partie III</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/3-1-les-neuf-cas/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Caractérisation des initiatives étudiées
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-2-dynamiques-institutionnalisation/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Analyse des dynamiques d'institutionnalisation
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/3-3-discussion-et-implications/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Discussion des résultats et implications
+      </a></li></ul>
+    
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/conclusion/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Conclusion
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/bibliographie/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Bibliographie
+      </a></li></ul>
+    <p style="margin:22px 0 10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+                 font-weight:600;color:#5A685F">Annexes</p>
+    <ul style="margin:0;padding:0;list-style:none"><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/1-glossaire/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 1 — Glossaire
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/2-limites-methodologiques/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 2 — Limites méthodologiques et contremesures
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/3-guide-entretien/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 3 — Guide d'entretien semi-directif
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/4-grille-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 4 — Grille de codage
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/5-matrices-de-codage/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 5 — Matrices de codage inter-cas
+      </a></li><li style="margin:0 0 10px">
+      <a href="/memoire/annexes/6-audit-trail/" 
+         style="display:block;text-decoration:none;font-size:13.5px;line-height:1.45;
+                color:#4A5850;font-weight:400;
+                border-left:2px solid transparent;padding-left:10px;margin-left:-12px">
+        Annexe 6 — Audit trail
+      </a></li></ul>
+        <a href="/memoire-communs-numeriques-berge-2025.pdf" style="display:inline-block;margin-top:26px;font-size:12px;letter-spacing:.1em;
+           text-transform:uppercase;font-weight:600;color:#1E2A23;text-decoration:none;
+           border-bottom:2px solid #127552;padding-bottom:3px">PDF · 124 p.</a>
+      </div>
+    </details>
+  </nav>
+
+  <main style="padding:clamp(28px,4vw,56px) 0 clamp(56px,7vw,96px);min-width:0">
+    <nav aria-label="Fil d'Ariane" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+         font-weight:600;color:#5A685F;margin-bottom:26px">
+      <a href="/la-recherche/" style="color:#5A685F;text-decoration:none">La recherche</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/memoire/" style="color:#5A685F;text-decoration:none">Le mémoire</a>
+      <span aria-hidden="true"> / </span><span style="color:#1E2A23">Partie II</span>
+    </nav>
+
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,5vw,54px);
+        line-height:1.06;letter-spacing:-.015em;margin:0 0 18px;color:#1E2A23;text-wrap:balance">
+      2.3. Traitement, analyse et limites</h1>
+    <p style="margin:0 0 6px;font-size:16px;line-height:1.65;color:#4A5850;max-width:60ch">Cadre abductif, techniques de codage et comparaisons inter-cas, critères de rigueur et limites assumées.</p>
+    <hr style="border:0;border-top:1px solid #1E2A23;margin:30px 0 34px">
+
+    <article style="max-width:72ch">
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La troisième section expose la chaîne analytique construite à partir du corpus empirique décrit plus haut. Elle commence par préciser le cadre conceptuel mobilisé et la démarche abductive recommandée pour la recherche par cas multiples <span style="color:#5A685F">[Dubois et Gadde, 2002]</span>. Viennent ensuite les procédures de codage dans Obsidian qui transforment les textes bruts en unités analytiques reliées au questionnement sur l’institutionnalisation. Les matrices comparatives obtenues facilitent la mise en évidence des régularités et des écarts. Enfin la section discute les critères de rigueur ainsi que les limites inhérentes aux choix méthodologiques afin d’assurer une lecture critique et transparente du travail produit.</p>
+<h3 id="2-3-1-cadre-analytique-et-demarche-abductive" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#2-3-1-cadre-analytique-et-demarche-abductive" style="color:inherit;text-decoration:none">2.3.1. Cadre analytique et démarche abductive</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La question des conditions d’institutionnalisation des communs numériques ne se laisse pas enfermer dans un seul cadre théorique. Elle oblige à croiser trois traditions dont l’articulation, parfois complexe, permet de saisir les logiques en tension.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La première, celle de la théorie néo-institutionnelle (TNI), analyse comment des normes s’imposent dans les organisations par imitation (mimétisme), par contrainte (coercition) ou par intériorisation des bonnes pratiques (normativité) <span style="color:#5A685F">[DiMaggio et Powell, 1983]</span>. La deuxième, développée autour du travail institutionnel <span style="color:#5A685F">[Lawrence et Suddaby, 2006]</span>, insiste sur le rôle des acteurs. Il y a ceux qui prennent appui sur ces normes, les adaptent, les détournent ou les recomposent dans des contextes donnés. La troisième, enfin, vient d’Ostrom <span style="color:#5A685F">[Ostrom, 1990]</span>, dont les travaux sur les communs naturels ont été étendus au numérique. Ils proposent un cadre de gouvernance polycentrique, fondé sur des principes que les communautés adaptent à leurs propres besoins.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce triptyque n’est pas une juxtaposition. Il permet de déplacer l’analyse de la seule conformité réglementaire vers une lecture plus fine, où les dynamiques d’appropriation, les jeux d’acteurs et les agencements de gouvernance sont mis à l’épreuve.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Un tripode analytique en tension</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Chaque courant théorique apporte une focale spécifique :</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Du côté de la TNI, on observe comment un commun est adopté lorsqu’une injonction politique croise une forme de légitimité professionnelle. L’ouverture du code source peut ainsi être mobilisée comme mythe organisationnel. Elle donne l’apparence de la modernité sans nécessairement transformer les pratiques internes <span style="color:#5A685F">[Meyer et Rowan, 1977]</span>.</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>La théorie du travail institutionnel éclaire les figures d’intermédiation que sont les agents- relais, les techniciens militants, les responsables open data ou les élus porteurs d’une stratégie. Ces acteurs ne se contentent pas d’appliquer une norme, ils la redéfinissent, la déplacent, ou créent de nouveaux scripts <span style="color:#5A685F">[Jain et al., 2023]</span>.</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Le cadre d’Ostrom, enfin, offre une grille de lecture différentielle. Il ne s’agit pas de cocher huit principes dans l’absolu, mais d’observer comment une organisation publique les interprète et les met en œuvre. La Fabrique des Mobilités (FabMob), par exemple, trace une frontière communautaire claire. A l’inverse, CAFData ouvre ses données sans définir de mécanisme collectif de résolution des conflits.</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce cadre met au jour une tension centrale avec d’un côté, les administrations cherchent une forme de légitimité institutionnelle en se rapprochant des communs et de l’autre, elles ajustent les règles de manière pragmatique, parfois en réduisant la portée réelle de la gouvernance partagée.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Une démarche résolument abductive</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette recherche ne s’appuie ni sur un raisonnement déductif (tiré de la théorie seule), ni inductif (dérivé uniquement du terrain), mais sur une logique abductive <span style="color:#5A685F">[Dubois et Gadde, 2002]</span>. Les concepts et les données sont en dialogue constant. Ce sont les dissonances, les anomalies, qui déclenchent les ajustements. Par exemple, le cas de la Suite Numérique, qui revendique une logique de souveraineté mais reste pilotée de manière centralisée, a incité à affiner la manière dont le « commun » est défini, perçu, mobilisé dans le langage institutionnel. Chaque itération, retour au terrain, retour à la théorie, permet de raffiner un cadre explicatif plus robuste.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Organisation technique de l’analyse</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le corpus (transcriptions d’entretiens, fiches documentaires, annotations analytiques) est structuré dans un système de gestion de connaissances qui permet l’interconnexion automatique entre les éléments. Une note maîtresse regroupe l’ensemble des définitions opérationnelles utilisées pour le codage. Chaque entretien est annoté à chaud, puis relié par liens hypertextes à d’autres segments similaires, selon des thématiques partagées.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Un fichier de synthèse centralise les premiers niveaux d’analyse. À partir de ce fichier, des matrices croisées sont générées automatiquement. Elles relient les occurrences des codes, leur intensité et les cas concernés. Par exemple, une simple requête permet d’afficher tous les entretiens codés « Leadership_Intrapreneur » avec leur niveau d’intensité ( ✓, ✓✓, ✓✓✓ ).</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce système garantit une triple exigence :</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Traçabilité, chaque assertion analytique est reliée à une source concrète,</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Reproductibilité, les synthèses peuvent être réexaminées ou étendues,</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Auditabilité, un tiers peut remonter jusqu’aux extraits d’entretien ayant motivé un code.</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette architecture facilite aussi l’intégration progressive de nouveaux matériaux, sans rompre la cohérence du dispositif.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Construction des catégories</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le codage a été mené en deux temps. Le premier cycle, dit « ouvert », a permis d’identifier 42 fragments significatifs couvrant à la fois les dimensions réglementaires, organisationnelles et culturelles. Le second cycle, « axial », a regroupé ces fragments en 12 codes centraux. Ces catégories sont ensuite confrontées aux principes d’Ostrom pour chaque cas étudié.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Validité interne et triangulation</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Trois modalités de validation ont été appliquées à chaque hypothèse avancée :</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Sa vérification sur au moins un cas,</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Un appui documentaire concordant,</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Une discussion réflexive avec les matériaux voisins.</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Conservation de la cohérence analytique</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Seule cinq codes saillants ont été retenus par entretien afin de conserver une cohérence analytique en évitant la démultiplication de qualification pour un même entretien.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cela justifie l’absence de représentation de certains codes même si leur dimension fut évoquée dans certains entretiens comme « Pression_Isomorphique ».</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette triangulation reprend les principes formulés par Klein et Myers pour les recherches interprétatives et vise à réduire les biais de corrélation arbitraire <span style="color:#5A685F">[Klein et Myers, 1999]</span>. Une attention spécifique a été portée à la manière dont chaque organisation publique se « couple » à un commun. De cette relation, plus ou moins ajustée, plus ou moins contrainte, naissent des formes contrastées d’institutionnalisation, parfois hybrides, parfois instables, parfois solides.</p>
+<h3 id="2-3-2-techniques-de-codage-et-comparaisons-inter-cas" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#2-3-2-techniques-de-codage-et-comparaisons-inter-cas" style="color:inherit;text-decoration:none">2.3.2. Techniques de codage et comparaisons inter cas</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le traitement des données s’est organisé en trois cycles successifs, centrés sur les entretiens, avec un apport complémentaire issu des documents analysés. L’ensemble du processus a été conduit dans Obsidian, qui a servi à la fois d’interface de lecture, de structure de codage et de support visuel pour les croisements analytiques.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le premier cycle, dit « ouvert », a consisté à segmenter chaque entretien en unités de sens. Ces segments ont été codés manuellement, à partir d’un jeu de balises évolutif, enrichi au fil des lectures. Les métadonnées associées à chaque entretien (cas, date, statut de l’interviewé, etc.) ont servi de socle pour regrouper les occurrences et repérer des régularités. Les fiches documentaires, quant à elles, n’ont pas été codées ligne à ligne, mais reliées aux thématiques émergentes, afin de repérer des confirmations, des décalages ou des nuances contextuelles.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le deuxième cycle, plus structurant, a permis d’agréger les éléments codés en familles conceptuelles. Un premier regroupement s’est opéré autour des facteurs contextuels (environnement politique, cadre réglementaire), un second autour des facteurs organisationnels et communautaires (culture, leadership, dynamique collective). Cette phase a reposé sur l’exploitation des requêtes, permettant d’afficher toutes les occurrences associées à un même code et d’en visualiser l’ancrage dans le corpus. Le mécanisme de rétroliens a été déterminant pour garder un va-et-vient constant entre les extraits de terrain et les hypothèses théoriques, dans l’esprit du « systematic combining » <span style="color:#5A685F">[Dubois et Gadde, 2002]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Le troisième cycle a visé à stabiliser l’ensemble dans une grille d’analyse finale. Quatorze codes ont été retenus comme discriminants pour comprendre l’institutionnalisation, répartis en trois grandes familles :</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Facteurs contextuels et stratégiques (4 codes),</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Facteurs organisationnels et communautaires (6 codes),</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Facteurs liés aux ressources et capacités (4 codes).</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cinq codes se sont révélés particulièrement récurrents : « Leadership_Intrapreneur » (10 occurrences), « Cadre_Reglementaire » (10), « Modele_Eco » (9), « Alignement_Strategique » (9) et « Contexte_Politique » (6). Pour structurer le codage, un fichier a été utilisé comme référence tout au long de l’analyse (Annexe 4). Il posait, pour chaque code, une définition précise, suffisamment claire pour guider sans enfermer. Ce document a joué un rôle de garde-fou car il a évité les glissements de sens d’un entretien à l’autre, en maintenant une cohérence interprétative conforme aux exigences de rigueur formulées par Klein et Myers (1999). À l’issue de ce travail, certaines tendances se sont nettement dégagées. Les occurrences les plus fréquentes se regroupent autour de deux foyers avec d’un côté, des facteurs stratégiques et contextuels très présents dans les discours, et de l’autre, des variables plus incarnées, liées au rôle moteur des porteurs de projet et à la question, souvent sensible, de la soutenabilité économique.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Afin d’apprécier la place de chaque facteur dans les cas étudiés, une gradation d’intensité a été appliquée à chaque code :</p>
+<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none"><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Une intensité faible correspond à une mention ponctuelle,</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Une intensité modérée signale un impact manifeste dans l’argumentation,</li><li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:#1E2A23"><span style="position:absolute;left:-1.4em;color:#127552">—</span>Une intensité forte désigne un facteur présenté comme structurant par l’interviewé.</li></ul>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette échelle permet de distinguer les « codes saillants » dans chaque entretien (généralement cinq par cas), qui servent ensuite de pivot pour les comparaisons inter-cas. Une matrice dynamique a été générée. Elle regroupe les entretiens par cas, liste les codes associés et en affiche l’intensité. Ce tableau, mis à jour automatiquement dès qu’une métadonnée est modifiée, permet de suivre les évolutions de l’analyse sans perdre la cohérence d’ensemble.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Ce dispositif rend possible une forme de réplication analytique <span style="color:#5A685F">[Yin, 2018]</span>. Chaque cas vient éprouver un ensemble identique de facteurs et si certains codes apparaissent systématiquement, d’autres restent spécifiques à un contexte. Ce jeu d’occurrences permet de juger du degré de généralisation de chaque facteur.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Au fil de l’analyse, deux grandes logiques d’institutionnalisation se sont dégagées. Dans les cas de type « appropriation » (Suite Numérique, CAFData), l’administration conserve la main sur le commun, en assure le pilotage et en dicte les règles. À l’inverse, dans les cas de type « relation » (Échirolles, ADULLACT, Brest), la structure publique s’insère dans un écosystème plus large et coopère avec une communauté externe sur la base d’un lien durable. Cette distinction a émergé empiriquement, mais elle a guidé ensuite l’organisation de l’analyse.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cinq associations reviennent de façon récurrente dans les entretiens. Ce ne sont pas des catégories théoriques, mais des cooccurrences suffisamment nettes pour mériter d’être relevées. Elles n’expliquent pas tout. Mais elles disent où ça tient.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Conformité institutionnelle</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans huit cas, &quot;Cadre_Reglementaire&quot; et &quot;Alignement_Strategique&quot; apparaissent ensemble. Les initiatives qui s’inscrivent dans les priorités stratégiques et bénéficient d’un cadre juridique clair tiennent mieux dans le temps. C’est une configuration fréquente dans les cas d’appropriation. L’ancrage repose ici sur la double compatibilité du fonctionnel et du normatif.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Viabilité réglementée</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">On trouve aussi huit occurrences pour l’association &quot;Cadre_Reglementaire&quot; et &quot;Modele_Eco&quot;. Cette combinaison suggère que la solidité économique d’un commun dépend aussi des conditions juridiques dans lesquelles il évolue. Si le cadre est instable ou flou, les mécanismes de financement ou de mutualisation le deviennent aussi. L’économie du projet se joue alors aussi dans le droit.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Entrepreneuriat encadré</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Sept occurrences pour la co-présence de &quot;Leadership_Intrapreneur&quot; et &quot;Cadre_Reglementaire&quot;. Ce sont des configurations où une figure interne joue un rôle moteur, mais dans un environnement normatif structurant. L’énergie individuelle produit des effets, mais à condition d’avoir un terrain juridique sur lequel s’appuyer.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Pilotage stratégique</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Six cas mettent en évidence le croisement entre &quot;Leadership_Intrapreneur&quot; et &quot;Alignement_Strategique&quot;. Le porteur de projet devient ici l’agent d’une mise en cohérence. Il traduit des orientations générales en décisions concrètes. Pas seulement un rôle moteur, mais une fonction de liaison entre intentions et exécution.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Entrepreneuriat économique</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dans six cas également, &quot;Leadership_Intrapreneur&quot; coexiste avec &quot;Modele_Eco&quot;. Les porteurs efficaces ne se contentent pas d’initier. Ils pensent aussi les équilibres (budgets, modèles de soutien, valorisation) car la pérennité dépend de cette capacité à intégrer les contraintes économiques.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">&quot;Cadre_Reglementaire&quot; apparaît dans trois de ces cinq patterns et &quot;Leadership_Intrapreneur&quot; dans quatre. Ce sont les deux codes les plus présents dans les configurations de convergence. Leur rôle central dans les processus d’institutionnalisation étudiés ne relève pas d’un effet isolé.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Les combinaisons de facteurs appariassent plus saillantes que les causes isolées. Elles appuient l’hypothèse centrale qu’un commun numérique ne parvient à s’institutionnaliser que lorsque l’organisation qui le porte réussit à transformer ses propres contraintes, règles, cloisonnements, inerties, en leviers de coopération. Une idée que prolongent les travaux d’Altayar sur les trajectoires différenciées des services publics numériques <span style="color:#5A685F">[Altayar, 2019]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Côté terrain, la collecte des données n’a pas suivi un protocole rigide. Elle s’est adaptée, tout simplement, aux conditions réelles, que se soient les disponibilités des acteurs clés, les échéances du mémoire, les imprévus d’agenda. L’enjeu n’était pas d’épuiser le champ, mais de croiser suffisamment de voix pour dégager des lignes de force.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Pour assurer la validité interne de l’analyse, deux garde-fous ont été posés. D’une part, tout facteur cité dans l’analyse finale devait apparaître dans au moins deux cas différents et être appuyé par deux sources empiriques distinctes (entretien, document). D’autre part, chaque code dit « fort » a été confronté aux extraits correspondants, afin de garantir l’alignement entre interprétation et matériau brut.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Enfin, la cohérence de l’ensemble a été testée par retour constant à la problématique. Le souci de transparence a guidé chaque étape. La chaîne d’évidence est documentée, traçable et ouverte à l’audit, conformément aux exigences de robustesse en recherche qualitative <span style="color:#5A685F">[Yin, 2018]</span>.</p>
+<h3 id="2-3-3-criteres-de-rigueur-et-limites-methodologiques" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.01em;margin:48px 0 16px;color:#1E2A23;scroll-margin-top:84px"><a href="#2-3-3-criteres-de-rigueur-et-limites-methodologiques" style="color:inherit;text-decoration:none">2.3.3. Critères de rigueur et limites méthodologiques</a></h3>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La démarche interprétative retenue pour comprendre les facteurs d’institutionnalisation des communs numériques dans l’administration publique impose de justifier rigoureusement la fiabilité de chaque inférence. Lincoln et Guba proposent quatre critères de « trustworthiness » avec la crédibilité, la transférabilité, la dépendabilité et la confirmabilité <span style="color:#5A685F">[Lincoln et Guba, 1985]</span>. Ces exigences ont guidé l’ensemble du dispositif empirique.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Crédibilité</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Chaque entretien a été intégralement enregistré puis retranscrit. Le codage interne maintient la proximité entre verbatim et interprétation, conformément au principe d’« empirical grounding » <span style="color:#5A685F">[Eisenhardt, 1989]</span>. Les transcriptions ont été relues immédiatement après chaque entretien afin de corriger les imprécisions. Dans un second temps, une requête a produit un tableau synthétique listant les occurrences entre codes et cas, supportant la triangulation avec les documents internes et les observations d’écran partagées. L’itération entre terrain et cadre théorique assure la cohérence interprétative, dans la lignée de la logique abductive <span style="color:#5A685F">[Dubois et Gadde, 2002]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Transférabilité</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La transférabilité dépend du niveau de détail fourni sur le contexte d’étude. Pour chaque initiative un profil « fiche‑cas » présente historique, gouvernance, ressources et environnement institutionnel. Cette documentation s’appuie sur les sites institutionnels, les statuts associatifs, les schémas directeurs et les rapports d’activité archivés. Les métadonnées associées autorisent un filtrage contextuel qui facilite la ré‑utilisation par d’autres chercheurs favorise la description épaisse des situations étudiées <span style="color:#5A685F">[Klein et Myers, 1999]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Dépendabilité</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La dépendabilité est traitée par la constitution d’un « audit trail ». Cette exigence répond à la recommandation de Yin qui plaide pour des procédures explicites reproductibles dans la recherche par études de cas <span style="color:#5A685F">[Yin, 2018]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Confirmabilité</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">La confirmabilité exige de distinguer données et interprétations. Les codes analytiques sont listés dans un « codebook.md » qui précise définition, exemple et éventuelle exclusion. Aucune modification d’un code ne peut se faire sans annotation de justification, ce qui crée une trace. Un journal réflexif explicite les ressorts personnels qui pourraient influencer la lecture des données, limitant ainsi le risque de projection subjective, à la manière de la posture réflexive <span style="color:#5A685F">[Klein et Myers, 1999]</span>.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Limites de la démarche</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Plusieurs limites subsistent. Premièrement, la sélection raisonnée des cas maximise la variété organisationnelle mais réduit la généralisation statistique. Deuxièmement, toutes les données proviennent d’acteurs favorables au logiciel libre, ce qui expose à un biais de confirmation <span style="color:#5A685F">[Yin, 2018]</span>. Troisièmement, l’absence de relecture externe augmente le risque d’angle mort analytique. Quatrièmement, l’usage unique d’Obsidian pour le codage repose sur un environnement qui, bien que transparent, ne dispose pas de fonctions de codage collaboratif.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Contremesures</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Une triangulation systématique limite l’influence des récits individuels. Les métadonnées de chaque entretien croisent fonction, organisation et date, ce qui permet de vérifier la cohérence temporelle des assertions. De plus, l’« audit trail » complet et la mise à disposition du « codebook » favorisent la ré‑analyse. Enfin, un tableau « Limites et contremesures » synthétise les faiblesses et les réponses méthodologiques associées, afin que le lecteur évalue la robustesse de l’enquête.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">« A case study is an empirical method that investigates a contemporary phenomenon in depth and within its real-world context » <span style="color:#5A685F">[Yin, 2018]</span>. Cette définition rappelle que la validité d’une étude de cas repose sur l’ancrage contextuel des données et sur la traçabilité du raisonnement scientifique. Les dispositifs décrits ci‑dessus ambitionnent de répondre à cette exigence tout en restant compatibles avec les contraintes opérationnelles d’un mémoire de master.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette troisième partie concentre l’essentiel du travail empirique. Elle vise à éclairer la question de fond qui traverse toute la recherche. Qu’est-ce qui permet à un commun numérique de s’ancrer durablement dans une administration ? Et, en creux, qu’est-ce qui l’en empêche ? Pour y répondre, treize entretiens semi-directifs ont été menés auprès d’acteurs issus d’horizons variés. Responsables de services publics, figures engagées dans le logiciel libre, chercheurs, experts ou agents en charge de projets. Leurs récits, croisés avec l’analyse de documents associés, permettent d’approcher les dynamiques d’institutionnalisation au plus près du réel. L’enquête repose sur un cadre théorique articulé autour de trois points d’appui avec la théorie néo-institutionnelle, les travaux sur le travail institutionnel, et les principes de gouvernance des communs formulés par Elinor Ostrom. Cette partie se déploie en trois temps. Le premier chapitre s’attache à présenter les cas étudiés et leur contexte. Il en fait ressortir les singularités mais aussi les constantes, dans la manière dont les formes de gouvernance s’articulent en particulier. Le deuxième chapitre tire le fil transversal. Quelles sont les étapes, les appuis, les résistances ? On y examine les trajectoires, les points de bascule, les marges de manœuvre réellement activées par les acteurs. Enfin, le troisième chapitre met en perspective les résultats obtenus, en les confrontant au cadre théorique. Il débouche sur une série de recommandations, adressées à celles et ceux qui, à différents niveaux, souhaitent faire des communs numériques autre chose qu’une exception provisoire.</p>
+<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:#1E2A23;text-wrap:pretty">Cette démarche poursuit trois objectifs complémentaires. Elle vise d’abord à fournir une réponse empirique solide à la question de recherche. Elle cherche ensuite à enrichir la compréhension théorique des mécanismes d’institutionnalisation des communs numériques au sein de l’administration. Enfin, elle propose des pistes d’action concrètes pour les praticiens.</p>
+    </article>
+
+    <nav style="display:flex;justify-content:space-between;gap:24px;margin-top:64px;padding-top:26px;
+         border-top:1px solid #1E2A23"><a href="/memoire/2-2-dispositif-empirique/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Précédent</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        ← Dispositif empirique</span></a><a href="/memoire/3-1-les-neuf-cas/"
+      style="display:block;text-decoration:none;color:#1E2A23;max-width:46%;text-align:right">
+      <span style="display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#5A685F;margin-bottom:6px">
+        Suivant</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:19px;line-height:1.25">
+        Caractérisation des initiatives étudiées →</span></a></nav>
+  </main>
+</div>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a class="hv3" href="/articles/" style="color:#1E2A23;text-decoration:none">Articles</a>
+        <a class="hv3" href="/la-recherche/" style="color:#1E2A23;text-decoration:none">La recherche</a>
+        <a class="hv3" href="/glossaire/" style="color:#1E2A23;text-decoration:none">Glossaire</a>
+        <a class="hv3" href="/a-propos/" style="color:#1E2A23;text-decoration:none">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#8A968D;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a class="hv3" href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px">consulting@alexandre-berge.fr</a>
+        <a class="hv3" href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#8A968D">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+<script>/* Remplace le runtime Claude Design (React + ReactDOM + Babel, ~3 Mo depuis un CDN)
+   par l'équivalent en JavaScript natif. Aucune dépendance, aucune requête réseau.
+   Le site reste entièrement lisible si ce script ne s'exécute pas. */
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ref = function (name) { return document.querySelector('[data-ref="' + name + '"]'); };
+
+  /* ── Barre de progression de lecture (articles) ───────────────────────── */
+  var bar = ref('barRef');
+  if (bar) {
+    var onScroll = function () {
+      var e = document.documentElement;
+      var p = e.scrollTop / Math.max(1, e.scrollHeight - e.clientHeight);
+      bar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Motif de points animé (couverture d'accueil) ─────────────────────── */
+  var canvas = ref('dotsRef');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var gap = parseInt(canvas.getAttribute('data-densite') || '30', 10);
+    var animate = canvas.getAttribute('data-anime') !== 'false' && !reduced;
+    var w = 0, h = 0, raf = 0;
+
+    var resize = function () {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    var draw = function (t) {
+      ctx.clearRect(0, 0, w, h);
+      var cx = w * 0.82, cy = h * 0.18;
+      for (var x = gap / 2; x < w; x += gap) {
+        for (var y = gap / 2; y < h; y += gap) {
+          var d = Math.hypot(x - cx, y - cy);
+          var k = Math.max(0, Math.sin(d * 0.015 - t * 0.001));
+          ctx.beginPath();
+          ctx.arc(x, y, 1.0 + 1.4 * k, 0, 6.2832);
+          ctx.fillStyle = 'rgba(18,117,82,' + (0.05 + 0.22 * k).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      if (animate) raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () { resize(); if (!animate) draw(600); })
+        .observe(canvas.parentElement);
+    } else {
+      window.addEventListener('resize', function () { resize(); if (!animate) draw(600); });
+    }
+    if (animate) raf = requestAnimationFrame(draw); else draw(600);
+  }
+
+  /* ── Compteurs animés (accueil) ───────────────────────────────────────── */
+  /* Les valeurs finales sont déjà dans le HTML : sans JS, rien ne manque. */
+  if (!reduced && window.IntersectionObserver) {
+    var counters = [];
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies'].forEach(function (n) {
+      var el = ref(n);
+      if (el) counters.push([el, parseInt(el.textContent.trim(), 10)]);
+    });
+    if (counters.length) {
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (done || !entries.some(function (e) { return e.isIntersecting; })) return;
+        done = true;
+        io.disconnect();
+        var start = performance.now(), dur = 1400;
+        var tick = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          counters.forEach(function (c) { c[0].textContent = String(Math.round(c[1] * ease)); });
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      io.observe(counters[0][0]);
+    }
+  }
+
+  /* ── Filtre du glossaire ──────────────────────────────────────────────── */
+  var filter = ref('filterRef');
+  if (filter) {
+    var empty = ref('emptyRef');
+    var norm = function (s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+    var apply = function () {
+      var q = norm(filter.value.trim());
+      var visible = 0;
+      document.querySelectorAll('[data-glossterm]').forEach(function (el) {
+        var hay = norm(el.getAttribute('data-glossterm') + ' ' + el.textContent);
+        var show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.querySelectorAll('[data-glossgroup]').forEach(function (g) {
+        var any = Array.prototype.some.call(
+          g.querySelectorAll('[data-glossterm]'),
+          function (el) { return el.style.display !== 'none'; }
+        );
+        g.style.display = any ? '' : 'none';
+      });
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    };
+    filter.addEventListener('input', apply);
+    if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
+  }
+})();
+</script>
+</body>
+</html>

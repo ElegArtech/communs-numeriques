@@ -5,7 +5,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node build/compile.mjs",
+    "build": "node build/compile.mjs && node build/memoire.mjs",
+    "figures": "node build/figures.mjs",
+    "memoire": "python3 build/extraire_memoire.py && node build/memoire.mjs",
     "serve": "cd docs && python3 -m http.server 8900",
     "verify": "node build/verify.mjs"
   },

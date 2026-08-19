@@ -43,8 +43,10 @@ a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
 .hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
 .hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
 .hv10:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
-.hv11:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
-.hv12:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+.hv11:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv12:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv13:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv14:hover{background:#EFF4EE !important;color:#1E2A23 !important}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Les Communs Numériques","alternateName":"Revue en ligne · Recherche & vulgarisation","url":"https://communs-numeriques.fr/","inLanguage":"fr-FR","description":"Une revue en ligne consacrée aux communs numériques et à leur place dans l'action publique : code, données et savoirs gouvernés collectivement, et ce qu'ils changent pour l'administration.","license":"https://creativecommons.org/licenses/by-sa/4.0/deed.fr","author":{"@type":"Person","name":"Alexandre Berge","url":"https://www.linkedin.com/in/bergealexandre/"}}</script>
 </head>
@@ -324,6 +326,37 @@ a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
     };
     filter.addEventListener('input', apply);
     if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
   }
 })();
 </script>
