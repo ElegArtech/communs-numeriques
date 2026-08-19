@@ -1,0 +1,686 @@
+[
+ {
+  "num": 1,
+  "legende": "Comparaison des paradigmes du New Public Management (NPM) et de la Digital Era Governance (DEG)",
+  "colonnes": [
+   "Critère",
+   "New Public Management (NPM)",
+   "Digital Era Governance (DEG)"
+  ],
+  "rangs": [
+   [
+    "Focus principal",
+    "Efficience interne, réduction des coûts, fragmentation",
+    "Valeur publique, intégration des services, orientation usager/citoyen"
+   ],
+   [
+    "Rôle du citoyen",
+    "Client, consommateur de services",
+    "Coproducteur, citoyen engagé, partenaire"
+   ],
+   [
+    "Approche technologique",
+    "Automatisation des processus existants, externalisation",
+    "Transformation numérique, réingénierie des processus, État plateforme"
+   ],
+   [
+    "Structure organisationnelle",
+    "Agences autonomes, concurrence interne, silos",
+    "Collaboration inter-organisationnelle, réseaux, gouvernance intégrée"
+   ],
+   [
+    "Indicateurs clés",
+    "Quantitatifs, performance par unité",
+    "Multidimensionnels (équité, transparence, participation, durabilité)"
+   ],
+   [
+    "Limites pour le numérique",
+    "Vision étroite de la performance, silos persistants, faible agilité",
+    "Coordination difficile, nécessité de nouvelles compétences"
+   ]
+  ]
+ },
+ {
+  "num": 2,
+  "legende": "Echantillon restreint de coûts et impacts des dépenses IT propriétaires dans le secteur public",
+  "colonnes": [
+   "Poste observé",
+   "Montant ou ratio annuel",
+   "Source"
+  ],
+  "rangs": [
+   [
+    "Licences Microsoft et Oracle pour l’État (hors opérateurs)",
+    "L’État dépense annuellement plusieurs dizaines de millions d’euros en licences propriétaires, dont environ 7,1 millions d’euros pour le seul ministère de l’Intérieur.",
+    "[Sénat, 2019] [Sénat, 2022]"
+   ],
+   [
+    "Licences bureautiques et serveurs, ville de Voiron",
+    "Près de 360 k€ prévus en 2025, contre 0 € en 2021 ; cumul de près de 900 k€ sur quatre ans.",
+    "[Ville de Voiron, 2025]"
+   ],
+   [
+    "Dépenses logicielles et équipements informatiques, exemple du CHU de Lille",
+    "Le CHU de Lille a investi environ 7,5 M€ en 2023 pour ses logiciels et équipements informatiques.",
+    "[CHU de Lille, 2024]"
+   ]
+  ]
+ },
+ {
+  "num": 3,
+  "legende": "Comparaison entre communs matériels et communs numériques",
+  "colonnes": [
+   "Caractéristique",
+   "Communs matériels",
+   "Communs numériques"
+  ],
+  "rangs": [
+   [
+    "Nature de la ressource",
+    "Tangible, finie",
+    "Immatérielle, informationnelle"
+   ],
+   [
+    "Rivalité",
+    "Élevée (l’usage par l’un réduit la part pour autrui)",
+    "Faible ou nulle (l’usage par l’un n’empêche pas celui d’autrui)"
+   ],
+   [
+    "Excluabilité",
+    "Difficile ou coûteuse (accès libre difficile à restreindre)",
+    "Possible artificiellement (DRM, licences restrictives)"
+   ],
+   [
+    "Risque principal",
+    "Surexploitation (« tragédie des communs »)",
+    "Sous-production ou sous-contribution, enclosure (appropriation)"
+   ],
+   [
+    "Priorité de gouvernance",
+    "Réguler l’accès et l’usage pour éviter l’épuisement",
+    "Stimuler la contribution, assurer l’ouverture et la pérennité"
+   ]
+  ]
+ },
+ {
+  "num": 4,
+  "legende": "Mécanismes d’isomorphisme institutionnel (TNI) et exemples d’application aux communs numériques publics",
+  "colonnes": [
+   "Mécanisme d’isomorphisme",
+   "Définition (d’après DiMaggio et Powell, 1983)",
+   "Illustration pour les communs numériques dans l’administration publique"
+  ],
+  "rangs": [
+   [
+    "Coercitif",
+    "Pressions formelles (lois, règlements) ou informelles (attentes socio-politiques) exercées sur l’organisation",
+    "Existence de dispositions légales imposant ou encourageant l’usage de logiciels libres ou l’ouverture des données. Directives hiérarchiques incitant à contribuer à des communs numériques."
+   ],
+   [
+    "Mimétique",
+    "Imitation de pratiques observées chez d’autres organisations perçues comme performantes ou légitimes en situation d’incertitude",
+    "Une administration adopte un commun numérique après avoir constaté le succès d’une initiative similaire dans une autre entité publique jugée exemplaire."
+   ],
+   [
+    "Normatif",
+    "Influence de la professionnalisation : diffusion de normes, standards et bonnes pratiques par les instances expertes",
+    "Les directeurs des systèmes d’information (DSI), formés aux bénéfices des communs, promeuvent ces pratiques dans leurs réseaux professionnels. Des associations du logiciel libre diffusent standards et guides d’usage."
+   ]
+  ]
+ },
+ {
+  "num": 5,
+  "legende": "Formes de travail institutionnel (TTI) et exemples d’actions pour l’institutionnalisation des communs numériques publics",
+  "colonnes": [
+   "Type de travail institutionnel",
+   "Objectif général",
+   "Exemples d’actions en faveur de l’institutionnalisation des communs numériques publics"
+  ],
+  "rangs": [
+   [
+    "Création d’institutions",
+    "Établir de nouvelles règles, normes ou pratiques",
+    "Plaidoyer auprès des décideurs pour la valeur des communs numériques, élaboration de cadres juridiques et de politiques favorables (programmes nationaux, circulaires), lancement de projets pilotes exemplaires, théorisation des bénéfices en termes de service public et de modernisation."
+   ],
+   [
+    "Maintien d’institutions",
+    "Préserver et renforcer les institutions existantes (communs établis ou en voie de l’être)",
+    "Animation de communautés de pratique, formation et acculturation des agents publics, défense d’un commun face à des menaces de recentralisation ou de privatisation, intégration du commun dans les routines organisationnelles (procédures, budget récurrent)."
+   ],
+   [
+    "Disruption d’institutions",
+    "Affaiblir ou démanteler des institutions en place (préparer l’émergence de nouvelles pratiques)",
+    "Critique des modèles propriétaires et du « vendor lock-in » existants, mobilisation d’alliés contre les monopoles fournisseurs, promotion d’alternatives ouvertes, déconstruction des mythes bureaucratiques défavorables au partage et à la collaboration."
+   ]
+  ]
+ },
+ {
+  "num": 6,
+  "legende": "Principes de gouvernance d’Ostrom et travail institutionnel de maintien dans les communs numériques",
+  "colonnes": [
+   "Principe d’Ostrom",
+   "Formes de travail institutionnel de maintien",
+   "Exemples concrets dans les communs numériques"
+  ],
+  "rangs": [
+   [
+    "1. Frontières clairement définies (ressource et communauté d’usagers)",
+    "• Enabling work : structurer l’accès, clarifier les rôles et les droits\n• Policing : contrôler les accès, décourager les usages non conformes",
+    "OpenStreetMap exige la création d’un compte utilisateur et l’acceptation de la licence ODbL.\nWikipédia requiert également de créer un compte et de se conformer implicitement à des règles éditoriales communes."
+   ],
+   [
+    "2. Règles d’appropriation et de provision adaptées aux conditions locales",
+    "• Embedding et routinizing : intégrer des normes spécifiques au contexte\n• Enabling work : adapter les règles aux besoins locaux et à l’évolution de la ressource",
+    "Projets de logiciels libres tels que Debian ou Apache : chartes de contribution et processus de décision propres à chaque communauté.\nOpenStreetMap : prise en compte des particularités cartographiques locales via des antennes (chapitres) nationales."
+   ],
+   [
+    "3. Dispositifs de choix collectif (participation des usagers à la définition des règles)",
+    "• Enabling work : instaurer des instances participatives de décision\n• Mythologizing : valoriser la légitimité d’une gouvernance partagée",
+    "Wikipédia : pages de discussion et votes communautaires pour définir les règles et élire les administrateurs.\nProjets libres : processus collaboratif de revue de code (merge requests) et comités techniques élus pour les décisions majeures."
+   ],
+   [
+    "4. Surveillance des usages et de l’état de la ressource",
+    "• Policing : organiser le contrôle mutuel par les pairs\n• Deterring : dissuader les comportements déviants par la visibilité du contrôle",
+    "Wikipédia : patrouilleurs qui vérifient les modifications récentes, robots anti-vandalisme, historique public des contributions.\nOpenStreetMap : outil de validation des modifications (OSMCha) et groupe de travail dédié (Data Working Group) pour surveiller la qualité des données."
+   ],
+   [
+    "5. Sanctions graduées pour les infractions aux règles",
+    "• Policing : appliquer des sanctions progressives et proportionnées\n• Valorizing et demonizing : renforcer la norme en sanctionnant les écarts",
+    "Wikipédia : avertissements aux contributeurs en cas de manquement, blocages temporaires ou définitifs des comptes en cas de récidive.\nProjets libres : refus des contributions de faible qualité et, en cas de violations répétées de la charte, exclusion du contributeur de la communauté."
+   ],
+   [
+    "6. Mécanismes de résolution des conflits accessibles et peu coûteux",
+    "• Enabling work : créer des instances de médiation et d’arbitrage\n• Embedding et routinizing : établir des procédures claires de gestion des désaccords",
+    "Wikipédia : comité d’arbitrage pour traiter les litiges complexes entre contributeurs.\nOpenStreetMap : résolution des différends au niveau local puis, si nécessaire, saisine du Data Working Group pour arbitrage."
+   ],
+   [
+    "7. Reconnaissance par les autorités externes du droit à l’auto-organisation",
+    "• Enabling work : négocier une reconnaissance légale et institutionnelle\n• Mythologizing : forger une identité et un récit légitime vis-à-vis des tiers",
+    "Licences libres (GPL, Creative Commons) reconnues par la loi et utilisées par des administrations publiques ; règlementations officielles encourageant l’usage de solutions ouvertes.\nOpenStreetMap Foundation servant d’interlocuteur reconnu auprès de certains gouvernements ou organismes internationaux."
+   ],
+   [
+    "8. Organisation en niveaux imbriqués pour les communs de grande envergure",
+    "• Enabling work : développer une gouvernance polycentrique, modulaire et coordonnée\n• Mythologizing : construire un récit commun englobant les différents niveaux",
+    "Wikipédia : projets linguistiques auto-organisés, fédérés par la Wikimedia Foundation, qui fixe des principes communs.\nÉcosystème Linux : multitude de sous-projets (noyau, distributions, applications) coordonnés autour de valeurs partagées et d’institutions communes (ex. : la Linux Foundation)."
+   ]
+  ]
+ },
+ {
+  "num": 7,
+  "legende": "Catégories de facteurs potentiels d’institutionnalisation des communs numériques dans l’administration publique",
+  "colonnes": [
+   "Catégorie de facteurs",
+   "Exemples de facteurs spécifiques"
+  ],
+  "rangs": [
+   [
+    "1. Contextuels et stratégiques",
+    "• Volonté politique affirmée et soutenue dans le temps\n• Cadres légaux et réglementaires incitatifs\n• Politiques d’achats publics favorables aux solutions ouvertes\n• Alignement stratégique avec les priorités nationales\n• Influence du champ organisationnel"
+   ],
+   [
+    "2. Organisationnels, culturels et communautaires",
+    "• Leadership interne et portage par des « champions »\n• Culture administrative ouverte à l’expérimentation et au partage\n• Compétences internes disponibles\n• Dispositifs de conduite du changement et structures dédiées\n• Vitalité et diversité de la communauté du commun\n• Gouvernance participative et transparente du commun\n• Confiance élevée entre les acteurs du commun\n• Orchestration efficace de l’écosystème autour du commun"
+   ],
+   [
+    "3. Ressources et capacités",
+    "• Modèles de financement pérennes et adaptés\n• Ressources humaines dédiées et formées\n• Qualité technique du commun\n• Interopérabilité avec les systèmes d’information en place\n• Documentation abondante et support actif\n• Infrastructures techniques de soutien"
+   ]
+  ]
+ },
+ {
+  "num": 8,
+  "legende": "Liste des interviews",
+  "colonnes": [
+   "ID",
+   "Fonction de l’interviewé (anonymisée)",
+   "Organisation / Initiative",
+   "Date",
+   "Durée (min)",
+   "Mode",
+   "Statut transcription"
+  ],
+  "rangs": [
+   [
+    "ENT-001",
+    "Directeur de la stratégie numérique",
+    "Ville d’Échirolles / FNL",
+    "02/05/2025",
+    "92",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-002",
+    "Chercheur en sciences sociales",
+    "CNRS",
+    "05/05/2025",
+    "68",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-003",
+    "Dirigeant d’association",
+    "ADULLACT",
+    "07/05/2025",
+    "116",
+    "présentiel",
+    "vérifiée"
+   ],
+   [
+    "ENT-004",
+    "Dirigeant de société de conseil",
+    "Inno³",
+    "08/05/2025",
+    "54",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-005",
+    "Responsable de projet",
+    "Suite Numérique",
+    "12/05/2025",
+    "98",
+    "présentiel",
+    "vérifiée"
+   ],
+   [
+    "ENT-006",
+    "Enseignante-chercheuse",
+    "Sciences Po Paris",
+    "12/05/2025",
+    "58",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-007",
+    "Ancien élu local",
+    "Ville de Brest",
+    "18/05/2025",
+    "50",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-008",
+    "Ancien DSI d’organisme public",
+    "CNAM / Open First",
+    "22/05/2025",
+    "65",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-009",
+    "Dirigeant d’opérateur public",
+    "SITIV",
+    "22/05/2025",
+    "60",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-010",
+    "DSI",
+    "CNAF / CAFData",
+    "22/05/2025",
+    "40",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-011",
+    "Chef de projet",
+    "ADEME / FabMob",
+    "26/05/2025",
+    "55",
+    "visioconférence",
+    "vérifiée"
+   ],
+   [
+    "ENT-012",
+    "Sociologue",
+    "CNRS",
+    "28/05/2025",
+    "55",
+    "présentiel",
+    "vérifiée"
+   ],
+   [
+    "ENT-013",
+    "Responsable de mission",
+    "DINUM",
+    "05/06/2025",
+    "50",
+    "présentiel",
+    "vérifiée"
+   ]
+  ]
+ },
+ {
+  "num": 9,
+  "legende": "Synthèse comparative des types de communs numériques étudiés",
+  "colonnes": [
+   "N°",
+   "Initiative",
+   "Niveau",
+   "Ressource principale",
+   "Entretiens",
+   "Exemples de documents mobilisés"
+  ],
+  "rangs": [
+   [
+    "1",
+    "Suite Numérique",
+    "National",
+    "Logiciel",
+    "ENT-005, ENT-013",
+    "DINUM Feuille de route, Rapport d’activité"
+   ],
+   [
+    "2",
+    "ADULLACT",
+    "Inter-collectivités",
+    "Logiciel",
+    "ENT-003",
+    "Site adullact.org, CR AG 2024"
+   ],
+   [
+    "3",
+    "SITIV (OPSN)",
+    "Intercommunal",
+    "Infrastructure",
+    "ENT-009",
+    "Site sitiv.fr, Rapport activité 2023"
+   ],
+   [
+    "4",
+    "Ville d’Échirolles",
+    "Commune",
+    "Logiciel",
+    "ENT-001",
+    "Schéma Directeur Échirolles Numérique Libre, Interview N. Vivant"
+   ],
+   [
+    "5",
+    "Ville de Brest",
+    "Commune",
+    "Connaissance",
+    "ENT-007",
+    "Article Briand et Brunet 2017"
+   ],
+   [
+    "6",
+    "Fabrique des Mobilités",
+    "Sectoriel",
+    "Connaissance et données",
+    "ENT-011",
+    "Site FabMob, Statuts FabMob, Wiki ADEME"
+   ],
+   [
+    "7",
+    "France Numérique Libre",
+    "Réseau agents",
+    "Communauté de pratique",
+    "ENT-001",
+    "Site FNL, Communiqué de presse FNL"
+   ],
+   [
+    "8",
+    "CAFData",
+    "National",
+    "Données",
+    "ENT-010",
+    "Site data.caf.fr, articles presse spécialisée"
+   ],
+   [
+    "9",
+    "CNAM (Open First)",
+    "National",
+    "Logiciel",
+    "ENT-008",
+    "Schéma Directeur Assurance Maladie"
+   ]
+  ]
+ },
+ {
+  "num": 10,
+  "legende": "Synthèse comparative des positionnements de chaque cas étudié",
+  "colonnes": [
+   "Initiative",
+   "Type de commun",
+   "Niveau",
+   "Porteurs",
+   "Objectifs",
+   "Maturité",
+   "Voie d’institutionnalisation"
+  ],
+  "rangs": [
+   [
+    "Suite Numérique (DINUM)",
+    "Logiciels",
+    "National",
+    "DINUM",
+    "Souveraineté et autonomie numériques",
+    "En cours de diffusion et de légitimation",
+    "Appropriation"
+   ],
+   [
+    "ADULLACT",
+    "Logiciels mutualisés, commun de méthode",
+    "Inter-organisationnel",
+    "Collectivités territoriales",
+    "Mutualiser coûts et développements",
+    "Diffusé / ancré",
+    "Relation"
+   ],
+   [
+    "SITIV – Territoire Numérique Ouvert",
+    "Infrastructure, services mutualisés",
+    "Territorial",
+    "Communes membres du SITIV",
+    "Mutualisation horizontale",
+    "Diffusé / ancré",
+    "Relation"
+   ],
+   [
+    "Ville d’Échirolles",
+    "Politique publique, logiciels",
+    "Territorial",
+    "Municipalité et DSI",
+    "Autonomie technologique et maîtrise des coûts",
+    "Ancré",
+    "Relation"
+   ],
+   [
+    "Ville de Brest",
+    "Communauté, communs de connaissance, infrastructure",
+    "Territorial",
+    "Municipalité et tissu associatif",
+    "Appropriation sociale du numérique",
+    "Ancré",
+    "Relation"
+   ],
+   [
+    "Fabrique des Mobilités (FabMob)",
+    "Connaissance, méthode, données et logiciels",
+    "Sectoriel",
+    "ADEME",
+    "Innovation ouverte en mobilité",
+    "Diffusé / ancré",
+    "Relation"
+   ],
+   [
+    "France Numérique Libre (FNL)",
+    "Communauté de pratique",
+    "Inter-organisationnel",
+    "Agents publics",
+    "Partage d’expériences IT libre",
+    "Émergent",
+    "Relation"
+   ],
+   [
+    "CAFData",
+    "Données",
+    "National",
+    "CNAF",
+    "Transparence",
+    "Diffusé",
+    "Appropriation"
+   ],
+   [
+    "Open First",
+    "Logiciels libres",
+    "National",
+    "CNAM",
+    "Souveraineté et autonomie numériques",
+    "Diffusé",
+    "Appropriation"
+   ]
+  ],
+  "note": "Le libellé de la dernière colonne est tronqué dans le PDF (« …alisation ») : restitué en « Voie d’institutionnalisation »."
+ },
+ {
+  "num": 11,
+  "legende": "Synthèse des modèles de gouvernance observés",
+  "colonnes": [
+   "Cas / Initiative",
+   "Modèle de gouvernance",
+   "Structure de décision",
+   "Financement principal"
+  ],
+  "rangs": [
+   [
+    "Suite Numérique",
+    "Porté par l’institution",
+    "Équipe interne DINUM",
+    "Budget public interne"
+   ],
+   [
+    "ADULLACT",
+    "Partenariat public-communauté",
+    "Conseil d’administration et communauté",
+    "Cotisations, prestations, subventions"
+   ],
+   [
+    "SITIV",
+    "Partenariat public-communauté",
+    "Comité syndical",
+    "Contributions des communes"
+   ],
+   [
+    "Ville d’Échirolles",
+    "Porté par l’institution",
+    "Pilotage municipal",
+    "Budget municipal"
+   ],
+   [
+    "Ville de Brest",
+    "Délégué / écosystémique",
+    "Associations locales, groupes mixtes",
+    "Subventions municipales"
+   ],
+   [
+    "Fabrique des Mobilités",
+    "Délégué / écosystémique",
+    "Association",
+    "Subventions ADEME, mécénat"
+   ],
+   [
+    "France Numérique Libre",
+    "Délégué / écosystémique",
+    "Consensus horizontal",
+    "Soutien indirect, bénévolat"
+   ],
+   [
+    "CAFData",
+    "Porté par l’institution",
+    "Pilotage CNAF et comité consultatif",
+    "Budget interne"
+   ],
+   [
+    "CNAM – Open First",
+    "Porté par l’institution",
+    "Pilotage DSI interne",
+    "Budget interne"
+   ]
+  ],
+  "note": "Deux relevés sur l’original : le libellé de la dernière colonne est tronqué (« …principal »), restitué en « Financement principal » ; et « Open Fisrt » est une coquille du mémoire, corrigée en « Open First » conformément au tableau 10."
+ },
+ {
+  "num": 12,
+  "legende": "Facteurs contextuels initiaux et déclencheurs des communs numériques selon le type d’initiative",
+  "colonnes": [
+   "Type de cas / initiative (genèse)",
+   "Principaux déclencheurs",
+   "Contexte organisationnel initial",
+   "Contexte socio-technique / économique initial"
+  ],
+  "rangs": [
+   [
+    "Initiative locale « bottom-up » / pionnière (ex. : Brest)",
+    "• Vision politique (démocratie locale, participation)\n• Insatisfaction (fracture numérique)\n• Entrepreneur institutionnel (élu)",
+    "• Culture de coopération existante\n• Espace de liberté politique\n• Moyens initiaux limités\n• Appui du tissu associatif",
+    "• Maturité des premiers outils libres (SPIP)\n• Écosystème militant local actif (Infini)\n• Faible acculturation numérique générale"
+   ],
+   [
+    "Initiative locale « top-down » / planifiée (ex. : Échirolles)",
+    "• Volonté politique forte\n• Entrepreneur institutionnel\n• Insatisfaction",
+    "• Soutien hiérarchique explicite\n• Expérience antérieure du DSI\n• Besoin de montée en compétences internes",
+    "• Écosystème libriste structuré (ADULLACT)\n• Offre de prestataires open source\n• Contexte de méfiance à l’égard des GAFAM"
+   ],
+   [
+    "Programme national « top-down » (ex. : Suite Numérique, CAFData, CNAM)",
+    "• Volonté politique\n• Crise ou opportunité (Covid, Cloud Act)\n• Alignement stratégique (État plateforme)",
+    "• Impulsion centrale (DINUM, CNAF)\n• Compétences internes à mobiliser ou recruter\n• Résistances au changement (habitudes)",
+    "• Maturité des briques open source existantes\n• Besoin d’outils collaboratifs souverains\n• Pression des GAFAM\n• Cadre légal"
+   ],
+   [
+    "Réseau mutualiste / inter-organisationnel (ex. : ADULLACT, SITIV)",
+    "• Insatisfaction (coûts, redondance)\n• Besoin de mutualisation\n• Entrepreneurs institutionnels (DSI, élus pionniers)",
+    "• Culture de coopération inter-organisationnelle\n• Besoin de structuration (SCIC pour ADULLACT)\n• Hétérogénéité des membres",
+    "• Écosystème open source en structuration\n• Marché du libre naissant\n• Soutien financier public ponctuel (plan de relance pour le SITIV)"
+   ],
+   [
+    "Communauté sectorielle / écosystème de pratique (ex. : FabMob, FNL)",
+    "• Besoin d’innovation ouverte sectorielle\n• Volonté de partage (FNL)\n• Impulsion d’un acteur pivot (ADEME pour FabMob)",
+    "• Flexibilité (association FabMob, réseau informel FNL)\n• Animation communautaire intensive nécessaire",
+    "• Données et outils ouverts disponibles\n• Réseaux d’acteurs préexistants\n• Besoin de financement d’amorçage"
+   ]
+  ]
+ },
+ {
+  "num": 13,
+  "legende": "Impacts financiers",
+  "colonnes": [
+   "Organisation",
+   "Impact financier constaté",
+   "Sources"
+  ],
+  "rangs": [
+   [
+    "Ville de Voiron",
+    "Surcoût : 900 000 € sur 4 ans après l’abandon du libre (licences Microsoft facturées 360 000 € en 2025, contre 0 € en 2021).",
+    "[Ville de Voiron, 2025]"
+   ],
+   [
+    "Ville d’Échirolles",
+    "Économies : 350 000 € par an grâce aux logiciels libres et à l’auto-hébergement, soit plus de 2 M€ sur la durée du mandat municipal.",
+    "[Rue Haute, 2025] ; [ENT-001]"
+   ],
+   [
+    "Gendarmerie nationale",
+    "Économies : près de 7 M€/an estimées grâce à la migration vers Ubuntu et des suites libres.",
+    "[Commission européenne, 2023]"
+   ],
+   [
+    "État (administrations)",
+    "Économies attendues : mutualisation des outils via La Suite Numérique pour rationaliser les dépenses applicatives (chiffrage en cours d’évaluation).",
+    "[Cour des comptes, 2024]"
+   ]
+  ],
+  "note": "La source « [ENT-01] » de l’original est écrite « [ENT-001] » ici, par cohérence avec la codification employée dans tout le mémoire."
+ }
+]
