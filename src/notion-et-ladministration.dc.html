@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Et l'administration, dans tout ça ? — Les Communs Numériques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+/* Renvoi vers le glossaire : souligné pointillé, sans rupture de lecture. */
+.gl{color:#1E2A23;text-decoration:none;border-bottom:1px dotted oklch(0.50 0.12 160)}
+.gl:hover{color:oklch(0.42 0.11 162);border-bottom-style:solid}
+</style>
+</helmet>
+<div ref="{{ barRef }}" style="position:fixed;top:0;left:0;height:3px;width:0%;background:oklch(0.50 0.12 160);z-index:80"></div>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="Accueil.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="Accueil.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Accueil</a>
+      <a href="Comprendre.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px">Comprendre</a>
+      <a href="Articles.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Articles</a>
+      <a href="Recherche.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">La recherche</a>
+      <a href="Glossaire.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Glossaire</a>
+      <a href="APropos.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div data-screen-label="En-tête notion 07" style="position:relative;overflow:hidden;border-bottom:1px solid #1E2A23">
+  <div style="position:absolute;right:clamp(0px,2vw,40px);top:-16px;font-family:'Instrument Serif',serif;font-size:clamp(150px,24vw,320px);line-height:1;color:transparent;-webkit-text-stroke:1.5px #DCE1D8;pointer-events:none;user-select:none" aria-hidden="true">07</div>
+  <div style="position:relative;max-width:1380px;margin:0 auto;padding:clamp(36px,4.5vw,64px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;animation:fadeUp .5s ease both">
+      <a href="Comprendre.dc.html" style="color:#68766C;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">← Comprendre</a>
+      <span style="color:#68766C">/</span>
+      <span style="color:oklch(0.50 0.12 160)">Notion 07 sur 07</span>
+      <span style="color:#68766C;font-weight:600">· 5 min de lecture</span>
+      <span style="display:inline-flex;align-items:center;gap:7px" role="img" aria-label="Notion 7 sur 7">
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(0.50 0.12 160)"></span>
+      </span>
+    </div>
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,5.4vw,72px);line-height:1.04;letter-spacing:-0.01em;margin:26px 0 0;max-width:1020px;text-wrap:balance;animation:fadeUp .6s .06s ease both">Et l'administration, dans tout ça&nbsp;?</h1>
+    <div style="margin-top:30px;max-width:880px;border:1px solid #1E2A23;border-radius:3px;background:#FFFFFF;padding:24px 28px;animation:fadeUp .6s .12s ease both">
+      <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">En une phrase</span>
+      <p style="margin:12px 0 0;font-family:'Instrument Serif',serif;font-size:clamp(20px,2.1vw,25px);line-height:1.36;color:#1E2A23;text-wrap:pretty">Un commun numérique répond à deux problèmes que l'administration connaît bien — la dépendance aux éditeurs et le coût des licences — mais il ne s'achète pas : il se rejoint, et c'est un geste que l'administration maîtrise mal.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px;margin-top:28px;padding-top:20px;border-top:1px solid #1E2A23;font-size:13.5px;color:#4A5850">
+      <span>Par <strong style="color:#1E2A23">Alexandre Berge</strong></span>
+      <span style="color:#68766C">·</span>
+      <span>Première approche — aucun prérequis</span>
+      <span style="color:#68766C">·</span>
+      <span>Les mots soulignés en pointillé renvoient au <a href="Glossaire.dc.html">glossaire</a></span>
+    </div>
+  </div>
+</div>
+<div style="position:relative;height:88px;border-bottom:1px solid #1E2A23;background-image:radial-gradient(circle, rgba(30,42,35,0.13) 1px, transparent 1.4px);background-size:20px 20px;overflow:hidden" aria-hidden="true">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 1200 88" preserveAspectRatio="xMidYMid slice"><rect x="138" y="28" width="34" height="34" fill="none" stroke="#1E2A23" stroke-width="1.5"></rect><circle cx="155" cy="45" r="6" fill="#127552"></circle><path d="M180 45 L226 45" stroke="#1E2A23" stroke-width="1.3" stroke-dasharray="4 4"></path><circle cx="240" cy="45" r="14" fill="none" stroke="#127552" stroke-width="2"></circle><circle cx="240" cy="45" r="5" fill="#127552"></circle><circle cx="990" cy="44" r="5" fill="#1E2A23"></circle><circle cx="1015" cy="44" r="5" fill="#127552"></circle><circle cx="1040" cy="44" r="5" fill="#1E2A23"></circle></svg>
+</div>
+
+<article style="max-width:820px;margin:0 auto;padding:clamp(44px,5.5vw,72px) clamp(20px,4vw,48px) 0">
+  <div style="font-size:17.5px;line-height:1.8;color:#2A362F;display:flex;flex-direction:column;gap:24px">
+    <p style="margin:0;text-wrap:pretty"><span style="float:left;font-family:'Instrument Serif',serif;font-size:78px;line-height:0.72;padding:10px 14px 0 0;color:oklch(0.50 0.12 160)">C</span>ette dernière notion referme le parcours en le reliant à l'objet de ce site. Pourquoi une administration s'intéresserait-elle à un mode de production né en dehors d'elle, sans fournisseur identifié, sans contrat, et dont personne ne garantit la pérennité&nbsp;? Parce que les alternatives posent des problèmes qu'elle connaît de mieux en mieux.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Trois problèmes qui poussent dans la même direction</span></h2>
+    <p style="margin:0;text-wrap:pretty">Le premier est la <strong>dépendance au fournisseur</strong>. Quand les données d'un service public sont enfermées dans un format que seul un éditeur sait lire, changer de solution coûte si cher que le renouvellement du contrat devient une formalité. Le prix augmente sans que l'acheteur ait de contre-pouvoir réel : c'est le mécanisme du <a class="gl" href="Glossaire.dc.html#g-vendor-lock-in">vendor lock-in</a>, documenté de longue date [Opara-Martins et al., 2016].</p>
+    <p style="margin:0;text-wrap:pretty">Le deuxième est la <strong><a class="gl" href="Glossaire.dc.html#g-souverainete-numerique">souveraineté</a></strong>. Une partie des logiciels et des services d'hébergement utilisés par les administrations européennes relève d'entreprises soumises à des législations extraterritoriales, au premier rang desquelles le <a class="gl" href="Glossaire.dc.html#g-cloud-act">Cloud Act</a> américain. La question n'est plus seulement contractuelle, elle est politique.</p>
+    <p style="margin:0;text-wrap:pretty">Le troisième est la <strong>capitalisation</strong>. Des centaines de collectivités résolvent le même problème chacune de son côté, en payant chacune le développement. Ce qui a été financé une fois par de l'argent public n'est ni réutilisé ni réutilisable.</p>
+    <p style="margin:0;text-wrap:pretty">Face à ces trois problèmes, un commun numérique offre une réponse de principe : le code est ouvert, donc auditable et transférable ; il peut être hébergé où l'on veut ; et il est réutilisable par toutes les organisations qui rencontrent le même besoin.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Ce que le droit français prévoit déjà</span></h2>
+    <p style="margin:0;text-wrap:pretty">Le sujet n'est ni neuf ni marginal. Un rapport au Premier ministre le documentait dès 2001 [Carcenac, 2001]. Une circulaire de 2012 a fixé des orientations pour l'usage des logiciels libres dans l'administration [France, 2012]. Surtout, la loi pour une République numérique de 2016 a fait du code source produit par une administration un document administratif communicable — ce qui en fait, par défaut, quelque chose de publiable [France, 2016].</p>
+    <p style="margin:0;text-wrap:pretty">Côté institutions, la <a class="gl" href="Glossaire.dc.html#g-dinum">DINUM</a> anime la politique de l'État en la matière, la communauté <a class="gl" href="Glossaire.dc.html#g-bluehats">BlueHats</a> fédère les agents publics contributeurs, et la <a class="gl" href="Glossaire.dc.html#g-suite-numerique">Suite Numérique</a> propose des outils collaboratifs développés en ouvert. La <a class="gl" href="Glossaire.dc.html#g-csnp">Commission supérieure du numérique et des postes</a> a consacré aux communs numériques un avis dédié en 2023.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">La difficulté réelle : l'administration sait acheter, pas rejoindre</span></h2>
+    <p style="margin:0;text-wrap:pretty">Le problème n'est donc pas le manque de cadre juridique. Il est organisationnel, et il tient en une phrase : un commun ne s'achète pas.</p>
+    <p style="margin:0;text-wrap:pretty">Une administration dispose de procédures éprouvées pour acheter une prestation : un besoin, un marché, un titulaire, des pénalités. Rejoindre un commun demande autre chose — désigner des agents dont le travail consistera pour partie à contribuer à une ressource qui ne lui appartient pas, accepter que les priorités soient discutées avec d'autres, et assumer qu'il n'y a personne à qui adresser une mise en demeure. Rien de tout cela n'entre naturellement dans les routines administratives.</p>
+    <p style="margin:0;text-wrap:pretty">C'est exactement ce point que le travail de recherche présenté sur ce site a exploré : à quelles conditions cette greffe prend, et pourquoi elle échoue si souvent.</p>
+    <div style="border-left:3px solid oklch(0.50 0.12 160);background:#FFFFFF;padding:22px 26px">
+      <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">Un exemple — deux voies plutôt qu'une</span>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.7;color:#2A362F;text-wrap:pretty">L'enquête menée auprès de neuf initiatives publiques françaises fait apparaître deux trajectoires distinctes. Dans la logique d'<strong>appropriation</strong>, l'administration prend la main sur le commun, l'intègre à ses processus et le pilote — elle en maîtrise le rythme, mais porte seule la charge. Dans la logique de <strong>relation</strong>, elle contribue à un collectif qu'elle ne dirige pas — elle partage l'effort, mais doit accepter de ne pas décider seule. Les deux fonctionnent ; elles ne demandent simplement pas les mêmes conditions de réussite.</p>
+    </div>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Où continuer</span></h2>
+    <p style="margin:0;text-wrap:pretty">Ce parcours s'arrête ici : vous avez de quoi lire la suite. Les articles reprennent chacun de ces points avec l'appareil de sources qui convient, et le mémoire donne l'enquête complète — méthode, cas, résultats.</p>
+  </div>
+  <div style="margin-top:44px;background:oklch(0.25 0.05 168);border-radius:3px;padding:clamp(28px,3.5vw,40px)">
+    <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.78 0.09 160)">À retenir</span>
+    <ol style="margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px;counter-reset:r">
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">01</span><span>Trois problèmes convergent : dépendance aux éditeurs, souveraineté, incapacité à capitaliser sur ce qui a déjà été financé.</span></li>
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">02</span><span>Le cadre juridique français existe depuis longtemps : circulaire de 2012, loi pour une République numérique de 2016.</span></li>
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">03</span><span>La difficulté est organisationnelle : un commun ne s'achète pas, il se rejoint — et l'administration sait mal faire ce geste.</span></li>
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">04</span><span>Deux voies d'ancrage se dégagent du terrain : l'appropriation, où l'administration pilote, et la relation, où elle contribue sans diriger.</span></li>
+    </ol>
+  </div>
+  <div style="margin-top:44px;border-top:1px solid #1E2A23;padding-top:22px">
+    <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#4A5850">Pour aller plus loin</span>
+    <div style="margin-top:14px;display:flex;flex-direction:column">
+      <a href="article-administration-et-communs.dc.html" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:14px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="flex:0 0 118px;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">Article</span><span style="flex:1 1 300px;font-family:'Instrument Serif',serif;font-size:20px;line-height:1.3">Pourquoi l'administration s'intéresse aux communs numériques</span><span style="font-family:'Instrument Serif',serif;font-size:19px">→</span></a>
+      <a href="article-appropriation-relation.dc.html" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:14px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="flex:0 0 118px;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">Article</span><span style="flex:1 1 300px;font-family:'Instrument Serif',serif;font-size:20px;line-height:1.3">Appropriation ou relation&nbsp;: deux voies pour ancrer les communs</span><span style="font-family:'Instrument Serif',serif;font-size:19px">→</span></a>
+      <a href="Recherche.dc.html" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:14px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="flex:0 0 118px;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">Mémoire</span><span style="flex:1 1 300px;font-family:'Instrument Serif',serif;font-size:20px;line-height:1.3">L'enquête complète&nbsp;: méthode, neuf cas, résultats</span><span style="font-family:'Instrument Serif',serif;font-size:19px">→</span></a>
+    </div>
+  </div>
+  <div style="margin-top:44px;border-top:1px solid #D8DDD3;padding-top:20px">
+    <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Sur quoi s'appuie cette notion</span>
+    <ul style="margin:14px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px 40px;font-size:13.5px;line-height:1.6;color:#4A5850">
+      <li>Opara-Martins J. et al., « Critical Analysis of Vendor Lock-in… », <em>Journal of Cloud Computing</em>, 2016.</li>
+      <li>Carcenac T., <em>L'administration électronique et les logiciels libres</em>, rapport au Premier ministre, 2001.</li>
+      <li>France, loi n° 2016-1321 du 7 octobre 2016 pour une République numérique.</li>
+      <li>CSNP, avis n° 2023-09, « Communs numériques : vers un modèle souverain et durable », 2023.</li>
+    </ul>
+    <p style="margin:14px 0 0;font-size:13px;color:#68766C">Les références complètes figurent dans la <a href="Recherche.dc.html">bibliographie du mémoire</a>.</p>
+  </div>
+</article>
+
+<nav aria-label="Progression dans le parcours" style="display:flex;flex-wrap:wrap;border-top:1px solid #1E2A23;background:#FAFAF6">
+    <a href="notion-trois-communs-trois-modeles.dc.html" style="flex:1 1 300px;min-width:min(100%,300px);display:block;padding:clamp(26px,3vw,40px) clamp(20px,3vw,44px);text-decoration:none;color:#1E2A23;;transition:background .25s ease" style-hover="background:#EFF4EE">
+      <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Notion 06 — précédente</span>
+      <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(21px,2.4vw,30px);line-height:1.16;margin-top:12px;text-wrap:balance">← Wikipédia, OpenStreetMap, Linux&nbsp;: trois façons de tenir</span>
+    </a>
+    <a href="Articles.dc.html" style="flex:1 1 300px;min-width:min(100%,300px);display:block;padding:clamp(26px,3vw,40px) clamp(20px,3vw,44px);text-decoration:none;color:#1E2A23;border-left:1px solid #D8DDD3;text-align:right;transition:background .25s ease" style-hover="background:#EFF4EE">
+      <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Parcours terminé</span>
+      <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(21px,2.4vw,30px);line-height:1.16;margin-top:12px;text-wrap:balance">Passer aux articles →</span>
+    </a>
+</nav>
+<section style="border-top:1px solid #1E2A23;border-bottom:1px solid #1E2A23;background:#FFFFFF">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(34px,4vw,56px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 30px">
+      <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">Le parcours en sept notions</span>
+      <a href="Comprendre.dc.html" style="font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#4A5850;text-decoration:none" style-hover="color:#1E2A23">Revenir au sommaire →</a>
+    </div>
+    <div style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 40px">
+      <a href="notion-un-commun-avant-le-numerique.dc.html" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">01</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Un commun, c'est quoi avant d'être numérique&nbsp;?</span></a>
+      <a href="notion-ce-que-change-le-numerique.dc.html" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">02</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qu'est-ce que le numérique change à un commun&nbsp;?</span></a>
+      <a href="notion-libre-open-source-commun.dc.html" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">03</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Libre, open source, commun&nbsp;: quelles différences&nbsp;?</span></a>
+      <a href="notion-qui-decide.dc.html" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">04</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qui décide dans un commun numérique&nbsp;?</span></a>
+      <a href="notion-qui-paie.dc.html" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">05</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qui paie un commun numérique&nbsp;?</span></a>
+      <a href="notion-trois-communs-trois-modeles.dc.html" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease" style-hover="transform:translateX(6px);color:oklch(0.42 0.11 162)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">06</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Wikipédia, OpenStreetMap, Linux&nbsp;: trois façons de tenir</span></a>
+      <span style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;color:#1E2A23" aria-current="page"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:oklch(0.50 0.12 160)">07</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28;font-style:italic;color:oklch(0.50 0.12 160)">Et l'administration, dans tout ça&nbsp;?</span></span>
+    </div>
+  </div>
+</section>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a href="Comprendre.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Comprendre</a>
+        <a href="Articles.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Articles</a>
+        <a href="Recherche.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">La recherche</a>
+        <a href="Glossaire.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Glossaire</a>
+        <a href="APropos.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px" style-hover="color:oklch(0.50 0.12 160)">consulting@alexandre-berge.fr</a>
+        <a href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:baseline;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#5A685F">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <nav style="display:flex;flex-wrap:wrap;gap:6px 16px">
+        <a href="MentionsLegales.dc.html" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3" style-hover="color:#1E2A23">Mentions légales</a>
+        <a href="Confidentialite.dc.html" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3" style-hover="color:#1E2A23">Confidentialité</a>
+      </nav>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.barRef = React.createRef();
+  }
+  componentDidMount() {
+    this.onScroll = () => {
+      const el = document.documentElement;
+      const p = el.scrollTop / Math.max(1, el.scrollHeight - el.clientHeight);
+      if (this.barRef.current) this.barRef.current.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+  renderVals() {
+    return { barRef: this.barRef };
+  }
+}
+</script>
+</body>
+</html>

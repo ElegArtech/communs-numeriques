@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Libre, open source, commun : quelles différences ? — Les Communs Numériques</title>
+<meta name="description" content="Le libre est une affaire de droits, l'open source une méthode, le commun une manière de gouverner. Trois termes voisins qui ne se recouvrent pas.">
+<meta name="author" content="Alexandre Berge">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://communs-numeriques.fr/comprendre/libre-open-source-commun/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Les Communs Numériques">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Libre, open source, commun : quelles différences ? — Les Communs Numériques">
+<meta property="og:description" content="Le libre est une affaire de droits, l'open source une méthode, le commun une manière de gouverner. Trois termes voisins qui ne se recouvrent pas.">
+<meta property="og:url" content="https://communs-numeriques.fr/comprendre/libre-open-source-commun/">
+<meta property="og:image" content="https://communs-numeriques.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Libre, open source, commun : quelles différences ? — Les Communs Numériques">
+<meta name="twitter:description" content="Le libre est une affaire de droits, l'open source une méthode, le commun une manière de gouverner. Trois termes voisins qui ne se recouvrent pas.">
+<meta name="twitter:image" content="https://communs-numeriques.fr/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+/* Renvoi vers le glossaire : souligné pointillé, sans rupture de lecture. */
+.gl{color:#1E2A23;text-decoration:none;border-bottom:1px dotted oklch(0.50 0.12 160)}
+.gl:hover{color:oklch(0.42 0.11 162);border-bottom-style:solid}
+.hv1:hover{color:#1E2A23 !important}
+.hv2:hover{color:oklch(0.42 0.11 162) !important}
+.hv3:hover{color:oklch(0.50 0.12 160) !important}
+.hv4:hover{color:oklch(0.42 0.11 162) !important;transform:translateX(6px) !important}
+.hv5:hover{animation-play-state:paused !important}
+.hv6:hover{background:oklch(0.78 0.09 160) !important;color:#1E2A23 !important}
+.hv7:hover{border-color:#F4F7F2 !important;color:#F4F7F2 !important}
+.hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
+.hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
+.hv10:hover{background:oklch(0.50 0.12 160) !important}
+.hv11:hover{background:rgba(255,255,255,0.75) !important}
+.hv12:hover{background:oklch(0.78 0.09 160) !important}
+.hv13:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
+.hv14:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv15:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv16:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv17:hover{transform:translateX(6px) !important;color:oklch(0.42 0.11 162) !important}
+.hv18:hover{background:#EFF4EE !important}
+.hv19:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","inLanguage":"fr-FR","isPartOf":{"@type":"WebSite","name":"Les Communs Numériques","url":"https://communs-numeriques.fr/"},"author":{"@type":"Person","name":"Alexandre Berge","url":"https://www.linkedin.com/in/bergealexandre/"},"license":"https://creativecommons.org/licenses/by-sa/4.0/deed.fr","@type":["Article","LearningResource"],"headline":"Libre, open source, commun : quelles différences ?","description":"Le libre est une affaire de droits, l'open source une méthode, le commun une manière de gouverner. Trois termes voisins qui ne se recouvrent pas.","url":"https://communs-numeriques.fr/comprendre/libre-open-source-commun/","articleSection":"Vocabulaire","learningResourceType":"Notion introductive","educationalLevel":"Débutant","publisher":{"@type":"Person","name":"Alexandre Berge"}}</script>
+</head>
+<body>
+<div data-ref="barRef" style="position:fixed;top:0;left:0;height:3px;width:0%;background:oklch(0.50 0.12 160);z-index:80"></div>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a class="hv1" href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Accueil</a>
+      <a href="/comprendre/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px">Comprendre</a>
+      <a class="hv1" href="/articles/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Articles</a>
+      <a class="hv1" href="/la-recherche/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">La recherche</a>
+      <a class="hv1" href="/glossaire/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Glossaire</a>
+      <a class="hv1" href="/a-propos/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div style="position:relative;overflow:hidden;border-bottom:1px solid #1E2A23">
+  <div style="position:absolute;right:clamp(0px,2vw,40px);top:-16px;font-family:'Instrument Serif',serif;font-size:clamp(150px,24vw,320px);line-height:1;color:transparent;-webkit-text-stroke:1.5px #DCE1D8;pointer-events:none;user-select:none" aria-hidden="true">03</div>
+  <div style="position:relative;max-width:1380px;margin:0 auto;padding:clamp(36px,4.5vw,64px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;animation:fadeUp .5s ease both">
+      <a class="hv3" href="/comprendre/" style="color:#68766C;text-decoration:none">← Comprendre</a>
+      <span style="color:#68766C">/</span>
+      <span style="color:oklch(0.50 0.12 160)">Notion 03 sur 07</span>
+      <span style="color:#68766C;font-weight:600">· 5 min de lecture</span>
+      <span style="display:inline-flex;align-items:center;gap:7px" role="img" aria-label="Notion 3 sur 7">
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(0.50 0.12 160)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+      </span>
+    </div>
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,5.4vw,72px);line-height:1.04;letter-spacing:-0.01em;margin:26px 0 0;max-width:1020px;text-wrap:balance;animation:fadeUp .6s .06s ease both">Libre, open source, commun&nbsp;: quelles différences&nbsp;?</h1>
+    <div style="margin-top:30px;max-width:880px;border:1px solid #1E2A23;border-radius:3px;background:#FFFFFF;padding:24px 28px;animation:fadeUp .6s .12s ease both">
+      <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">En une phrase</span>
+      <p style="margin:12px 0 0;font-family:'Instrument Serif',serif;font-size:clamp(20px,2.1vw,25px);line-height:1.36;color:#1E2A23;text-wrap:pretty">Le logiciel libre est une affaire de droits, l'open source une méthode de production, le commun une manière de gouverner — et un logiciel peut être parfaitement libre sans être un commun.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px;margin-top:28px;padding-top:20px;border-top:1px solid #1E2A23;font-size:13.5px;color:#4A5850">
+      <span>Par <strong style="color:#1E2A23">Alexandre Berge</strong></span>
+      <span style="color:#68766C">·</span>
+      <span>Première approche — aucun prérequis</span>
+      <span style="color:#68766C">·</span>
+      <span>Les mots soulignés en pointillé renvoient au <a href="/glossaire/">glossaire</a></span>
+    </div>
+  </div>
+</div>
+<div style="position:relative;height:88px;border-bottom:1px solid #1E2A23;background-image:radial-gradient(circle, rgba(30,42,35,0.13) 1px, transparent 1.4px);background-size:20px 20px;overflow:hidden" aria-hidden="true">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 1200 88" preserveAspectRatio="xMidYMid slice"><circle cx="150" cy="44" r="17" fill="none" stroke="#127552" stroke-width="2"></circle><circle cx="182" cy="44" r="17" fill="none" stroke="#1E2A23" stroke-width="1.5"></circle><circle cx="214" cy="44" r="17" fill="none" stroke="#1E2A23" stroke-width="1.5" stroke-dasharray="3 3"></circle><circle cx="1000" cy="44" r="9" fill="#127552"></circle><circle cx="1040" cy="44" r="4" fill="#1E2A23"></circle></svg>
+</div>
+
+<article style="max-width:820px;margin:0 auto;padding:clamp(44px,5.5vw,72px) clamp(20px,4vw,48px) 0">
+  <div style="font-size:17.5px;line-height:1.8;color:#2A362F;display:flex;flex-direction:column;gap:24px">
+    <p style="margin:0;text-wrap:pretty"><span style="float:left;font-family:'Instrument Serif',serif;font-size:78px;line-height:0.72;padding:10px 14px 0 0;color:oklch(0.50 0.12 160)">L</span>es trois mots — « libre », « open source », « commun » — circulent souvent comme des équivalents, y compris dans des documents officiels. Ils ne décrivent pourtant pas la même chose. Le premier parle de droits, le deuxième de méthode, le troisième de gouvernance — et c'est le troisième qui pose le plus de difficultés à une administration.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Le logiciel libre : une question de droits</span></h2>
+    <p style="margin:0;text-wrap:pretty">Un <a class="gl" href="/glossaire/#g-logiciel-libre">logiciel libre</a> est un logiciel dont la licence garantit quatre libertés à quiconque en détient une copie : l'utiliser pour n'importe quel usage, en étudier le fonctionnement — ce qui suppose l'accès au code source —, le modifier, et redistribuer les versions modifiées.</p>
+    <p style="margin:0;text-wrap:pretty">Ces libertés sont un objet juridique, pas technique. Elles sont formulées dans les années 1980 par le mouvement du logiciel libre, qui invente au passage le mécanisme du <em>copyleft</em> : une licence comme la <a class="gl" href="/glossaire/#g-gnu-gpl">GNU GPL</a> n'abandonne pas le droit d'auteur, elle le retourne. L'auteur conserve ses droits, et s'en sert pour imposer que toute version dérivée reste soumise aux mêmes libertés. Le terme est politique — il s'agit de garantir l'autonomie de l'utilisateur face au logiciel.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">L'open source : la même chose, avec un autre argumentaire</span></h2>
+    <p style="margin:0;text-wrap:pretty">À la fin des années 1990, une partie du mouvement fait un choix stratégique : parler aux entreprises. L'expression « open source » désigne à peu près le même socle juridique, mais elle est portée par une argumentation différente — pas la liberté de l'utilisateur, mais la qualité du produit, la réduction des coûts, la sécurité par l'examen public du code, la vitesse de correction.</p>
+    <p style="margin:0;text-wrap:pretty">Le texte fondateur de ce déplacement est <em>La cathédrale et le bazar</em>, où Eric Raymond oppose le développement fermé et planifié d'un côté, et de l'autre le développement ouvert, désordonné en apparence, mais dont il soutient qu'il produit un logiciel plus robuste [Raymond, 1999]. Sur le plan des licences, la différence avec le logiciel libre est mince ; sur le plan du discours, elle est nette.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Le commun : ce que les deux premiers ne disent pas</span></h2>
+    <p style="margin:0;text-wrap:pretty">Ni « libre » ni « open source » ne disent quoi que ce soit sur la manière dont les décisions sont prises. Une entreprise peut publier son code sous licence libre, accepter les corrections extérieures, et rester seule à décider de la feuille de route, des versions, de ce qui est intégré et de ce qui ne l'est pas. Le logiciel est libre. Ce n'est pas un commun.</p>
+    <p style="margin:0;text-wrap:pretty">La différence tient au troisième ingrédient. Pour qu'il y ait commun, il faut une communauté qui participe réellement aux décisions, selon des règles explicites et connues [Broca et Coriat, 2015]. Le libre est une condition nécessaire — sans licence ouverte, aucune communauté ne peut se saisir de la ressource — mais elle n'est pas suffisante.</p>
+    <div style="overflow-x:auto;border-top:1px solid #1E2A23">
+      <table style="width:100%;min-width:560px;border-collapse:collapse;font-size:15px;line-height:1.6">
+        <thead><tr><th scope="col" style="text-align:left;padding:16px 18px 14px 0;border-bottom:1px solid #1E2A23;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#4A5850;vertical-align:bottom"></th><th scope="col" style="text-align:left;padding:16px 18px 14px 18px;border-bottom:1px solid #1E2A23;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#1E2A23;vertical-align:bottom">Ce que cela garantit</th><th scope="col" style="text-align:left;padding:16px 18px 14px 18px;border-bottom:1px solid #1E2A23;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#1E2A23;vertical-align:bottom">Ce que cela ne garantit pas</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" style="text-align:left;padding:15px 18px 15px 0;border-bottom:1px solid #D8DDD3;font-weight:600;color:#4A5850;vertical-align:top;font-size:13.5px">Logiciel libre</th><td style="padding:15px 18px;border-bottom:1px solid #D8DDD3;color:#2A362F;vertical-align:top">Quatre libertés opposables : utiliser, étudier, modifier, redistribuer. Une protection contre l'appropriation si la licence est <em>copyleft</em>.</td><td style="padding:15px 18px;border-bottom:1px solid #D8DDD3;color:#2A362F;vertical-align:top">Que quiconque d'autre que l'auteur ait voix au chapitre.</td></tr>
+          <tr><th scope="row" style="text-align:left;padding:15px 18px 15px 0;border-bottom:1px solid #D8DDD3;font-weight:600;color:#4A5850;vertical-align:top;font-size:13.5px">Open source</th><td style="padding:15px 18px;border-bottom:1px solid #D8DDD3;color:#2A362F;vertical-align:top">Le même socle juridique, plus une culture de développement ouvert et de contribution extérieure.</td><td style="padding:15px 18px;border-bottom:1px solid #D8DDD3;color:#2A362F;vertical-align:top">Une gouvernance partagée : l'ouverture des contributions n'est pas l'ouverture des décisions.</td></tr>
+          <tr><th scope="row" style="text-align:left;padding:15px 18px 15px 0;border-bottom:1px solid #D8DDD3;font-weight:600;color:#4A5850;vertical-align:top;font-size:13.5px">Commun numérique</th><td style="padding:15px 18px;border-bottom:1px solid #D8DDD3;color:#2A362F;vertical-align:top">Une ressource ouverte, une communauté identifiée, et des règles de décision qu'elle s'applique à elle-même.</td><td style="padding:15px 18px;border-bottom:1px solid #D8DDD3;color:#2A362F;vertical-align:top">La pérennité : un commun bien gouverné peut mourir faute de moyens ou de contributeurs.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="border:1px solid #1E2A23;border-radius:3px;background:#FFFFFF;padding:24px 28px">
+      <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#1E2A23">Le piège du « common washing »</span>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.7;color:#2A362F;text-wrap:pretty">Se déclarer commun coûte peu et rapporte beaucoup en légitimité. D'où une pratique repérable : afficher le vocabulaire des communs — ouverture, communauté, gouvernance partagée — sans en adopter les mécanismes. Le code est publié mais personne d'extérieur ne peut le modifier ; un comité est annoncé mais ne se réunit pas ; la licence est ouverte mais aucun processus ne permet de contester une décision. Le signe le plus fiable n'est pas le discours, ce sont les règles écrites et vérifiables : qui décide, comment, et que fait-on des désaccords.</p>
+    </div>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Pourquoi la distinction compte pour une administration</span></h2>
+    <p style="margin:0;text-wrap:pretty">Elle a des conséquences pratiques immédiates. Publier le code source d'une application publique sur une <a class="gl" href="/glossaire/#g-forge-logicielle">forge logicielle</a> est une obligation légale depuis la loi pour une République numérique de 2016 : cela crée de l'open source, pas un commun. Faire naître un commun demande un travail supplémentaire — désigner qui accueille les contributions extérieures, écrire les règles d'intégration, prévoir comment les autres administrations peuvent peser sur les priorités.</p>
+    <p style="margin:0;text-wrap:pretty">Cette différence explique une bonne part des échecs constatés sur le terrain : des projets publiés en toute sincérité, jamais rejoints par personne, faute d'avoir prévu la place des autres.</p>
+  </div>
+  <div style="margin-top:44px;background:oklch(0.25 0.05 168);border-radius:3px;padding:clamp(28px,3.5vw,40px)">
+    <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.78 0.09 160)">À retenir</span>
+    <ol style="margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px;counter-reset:r">
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">01</span><span>Libre = des droits garantis par la licence. Open source = la même base juridique, défendue par un argument d'efficacité industrielle.</span></li>
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">02</span><span>Commun = ouverture plus gouvernance partagée. Un logiciel libre édité par un acteur unique qui décide de tout n'est pas un commun.</span></li>
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">03</span><span>Publier son code ne crée pas un commun : il faut organiser la place des contributeurs extérieurs dans la décision.</span></li>
+    </ol>
+  </div>
+  <div style="margin-top:44px;border-top:1px solid #1E2A23;padding-top:22px">
+    <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#4A5850">Pour aller plus loin</span>
+    <div style="margin-top:14px;display:flex;flex-direction:column">
+      <a class="hv17" href="/articles/institutionnalisation/" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:14px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="flex:0 0 118px;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">Article</span><span style="flex:1 1 300px;font-family:'Instrument Serif',serif;font-size:20px;line-height:1.3">L'institutionnalisation, ou comment une innovation devient la norme</span><span style="font-family:'Instrument Serif',serif;font-size:19px">→</span></a>
+      <a class="hv17" href="/glossaire/#g-logiciel-libre" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:14px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="flex:0 0 118px;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">Glossaire</span><span style="flex:1 1 300px;font-family:'Instrument Serif',serif;font-size:20px;line-height:1.3">Logiciel libre, GNU GPL, forge logicielle</span><span style="font-family:'Instrument Serif',serif;font-size:19px">→</span></a>
+    </div>
+  </div>
+  <div style="margin-top:44px;border-top:1px solid #D8DDD3;padding-top:20px">
+    <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Sur quoi s'appuie cette notion</span>
+    <ul style="margin:14px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px 40px;font-size:13.5px;line-height:1.6;color:#4A5850">
+      <li>Broca S., Coriat B., « Le logiciel libre et les communs », <em>Revue internationale de droit économique</em>, 2015.</li>
+      <li>Raymond E. S., <em>The Cathedral and the Bazaar</em>, O'Reilly, 1999.</li>
+      <li>France, loi n° 2016-1321 du 7 octobre 2016 pour une République numérique.</li>
+    </ul>
+    <p style="margin:14px 0 0;font-size:13px;color:#68766C">Les références complètes figurent dans la <a href="/la-recherche/">bibliographie du mémoire</a>.</p>
+  </div>
+</article>
+
+<nav aria-label="Progression dans le parcours" style="display:flex;flex-wrap:wrap;border-top:1px solid #1E2A23;background:#FAFAF6">
+    <a class="hv18" href="/comprendre/ce-que-change-le-numerique/" style="flex:1 1 300px;min-width:min(100%,300px);display:block;padding:clamp(26px,3vw,40px) clamp(20px,3vw,44px);text-decoration:none;color:#1E2A23;;transition:background .25s ease">
+      <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Notion 02 — précédente</span>
+      <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(21px,2.4vw,30px);line-height:1.16;margin-top:12px;text-wrap:balance">← Qu'est-ce que le numérique change à un commun&nbsp;?</span>
+    </a>
+    <a class="hv18" href="/comprendre/qui-decide/" style="flex:1 1 300px;min-width:min(100%,300px);display:block;padding:clamp(26px,3vw,40px) clamp(20px,3vw,44px);text-decoration:none;color:#1E2A23;border-left:1px solid #D8DDD3;text-align:right;transition:background .25s ease">
+      <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Notion 04 — suivante</span>
+      <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(21px,2.4vw,30px);line-height:1.16;margin-top:12px;text-wrap:balance">Qui décide dans un commun numérique&nbsp;? →</span>
+    </a>
+</nav>
+<section style="border-top:1px solid #1E2A23;border-bottom:1px solid #1E2A23;background:#FFFFFF">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(34px,4vw,56px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 30px">
+      <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">Le parcours en sept notions</span>
+      <a class="hv1" href="/comprendre/" style="font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#4A5850;text-decoration:none">Revenir au sommaire →</a>
+    </div>
+    <div style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 40px">
+      <a class="hv17" href="/comprendre/un-commun-avant-le-numerique/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">01</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Un commun, c'est quoi avant d'être numérique&nbsp;?</span></a>
+      <a class="hv17" href="/comprendre/ce-que-change-le-numerique/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">02</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qu'est-ce que le numérique change à un commun&nbsp;?</span></a>
+      <span style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;color:#1E2A23" aria-current="page"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:oklch(0.50 0.12 160)">03</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28;font-style:italic;color:oklch(0.50 0.12 160)">Libre, open source, commun&nbsp;: quelles différences&nbsp;?</span></span>
+      <a class="hv17" href="/comprendre/qui-decide/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">04</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qui décide dans un commun numérique&nbsp;?</span></a>
+      <a class="hv17" href="/comprendre/qui-paie/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">05</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qui paie un commun numérique&nbsp;?</span></a>
+      <a class="hv17" href="/comprendre/trois-communs-trois-modeles/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">06</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Wikipédia, OpenStreetMap, Linux&nbsp;: trois façons de tenir</span></a>
+      <a class="hv17" href="/comprendre/et-ladministration/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">07</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Et l'administration, dans tout ça&nbsp;?</span></a>
+    </div>
+  </div>
+</section>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a class="hv3" href="/comprendre/" style="color:#1E2A23;text-decoration:none">Comprendre</a>
+        <a class="hv3" href="/articles/" style="color:#1E2A23;text-decoration:none">Articles</a>
+        <a class="hv3" href="/la-recherche/" style="color:#1E2A23;text-decoration:none">La recherche</a>
+        <a class="hv3" href="/glossaire/" style="color:#1E2A23;text-decoration:none">Glossaire</a>
+        <a class="hv3" href="/a-propos/" style="color:#1E2A23;text-decoration:none">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a class="hv3" href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px">consulting@alexandre-berge.fr</a>
+        <a class="hv3" href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:baseline;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#5A685F">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <nav style="display:flex;flex-wrap:wrap;gap:6px 16px">
+        <a class="hv1" href="/mentions-legales/" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3">Mentions légales</a>
+        <a class="hv1" href="/confidentialite/" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3">Confidentialité</a>
+      </nav>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+<script>/* Remplace le runtime Claude Design (React + ReactDOM + Babel, ~3 Mo depuis un CDN)
+   par l'équivalent en JavaScript natif. Aucune dépendance, aucune requête réseau.
+   Le site reste entièrement lisible si ce script ne s'exécute pas. */
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ref = function (name) { return document.querySelector('[data-ref="' + name + '"]'); };
+
+  /* ── Barre de progression de lecture (articles) ───────────────────────── */
+  var bar = ref('barRef');
+  if (bar) {
+    var onScroll = function () {
+      var e = document.documentElement;
+      var p = e.scrollTop / Math.max(1, e.scrollHeight - e.clientHeight);
+      bar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Motif de points animé (couverture d'accueil) ─────────────────────── */
+  var canvas = ref('dotsRef');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var gap = parseInt(canvas.getAttribute('data-densite') || '30', 10);
+    var animate = canvas.getAttribute('data-anime') !== 'false' && !reduced;
+    var w = 0, h = 0, raf = 0;
+
+    var resize = function () {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    var draw = function (t) {
+      ctx.clearRect(0, 0, w, h);
+      var cx = w * 0.82, cy = h * 0.18;
+      for (var x = gap / 2; x < w; x += gap) {
+        for (var y = gap / 2; y < h; y += gap) {
+          var d = Math.hypot(x - cx, y - cy);
+          var k = Math.max(0, Math.sin(d * 0.015 - t * 0.001));
+          ctx.beginPath();
+          ctx.arc(x, y, 1.0 + 1.4 * k, 0, 6.2832);
+          ctx.fillStyle = 'rgba(18,117,82,' + (0.05 + 0.22 * k).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      if (animate) raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () { resize(); if (!animate) draw(600); })
+        .observe(canvas.parentElement);
+    } else {
+      window.addEventListener('resize', function () { resize(); if (!animate) draw(600); });
+    }
+    if (animate) raf = requestAnimationFrame(draw); else draw(600);
+  }
+
+  /* ── Compteurs animés (accueil) ───────────────────────────────────────── */
+  /* Les valeurs finales sont déjà dans le HTML : sans JS, rien ne manque. */
+  if (!reduced && window.IntersectionObserver) {
+    var counters = [];
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies'].forEach(function (n) {
+      var el = ref(n);
+      if (el) counters.push([el, parseInt(el.textContent.trim(), 10)]);
+    });
+    if (counters.length) {
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (done || !entries.some(function (e) { return e.isIntersecting; })) return;
+        done = true;
+        io.disconnect();
+        var start = performance.now(), dur = 1400;
+        var tick = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          counters.forEach(function (c) { c[0].textContent = String(Math.round(c[1] * ease)); });
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      io.observe(counters[0][0]);
+    }
+  }
+
+  /* ── Filtre du glossaire ──────────────────────────────────────────────── */
+  var filter = ref('filterRef');
+  if (filter) {
+    var empty = ref('emptyRef');
+    var norm = function (s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+    var apply = function () {
+      var q = norm(filter.value.trim());
+      var visible = 0;
+      document.querySelectorAll('[data-glossterm]').forEach(function (el) {
+        var hay = norm(el.getAttribute('data-glossterm') + ' ' + el.textContent);
+        var show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.querySelectorAll('[data-glossgroup]').forEach(function (g) {
+        var any = Array.prototype.some.call(
+          g.querySelectorAll('[data-glossterm]'),
+          function (el) { return el.style.display !== 'none'; }
+        );
+        g.style.display = any ? '' : 'none';
+      });
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    };
+    filter.addEventListener('input', apply);
+    if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
+  }
+})();
+</script>
+</body>
+</html>

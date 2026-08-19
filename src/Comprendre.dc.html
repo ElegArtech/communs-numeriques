@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprendre les communs numériques — Les Communs Numériques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+/* Renvoi vers le glossaire : souligné pointillé, sans rupture de lecture. */
+.gl{color:#1E2A23;text-decoration:none;border-bottom:1px dotted oklch(0.50 0.12 160)}
+.gl:hover{color:oklch(0.42 0.11 162);border-bottom-style:solid}
+</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="Accueil.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="Accueil.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Accueil</a>
+      <a href="Comprendre.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px">Comprendre</a>
+      <a href="Articles.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Articles</a>
+      <a href="Recherche.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">La recherche</a>
+      <a href="Glossaire.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Glossaire</a>
+      <a href="APropos.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<section data-screen-label="En-tête Comprendre" style="border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(40px,5vw,76px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 30px;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);animation:fadeUp .5s ease both">
+      <span>Parcours d'introduction</span>
+      <span style="color:#5A685F;font-weight:600">7 notions · environ 34 minutes en tout</span>
+    </div>
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,8vw,120px);line-height:0.96;letter-spacing:-0.015em;margin:22px 0 0;animation:fadeUp .6s ease both">Comprendre</h1>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:22px 56px;margin-top:clamp(28px,3.5vw,46px);padding-top:24px;border-top:1px solid #1E2A23;animation:fadeUp .6s .1s ease both">
+      <p style="margin:0;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(21px,2.4vw,29px);line-height:1.32;color:#1E2A23;max-width:620px;text-wrap:balance">Sept questions simples, dans l'ordre où elles se posent.</p>
+      <p style="margin:0;font-size:16px;line-height:1.72;color:#4A5850;max-width:520px;text-wrap:pretty">Ce parcours ne suppose aucune connaissance préalable. Chaque notion pose une question, y répond dès la première phrase, puis prend quatre à six minutes pour l'expliquer. Elles se lisent dans l'ordre, mais rien n'empêche d'entrer par celle qui vous intéresse.</p>
+    </div>
+    <a href="notion-un-commun-avant-le-numerique.dc.html" style="display:inline-flex;align-items:center;gap:12px;margin-top:32px;background:#1E2A23;color:#FAFAF6;text-decoration:none;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;padding:16px 26px;border-radius:2px;transition:background .2s ease;animation:fadeUp .6s .16s ease both" style-hover="background:oklch(0.50 0.12 160)">Commencer par la notion 01 <span style="font-family:'Instrument Serif',serif;font-size:18px">→</span></a>
+  </div>
+</section>
+
+<section data-screen-label="Les sept notions" style="border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <a href="notion-un-commun-avant-le-numerique.dc.html" style="display:flex;flex-wrap:wrap;gap:12px clamp(20px,3vw,48px);align-items:baseline;padding:clamp(26px,3vw,38px) 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:clamp(28px,3vw,42px);line-height:1;color:oklch(0.50 0.12 160);min-width:58px">01</span>
+      <span style="flex:1 1 460px;min-width:min(100%,300px)">
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(23px,2.6vw,34px);line-height:1.14;text-wrap:balance">Un commun, c'est quoi avant d'être numérique&nbsp;?</span>
+        <span style="display:block;font-size:15.5px;line-height:1.66;color:#4A5850;margin-top:10px;max-width:660px;text-wrap:pretty">Un commun, c'est une ressource partagée dont un groupe identifié organise lui-même l'usage par des règles qu'il s'est données — ni propriété privée, ni service géré d'en haut.</span>
+      </span>
+      <span style="flex:0 0 auto;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">4 min</span>
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:26px">→</span>
+    </a>
+    <a href="notion-ce-que-change-le-numerique.dc.html" style="display:flex;flex-wrap:wrap;gap:12px clamp(20px,3vw,48px);align-items:baseline;padding:clamp(26px,3vw,38px) 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:clamp(28px,3vw,42px);line-height:1;color:oklch(0.50 0.12 160);min-width:58px">02</span>
+      <span style="flex:1 1 460px;min-width:min(100%,300px)">
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(23px,2.6vw,34px);line-height:1.14;text-wrap:balance">Qu'est-ce que le numérique change à un commun&nbsp;?</span>
+        <span style="display:block;font-size:15.5px;line-height:1.66;color:#4A5850;margin-top:10px;max-width:660px;text-wrap:pretty">Une ressource numérique ne s'épuise pas quand on l'utilise : le risque n'est plus la surexploitation, c'est l'abandon — et la clôture par un tiers.</span>
+      </span>
+      <span style="flex:0 0 auto;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">4 min</span>
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:26px">→</span>
+    </a>
+    <a href="notion-libre-open-source-commun.dc.html" style="display:flex;flex-wrap:wrap;gap:12px clamp(20px,3vw,48px);align-items:baseline;padding:clamp(26px,3vw,38px) 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:clamp(28px,3vw,42px);line-height:1;color:oklch(0.50 0.12 160);min-width:58px">03</span>
+      <span style="flex:1 1 460px;min-width:min(100%,300px)">
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(23px,2.6vw,34px);line-height:1.14;text-wrap:balance">Libre, open source, commun&nbsp;: quelles différences&nbsp;?</span>
+        <span style="display:block;font-size:15.5px;line-height:1.66;color:#4A5850;margin-top:10px;max-width:660px;text-wrap:pretty">Le logiciel libre est une affaire de droits, l'open source une méthode de production, le commun une manière de gouverner — et un logiciel peut être parfaitement libre sans être un commun.</span>
+      </span>
+      <span style="flex:0 0 auto;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">5 min</span>
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:26px">→</span>
+    </a>
+    <a href="notion-qui-decide.dc.html" style="display:flex;flex-wrap:wrap;gap:12px clamp(20px,3vw,48px);align-items:baseline;padding:clamp(26px,3vw,38px) 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:clamp(28px,3vw,42px);line-height:1;color:oklch(0.50 0.12 160);min-width:58px">04</span>
+      <span style="flex:1 1 460px;min-width:min(100%,300px)">
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(23px,2.6vw,34px);line-height:1.14;text-wrap:balance">Qui décide dans un commun numérique&nbsp;?</span>
+        <span style="display:block;font-size:15.5px;line-height:1.66;color:#4A5850;margin-top:10px;max-width:660px;text-wrap:pretty">Personne ne décide seul, mais quelqu'un tranche toujours : les communs numériques qui durent ont des règles de décision explicites, écrites, et rarement égalitaires.</span>
+      </span>
+      <span style="flex:0 0 auto;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">5 min</span>
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:26px">→</span>
+    </a>
+    <a href="notion-qui-paie.dc.html" style="display:flex;flex-wrap:wrap;gap:12px clamp(20px,3vw,48px);align-items:baseline;padding:clamp(26px,3vw,38px) 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:clamp(28px,3vw,42px);line-height:1;color:oklch(0.50 0.12 160);min-width:58px">05</span>
+      <span style="flex:1 1 460px;min-width:min(100%,300px)">
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(23px,2.6vw,34px);line-height:1.14;text-wrap:balance">Qui paie un commun numérique&nbsp;?</span>
+        <span style="display:block;font-size:15.5px;line-height:1.66;color:#4A5850;margin-top:10px;max-width:660px;text-wrap:pretty">Gratuit à l'usage ne veut pas dire gratuit à produire : un commun numérique vit de temps salarié, de dons, de subventions ou de services — et son point faible n'est pas la création, c'est la maintenance.</span>
+      </span>
+      <span style="flex:0 0 auto;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">5 min</span>
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:26px">→</span>
+    </a>
+    <a href="notion-trois-communs-trois-modeles.dc.html" style="display:flex;flex-wrap:wrap;gap:12px clamp(20px,3vw,48px);align-items:baseline;padding:clamp(26px,3vw,38px) 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:clamp(28px,3vw,42px);line-height:1;color:oklch(0.50 0.12 160);min-width:58px">06</span>
+      <span style="flex:1 1 460px;min-width:min(100%,300px)">
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(23px,2.6vw,34px);line-height:1.14;text-wrap:balance">Wikipédia, OpenStreetMap, Linux&nbsp;: trois façons de tenir</span>
+        <span style="display:block;font-size:15.5px;line-height:1.66;color:#4A5850;margin-top:10px;max-width:660px;text-wrap:pretty">Trois des communs numériques les plus connus reposent sur trois architectures de gouvernance et de financement très différentes : il n'existe pas un modèle du commun, mais une famille de solutions.</span>
+      </span>
+      <span style="flex:0 0 auto;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">6 min</span>
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:26px">→</span>
+    </a>
+    <a href="notion-et-ladministration.dc.html" style="display:flex;flex-wrap:wrap;gap:12px clamp(20px,3vw,48px);align-items:baseline;padding:clamp(26px,3vw,38px) 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .22s ease,color .22s ease" style-hover="transform:translateX(10px);color:oklch(0.42 0.11 162)">
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:clamp(28px,3vw,42px);line-height:1;color:oklch(0.50 0.12 160);min-width:58px">07</span>
+      <span style="flex:1 1 460px;min-width:min(100%,300px)">
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(23px,2.6vw,34px);line-height:1.14;text-wrap:balance">Et l'administration, dans tout ça&nbsp;?</span>
+        <span style="display:block;font-size:15.5px;line-height:1.66;color:#4A5850;margin-top:10px;max-width:660px;text-wrap:pretty">Un commun numérique répond à deux problèmes que l'administration connaît bien — la dépendance aux éditeurs et le coût des licences — mais il ne s'achète pas : il se rejoint, et c'est un geste que l'administration maîtrise mal.</span>
+      </span>
+      <span style="flex:0 0 auto;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">5 min</span>
+      <span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:26px">→</span>
+    </a>
+  </div>
+</section>
+
+<section data-screen-label="Niveaux de lecture" style="border-bottom:1px solid #1E2A23;background-image:radial-gradient(circle, rgba(30,42,35,0.10) 1px, transparent 1.4px);background-size:22px 22px">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(48px,6vw,88px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:22px 64px;align-items:baseline;justify-content:space-between">
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(32px,4.2vw,54px);line-height:1.06;margin:0;max-width:640px;text-wrap:balance">Quatre niveaux <em style="font-style:italic;color:oklch(0.50 0.12 160)">de lecture</em></h2>
+      <p style="margin:0;font-size:15.5px;line-height:1.7;color:#4A5850;max-width:460px;text-wrap:pretty">Le site est organisé par profondeur, pas par thème. Selon le temps dont vous disposez et ce que vous cherchez, il y a quatre manières d'entrer dans le sujet — et l'on peut passer de l'une à l'autre à tout moment.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;margin-top:clamp(34px,4vw,56px);border-top:1px solid #1E2A23">
+      <div style="flex:1 1 200px;min-width:min(100%,220px);padding:28px clamp(18px,2.2vw,34px) 14px 0;background:rgba(255,255,255,0.75)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px"><span style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:oklch(0.50 0.12 160)">I.</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">4 à 6 min par notion</span></div>
+        <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:25px;margin:14px 0 0">Comprendre</h3>
+        <p style="font-size:15px;line-height:1.66;color:#4A5850;margin:10px 0 0;text-wrap:pretty">Sept notions dans un ordre choisi, qui répondent chacune à une question. Aucun prérequis. C'est ici que vous êtes.</p>
+      </div>
+      <a href="Articles.dc.html" style="flex:1 1 200px;min-width:min(100%,220px);padding:28px clamp(18px,2.2vw,34px) 14px clamp(18px,2.2vw,34px);border-left:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:background .2s ease" style-hover="background:rgba(255,255,255,0.75)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px"><span style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:oklch(0.50 0.12 160)">II.</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">8 à 10 min</span></div>
+        <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:25px;margin:14px 0 0">Articles <span style="font-size:19px">→</span></h3>
+        <p style="font-size:15px;line-height:1.66;color:#4A5850;margin:10px 0 0;text-wrap:pretty">Des analyses sourcées, appuyées sur la littérature académique. Elles supposent acquis le vocabulaire du parcours.</p>
+      </a>
+      <a href="Recherche.dc.html" style="flex:1 1 200px;min-width:min(100%,220px);padding:28px clamp(18px,2.2vw,34px) 14px clamp(18px,2.2vw,34px);border-left:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:background .2s ease" style-hover="background:rgba(255,255,255,0.75)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px"><span style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:oklch(0.50 0.12 160)">III.</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">124 pages</span></div>
+        <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:25px;margin:14px 0 0">La recherche <span style="font-size:19px">→</span></h3>
+        <p style="font-size:15px;line-height:1.66;color:#4A5850;margin:10px 0 0;text-wrap:pretty">Le mémoire dans son intégralité : problématique, méthode, neuf cas de terrain, résultats et préconisations.</p>
+      </a>
+      <a href="Glossaire.dc.html" style="flex:1 1 200px;min-width:min(100%,220px);padding:28px clamp(18px,2.2vw,34px) 14px clamp(18px,2.2vw,34px);border-left:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:background .2s ease" style-hover="background:rgba(255,255,255,0.75)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px"><span style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:oklch(0.50 0.12 160)">IV.</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">68 entrées</span></div>
+        <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:25px;margin:14px 0 0">Glossaire <span style="font-size:19px">→</span></h3>
+        <p style="font-size:15px;line-height:1.66;color:#4A5850;margin:10px 0 0;text-wrap:pretty">Les définitions, une par une, consultables à tout moment. Les mots soulignés dans les notions y renvoient.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Renvoi articles" style="background:oklch(0.25 0.05 168);border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5.5vw,78px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px 56px">
+    <p style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(24px,3.2vw,40px);line-height:1.14;color:#F4F7F2;max-width:760px;text-wrap:balance">Le parcours terminé, <em style="font-style:italic;color:oklch(0.78 0.09 160)">les articles prennent le relais</em> — mêmes sujets, traités en profondeur et sourcés.</p>
+    <a href="Articles.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:#F4F7F2;color:#1E2A23;text-decoration:none;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;padding:16px 26px;border-radius:2px;transition:background .2s ease" style-hover="background:oklch(0.78 0.09 160)">Voir les six articles</a>
+  </div>
+</section>
+
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a href="Comprendre.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Comprendre</a>
+        <a href="Articles.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Articles</a>
+        <a href="Recherche.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">La recherche</a>
+        <a href="Glossaire.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Glossaire</a>
+        <a href="APropos.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px" style-hover="color:oklch(0.50 0.12 160)">consulting@alexandre-berge.fr</a>
+        <a href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:baseline;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#5A685F">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <nav style="display:flex;flex-wrap:wrap;gap:6px 16px">
+        <a href="MentionsLegales.dc.html" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3" style-hover="color:#1E2A23">Mentions légales</a>
+        <a href="Confidentialite.dc.html" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3" style-hover="color:#1E2A23">Confidentialité</a>
+      </nav>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+
+</body>
+</html>

@@ -123,6 +123,24 @@ function jsonLd(page, title) {
     author: { '@type': 'Person', name: site.author, url: site.linkedin },
     license: site.licenceUrl,
   };
+  // Les notions du parcours « Comprendre » sont des ressources pédagogiques
+  // autant que des articles : le double type le dit aux moteurs.
+  if (page.kind === 'notion') {
+    return { ...base, '@type': ['Article', 'LearningResource'],
+      headline: title.replace(/ — .*$/, ''), description: page.desc,
+      url: site.origin + page.route, articleSection: page.section,
+      learningResourceType: 'Notion introductive', educationalLevel: 'Débutant',
+      publisher: { '@type': 'Person', name: site.author } };
+  }
+  // La page de rubrique décrit le parcours comme une liste ordonnée.
+  if (page.kind === 'parcours') {
+    const etapes = pages.filter(p => p.kind === 'notion');
+    return { ...base, '@type': 'ItemList', name: title.replace(/ — .*$/, ''),
+      description: page.desc, url: site.origin + page.route,
+      numberOfItems: etapes.length, itemListOrder: 'ItemListOrderAscending',
+      itemListElement: etapes.map((p, i) => ({ '@type': 'ListItem', position: i + 1,
+        url: site.origin + p.route, name: p.section })) };
+  }
   if (page.type === 'article') {
     return { ...base, '@type': 'Article', headline: title.replace(/ — .*$/, ''),
       description: page.desc, url: site.origin + page.route,
@@ -250,6 +268,7 @@ ${header}
   <p style="margin:0 0 40px;font-size:17px;line-height:1.7;color:#4A5850;max-width:560px">L'adresse demandée ne correspond à aucune page du site. Elle a peut-être changé, ou le lien qui vous a amené ici comporte une coquille.</p>
   <nav style="display:flex;flex-wrap:wrap;gap:14px 28px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;font-weight:600">
     <a href="/" style="color:#1E2A23">Accueil</a>
+    <a href="/comprendre/" style="color:#1E2A23">Comprendre</a>
     <a href="/articles/" style="color:#1E2A23">Articles</a>
     <a href="/la-recherche/" style="color:#1E2A23">La recherche</a>
     <a href="/glossaire/" style="color:#1E2A23">Glossaire</a>

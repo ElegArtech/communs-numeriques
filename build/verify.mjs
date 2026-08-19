@@ -28,7 +28,8 @@ const browser = await puppeteer.launch({
     if (h !== 'localhost' && h !== '127.0.0.1') external.add(h);
   });
   for (const route of ['/', '/articles/', '/la-recherche/', '/glossaire/', '/a-propos/',
-                       '/articles/gouvernance-ostrom/']) {
+                       '/articles/gouvernance-ostrom/', '/comprendre/',
+                       '/comprendre/qui-decide/']) {
     await page.goto(BASE + route, { waitUntil: 'networkidle0' });
   }
   ok('Aucune requête vers un domaine tiers', external.size === 0,
@@ -125,7 +126,11 @@ const browser = await puppeteer.launch({
   const routes = ['/', '/articles/', '/la-recherche/', '/glossaire/', '/a-propos/',
     '/articles/quest-ce-quun-commun-numerique/', '/articles/administration-et-communs/',
     '/articles/institutionnalisation/', '/articles/gouvernance-ostrom/',
-    '/articles/neuf-initiatives/', '/articles/appropriation-relation/'];
+    '/articles/neuf-initiatives/', '/articles/appropriation-relation/',
+    '/comprendre/', '/comprendre/un-commun-avant-le-numerique/',
+    '/comprendre/ce-que-change-le-numerique/', '/comprendre/libre-open-source-commun/',
+    '/comprendre/qui-decide/', '/comprendre/qui-paie/',
+    '/comprendre/trois-communs-trois-modeles/', '/comprendre/et-ladministration/'];
   const broken = [];
   const seen = new Set();
   for (const r of routes) {

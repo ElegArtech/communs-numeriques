@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un commun, c'est quoi avant d'être numérique ? — Les Communs Numériques</title>
+<meta name="description" content="Pâturages, forêts, canaux d'irrigation : avant le code source, les communs sont des ressources gouvernées par leurs usagers. De Hardin à Elinor Ostrom.">
+<meta name="author" content="Alexandre Berge">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://communs-numeriques.fr/comprendre/un-commun-avant-le-numerique/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Les Communs Numériques">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Un commun, c'est quoi avant d'être numérique ? — Les Communs Numériques">
+<meta property="og:description" content="Pâturages, forêts, canaux d'irrigation : avant le code source, les communs sont des ressources gouvernées par leurs usagers. De Hardin à Elinor Ostrom.">
+<meta property="og:url" content="https://communs-numeriques.fr/comprendre/un-commun-avant-le-numerique/">
+<meta property="og:image" content="https://communs-numeriques.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Un commun, c'est quoi avant d'être numérique ? — Les Communs Numériques">
+<meta name="twitter:description" content="Pâturages, forêts, canaux d'irrigation : avant le code source, les communs sont des ressources gouvernées par leurs usagers. De Hardin à Elinor Ostrom.">
+<meta name="twitter:image" content="https://communs-numeriques.fr/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+/* Renvoi vers le glossaire : souligné pointillé, sans rupture de lecture. */
+.gl{color:#1E2A23;text-decoration:none;border-bottom:1px dotted oklch(0.50 0.12 160)}
+.gl:hover{color:oklch(0.42 0.11 162);border-bottom-style:solid}
+.hv1:hover{color:#1E2A23 !important}
+.hv2:hover{color:oklch(0.42 0.11 162) !important}
+.hv3:hover{color:oklch(0.50 0.12 160) !important}
+.hv4:hover{color:oklch(0.42 0.11 162) !important;transform:translateX(6px) !important}
+.hv5:hover{animation-play-state:paused !important}
+.hv6:hover{background:oklch(0.78 0.09 160) !important;color:#1E2A23 !important}
+.hv7:hover{border-color:#F4F7F2 !important;color:#F4F7F2 !important}
+.hv8:hover{transform:translateX(10px) !important;color:oklch(0.42 0.11 162) !important}
+.hv9:hover{transform:translateX(12px) !important;color:#1E2A23 !important}
+.hv10:hover{background:oklch(0.50 0.12 160) !important}
+.hv11:hover{background:rgba(255,255,255,0.75) !important}
+.hv12:hover{background:oklch(0.78 0.09 160) !important}
+.hv13:hover{background:oklch(0.42 0.11 162) !important;color:#FAFAF6 !important}
+.hv14:hover{background:#EAEDE6 !important;color:#1E2A23 !important}
+.hv15:hover{background:rgba(244,247,242,0.12) !important;color:#F4F7F2 !important}
+.hv16:hover{transform:translateX(6px) !important;color:#1E2A23 !important}
+.hv17:hover{transform:translateX(6px) !important;color:oklch(0.42 0.11 162) !important}
+.hv18:hover{background:#EFF4EE !important}
+.hv19:hover{background:#EFF4EE !important;color:#1E2A23 !important}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","inLanguage":"fr-FR","isPartOf":{"@type":"WebSite","name":"Les Communs Numériques","url":"https://communs-numeriques.fr/"},"author":{"@type":"Person","name":"Alexandre Berge","url":"https://www.linkedin.com/in/bergealexandre/"},"license":"https://creativecommons.org/licenses/by-sa/4.0/deed.fr","@type":["Article","LearningResource"],"headline":"Un commun, c'est quoi avant d'être numérique ?","description":"Pâturages, forêts, canaux d'irrigation : avant le code source, les communs sont des ressources gouvernées par leurs usagers. De Hardin à Elinor Ostrom.","url":"https://communs-numeriques.fr/comprendre/un-commun-avant-le-numerique/","articleSection":"Fondations","learningResourceType":"Notion introductive","educationalLevel":"Débutant","publisher":{"@type":"Person","name":"Alexandre Berge"}}</script>
+</head>
+<body>
+<div data-ref="barRef" style="position:fixed;top:0;left:0;height:3px;width:0%;background:oklch(0.50 0.12 160);z-index:80"></div>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a class="hv1" href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Accueil</a>
+      <a href="/comprendre/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px">Comprendre</a>
+      <a class="hv1" href="/articles/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Articles</a>
+      <a class="hv1" href="/la-recherche/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">La recherche</a>
+      <a class="hv1" href="/glossaire/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">Glossaire</a>
+      <a class="hv1" href="/a-propos/" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div style="position:relative;overflow:hidden;border-bottom:1px solid #1E2A23">
+  <div style="position:absolute;right:clamp(0px,2vw,40px);top:-16px;font-family:'Instrument Serif',serif;font-size:clamp(150px,24vw,320px);line-height:1;color:transparent;-webkit-text-stroke:1.5px #DCE1D8;pointer-events:none;user-select:none" aria-hidden="true">01</div>
+  <div style="position:relative;max-width:1380px;margin:0 auto;padding:clamp(36px,4.5vw,64px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;animation:fadeUp .5s ease both">
+      <a class="hv3" href="/comprendre/" style="color:#68766C;text-decoration:none">← Comprendre</a>
+      <span style="color:#68766C">/</span>
+      <span style="color:oklch(0.50 0.12 160)">Notion 01 sur 07</span>
+      <span style="color:#68766C;font-weight:600">· 4 min de lecture</span>
+      <span style="display:inline-flex;align-items:center;gap:7px" role="img" aria-label="Notion 1 sur 7">
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(0.50 0.12 160)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+        <span style="width:9px;height:9px;border-radius:50%;border:1px solid #C3CCBF"></span>
+      </span>
+    </div>
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,5.4vw,72px);line-height:1.04;letter-spacing:-0.01em;margin:26px 0 0;max-width:1020px;text-wrap:balance;animation:fadeUp .6s .06s ease both">Un commun, c'est quoi avant d'être numérique&nbsp;?</h1>
+    <div style="margin-top:30px;max-width:880px;border:1px solid #1E2A23;border-radius:3px;background:#FFFFFF;padding:24px 28px;animation:fadeUp .6s .12s ease both">
+      <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">En une phrase</span>
+      <p style="margin:12px 0 0;font-family:'Instrument Serif',serif;font-size:clamp(20px,2.1vw,25px);line-height:1.36;color:#1E2A23;text-wrap:pretty">Un commun, c'est une ressource partagée dont un groupe identifié organise lui-même l'usage par des règles qu'il s'est données — ni propriété privée, ni service géré d'en haut.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px;margin-top:28px;padding-top:20px;border-top:1px solid #1E2A23;font-size:13.5px;color:#4A5850">
+      <span>Par <strong style="color:#1E2A23">Alexandre Berge</strong></span>
+      <span style="color:#68766C">·</span>
+      <span>Première approche — aucun prérequis</span>
+      <span style="color:#68766C">·</span>
+      <span>Les mots soulignés en pointillé renvoient au <a href="/glossaire/">glossaire</a></span>
+    </div>
+  </div>
+</div>
+<div style="position:relative;height:88px;border-bottom:1px solid #1E2A23;background-image:radial-gradient(circle, rgba(30,42,35,0.13) 1px, transparent 1.4px);background-size:20px 20px;overflow:hidden" aria-hidden="true">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 1200 88" preserveAspectRatio="xMidYMid slice"><circle cx="140" cy="44" r="18" fill="none" stroke="#127552" stroke-width="2"></circle><circle cx="200" cy="44" r="5" fill="#1E2A23"></circle><circle cx="232" cy="44" r="5" fill="#1E2A23"></circle><circle cx="264" cy="44" r="5" fill="#1E2A23"></circle><circle cx="296" cy="44" r="5" fill="#1E2A23"></circle><path d="M960 60 Q1000 24 1040 60" fill="none" stroke="#1E2A23" stroke-width="1.5"></path><circle cx="1000" cy="42" r="6" fill="#127552"></circle></svg>
+</div>
+
+<article style="max-width:820px;margin:0 auto;padding:clamp(44px,5.5vw,72px) clamp(20px,4vw,48px) 0">
+  <div style="font-size:17.5px;line-height:1.8;color:#2A362F;display:flex;flex-direction:column;gap:24px">
+    <p style="margin:0;text-wrap:pretty"><span style="float:left;font-family:'Instrument Serif',serif;font-size:78px;line-height:0.72;padding:10px 14px 0 0;color:oklch(0.50 0.12 160)">L</span>e mot « commun » évoque aujourd'hui les logiciels libres et Wikipédia. Il désigne pourtant d'abord des choses très concrètes : un pâturage de village, une forêt communale, un canal d'irrigation, une zone de pêche. Comprendre ce que ces ressources ont en commun — et surtout comment elles ont survécu des siècles — est le meilleur point d'entrée dans le sujet.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Des ressources que personne ne possède seul</span></h2>
+    <p style="margin:0;text-wrap:pretty">Dans les Alpes suisses, des alpages sont exploités collectivement depuis le Moyen Âge par les familles d'un même village. Dans la plaine de Valence, en Espagne, un réseau de canaux irrigue les jardins maraîchers depuis plus de mille ans. Au Japon, des villages côtiers se partagent des zones de pêche selon des tours établis de longue date.</p>
+    <p style="margin:0;text-wrap:pretty">Ces ressources ont trois caractéristiques communes. Elles sont <strong>partagées</strong> : plusieurs personnes y puisent. Elles sont <strong>épuisables</strong> : si chacun prend trop, il ne reste rien. Et elles ne relèvent ni de la propriété privée exclusive, ni d'une administration qui déciderait à la place des usagers. Ce sont les usagers eux-mêmes qui fixent les règles.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">La thèse qui a fait autorité pendant trente ans</span></h2>
+    <p style="margin:0;text-wrap:pretty">En 1968, le biologiste Garrett Hardin publie dans <em>Science</em> un texte qui deviendra l'un des plus cités du siècle : « La tragédie des communs » [Hardin, 1968]. Son raisonnement tient en quelques lignes. Imaginons un pâturage ouvert à tous les bergers d'un village. Chaque berger a intérêt à ajouter une bête de plus à son troupeau : il en tire tout le bénéfice, alors que le coût — l'herbe en moins — est réparti sur l'ensemble du groupe. Tous les bergers font le même calcul. Le pâturage s'effondre.</p>
+    <p style="margin:0;text-wrap:pretty">La conclusion politique est nette : puisque la ruine est inévitable, il faut sortir de la propriété partagée. Soit on privatise, soit l'État prend la main. Pendant trois décennies, cette alternative a structuré les politiques publiques de gestion des ressources naturelles.</p>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Ce qu'Elinor Ostrom a démontré sur le terrain</span></h2>
+    <p style="margin:0;text-wrap:pretty">Économiste et politiste américaine, Elinor Ostrom passe une grande partie de sa carrière à vérifier cette thèse sur le terrain, dans des dizaines de cas réels — irrigation, pêcheries, forêts, nappes phréatiques. Le résultat, publié en 1990 dans <em>Governing the Commons</em>, contredit Hardin [Ostrom, 1990].</p>
+    <p style="margin:0;text-wrap:pretty">Sa première objection est une objection de définition : Hardin ne décrit pas un commun, il décrit un <strong>libre accès</strong>. Un pâturage où n'importe qui peut faire entrer n'importe quel troupeau sans règle ni contrôle n'est pas géré collectivement — il n'est pas géré du tout. Or les communs réels sont truffés de règles : qui a le droit d'entrer, combien de bêtes, à quelle saison, qui surveille, que se passe-t-il en cas d'abus.</p>
+    <p style="margin:0;text-wrap:pretty">Sa seconde objection est empirique : ces systèmes de règles fonctionnent, parfois depuis des siècles, sans privatisation ni tutelle publique. Ostrom en dégage huit principes récurrents — frontières claires, règles adaptées au contexte local, décisions collectives, surveillance mutuelle, sanctions graduées, mécanismes de résolution des conflits, reconnaissance par les autorités, gouvernance à plusieurs niveaux. Elle recevra le prix Nobel d'économie en 2009.</p>
+    <div style="border-left:3px solid oklch(0.50 0.12 160);background:#FFFFFF;padding:22px 26px">
+      <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">Un exemple — le tribunal des eaux de Valence</span>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.7;color:#2A362F;text-wrap:pretty">Chaque jeudi à midi, devant la cathédrale de Valence, huit représentants élus des communautés d'irrigants se réunissent en plein air pour trancher les litiges de partage de l'eau. La séance est orale, publique, gratuite, et la décision s'applique immédiatement. Ce tribunal siège sans interruption depuis au moins le X<sup>e</sup> siècle. Aucune police extérieure ne fait respecter ses décisions : c'est le regard des autres irrigants qui suffit.</p>
+    </div>
+    <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;padding-top:26px;border-top:1px solid #D8DDD3;display:flex;gap:14px;align-items:baseline"><span style="flex:0 0 auto;width:9px;height:9px;background:oklch(0.50 0.12 160);border-radius:1px" aria-hidden="true"></span><span style="text-wrap:balance">Trois ingrédients, et pas un de moins</span></h2>
+    <p style="margin:0;text-wrap:pretty">De ces travaux se dégage une définition opératoire du commun, qui vaut aussi bien pour un alpage que pour une encyclopédie en ligne. Un commun est la combinaison de trois éléments indissociables.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid #1E2A23;border-left:1px solid #D8DDD3">
+      <div style="border-right:1px solid #D8DDD3;border-bottom:1px solid #D8DDD3;padding:20px 22px">
+        <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">I</span>
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:23px;line-height:1.2;margin-top:10px">Une ressource</span>
+        <span style="display:block;font-size:15px;line-height:1.62;color:#4A5850;margin-top:10px">Un pâturage, une nappe d'eau, une base de données. Partagée, et susceptible de se dégrader si personne n'en prend soin.</span>
+      </div>
+      <div style="border-right:1px solid #D8DDD3;border-bottom:1px solid #D8DDD3;padding:20px 22px">
+        <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">II</span>
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:23px;line-height:1.2;margin-top:10px">Une communauté</span>
+        <span style="display:block;font-size:15px;line-height:1.62;color:#4A5850;margin-top:10px">Un groupe identifiable d'usagers, qui se reconnaissent comme tels et savent qui en fait partie.</span>
+      </div>
+      <div style="border-right:1px solid #D8DDD3;border-bottom:1px solid #D8DDD3;padding:20px 22px">
+        <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">III</span>
+        <span style="display:block;font-family:'Instrument Serif',serif;font-size:23px;line-height:1.2;margin-top:10px">Des règles</span>
+        <span style="display:block;font-size:15px;line-height:1.62;color:#4A5850;margin-top:10px">Un système explicite de droits et de devoirs : qui accède, qui contribue, qui surveille, qui arbitre.</span>
+      </div>
+    </div>
+    <p style="margin:0;text-wrap:pretty">Retirez l'un des trois et le mot ne tient plus. Une ressource sans communauté est un bien sans gardien. Une communauté sans règles est un libre accès — le cas de Hardin. Et des règles sans ressource ne gouvernent rien du tout. C'est ce triptyque, et non la simple gratuité, qui définit un commun.</p>
+    <div style="border:1px solid #1E2A23;border-radius:3px;background:#FFFFFF;padding:24px 28px">
+      <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#1E2A23">Ce n'est pas un synonyme de « gratuit » ou de « public »</span>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.7;color:#2A362F;text-wrap:pretty">Un commun n'est pas un bien public au sens où l'entend le droit administratif : il n'est ni détenu ni piloté par la puissance publique. Il n'est pas davantage synonyme d'accès libre et sans condition — la plupart des communs historiques réservent l'usage aux membres de la communauté et sanctionnent les passagers clandestins. Ce qui les caractérise, c'est l'autogouvernement, pas l'ouverture.</p>
+    </div>
+    <p style="margin:0;text-wrap:pretty">Reste une question : ces principes, forgés sur des ressources matérielles qui s'épuisent quand on les consomme, résistent-ils au passage au numérique, où copier un fichier n'en prive personne&nbsp;? C'est l'objet de la notion suivante.</p>
+  </div>
+  <div style="margin-top:44px;background:oklch(0.25 0.05 168);border-radius:3px;padding:clamp(28px,3.5vw,40px)">
+    <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.78 0.09 160)">À retenir</span>
+    <ol style="margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px;counter-reset:r">
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">01</span><span>Un commun, ce n'est pas une ressource sans règles : c'est une ressource partagée que ses usagers gouvernent eux-mêmes.</span></li>
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">02</span><span>La « tragédie des communs » de Hardin décrit en réalité un libre accès. Elinor Ostrom a montré sur le terrain que les communs réels, eux, tiennent — grâce à leurs règles.</span></li>
+      <li style="display:flex;gap:16px;align-items:baseline;color:#F4F7F2;font-size:16.5px;line-height:1.62;text-wrap:pretty"><span style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:22px;color:oklch(0.78 0.09 160)">03</span><span>Trois ingrédients sont nécessaires et suffisants : une ressource, une communauté, des règles de gouvernance.</span></li>
+    </ol>
+  </div>
+  <div style="margin-top:44px;border-top:1px solid #1E2A23;padding-top:22px">
+    <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#4A5850">Pour aller plus loin</span>
+    <div style="margin-top:14px;display:flex;flex-direction:column">
+      <a class="hv17" href="/articles/quest-ce-quun-commun-numerique/" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:14px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="flex:0 0 118px;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">Article</span><span style="flex:1 1 300px;font-family:'Instrument Serif',serif;font-size:20px;line-height:1.3">Qu'est-ce qu'un commun numérique&nbsp;? — la version longue et sourcée</span><span style="font-family:'Instrument Serif',serif;font-size:19px">→</span></a>
+      <a class="hv17" href="/la-recherche/" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:14px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="flex:0 0 118px;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#68766C">Mémoire</span><span style="flex:1 1 300px;font-family:'Instrument Serif',serif;font-size:20px;line-height:1.3">Le paradigme des communs numériques (section 1.2)</span><span style="font-family:'Instrument Serif',serif;font-size:19px">→</span></a>
+    </div>
+  </div>
+  <div style="margin-top:44px;border-top:1px solid #D8DDD3;padding-top:20px">
+    <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Sur quoi s'appuie cette notion</span>
+    <ul style="margin:14px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px 40px;font-size:13.5px;line-height:1.6;color:#4A5850">
+      <li>Hardin G., « The tragedy of the commons », <em>Science</em>, 1968.</li>
+      <li>Ostrom E., <em>Governing the Commons</em>, Cambridge University Press, 1990.</li>
+      <li>Shulz S., « Des forêts suisses à Wikipédia : histoire sociale de la théorie des communs autogouvernés », <em>Genèses</em>, 2024.</li>
+    </ul>
+    <p style="margin:14px 0 0;font-size:13px;color:#68766C">Les références complètes figurent dans la <a href="/la-recherche/">bibliographie du mémoire</a>.</p>
+  </div>
+</article>
+
+<nav aria-label="Progression dans le parcours" style="display:flex;flex-wrap:wrap;border-top:1px solid #1E2A23;background:#FAFAF6">
+    <a class="hv18" href="/comprendre/" style="flex:1 1 300px;min-width:min(100%,300px);display:block;padding:clamp(26px,3vw,40px) clamp(20px,3vw,44px);text-decoration:none;color:#1E2A23;;transition:background .25s ease">
+      <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Le parcours</span>
+      <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(21px,2.4vw,30px);line-height:1.16;margin-top:12px;text-wrap:balance">← Sommaire des sept notions</span>
+    </a>
+    <a class="hv18" href="/comprendre/ce-que-change-le-numerique/" style="flex:1 1 300px;min-width:min(100%,300px);display:block;padding:clamp(26px,3vw,40px) clamp(20px,3vw,44px);text-decoration:none;color:#1E2A23;border-left:1px solid #D8DDD3;text-align:right;transition:background .25s ease">
+      <span style="display:block;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Notion 02 — suivante</span>
+      <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(21px,2.4vw,30px);line-height:1.16;margin-top:12px;text-wrap:balance">Qu'est-ce que le numérique change à un commun&nbsp;? →</span>
+    </a>
+</nav>
+<section style="border-top:1px solid #1E2A23;border-bottom:1px solid #1E2A23;background:#FFFFFF">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(34px,4vw,56px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 30px">
+      <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160)">Le parcours en sept notions</span>
+      <a class="hv1" href="/comprendre/" style="font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#4A5850;text-decoration:none">Revenir au sommaire →</a>
+    </div>
+    <div style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 40px">
+      <span style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;color:#1E2A23" aria-current="page"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:oklch(0.50 0.12 160)">01</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28;font-style:italic;color:oklch(0.50 0.12 160)">Un commun, c'est quoi avant d'être numérique&nbsp;?</span></span>
+      <a class="hv17" href="/comprendre/ce-que-change-le-numerique/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">02</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qu'est-ce que le numérique change à un commun&nbsp;?</span></a>
+      <a class="hv17" href="/comprendre/libre-open-source-commun/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">03</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Libre, open source, commun&nbsp;: quelles différences&nbsp;?</span></a>
+      <a class="hv17" href="/comprendre/qui-decide/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">04</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qui décide dans un commun numérique&nbsp;?</span></a>
+      <a class="hv17" href="/comprendre/qui-paie/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">05</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Qui paie un commun numérique&nbsp;?</span></a>
+      <a class="hv17" href="/comprendre/trois-communs-trois-modeles/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">06</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Wikipédia, OpenStreetMap, Linux&nbsp;: trois façons de tenir</span></a>
+      <a class="hv17" href="/comprendre/et-ladministration/" style="display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #D8DDD3;text-decoration:none;color:#1E2A23;transition:transform .2s ease,color .2s ease"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#68766C">07</span><span style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.28">Et l'administration, dans tout ça&nbsp;?</span></a>
+    </div>
+  </div>
+</section>
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a class="hv3" href="/comprendre/" style="color:#1E2A23;text-decoration:none">Comprendre</a>
+        <a class="hv3" href="/articles/" style="color:#1E2A23;text-decoration:none">Articles</a>
+        <a class="hv3" href="/la-recherche/" style="color:#1E2A23;text-decoration:none">La recherche</a>
+        <a class="hv3" href="/glossaire/" style="color:#1E2A23;text-decoration:none">Glossaire</a>
+        <a class="hv3" href="/a-propos/" style="color:#1E2A23;text-decoration:none">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a class="hv3" href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px">consulting@alexandre-berge.fr</a>
+        <a class="hv3" href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:baseline;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#5A685F">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <nav style="display:flex;flex-wrap:wrap;gap:6px 16px">
+        <a class="hv1" href="/mentions-legales/" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3">Mentions légales</a>
+        <a class="hv1" href="/confidentialite/" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3">Confidentialité</a>
+      </nav>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+<script>/* Remplace le runtime Claude Design (React + ReactDOM + Babel, ~3 Mo depuis un CDN)
+   par l'équivalent en JavaScript natif. Aucune dépendance, aucune requête réseau.
+   Le site reste entièrement lisible si ce script ne s'exécute pas. */
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ref = function (name) { return document.querySelector('[data-ref="' + name + '"]'); };
+
+  /* ── Barre de progression de lecture (articles) ───────────────────────── */
+  var bar = ref('barRef');
+  if (bar) {
+    var onScroll = function () {
+      var e = document.documentElement;
+      var p = e.scrollTop / Math.max(1, e.scrollHeight - e.clientHeight);
+      bar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Motif de points animé (couverture d'accueil) ─────────────────────── */
+  var canvas = ref('dotsRef');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var gap = parseInt(canvas.getAttribute('data-densite') || '30', 10);
+    var animate = canvas.getAttribute('data-anime') !== 'false' && !reduced;
+    var w = 0, h = 0, raf = 0;
+
+    var resize = function () {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    var draw = function (t) {
+      ctx.clearRect(0, 0, w, h);
+      var cx = w * 0.82, cy = h * 0.18;
+      for (var x = gap / 2; x < w; x += gap) {
+        for (var y = gap / 2; y < h; y += gap) {
+          var d = Math.hypot(x - cx, y - cy);
+          var k = Math.max(0, Math.sin(d * 0.015 - t * 0.001));
+          ctx.beginPath();
+          ctx.arc(x, y, 1.0 + 1.4 * k, 0, 6.2832);
+          ctx.fillStyle = 'rgba(18,117,82,' + (0.05 + 0.22 * k).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      if (animate) raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () { resize(); if (!animate) draw(600); })
+        .observe(canvas.parentElement);
+    } else {
+      window.addEventListener('resize', function () { resize(); if (!animate) draw(600); });
+    }
+    if (animate) raf = requestAnimationFrame(draw); else draw(600);
+  }
+
+  /* ── Compteurs animés (accueil) ───────────────────────────────────────── */
+  /* Les valeurs finales sont déjà dans le HTML : sans JS, rien ne manque. */
+  if (!reduced && window.IntersectionObserver) {
+    var counters = [];
+    ['statEntretiens', 'statCas', 'statCadres', 'statVoies'].forEach(function (n) {
+      var el = ref(n);
+      if (el) counters.push([el, parseInt(el.textContent.trim(), 10)]);
+    });
+    if (counters.length) {
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (done || !entries.some(function (e) { return e.isIntersecting; })) return;
+        done = true;
+        io.disconnect();
+        var start = performance.now(), dur = 1400;
+        var tick = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          counters.forEach(function (c) { c[0].textContent = String(Math.round(c[1] * ease)); });
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      io.observe(counters[0][0]);
+    }
+  }
+
+  /* ── Filtre du glossaire ──────────────────────────────────────────────── */
+  var filter = ref('filterRef');
+  if (filter) {
+    var empty = ref('emptyRef');
+    var norm = function (s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+    var apply = function () {
+      var q = norm(filter.value.trim());
+      var visible = 0;
+      document.querySelectorAll('[data-glossterm]').forEach(function (el) {
+        var hay = norm(el.getAttribute('data-glossterm') + ' ' + el.textContent);
+        var show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.querySelectorAll('[data-glossgroup]').forEach(function (g) {
+        var any = Array.prototype.some.call(
+          g.querySelectorAll('[data-glossterm]'),
+          function (el) { return el.style.display !== 'none'; }
+        );
+        g.style.display = any ? '' : 'none';
+      });
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    };
+    filter.addEventListener('input', apply);
+    if (filter.value) apply();
+  }
+
+  /* ── Sommaire du mémoire : surlignage de la section en cours de lecture ── */
+  /* On retient le dernier titre franchi plutôt que celui visible à l'écran :
+     dans une longue section, aucun titre n'est à l'écran, et il faut pourtant
+     surligner la bonne entrée. */
+  var liens = document.querySelectorAll('.memoire-sommaire a[data-ancre]');
+  if (liens.length) {
+    var cibles = [];
+    liens.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('data-ancre'));
+      if (el) cibles.push({ lien: a, el: el });
+    });
+    if (cibles.length) {
+      var enAttente = false;
+      var suivre = function () {
+        enAttente = false;
+        var courant = cibles[0];
+        for (var i = 0; i < cibles.length; i++) {
+          if (cibles[i].el.getBoundingClientRect().top <= 120) courant = cibles[i];
+          else break;
+        }
+        cibles.forEach(function (c) { c.lien.classList.toggle('actif', c === courant); });
+      };
+      var planifier = function () {
+        if (!enAttente) { enAttente = true; requestAnimationFrame(suivre); }
+      };
+      window.addEventListener('scroll', planifier, { passive: true });
+      window.addEventListener('resize', planifier, { passive: true });
+      suivre();
+    }
+  }
+})();
+</script>
+</body>
+</html>

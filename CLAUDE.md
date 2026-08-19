@@ -13,7 +13,7 @@ npm run build && npm run serve   # puis, dans un autre terminal :
 npm run verify
 ```
 
-`npm run verify` doit rester à 11/11. Il vérifie notamment qu'aucune requête
+`npm run verify` doit rester à 17/17. Il vérifie notamment qu'aucune requête
 ne part vers un domaine tiers et que les pages restent lisibles sans
 JavaScript — deux propriétés faciles à casser sans s'en apercevoir.
 
@@ -33,6 +33,42 @@ Les sources confidentielles sont hors dépôt, dans
 **Le design fait foi.** Les maquettes `.dc.html` sont la référence visuelle.
 Une modification de rendu se fait dans la maquette, pas par du CSS ajouté
 après coup dans le compilateur.
+
+## Deux types de contenu, deux contrats de lecture
+
+Le site distingue **les notions** et **les articles**, et cette distinction
+n'est pas une question de difficulté mais de contrat de lecture.
+
+| | corpus | gabarit | on y répond à |
+|---|---|---|---|
+| **Comprendre** — `notion-*.dc.html` | fermé, ordonné, 7 entrées de 4-6 min | question en titre, réponse en exergue, parcours numéroté, « à retenir » | *de quoi s'agit-il ?* |
+| **Articles** — `article-*.dc.html` | ouvert, s'enrichit, 8-10 min | chapô italique, § numérotés, sources détaillées | *qu'est-ce que ça produit ?* |
+
+Une notion n'est pas datée et ne périme pas ; un article s'inscrit dans une
+série qui s'allonge. Une notion et un article peuvent traiter du même sujet à
+condition de ne pas dire la même chose : la notion pose le quoi, l'article
+traite le et alors.
+
+Le glossaire porte une ancre `id="g-<slug>"` sur chaque terme. Les notions y
+renvoient avec `<a class="gl" href="Glossaire.dc.html#g-…">`, un souligné
+pointillé qui fonctionne sans JavaScript. Le terme atteint se surligne
+grâce à la règle `p[data-glossterm]:target` de `src/Glossaire.dc.html`.
+
+## Ajouter une notion au parcours
+
+1. Créer `src/notion-<slug>.dc.html` en copiant une notion existante — le
+   gabarit est strictement identique de l'une à l'autre.
+2. Mettre à jour, **dans toutes les notions**, le sommaire de bas de page, les
+   pastilles de progression, la numérotation « Notion N sur 7 » et les liens
+   précédent/suivant. Le parcours est ordonné : une insertion se répercute
+   partout.
+3. Déclarer la page dans `build/site.config.mjs` avec `kind: 'notion'` — c'est
+   ce champ qui produit le JSON-LD `LearningResource` et alimente l'`ItemList`
+   de la page de rubrique.
+4. Ajouter l'entrée dans `src/Comprendre.dc.html` et dans le bloc
+   « Première approche » de `src/Accueil.dc.html`.
+5. `npm run build && npm run verify`, puis ajouter la route à la liste des
+   liens contrôlés dans `build/verify.mjs`.
 
 ## Ajouter ou remplacer un article
 
