@@ -5,19 +5,19 @@
  *   • le contenu reste lisible JavaScript désactivé
  * Prérequis : un serveur sur http://localhost:8900 servant docs/. */
 
-import puppeteer from 'puppeteer-core';
+import puppeteer from 'puppeteer';
+import { browserOptions } from './browser.mjs';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const BASE = 'http://localhost:8900';
+const BASE = 'http://127.0.0.1:8900';
 const results = [];
 const ok = (n, c, d = '') => results.push({ n, c, d });
 
-const browser = await puppeteer.launch({
-  executablePath: '/snap/bin/chromium',
-  args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-});
+const browser = await puppeteer.launch(await browserOptions());
+
+try {
 
 /* ── Aucune requête vers l'extérieur ──────────────────────────────────────── */
 {
@@ -28,6 +28,7 @@ const browser = await puppeteer.launch({
     if (h !== 'localhost' && h !== '127.0.0.1') external.add(h);
   });
   for (const route of ['/', '/articles/', '/la-recherche/', '/glossaire/', '/a-propos/',
+                       '/mentions-legales/', '/confidentialite/',
                        '/articles/gouvernance-ostrom/', '/comprendre/',
                        '/comprendre/qui-decide/']) {
     await page.goto(BASE + route, { waitUntil: 'networkidle0' });
@@ -124,6 +125,7 @@ const browser = await puppeteer.launch({
 {
   const page = await browser.newPage();
   const routes = ['/', '/articles/', '/la-recherche/', '/glossaire/', '/a-propos/',
+    '/mentions-legales/', '/confidentialite/',
     '/articles/quest-ce-quun-commun-numerique/', '/articles/administration-et-communs/',
     '/articles/institutionnalisation/', '/articles/gouvernance-ostrom/',
     '/articles/neuf-initiatives/', '/articles/appropriation-relation/',
@@ -238,7 +240,9 @@ const browser = await puppeteer.launch({
      fautifs.length ? fautifs.slice(0, 3).join(' · ') : `${fichiers.length} pages contrôlées`);
 }
 
-await browser.close();
+} finally {
+  await browser.close();
+}
 
 /* ── Rapport ──────────────────────────────────────────────────────────────── */
 console.log('\nVérification du site compilé\n');
