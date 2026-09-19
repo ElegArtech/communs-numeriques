@@ -144,6 +144,7 @@ function jsonLd(page, title) {
   if (page.type === 'article') {
     return { ...base, '@type': 'Article', headline: title.replace(/ — .*$/, ''),
       description: page.desc, url: site.origin + page.route,
+      ...(page.datePublished ? { datePublished: page.datePublished } : {}),
       articleSection: page.section, publisher: { '@type': 'Person', name: site.author } };
   }
   if (page.route === '/') {
@@ -169,7 +170,7 @@ function assemble(page, { title, styles, body }, hoverCss) {
 <meta name="author" content="${esc(site.author)}">
 ${site.noindex ? '<meta name="robots" content="noindex, nofollow">' : '<meta name="robots" content="index, follow">'}
 <link rel="canonical" href="${url}">
-<meta property="og:type" content="${page.type}">
+<meta property="og:type" content="${page.type}">${page.type === 'article' && page.datePublished ? '\n<meta property="article:published_time" content="' + esc(page.datePublished) + '">' : ''}
 <meta property="og:site_name" content="${esc(site.name)}">
 <meta property="og:locale" content="${site.locale}">
 <meta property="og:title" content="${esc(title)}">

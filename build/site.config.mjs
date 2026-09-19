@@ -60,7 +60,7 @@ export const pages = [
     route: '/articles/',
     type: 'website',
     priority: '0.9',
-    desc: "Six entrées courtes et sourcées pour comprendre les communs numériques : fondements théoriques, gouvernance, institutionnalisation et résultats de terrain.",
+    desc: "Sept analyses sourcées sur les communs numériques : fondements, action publique, gouvernance, institutionnalisation, résultats de terrain et maintenance.",
   },
   {
     src: 'Comprendre.dc.html',
@@ -205,6 +205,16 @@ export const pages = [
     priority: '0.8',
     section: 'Résultats',
     desc: "Deux voies pour ancrer un commun numérique dans l'administration : l'appropriation, où l'État pilote et contrôle, et la relation, où il contribue à un collectif qu'il ne dirige pas. Chacune a ses facteurs de réussite.",
+  },
+
+  {
+    src: 'article-maintenance-communs-numeriques.dc.html',
+    route: '/articles/maintenance-communs-numeriques/',
+    type: 'article',
+    priority: '0.8',
+    section: 'Maintenance',
+    datePublished: '2026-09-19',
+    desc: "Financer l'entretien, partager les responsabilités, préparer la relève : comment la maintenance permet aux communs numériques de durer dans l’action publique.",
   },
 
   // ── Pages légales ─────────────────────────────────────────────────────────
