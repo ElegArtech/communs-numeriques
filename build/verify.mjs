@@ -29,7 +29,7 @@ try {
   });
   for (const route of ['/', '/articles/', '/la-recherche/', '/glossaire/', '/a-propos/',
                        '/mentions-legales/', '/confidentialite/',
-                       '/articles/gouvernance-ostrom/', '/comprendre/',
+                       '/articles/gouvernance-ostrom/', '/articles/maintenance-communs-numeriques/', '/comprendre/',
                        '/comprendre/qui-decide/']) {
     await page.goto(BASE + route, { waitUntil: 'networkidle0' });
   }
@@ -129,6 +129,7 @@ try {
     '/articles/quest-ce-quun-commun-numerique/', '/articles/administration-et-communs/',
     '/articles/institutionnalisation/', '/articles/gouvernance-ostrom/',
     '/articles/neuf-initiatives/', '/articles/appropriation-relation/',
+    '/articles/maintenance-communs-numeriques/',
     '/comprendre/', '/comprendre/un-commun-avant-le-numerique/',
     '/comprendre/ce-que-change-le-numerique/', '/comprendre/libre-open-source-commun/',
     '/comprendre/qui-decide/', '/comprendre/qui-paie/',

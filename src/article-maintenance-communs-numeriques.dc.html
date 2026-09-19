@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La maintenance, épreuve de vérité des communs numériques — Les Communs Numériques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAFAF6;color:#1E2A23;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:oklch(0.50 0.12 160)}a:hover{color:oklch(0.40 0.11 162)}
+::selection{background:oklch(0.90 0.05 160);color:#1E2A23}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div ref="{{ barRef }}" style="position:fixed;top:0;left:0;height:3px;width:0%;background:oklch(0.50 0.12 160);z-index:80"></div>
+<header style="position:sticky;top:0;z-index:60;background:#FAFAF6;border-bottom:1px solid #1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);min-height:58px;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:space-between;gap:0 24px">
+    <a href="Accueil.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1E2A23;padding:12px 0">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="13" cy="4" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="4" r="2.6" fill="#B9C4B6"></circle><circle cx="4" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="13" cy="13" r="2.6" fill="oklch(0.50 0.12 160)"></circle><circle cx="22" cy="13" r="2.6" fill="#1E2A23"></circle><circle cx="4" cy="22" r="2.6" fill="#B9C4B6"></circle><circle cx="13" cy="22" r="2.6" fill="#1E2A23"></circle><circle cx="22" cy="22" r="2.6" fill="oklch(0.50 0.12 160)"></circle></svg>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Les Communs Numériques</span>
+    </a>
+    <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0 clamp(14px,2vw,30px);font-size:12px;letter-spacing:0.11em;text-transform:uppercase;font-weight:600">
+      <a href="Accueil.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Accueil</a>
+      <a href="Comprendre.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Comprendre</a>
+      <a href="Articles.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#1E2A23;border-bottom:2px solid oklch(0.50 0.12 160);padding:4px 0;margin-bottom:-1px">Articles</a>
+      <a href="Recherche.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">La recherche</a>
+      <a href="Glossaire.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">Glossaire</a>
+      <a href="APropos.dc.html" style="display:inline-flex;align-items:center;text-decoration:none;color:#5A685F;border-bottom:2px solid transparent;padding:4px 0;margin-bottom:-1px;transition:color .2s ease" style-hover="color:#1E2A23">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<div data-screen-label="En-tête article 07" style="position:relative;overflow:hidden;border-bottom:1px solid #1E2A23">
+  <div style="position:absolute;right:clamp(0px,2vw,40px);top:-16px;font-family:'Instrument Serif',serif;font-size:clamp(150px,24vw,320px);line-height:1;color:transparent;-webkit-text-stroke:1.5px #DCE1D8;pointer-events:none;user-select:none" aria-hidden="true">07</div>
+  <div style="position:relative;max-width:1380px;margin:0 auto;padding:clamp(36px,4.5vw,64px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;animation:fadeUp .5s ease both">
+      <a href="Articles.dc.html" style="color:#68766C;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">← Articles</a>
+      <span style="color:#68766C">/</span>
+      <span style="color:oklch(0.50 0.12 160)">Maintenance</span>
+      <span style="color:#68766C;font-weight:600">· 8 min de lecture</span>
+    </div>
+    <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,5.8vw,78px);line-height:1.02;letter-spacing:-0.01em;margin:26px 0 0;max-width:1080px;text-wrap:balance;animation:fadeUp .6s .06s ease both">La maintenance, épreuve de vérité des communs numériques</h1>
+    <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(20px,2.2vw,25px);line-height:1.42;color:#4A5850;margin:24px 0 0;max-width:820px;text-wrap:pretty;animation:fadeUp .6s .12s ease both">Ouvrir une ressource engage un travail qui se poursuit après sa publication. Corrections, documentation, arbitrages, transmission&nbsp;: comment organiser cette continuité, et quelle part l’action publique peut-elle y prendre&nbsp;?</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px;margin-top:32px;padding-top:20px;border-top:1px solid #1E2A23;font-size:13.5px;color:#4A5850">
+      <span>Par <strong style="color:#1E2A23">Alexandre Berge</strong></span>
+      <span style="color:#68766C">·</span>
+      <span>Analyse documentaire · <time datetime="2026-09-19">19 septembre 2026</time></span>
+    </div>
+  </div>
+</div>
+<div style="position:relative;height:88px;border-bottom:1px solid #1E2A23;background-image:radial-gradient(circle, rgba(30,42,35,0.13) 1px, transparent 1.4px);background-size:20px 20px;overflow:hidden" aria-hidden="true">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 1200 88" preserveAspectRatio="xMidYMid slice"><circle cx="170" cy="44" r="24" fill="#127552"></circle><circle cx="240" cy="44" r="24" fill="none" stroke="#1E2A23" stroke-width="1.6"></circle><circle cx="1000" cy="44" r="14" fill="none" stroke="#127552" stroke-width="2"></circle><circle cx="1054" cy="44" r="6" fill="#1E2A23"></circle></svg>
+</div>
+
+<article style="max-width:820px;margin:0 auto;padding:clamp(44px,5.5vw,72px) clamp(20px,4vw,48px) 0">
+  <div style="font-size:17.5px;line-height:1.8;color:#2A362F;display:flex;flex-direction:column;gap:24px">
+    <p style="margin:0;text-wrap:pretty"><span style="float:left;font-family:'Instrument Serif',serif;font-size:78px;line-height:0.72;padding:10px 14px 0 0;color:oklch(0.50 0.12 160)">I</span>maginons une collectivité qui publie un outil développé pour ses services. Le code est accessible, la licence autorise sa réutilisation, plusieurs organisations manifestent leur intérêt. Deux ans plus tard, la personne qui préparait les mises à jour change de poste. Les demandes s'accumulent. Une dépendance doit être remplacée, mais personne ne sait précisément comment reconstruire l'application. Le dépôt est toujours public&nbsp;; la capacité collective à le faire vivre s'est fragilisée.</p>
+    <p style="margin:0;text-wrap:pretty">Cette situation fictive permet de poser une question concrète&nbsp;: que partage-t-on lorsqu'on partage un commun numérique&nbsp;? Une ressource, bien sûr, mais aussi le travail nécessaire pour qu'elle reste utilisable. Le parcours <a href="notion-qui-paie.dc.html">«&nbsp;Qui paie un commun numérique&nbsp;?&nbsp;»</a> présente ses modes de financement. Il faut maintenant regarder ce que ces financements permettent de maintenir, qui accomplit ce travail et comment une administration peut en prendre sa part.</p>
+
+    <h2 id="travail-invisible" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.2;margin:30px 0 0;padding-top:30px;border-top:1px solid #1E2A23;scroll-margin-top:100px"><span style="display:block;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);margin-bottom:12px">§ 01</span>Ce que la continuité rend invisible</h2>
+    <p style="margin:0;text-wrap:pretty">Dans leur enquête sur la signalétique du métro parisien, Jérôme Denis et David Pontille montrent que la stabilité apparente des panneaux dépend d'interventions répétées&nbsp;: nettoyer, réparer, remplacer, ajuster aux particularités des lieux. Les standards graphiques expliquent une partie de la cohérence du réseau&nbsp;; le travail des équipes de maintenance en assure la continuité matérielle. Leur étude invite à considérer la fragilité comme une propriété ordinaire des choses, dont il faut prendre soin <a href="#source-denis">[Denis et Pontille, 2013]</a>.</p>
+    <p style="margin:0;text-wrap:pretty">Transposer ce regard au numérique demande une précaution&nbsp;: un fichier ne s'use pas comme un panneau. En revanche, son environnement change. Un logiciel doit fonctionner avec de nouvelles versions de ses dépendances&nbsp;; une base de données perd de sa pertinence lorsque le territoire qu'elle décrit évolue&nbsp;; un guide devient trompeur quand la procédure qu'il explique a changé. La ressource peut rester identique et cesser, pourtant, de rendre le même service.</p>
+    <p style="margin:0;text-wrap:pretty">La maintenance comprend alors bien davantage que la réparation des pannes. Elle consiste à repérer les écarts, vérifier une correction, actualiser un exemple, expliquer une décision ou accueillir une personne qui contribuera demain. Ces opérations produisent un résultat difficile à montrer&nbsp;: un service qui continue de fonctionner. Une évaluation limitée aux nouvelles fonctionnalités risque de laisser hors champ une part essentielle du travail.</p>
+
+    <h2 id="charge-de-travail" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.2;margin:30px 0 0;padding-top:30px;border-top:1px solid #1E2A23;scroll-margin-top:100px"><span style="display:block;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);margin-bottom:12px">§ 02</span>Le succès peut augmenter la charge sans augmenter les moyens</h2>
+    <p style="margin:0;text-wrap:pretty">Dans <em>Roads and Bridges</em>, Nadia Eghbal documente le décalage entre l'importance des composants logiciels partagés et le soutien dont disposent leurs responsables. Elle décrit aussi les tâches de coordination et le sentiment d'obligation qui peuvent retenir une personne à la tête d'un projet devenu très utilisé. L'adoption d'une ressource ne garantit donc pas que les moyens de l'entretenir suivent la même trajectoire <a href="#source-eghbal">[Eghbal, 2016]</a>.</p>
+    <p style="margin:0;text-wrap:pretty">Prenons un exemple de mécanisme possible. Dix administrations installent le même outil&nbsp;: chacune économise un développement, mais chacune apporte aussi ses configurations, ses demandes et ses incidents. Si toutes sollicitent la même petite équipe sans contribuer à son fonctionnement, la mutualisation des bénéfices s'accompagne d'une concentration de la charge. L'économie réalisée par les utilisateurs peut ainsi reposer sur du temps que personne n'a prévu de financer.</p>
+    <p style="margin:0;text-wrap:pretty">Pour une administration, identifier cette charge suppose de regarder au-delà de son contrat d'hébergement ou d'assistance. Qui suit le logiciel partagé&nbsp;? Qui relit les modifications&nbsp;? Le prestataire contribue-t-il au projet d'origine, ou entretient-il seulement une variante locale&nbsp;? Les deux activités peuvent être utiles, mais leurs effets sur la continuité du commun diffèrent. La question doit pouvoir être posée et documentée, plutôt que laissée à l'implicite.</p>
+
+    <h2 id="financement" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.2;margin:30px 0 0;padding-top:30px;border-top:1px solid #1E2A23;scroll-margin-top:100px"><span style="display:block;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);margin-bottom:12px">§ 03</span>Financer ce qui bénéficie à plusieurs</h2>
+    <p style="margin:0;text-wrap:pretty">Un financeur sait facilement décrire une fonction qui lui manque. Il peut demander un connecteur, un formulaire ou un export supplémentaire. Financer une amélioration de la documentation ou la simplification d'un composant demande un raisonnement différent&nbsp;: le bénéfice sera partagé et se manifestera parfois par des difficultés évitées. Pour le rendre discutable, il faut nommer le travail attendu et expliquer quelles dépendances il réduit.</p>
+    <p style="margin:0;text-wrap:pretty">On peut ainsi distinguer trois objets dans une discussion budgétaire&nbsp;: le fonctionnement du service utilisé localement, l'entretien de la ressource commune et la transmission des compétences. Une prestation peut couvrir plusieurs de ces objets. Les expliciter permet néanmoins de voir si tout l'effort porte sur l'exploitation immédiate, pendant que les outils de test, la documentation et l'accueil de nouveaux responsables restent sans moyens.</p>
+    <p style="margin:0;text-wrap:pretty">Cette reconnaissance doit aussi préserver une marge de décision pour les personnes qui maintiennent la ressource. Un financement entièrement découpé en demandes particulières peut laisser peu de place aux problèmes qui apparaîtront en cours de route. Une piste consiste à convenir d'objectifs de continuité, d'un temps disponible et d'un bilan lisible, tout en discutant régulièrement les priorités avec le collectif. C'est une proposition de gouvernance&nbsp;: sa mise en œuvre dépend de l'organisation du projet et du cadre d'intervention du financeur.</p>
+
+    <h2 id="soutiens-publics" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.2;margin:30px 0 0;padding-top:30px;border-top:1px solid #1E2A23;scroll-margin-top:100px"><span style="display:block;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);margin-bottom:12px">§ 04</span>Trois formes de soutien, trois effets différents</h2>
+    <p style="margin:0;text-wrap:pretty"><strong>Reconnaître le travail accompli.</strong> En janvier 2024, la DINUM et la fondation NLnet annoncent quatre prix BlueHats de 10&nbsp;000&nbsp;euros pour des mainteneurs de logiciels libres importants pour l'administration et peu soutenus. Le premier est attribué à Simon Kelley, mainteneur de dnsmasq, en avril. L'annonce souligne précisément la difficulté à financer la maintenance alors que certaines nouvelles fonctionnalités trouvent des commanditaires <a href="#source-bluehats">[DINUM, 2024a]</a> <a href="#source-dnsmasq">[DINUM, 2024b]</a>. Un prix apporte des moyens et une reconnaissance publique&nbsp;; il ne constitue pas, à lui seul, un engagement de soutien récurrent.</p>
+    <p style="margin:0;text-wrap:pretty"><strong>Financer un chantier d'entretien.</strong> Pour curl, composant de transfert de données, la fiche du Sovereign Tech Fund indique un soutien de 195&nbsp;000&nbsp;euros sur 2022–2023. Le programme de travail présenté porte notamment sur le tri et la correction de bogues ainsi que sur la prise en charge de versions plus récentes du protocole HTTP <a href="#source-curl">[Sovereign Tech Agency, fiche curl]</a>. Ce cas rend visible une autre manière d'agir&nbsp;: consacrer des moyens à l'amélioration d'une infrastructure existante, avec des tâches identifiées.</p>
+    <p style="margin:0;text-wrap:pretty"><strong>Rémunérer du temps de maintenance.</strong> L'appel pilote du Sovereign Tech Fund publié en septembre 2024 prévoit cinq places pour un programme de douze mois. Il inclut explicitement la revue des modifications, les relations avec la communauté et la sécurité parmi les activités soutenues <a href="#source-fellowship">[Swillus, 2024]</a>. L'objet financé se rapproche ici de la capacité à assumer une responsabilité dans la durée.</p>
+    <p style="margin:0;text-wrap:pretty">Ces exemples historiques illustrent des instruments différents, sans constituer un inventaire des aides disponibles aujourd'hui. Ils ne démontrent pas non plus que les projets soutenus sont devenus durablement autonomes. Leur intérêt pour l'analyse est de distinguer une récompense, un chantier et du temps rémunéré&nbsp;: trois réponses qui peuvent se compléter, mais ne résolvent pas exactement le même problème.</p>
+    <p style="margin:0;text-wrap:pretty">Ces infrastructures libres ne constituent pas automatiquement des communs&nbsp;: leur gouvernance et leurs règles de contribution restent à examiner. Elles éclairent ici les conditions matérielles de l'entretien d'une ressource partagée, une question que les collectifs organisés en commun doivent eux aussi résoudre.</p>
+
+    <h2 id="gouvernance" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.2;margin:30px 0 0;padding-top:30px;border-top:1px solid #1E2A23;scroll-margin-top:100px"><span style="display:block;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);margin-bottom:12px">§ 05</span>La gouvernance commence par le travail ordinaire</h2>
+    <p style="margin:0;text-wrap:pretty">Partager une ressource oblige à arbitrer entre des besoins. Faut-il accepter une fonction demandée par un membre important si elle alourdit le logiciel pour les autres&nbsp;? Qui peut différer une publication pour terminer les tests&nbsp;? À quel moment cesse-t-on de maintenir une ancienne version&nbsp;? Ces décisions distribuent du temps, des coûts et des risques. Elles donnent un contenu très concret à la <a href="article-gouvernance-ostrom.dc.html">gouvernance d'un commun</a>.</p>
+    <p style="margin:0;text-wrap:pretty">Une responsabilité partagée gagne donc à être traduite en rôles identifiables&nbsp;: accueillir les demandes, examiner les contributions, décider d'une version, tenir la documentation. Les rôles peuvent se cumuler dans un petit projet. L'enjeu est que leur répartition soit connue et révisable, et que les personnes puissent annoncer leurs limites. Dire qu'une fonctionnalité ne sera pas prise en charge peut protéger la continuité d'un ensemble devenu trop lourd à entretenir.</p>
+    <p style="margin:0;text-wrap:pretty">L'administration contributrice a, elle aussi, un arbitrage à faire. Si un agent doit participer au projet, ce temps doit trouver une place dans sa charge de travail et dans l'évaluation de son activité. Sinon, la contribution reste en concurrence avec des obligations reconnues comme plus urgentes. Cette question prolonge la distinction entre <a href="article-appropriation-relation.dc.html">appropriation et relation</a>&nbsp;: soutenir un commun externe suppose d'organiser la participation à des décisions que l'on ne prend pas seul.</p>
+
+    <h2 id="releve" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.2;margin:30px 0 0;padding-top:30px;border-top:1px solid #1E2A23;scroll-margin-top:100px"><span style="display:block;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);margin-bottom:12px">§ 06</span>Préparer la relève avant le départ</h2>
+    <p style="margin:0;text-wrap:pretty">Revenons à notre collectivité fictive. La personne qui quitte le projet laisse peut-être un code bien écrit, mais emporte la mémoire des choix techniques, des contacts et des opérations exceptionnelles. Pour réduire cette dépendance, il faut transmettre des savoirs et des responsabilités pendant qu'elle est encore disponible. La documentation constitue un appui&nbsp;; son utilisation par quelqu'un d'autre permet d'en éprouver les manques.</p>
+    <aside aria-labelledby="test-releve" style="border:1px solid #1E2A23;padding:26px clamp(18px,3vw,30px);background:#F4F7F2">
+      <h3 id="test-releve" style="margin:0;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#127552">Un exercice concret&nbsp;: préparer une relève</h3>
+      <p style="margin:14px 0 0;font-size:16px;line-height:1.75;text-wrap:pretty">Demander à une seconde personne de reconstruire une version de test à partir des instructions, de traiter une petite correction et d'expliquer comment se décide une publication. Relever ensemble les informations manquantes, puis réserver du temps pour les compléter. Cet exercice se déroule dans un environnement prévu à cet effet, avec les accès nécessaires et sans exposer de données sensibles.</p>
+    </aside>
+    <p style="margin:0;text-wrap:pretty">L'objectif est de rendre le travail transmissible, sans présumer que toute personne doit pouvoir tout faire immédiatement. Les accès d'administration, les procédures de récupération et les responsabilités de validation demandent une organisation distincte de la publication du code. Ouvrir la documentation utile à la contribution n'implique pas de rendre publics les secrets techniques ou les informations personnelles.</p>
+    <p style="margin:0;text-wrap:pretty">La relève possède aussi une dimension collective. Une personne nouvelle doit pouvoir comprendre pourquoi une proposition a été refusée, où demander de l'aide et comment obtenir progressivement davantage de responsabilités. Préparer cette progression prend du temps aux responsables actuels. Il est donc cohérent de la compter parmi les activités à financer, plutôt que d'attendre qu'un départ transforme une transmission possible en reprise d'urgence.</p>
+
+    <h2 id="evaluer" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.2;margin:30px 0 0;padding-top:30px;border-top:1px solid #1E2A23;scroll-margin-top:100px"><span style="display:block;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:oklch(0.50 0.12 160);margin-bottom:12px">§ 07</span>Évaluer la capacité à durer</h2>
+    <p style="margin:0;text-wrap:pretty">Pour piloter un soutien public, on peut proposer quelques questions de suivi&nbsp;: quelles tâches indispensables disposent de temps financé&nbsp;? Combien de personnes savent préparer une version&nbsp;? Une organisation extérieure a-t-elle pu réutiliser la ressource avec l'aide disponible&nbsp;? Les décisions importantes et les limites du support sont-elles compréhensibles&nbsp;? Il s'agit ici de pistes d'évaluation, à adapter au projet, et non d'un score universel de maturité.</p>
+    <p style="margin:0;text-wrap:pretty">Le nombre de contributions ou la fréquence des publications doivent notamment être interprétés. Un composant stable peut évoluer peu&nbsp;; une activité intense peut correspondre à une période de rattrapage. Examiner des situations concrètes — une correction menée à terme, une relève préparée, une dépendance remplacée — aide à comprendre ce que les chiffres seuls laissent indécis. La qualité du dialogue avec les utilisateurs compte aussi pour repérer les difficultés avant qu'elles deviennent des ruptures.</p>
+    <p style="margin:0;text-wrap:pretty">Prendre la maintenance au sérieux conduit finalement à préciser ce que signifie institutionnaliser un commun. La continuité repose sur des engagements renouvelés&nbsp;: des personnes reconnues dans leur rôle, des moyens discutés, des décisions explicables et une transmission organisée. Pour l'action publique, soutenir un commun revient alors à prendre part aux conditions de sa durée. C'est dans ce travail quotidien que la promesse de partage devient une capacité sur laquelle d'autres peuvent compter.</p>
+  </div>
+
+  <div style="margin-top:60px;border-top:1px solid #1E2A23;padding-top:24px">
+    <h2 style="margin:0;font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#5A685F">Sources et repères</h2>
+    <p style="font-size:14px;line-height:1.7;color:#4A5850;margin:16px 0 0">Cette analyse documentaire prolonge les thèmes du mémoire à partir de travaux et de dispositifs publiés. Les exemples de soutien sont datés de 2022–2024&nbsp;; les propositions d'organisation et d'évaluation développées ici relèvent de l'analyse de l'auteur.</p>
+    <ol style="margin:18px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:16px;font-size:14px;line-height:1.7;color:#4A5850;overflow-wrap:anywhere">
+      <li id="source-denis" style="scroll-margin-top:100px">Denis J. et Pontille D. (2013), <a href="https://www.csi.minesparis.psl.eu/working-papers/WP/WP_CSI_034.pdf" target="_blank" rel="noopener"><em>Material Ordering and the Care of Things</em></a>, CSI Working Papers, nº&nbsp;034. Document de travail fondé sur une enquête sur la signalétique du métro parisien.</li>
+      <li id="source-eghbal" style="scroll-margin-top:100px">Eghbal N. (2016), <a href="https://www.fordfoundation.org/learning/library/research-reports/roads-and-bridges-the-unseen-labor-behind-our-digital-infrastructure/" target="_blank" rel="noopener"><em>Roads and Bridges: The Unseen Labor Behind Our Digital Infrastructure</em></a>, Ford Foundation, 14 juillet. Rapport sur les conditions de production et de soutien des infrastructures logicielles ouvertes.</li>
+      <li id="source-bluehats" style="scroll-margin-top:100px">DINUM (2024a), <a href="https://code.gouv.fr/fr/bluehats/prix-bluehats/" target="_blank" rel="noopener">«&nbsp;Lancement du Prix BlueHats&nbsp;»</a>, 21 janvier. Annonce du dispositif avec NLnet et de ses quatre prix de 10&nbsp;000&nbsp;euros.</li>
+      <li id="source-dnsmasq" style="scroll-margin-top:100px">DINUM (2024b), <a href="https://code.gouv.fr/fr/blog/remise-du-premier-prix-bluehats-2024/" target="_blank" rel="noopener">«&nbsp;Dnsmasq remporte le premier prix BlueHats&nbsp;»</a>, 18 avril. Présentation du lauréat et de la distinction entre financement de fonctionnalités et maintenance.</li>
+      <li id="source-curl" style="scroll-margin-top:100px">Sovereign Tech Agency, <a href="https://www.sovereign.tech/tech/curl" target="_blank" rel="noopener">fiche du soutien à curl</a>, investissements 2022–2023. Montant et travaux prévus décrits par le financeur.</li>
+      <li id="source-fellowship" style="scroll-margin-top:100px">Swillus M. (2024), <a href="https://www.sovereign.tech/news/apply-to-the-fellowship-for-maintainers" target="_blank" rel="noopener">«&nbsp;Apply to the Fellowship for Maintainers&nbsp;»</a>, Sovereign Tech Fund, 12 septembre. Appel du programme pilote de douze mois, hébergé sur le site de la Sovereign Tech Agency.</li>
+    </ol>
+    <p style="margin:18px 0 0;font-size:13px;color:#5A685F">Sources consultées le 19 septembre 2026. Pour prolonger&nbsp;: <a href="notion-qui-paie.dc.html">le financement des communs</a>, <a href="article-appropriation-relation.dc.html">les deux voies d'institutionnalisation</a> et <a href="Recherche.dc.html">le mémoire en accès libre</a>.</p>
+  </div>
+</article>
+
+<a href="Recherche.dc.html" style="display:block;margin-top:72px;border-top:1px solid #1E2A23;border-bottom:1px solid #1E2A23;background:#FFFFFF;text-decoration:none;color:#1E2A23;transition:background .25s ease" style-hover="background:#EFF4EE;color:#1E2A23">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(30px,4vw,48px) clamp(20px,4vw,48px)">
+    <span style="font-size:11.5px;letter-spacing:0.13em;text-transform:uppercase;font-weight:700;color:#68766C">Pour aller au fond</span>
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 40px;margin-top:14px">
+      <span style="font-family:'Instrument Serif',serif;font-size:clamp(24px,3.2vw,42px);line-height:1.12;max-width:900px;text-wrap:balance">Explorer le travail de recherche — méthode, modèle et texte intégral</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:clamp(26px,3vw,40px)">→</span>
+    </div>
+  </div>
+</a>
+
+<footer style="background:#FAFAF6">
+  <div style="max-width:1380px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(20px,4vw,48px) 26px">
+    <div style="font-family:'Instrument Serif',serif;font-size:clamp(38px,7.2vw,110px);line-height:0.98;letter-spacing:-0.015em;padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #1E2A23">Les Communs <em style="font-style:italic;color:oklch(0.50 0.12 160)">Numériques</em></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;padding:34px 0 44px">
+      <p style="font-size:14.5px;line-height:1.65;color:#4A5850;margin:0;max-width:400px">Une revue en ligne de recherche et de vulgarisation consacrée aux communs numériques et à leur place dans l'action publique. Éditée par Alexandre Berge.</p>
+      <nav style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Explorer</span>
+        <a href="Comprendre.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Comprendre</a>
+        <a href="Articles.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Articles</a>
+        <a href="Recherche.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">La recherche</a>
+        <a href="Glossaire.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">Glossaire</a>
+        <a href="APropos.dc.html" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">À propos</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">
+        <span style="color:#68766C;font-size:11px;letter-spacing:0.14em">Contact</span>
+        <a href="mailto:consulting@alexandre-berge.fr" style="color:#1E2A23;text-decoration:none;text-transform:none;letter-spacing:0.01em;font-size:14px" style-hover="color:oklch(0.50 0.12 160)">consulting@alexandre-berge.fr</a>
+        <a href="https://www.linkedin.com/in/bergealexandre/" target="_blank" rel="noopener" style="color:#1E2A23;text-decoration:none" style-hover="color:oklch(0.50 0.12 160)">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:baseline;padding-top:20px;border-top:1px solid #D8DDD3;font-size:12px;color:#5A685F">
+      <span>© 2026 Alexandre Berge — Les Communs Numériques</span>
+      <nav style="display:flex;flex-wrap:wrap;gap:6px 16px">
+        <a href="MentionsLegales.dc.html" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3" style-hover="color:#1E2A23">Mentions légales</a>
+        <a href="Confidentialite.dc.html" style="color:#5A685F;text-decoration:none;border-bottom:1px solid #D8DDD3" style-hover="color:#1E2A23">Confidentialité</a>
+      </nav>
+      <span>Sauf mention contraire, contenus partagés sous licence CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.barRef = React.createRef();
+  }
+  componentDidMount() {
+    this.onScroll = () => {
+      const el = document.documentElement;
+      const p = el.scrollTop / Math.max(1, el.scrollHeight - el.clientHeight);
+      if (this.barRef.current) this.barRef.current.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+  renderVals() {
+    return { barRef: this.barRef };
+  }
+}
+</script>
+</body>
+</html>
