@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Sécurité, confidentialité ou document privé
+    url: https://github.com/ElegArtech/communs-numeriques/blob/main/SECURITY.md
+    about: Utiliser le contact privé indiqué ; ne pas publier de données sensibles dans une issue.

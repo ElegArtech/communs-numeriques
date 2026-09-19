@@ -10,13 +10,14 @@
  * Le thème (_theme.txt) est préfixé à chaque figure pour aligner polices et
  * couleurs sur la charte du site.
  *
- * Nécessite un Chromium ; celui du système est réutilisé via build/pptr.json.
+ * Utilise le navigateur de Puppeteer ou PUPPETEER_EXECUTABLE_PATH.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import { browserOptions } from './browser.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..');
@@ -28,6 +29,8 @@ const theme = readFileSync(join(SRC, '_theme.txt'), 'utf8').trim();
 
 mkdirSync(OUT, { recursive: true });
 mkdirSync(TMP, { recursive: true });
+const browserConfig = join(TMP, 'puppeteer.json');
+writeFileSync(browserConfig, JSON.stringify(await browserOptions()));
 
 const sources = readdirSync(SRC).filter(f => f.endsWith('.mmd')).sort();
 console.log(`Rendu de ${sources.length} figures\n`);
@@ -39,8 +42,8 @@ for (const f of sources) {
 
   writeFileSync(entree, theme + '\n' + readFileSync(join(SRC, f), 'utf8'));
 
-  execFileSync('npx', ['mmdc', '-i', entree, '-o', sortie,
-    '-p', join(HERE, 'pptr.json'), '-b', 'transparent', '-q'],
+  execFileSync(process.execPath, [join(ROOT, 'node_modules/@mermaid-js/mermaid-cli/src/cli.js'),
+    '-i', entree, '-o', sortie, '-p', browserConfig, '-b', 'transparent', '-q'],
     { cwd: ROOT, stdio: ['ignore', 'ignore', 'pipe'] });
 
   let svg = readFileSync(sortie, 'utf8');

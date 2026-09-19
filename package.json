@@ -8,10 +8,23 @@
     "build": "node build/compile.mjs && node build/memoire.mjs",
     "figures": "node build/figures.mjs",
     "memoire": "python3 build/extraire_memoire.py && node build/memoire.mjs",
-    "serve": "cd docs && python3 -m http.server 8900",
-    "verify": "node build/verify.mjs"
+    "serve": "python3 -m http.server 8900 --bind 127.0.0.1 --directory docs",
+    "verify": "node build/verify.mjs",
+    "check:repo": "node build/check-repository.mjs",
+    "check:generated": "node build/check-generated.mjs",
+    "browser:install": "puppeteer browsers install chrome"
   },
   "devDependencies": {
-    "@mermaid-js/mermaid-cli": "^11.13.0"
+    "@mermaid-js/mermaid-cli": "11.16.0",
+    "puppeteer": "25.8.0"
+  },
+  "license": "SEE LICENSE IN LICENSING.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElegArtech/communs-numeriques.git"
+  },
+  "homepage": "https://communs-numeriques.fr",
+  "engines": {
+    "node": ">=24 <25"
   }
 }

@@ -1,99 +1,132 @@
 # Les Communs Numériques
 
-Revue en ligne de recherche et de vulgarisation sur les communs numériques et
-leur place dans l'action publique. Éditée par Alexandre Berge, adossée au
+Revue de recherche et de vulgarisation sur les communs numériques et leur
+place dans l'action publique, éditée par Alexandre Berge. Elle prolonge le
 mémoire « Les facteurs d'institutionnalisation des communs numériques au sein
 de l'administration » (Executive Master 2 MSIC, soutenu le 10 juillet 2025).
 
-**Production :** https://communs-numeriques.fr
+**[Lire le site](https://communs-numeriques.fr)** ·
+[Contribuer](CONTRIBUTING.md) · [Licences](LICENSING.md) ·
+[Maintenance et publication](maintenance/README.md) · [Citer le mémoire](CITATION.cff)
 
-> **État actuel — indexation fermée.** Le site est en ligne mais porte un
-> `noindex` et un `robots.txt` fermé, le temps que les articles définitifs
-> remplacent les textes provisoires. Pour ouvrir l'indexation : passer
-> `noindex: false` dans `build/site.config.mjs`, recompiler, pousser.
+> **Site en préparation.** L'indexation par les moteurs reste fermée :
+> `noindex: true` dans `build/site.config.mjs`. L'ouverture est une décision
+> éditoriale distincte, une fois les textes définitifs prêts.
 
-## Comment ça marche
+## Fonctionnement
 
-Les pages sont dessinées dans **Claude Design** et versionnées sous forme de
-maquettes `.dc.html` dans `src/`. Un compilateur les transforme en site
-statique autonome dans `docs/`, que GitHub Pages publie.
+Les maquettes Claude Design de `src/` sont compilées en HTML statique dans
+`docs/`. GitHub Actions reconstruit et vérifie le site avant de le transmettre
+à GitHub Pages. Les pages publiées restent lisibles sans JavaScript ; les
+polices et ressources sont hébergées sur le même domaine.
 
+```text
+src/*.dc.html + static/ ── build/compile.mjs ──▶ docs/
+build/memoire.json + tableaux + figures ── build/memoire.mjs ──▶ docs/memoire/
 ```
-src/*.dc.html   ──[ build/compile.mjs ]──▶   docs/<route>/index.html
+
+`docs/` reste versionné pour rendre les changements publiés vérifiables.
+**Ne pas le modifier à la main** : le build l'efface puis le reconstruit.
+La prévisualisation des maquettes dans Claude Design utilise un environnement
+distinct ; les propriétés ci-dessus concernent le site compilé.
+
+## Installation
+
+Prérequis : **Git, Node.js 24 et npm, Python 3**. Avec nvm, `nvm install`
+sélectionne la version indiquée dans `.nvmrc`.
+
+```bash
+git clone https://github.com/ElegArtech/communs-numeriques.git
+cd communs-numeriques
+npm ci
+npm run browser:install
+npm run build
+npm run check:repo
+npm run serve
 ```
 
-Le compilateur retire tout ce qui rendrait le site dépendant du réseau ou d'un
-runtime : React, ReactDOM et Babel (~3 Mo téléchargés depuis unpkg.com à chaque
-visite) sont remplacés par `build/runtime.js`, 3,7 Ko de JavaScript natif
-inliné ; les polices sont auto-hébergées ; les attributs `style-hover` propres
-à Claude Design deviennent de vraies règles CSS `:hover`.
+Ouvrir [http://127.0.0.1:8900](http://127.0.0.1:8900). Dans un autre terminal,
+depuis le même dossier :
 
-Une page reste entièrement lisible JavaScript désactivé.
+```bash
+npm run verify
+```
+
+Les **17 contrôles navigateur** couvrent notamment l'absence de requêtes
+externes sur les pages échantillonnées, la lecture sans JavaScript, le
+glossaire, les liens, les redirections et les pages du mémoire. Le contrôle
+des contrastes détecte les trois gris interdits de la charte ; il ne constitue
+pas un audit complet d'accessibilité.
+
+`npm ci` installe les versions verrouillées ; `npm run browser:install`
+assure la présence du navigateur compatible de Puppeteer, même si npm bloque
+les scripts automatiques des dépendances. Un navigateur système peut être sélectionné avec
+`PUPPETEER_EXECUTABLE_PATH` ; voir les [options et le dépannage](maintenance/README.md#navigateur).
+La compilation ordinaire n'a besoin ni de Chromium ni de Poppler ; les tests
+et la régénération des figures utilisent le navigateur.
 
 ## Commandes
 
-```bash
-npm run build     # src/ → docs/
-npm run serve     # sert docs/ sur http://localhost:8900
-npm run verify    # 11 contrôles dans un vrai navigateur (serveur requis)
-```
+| Commande | Rôle |
+|---|---|
+| `npm ci` | Installer les dépendances verrouillées |
+| `npm run browser:install` | Installer le navigateur compatible pour les tests et les figures |
+| `npm run build` | Reconstruire tout `docs/` avec les données et figures enregistrées |
+| `npm run serve` | Servir uniquement `docs/` sur la boucle locale, port 8900 |
+| `npm run verify` | Exécuter les 17 contrôles, serveur local requis |
+| `npm run check:repo` | Vérifier les exclusions de fichiers privés, notices et configuration après le build |
+| `npm run check:generated` | Vérifier que `docs/` correspond au dernier commit, après un build |
+| `npm run figures` | Régénérer les quatre SVG du mémoire ; lancer ensuite le build |
+| `npm run memoire` | Réextraire le PDF public et générer les pages du mémoire ; Python et Poppler requis |
 
-Le mémoire est extrait du PDF public par un script distinct :
-
-```bash
-python3 build/extraire_memoire.py    # PDF 124 p. → build/memoire.json
-```
+Les deux dernières commandes sont destinées à la maintenance du mémoire,
+pas à l'installation ordinaire. Leurs prérequis et leur ordre d'utilisation
+sont détaillés dans le [guide de maintenance](maintenance/README.md).
 
 ## Arborescence
 
-```
-src/            maquettes Claude Design (.dc.html) — la source à éditer
-static/         ressources copiées telles quelles à la racine du site
-                  fonts/       Instrument Sans & Serif auto-hébergées
-                  images/      illustrations et portrait
-                  *.pdf        mémoire, version publique 124 p.
-build/          chaîne de fabrication
-                  site.config.mjs      routes, métadonnées, redirections
-                  compile.mjs          compilateur
-                  runtime.js           JS natif inliné dans chaque page
-                  verify.mjs           contrôles navigateur
-                  extraire_memoire.py  extraction structurée du PDF
-docs/           sortie du build — c'est ce que GitHub Pages sert
+```text
+src/                 maquettes et contenu à modifier ; tableaux et figures sources
+static/              ressources publiées : polices, notices, figures, PDF public
+build/               compilateurs, configuration, données du mémoire et contrôles
+docs/                site généré et versionné, seul dossier envoyé à GitHub Pages
+maintenance/         documentation technique (hors du dossier de publication)
+.github/             vérification, déploiement et modèles de contribution
 ```
 
-`docs/` est généré : ne rien y modifier à la main, tout serait écrasé au build
-suivant.
+Le compilateur régénère `docs/CNAME` (domaine), `docs/.nojekyll` et le fichier
+de validation Google Search Console depuis `build/site.config.mjs`.
 
-## Fichiers à ne jamais supprimer
+## Confidentialité
 
-| Fichier | Rôle |
-|---|---|
-| `docs/CNAME` | rattache GitHub Pages au domaine communs-numeriques.fr |
-| `docs/googlea6937b2d0e8f4a2d.html` | validation Google Search Console |
-| `docs/.nojekyll` | empêche Jekyll d'ignorer certains fichiers |
+Le seul mémoire publiable est
+`static/memoire-communs-numeriques-berge-2025.pdf`, **124 pages**, sans les
+retranscriptions des treize entretiens (pages 125–206 de la version soutenue).
+Les sources privées et brouillons doivent rester hors du dépôt public.
+Les noms des dossiers privés connus sont aussi exclus par `.gitignore`.
 
-Ces trois fichiers sont régénérés automatiquement par `build/compile.mjs` :
-ils sont listés ici parce qu'une suppression manuelle dans `docs/` casserait
-le domaine ou le référencement jusqu'au build suivant.
+`check:repo` refuse les chemins sensibles connus s'ils sont suivis par Git.
+Cela ne remplace pas la relecture des fichiers et de leur contenu avant un
+commit. Pour un signalement confidentiel, suivre [SECURITY.md](SECURITY.md).
 
-## Ce qui n'est pas dans ce dépôt
+## Licences et citation
 
-Le dépôt est public. Les matériaux suivants vivent hors de son arborescence :
+- **Code original et documentation technique : MIT**, texte dans [LICENSE](LICENSE).
+- **Contenus éditoriaux et mémoire : CC BY-SA 4.0**, texte dans
+  [static/licenses/CC-BY-SA-4.0.txt](static/licenses/CC-BY-SA-4.0.txt).
+- **Polices Instrument Sans et Serif : SIL OFL 1.1**, notices dans `static/fonts/`.
 
-- **les retranscriptions des 13 entretiens** (p. 125-206 du mémoire soutenu) —
-  les personnes interrogées ont donné un consentement oral pour un travail
-  universitaire, pas pour une publication web, et le site s'engage
-  explicitement à ne pas les diffuser ;
-- les brouillons d'articles et l'audit éditorial.
+Le [périmètre des licences](LICENSING.md) distingue le code et le texte dans
+les fichiers mixtes. Les [crédits et exceptions](THIRD_PARTY.md) documentent
+les ressources tierces, notamment le runtime de prévisualisation Claude Design.
+L'indication MIT affichée par GitHub ne décrit donc pas tout le dépôt.
 
-Le PDF publié ici est la **version publique, 124 pages**, qui s'arrête à la fin
-de l'annexe 6 et ne contient aucune retranscription.
-
-## Licences
-
-- **Code** (compilateur, runtime, scripts) : MIT — voir `LICENSE`.
-- **Contenus** (articles, glossaire, mémoire) : CC BY-SA 4.0.
+Citation du mémoire : Berge A., *Les facteurs d'institutionnalisation des
+communs numériques au sein de l'administration*, mémoire d'Executive Master 2
+MSIC, dir. M. Liottier, soutenu le 10 juillet 2025.
+[CITATION.cff](CITATION.cff) fournit cette référence au bouton de citation GitHub.
 
 ## Contact
 
-consulting@alexandre-berge.fr · [LinkedIn](https://www.linkedin.com/in/bergealexandre/)
+[consulting@alexandre-berge.fr](mailto:consulting@alexandre-berge.fr) ·
+[LinkedIn](https://www.linkedin.com/in/bergealexandre/)

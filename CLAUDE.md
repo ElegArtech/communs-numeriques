@@ -1,5 +1,9 @@
 # Guide de travail — Les Communs Numériques
 
+Les consignes publiques sont dans [CONTRIBUTING.md](CONTRIBUTING.md), les
+prérequis et la publication dans [maintenance/README.md](maintenance/README.md),
+et le périmètre des licences dans [LICENSING.md](LICENSING.md).
+
 ## Ce qu'il faut savoir avant de toucher au dépôt
 
 Le site est compilé : `src/*.dc.html` → `docs/`. **Ne jamais éditer `docs/`**,
@@ -9,11 +13,13 @@ tout y est écrasé au build suivant. Les modifications se font dans `src/`
 Après toute modification :
 
 ```bash
-npm run build && npm run serve   # puis, dans un autre terminal :
+npm run build && npm run check:repo && npm run serve   # puis, dans un autre terminal :
 npm run verify
 ```
 
-`npm run verify` doit rester à 17/17. Il vérifie notamment qu'aucune requête
+`npm run verify` doit rester à 17/17. GitHub Actions le relance avant chaque
+publication, ainsi que le contrôle de cohérence de `docs/`. Il vérifie
+notamment qu'aucune requête
 ne part vers un domaine tiers et que les pages restent lisibles sans
 JavaScript — deux propriétés faciles à casser sans s'en apercevoir.
 
@@ -87,7 +93,8 @@ rien à écrire à la main.
 
 Le site porte actuellement `noindex: true` dans `build/site.config.mjs`, le
 temps que les articles définitifs remplacent les textes provisoires. Passer à
-`false`, recompiler, pousser. Cela retire la balise `robots` de chaque page et
+`false`, recompiler, puis publier via le workflow GitHub Actions. Cela retire
+la balise `robots` de chaque page et
 rétablit un `robots.txt` ouvert avec le lien vers le sitemap.
 
 ## Conventions d'écriture
