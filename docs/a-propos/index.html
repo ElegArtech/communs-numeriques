@@ -71,7 +71,7 @@ main.vue{position:relative}
       <p class="legal"><a href="/mentions-legales/" data-sortie>Mentions légales</a><a href="/confidentialite/" data-sortie>Confidentialité</a><span>© 2026 Alexandre Berge · CC BY-SA 4.0</span></p>
     </section>
     <section class="scene" id="scene" aria-label="Ce site, lui aussi, se veut un commun">
-      <p class="legende">Ce site, lui aussi, se veut un commun.</p>
+      <p class="legende" id="legende">Ce site, lui aussi, se veut un commun.</p>
     </section>
     <article class="carte" id="carte">
       <p class="sur">Contact</p>
@@ -91,17 +91,17 @@ main.vue{position:relative}
 <script src="/univers/donnees.js"></script><script src="/univers/champ.js"></script>
 <script>
 (function () {
-  var scene = document.getElementById('scene'), propos = document.getElementById('propos');
-  var ETQ = [['une ressource', 'ces textes, en accès libre'], ['une communauté', 'vous, qui les lisez, citez, reprenez'], ['des règles', 'CC BY-SA : citer, partager à l\u2019identique']];
+  var scene = document.getElementById('scene'), propos = document.getElementById('propos'), legende = document.getElementById('legende');
+  var ETQ = [['une ressource', 'ces textes, en accès libre'], ['une communauté', 'vous, qui les lisez, citez, reprenez'], ['des règles', 'citer, partager à l\u2019identique']];
   var champ = Champ({
     canvas: document.getElementById('c'), stage: document.getElementById('stage'), forme: 'commun', entree: 'bords', densite: .6,
-    boite: function () { var r = scene.getBoundingClientRect(); return innerWidth < 861 ? { x1: r.left + 30, y1: r.top + 30, x2: r.right - 30, y2: r.bottom - 10 } : { x1: r.left - 30, y1: r.top + 60, x2: r.right - 210, y2: r.bottom - 10 }; },
+    boite: function () { var r = scene.getBoundingClientRect(); return innerWidth < 861 ? { x1: r.left + 30, y1: r.top + 30, x2: r.right - 30, y2: r.bottom - 10 } : { x1: r.left - 30, y1: legende.getBoundingClientRect().bottom + 80, x2: r.right - 210, y2: r.bottom - 64 }; },
     calme: function () { var r = propos.getBoundingClientRect(); return [{ x1: r.left, y1: r.top, x2: r.right - 40, y2: r.bottom }]; },
     dessin: function (ctx, api, a) {
       if (api.petit()) return;
-      var V = api.venn(), ang = [-1.75, -.9, 2.55];
+      var V = api.venn(), ang = [-1.75, -.9, Math.PI / 2];
       for (var k = 0; k < 3; k++) {
-        var x = V.F[k][0] + Math.cos(ang[k]) * V.R * 1.16, y = V.F[k][1] + Math.sin(ang[k]) * V.R * 1.16, al = ['center', 'left', 'right'][k];
+        var x = V.F[k][0] + Math.cos(ang[k]) * V.R * 1.16, y = V.F[k][1] + Math.sin(ang[k]) * V.R * 1.16, al = ['center', 'left', 'center'][k];
         api.texte(ETQ[k][0], x, y, { s: 19, a: a, al: al });
         api.texte(ETQ[k][1], x, y + 20, { f: '500 11.5px "Instrument Sans", sans-serif', c: 'rgba(157,176,164,' + a + ')', al: al });
       }
