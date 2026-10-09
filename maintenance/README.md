@@ -77,6 +77,17 @@ de revoir `build/extraire_memoire.py`. Les tableaux sont saisis séparément dan
 tableaux après toute réextraction. Le script n'a pas besoin de paquets Python
 supplémentaires, mais appelle `pdftohtml`.
 
+Édition PDF : après toute modification du mémoire en ligne, régénérer l'édition
+PDF, la relire, puis la publier. Le générateur refuse un PDF qui contiendrait un
+élément identifiant (liste dans `build/interdits.mjs`).
+
+```bash
+npm run build
+npm run pdf
+cp build/tmp/memoire-communs-numeriques-version-publique.pdf static/
+npm run build && npm run check:pdf
+```
+
 ## Publication GitHub Pages
 
 Le workflow [`.github/workflows/site.yml`](../.github/workflows/site.yml)
@@ -85,7 +96,7 @@ déclenchement manuel. Il :
 
 1. installe les versions verrouillées ;
 2. recompile et vérifie que `docs/` correspond au commit ;
-3. vérifie les protections du dépôt, les notices, et qu'aucun PDF n'est publié ;
+3. vérifie les protections du dépôt, les notices, et l'édition PDF publiée (`npm run check:pdf`) ;
 4. sert le site localement et exécute les 17 contrôles navigateur ;
 5. uniquement sur `main` du dépôt d'origine, transmet `docs/` à GitHub Pages
    après réussite de toutes les étapes précédentes.

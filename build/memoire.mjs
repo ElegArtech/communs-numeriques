@@ -307,6 +307,9 @@ pages.forEach((ch, i) => {
            font-size:19px;line-height:1.25;color:${ENCRE};padding-bottom:14px;border-bottom:1px solid ${FILET};margin-bottom:4px">
           Le mémoire</a>
         ${sommaireLateral(ch, ancres)}
+        <a href="${site.pdf}" style="display:inline-block;margin-top:26px;font-size:12px;letter-spacing:.1em;
+           text-transform:uppercase;font-weight:600;color:${ENCRE};text-decoration:none;
+           border-bottom:2px solid ${ACCENT};padding-bottom:3px">PDF · version publique</a>
       </div>
     </details>
   </nav>
@@ -416,6 +419,9 @@ const corpsIndex = `
       <a href="${racine}${pages[0].slug}/" style="display:inline-block;background:${ENCRE};color:${FOND};
          text-decoration:none;padding:13px 26px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;font-weight:600">
         Commencer la lecture</a>
+      <a href="${site.pdf}" style="font-size:13px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+         color:${ENCRE};text-decoration:none;border-bottom:2px solid ${ACCENT};padding-bottom:3px">
+        Télécharger le PDF · version publique</a>
     </div>
   </div>
 </section>

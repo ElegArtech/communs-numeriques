@@ -11,6 +11,8 @@ export const site = {
   locale: 'fr_FR',
   licence: 'CC BY-SA 4.0',
   licenceUrl: 'https://creativecommons.org/licenses/by-sa/4.0/deed.fr',
+  // Édition PDF anonymisée, tirée de la version web (npm run pdf).
+  pdf: '/memoire-communs-numeriques-version-publique.pdf',
 
   // Tant que les articles définitifs ne sont pas en ligne, le site est visible
   // mais fermé aux moteurs de recherche. Passer à false pour ouvrir l'indexation.
@@ -41,8 +43,8 @@ export const redirects = {
   '/recherche/index.html': '/la-recherche/',
   '/recherche/memoire.html': '/la-recherche/',
   '/recherche/memoire/bibliographie/': '/la-recherche/',
-  // Le PDF n'est plus proposé au téléchargement : l'ancienne adresse mène à la recherche.
-  '/recherche/memoire/pdf/': '/la-recherche/',
+  // L'ancienne adresse du PDF mène à l'édition anonymisée.
+  '/recherche/memoire/pdf/': '/memoire-communs-numeriques-version-publique.pdf',
 };
 
 // Chaque entrée : fichier source → route publique + métadonnées de partage.
@@ -236,3 +238,4 @@ export const pages = [
 
 // Réécriture des liens internes : ancien fichier → nouvelle route.
 export const linkMap = Object.fromEntries(pages.map(p => [p.src, p.route]));
+linkMap['assets/memoire-communs-numeriques-version-publique.pdf'] = site.pdf;

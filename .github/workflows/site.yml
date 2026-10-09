@@ -36,10 +36,12 @@ jobs:
           npm run build
           npm run check:generated
           npm run check:repo
-      - name: Vérifier qu'aucun PDF n'est publié
+      - name: Vérifier l'édition PDF publiée
         run: |
-          # Le mémoire n'est plus proposé en PDF tant qu'une version anonymisée n'est pas validée.
-          test -z "$(find docs static -name '*.pdf' -print -quit)"
+          # Seule l'édition anonymisée est publiable, et son texte est contrôlé.
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
+          npm run check:pdf
       - name: Vérifier dans le navigateur
         shell: bash
         run: |

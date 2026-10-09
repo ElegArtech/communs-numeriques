@@ -12,6 +12,7 @@
     "verify": "node build/verify.mjs",
     "check:repo": "node build/check-repository.mjs",
     "check:generated": "node build/check-generated.mjs",
+    "check:pdf": "node build/check-pdf.mjs",
     "pdf": "node build/pdf.mjs",
     "browser:install": "puppeteer browsers install chrome"
   },

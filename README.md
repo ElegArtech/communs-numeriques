@@ -77,6 +77,8 @@ et la régénération des figures utilisent le navigateur.
 | `npm run check:repo` | Vérifier les exclusions de fichiers privés, notices et configuration après le build |
 | `npm run check:generated` | Vérifier que `docs/` correspond au dernier commit, après un build |
 | `npm run figures` | Régénérer les quatre SVG du mémoire ; lancer ensuite le build |
+| `npm run pdf` | Générer l'édition PDF anonymisée depuis `docs/memoire/` (dans `build/tmp/`, à copier dans `static/` après relecture) |
+| `npm run check:pdf` | Vérifier que seule l'édition anonymisée est publiée et qu'elle ne contient aucun élément identifiant |
 | `npm run memoire` | Réextraire le PDF source (hors dépôt, `MEMOIRE_PDF=…`) et générer les pages du mémoire ; Python et Poppler requis |
 
 Les deux dernières commandes sont destinées à la maintenance du mémoire,
@@ -99,10 +101,11 @@ de validation Google Search Console depuis `build/site.config.mjs`.
 
 ## Confidentialité
 
-Le mémoire est publié en lecture web uniquement, sans les retranscriptions des
-treize entretiens (pages 125–206 de la version soutenue) et sans élément
-permettant d'identifier les personnes interrogées. Aucun PDF n'est publié tant
-qu'une version anonymisée n'a pas été validée ; le PDF source reste hors dépôt.
+Le mémoire est publié en lecture web et dans une édition PDF qui en est le
+reflet (`static/memoire-communs-numeriques-version-publique.pdf`, produite par
+`npm run pdf`), sans les retranscriptions des treize entretiens (pages 125–206
+de la version soutenue) et sans élément permettant d'identifier les personnes
+interrogées. Le PDF de la version soutenue reste hors dépôt.
 Les sources privées et brouillons doivent rester hors du dépôt public.
 Les noms des dossiers privés connus sont aussi exclus par `.gitignore`.
 

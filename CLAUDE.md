@@ -34,10 +34,11 @@ contrôlée par `verify.mjs`.
 confidentielles ; le site s'y engage explicitement sur `/la-recherche/` et
 `/a-propos/`. **Aucune personne interrogée ne doit être identifiable** : ni
 fonction associée à une organisation, ni mention indiquant qu'une personne a été
-interviewée pour le mémoire. **Aucun PDF n'est publié** tant qu'une version
-anonymisée n'a pas été validée (le contrôle de publication échoue sinon). Le PDF
-source et les sources confidentielles sont hors dépôt, dans
-`~/Documents/Communs-numeriques-prive/`.
+interviewée pour le mémoire. Le seul PDF publiable est l'édition anonymisée
+`static/memoire-communs-numeriques-version-publique.pdf`, tirée de la version web
+par `npm run pdf` et contrôlée par `npm run check:pdf` ; les éléments interdits
+sont listés dans `build/interdits.mjs`. Le PDF de la version soutenue et les
+sources confidentielles sont hors dépôt, dans `~/Documents/Communs-numeriques-prive/`.
 
 **Le design fait foi.** Les maquettes `.dc.html` sont la référence visuelle.
 Une modification de rendu se fait dans la maquette, pas par du CSS ajouté

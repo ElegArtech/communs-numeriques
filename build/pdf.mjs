@@ -4,8 +4,8 @@
 //
 // Le PDF n'est que le reflet des pages web du mémoire (docs/memoire/) : même
 // texte, mêmes tableaux saisis à la main, même anonymisation. Il est écrit dans
-// build/tmp/ pour relecture ; il n'est publié qu'une fois validé (voir
-// maintenance/README.md). Un contrôle refuse le fichier s'il contient un
+// build/tmp/ pour relecture ; une fois relu, il est copié dans static/ pour être
+// publié (voir maintenance/README.md). Un contrôle refuse le fichier s'il contient un
 // élément permettant d'identifier une personne interrogée.
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -16,18 +16,13 @@ import puppeteer from 'puppeteer';
 import { browserOptions } from './browser.mjs';
 import { site } from './site.config.mjs';
 import { chapitres, parties } from './memoire.config.mjs';
+import { INTERDITS, PDF_PUBLIC } from './interdits.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DOCS = join(ROOT, 'docs');
 const SORTIE = join(ROOT, 'build', 'tmp');
-const NOM = 'memoire-communs-numeriques-version-publique.pdf';
+const NOM = PDF_PUBLIC;
 
-// Éléments qui ne doivent jamais figurer dans une édition publique.
-const INTERDITS = [
-  'Interview N. Vivant', 'Fonction de l’interviewé', 'Directeur de la stratégie numérique',
-  'Ancien élu local', 'Dirigeant d’association', 'Dirigeant de société de conseil',
-  'Ancien DSI d’organisme public', 'Dirigeant d’opérateur public', 'Enseignante-chercheuse',
-];
 
 const ENCRE = '#1E2A23', ACCENT = '#127552', SECOND = '#4A5850', FILET = '#D8DDD3';
 const echapper = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
@@ -192,4 +187,4 @@ if (trouves.length) {
   console.error(`✗ Le PDF contient des éléments identifiants : ${trouves.join(' · ')}`);
   process.exit(1);
 }
-console.log(`✓ ${NOM} : ${pages} pages, aucun élément identifiant — build/tmp/, à relire avant publication`);
+console.log(`✓ ${NOM} : ${pages} pages, aucun élément identifiant — build/tmp/, à relire, puis copier dans static/ pour publier`);
