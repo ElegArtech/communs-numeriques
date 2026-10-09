@@ -49,12 +49,13 @@ h1 em{font-style:italic;color:var(--lime);letter-spacing:-.035em}
 .sub{margin-top:clamp(18px,3vh,34px);max-width:38ch;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--muted)}
 .sub b{color:var(--ink);font-weight:500}
 /* Le milieu de la phrase change : un commun, ce qu'il est, qui l'entretient.
-   Sans script, seule la première variante s'affiche ; avec, les lettres
-   basculent comme sur un panneau à palettes avant de se fixer. */
+   Sans script, seule la première variante s'affiche ; avec, chaque mot
+   défile verticalement, en cascade, comme sur un compteur mécanique. */
 .rot > span{display:none}
 .rot > span.on{display:inline}
 .rot b{color:var(--ink);font-weight:500}
-.rot i{font-style:normal;color:var(--lime)}
+.rot .mot{display:inline-block;vertical-align:top;height:1.5em;line-height:1.5em;overflow:hidden;white-space:pre}
+.rot .mot > span{display:inline-block}
 
 /* Étiquettes du champ, placées par le script */
 .tag{position:absolute;z-index:0;top:0;left:0;font:italic 400 clamp(17px,1.5vw,22px)/1 var(--serif);color:var(--ink);opacity:0;transition:opacity 1.2s;pointer-events:none;white-space:nowrap}
@@ -278,31 +279,40 @@ body:not([data-mode="commun"]) .tag{opacity:0!important;transition:opacity .4s}
   hauteur(); addEventListener('resize', hauteur);
   if (document.fonts) document.fonts.ready.then(hauteur);
 
-  // panneau à palettes : chaque lettre bascule quelques fois, puis se fixe, de gauche à droite
-  var PALETTES = 'aeonsrucvxz', palettesMaj = 'AEONSRUCVXZ';
-  var echap = function (c) { return c === '<' ? '&lt;' : c === '&' ? '&amp;' : c; };
-  function basculer(el, de, vers, decalage) {
-    var n = Math.max(de.length, vers.length), t0 = performance.now(), fin = [];
-    for (var i = 0; i < n; i++) fin.push(decalage + i * 14 + 120 + Math.random() * 160);
-    (function pas(now) {
-      var t = now - t0, html = '', fini = true;
-      for (var i = 0; i < n; i++) {
-        var c = vers.charAt(i);
-        if (t >= fin[i]) { html += echap(c); continue; }
-        fini = false;
-        if (t < decalage + i * 14) { html += echap(de.charAt(i)); continue; }
-        if (c === ' ' || c === ',' || c === '’' || c === "'") { html += c; continue; }
-        var jeu = c && c === c.toUpperCase() && c !== c.toLowerCase() ? palettesMaj : PALETTES;
-        html += '<i>' + jeu.charAt((Math.random() * jeu.length) | 0) + '</i>';
-      }
-      el.innerHTML = html;
-      if (!fini) requestAnimationFrame(pas); else el.textContent = vers;
-    })(t0);
+  // défilement vertical : les mots sortent par le haut, puis les nouveaux montent à leur place.
+  // La phrase n'est recomposée qu'une fois, entre les deux, quand elle est vide : aucun mot ne
+  // change de ligne en cours de route.
+  var html = function (t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+  function cases(v) {
+    var m = [];
+    v.nom.split(/(?<= )/).forEach(function (t) { m.push('<b>' + html(t) + '</b>'); });
+    v.reste.split(/(?<= )/).forEach(function (t) {
+      // la ponctuation reste collée au mot qui la précède
+      if (m.length && /^[,.;:]/.test(t)) m[m.length - 1] += html(t); else m.push(html(t));
+    });
+    boite.innerHTML = m.map(function (x) { return '<span class="mot"><span>' + x + '</span></span>'; }).join('');
+    return [].map.call(boite.children, function (c) { return c.firstChild; });
+  }
+  function bouger(els, y, duree, pas, courbe) {
+    els.forEach(function (e, i) { e.style.transition = 'transform ' + duree + 'ms ' + courbe + ' ' + (i * pas) + 'ms'; e.style.transform = y; });
+    return duree + els.length * pas;
+  }
+  function defiler(a, b) {
+    var vieux = cases(a);
+    boite.offsetWidth;
+    var t1 = bouger(vieux, 'translateY(-105%)', 340, 22, 'cubic-bezier(.5,0,.9,.5)');
+    setTimeout(function () {
+      var neufs = cases(b);
+      neufs.forEach(function (e) { e.style.transform = 'translateY(105%)'; });
+      boite.offsetWidth;
+      var t2 = bouger(neufs, 'none', 620, 40, 'cubic-bezier(.2,.7,0,1)');
+      // une fois arrivée, la phrase redevient du texte ordinaire
+      setTimeout(function () { boite.innerHTML = '<b></b><span class="on"></span>'; eNom = boite.firstChild; eReste = boite.lastChild; eNom.textContent = b.nom; eReste.textContent = b.reste; }, t2 + 40);
+    }, t1);
   }
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(function () {
-    var a = V[r]; r = (r + 1) % V.length; var b = V[r];
-    basculer(eNom, a.nom, b.nom, 0);
-    basculer(eReste, a.reste, b.reste, a.nom.length * 14 * .6);
+    if (document.hidden) return;
+    var a = V[r]; r = (r + 1) % V.length; defiler(a, V[r]);
   }, 4600);
 })();
 </script>
