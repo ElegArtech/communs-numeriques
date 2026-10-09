@@ -38,6 +38,7 @@ function chapitre(ch) {
   c = c.replace(/<span style="color:#5A685F">(\[[^\]]*\])<\/span>/g, '<span class="ref">$1</span>');
   c = c.split(/(<svg[\s\S]*?<\/svg>)/).map((x, i) => (i % 2 ? x : x.replace(/\s(style|class)="[^"]*"/g, ''))).join('');
   c = c.replace(/href="\/(?!\/)/g, `href="${site.origin}/`);
+  c = c.replace(/<li>\s*<span>[—•]<\/span>\s*/g, '<li>');   // une seule puce
   return { titre, corps: c };
 }
 
@@ -112,9 +113,14 @@ a{color:inherit;text-decoration:none}
 .texte h4{font-size:12pt;margin:5mm 0 2mm}
 .texte ul,.texte ol{margin:0 0 3mm;padding-left:5mm}
 .texte li{margin-bottom:1.2mm}
+.texte li::marker{color:${ACCENT}}
+.texte h5{font:600 10.4pt/1.4 'Instrument Sans',sans-serif;margin:4.5mm 0 1.5mm;text-align:left;break-after:avoid}
 .ref{font-size:.82em;color:${SECOND};white-space:nowrap}
 .texte figure{margin:5mm 0;break-inside:avoid}
-.texte figure svg{max-width:100%;height:auto;display:block;margin:0 auto}
+/* une figure tient toujours sur une page : seule sa taille change */
+.texte figure svg{display:block;margin:0 auto;width:auto !important;height:auto !important;max-width:100% !important;max-height:215mm !important}
+/* un tableau peut se poursuivre sur la page suivante, son en-tête se répète */
+.texte figure:has(table){break-inside:auto}
 .texte table{width:100%;border-collapse:collapse;font-size:8.6pt;line-height:1.4;text-align:left}
 .texte thead{display:table-header-group}
 .texte tr{break-inside:avoid}

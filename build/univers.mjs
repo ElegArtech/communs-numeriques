@@ -100,6 +100,7 @@ function rhabiller(src) {
        .replace(/<span style="color:#5A685F">(\[[^\]]*\])<\/span>/g, '<span class="ref">$1</span>');
   c = c.split(/(<svg[\s\S]*?<\/svg>)/).map((x, i) => (i % 2 ? x : x.replace(/\s(style|class|style-hover)="[^"]*"/g, ''))).join('');
   c = c.replace(/href="\/glossaire\/#g-([a-z0-9-]+)"/g, 'href="/glossaire/a-z/#$1"');
+  c = c.replace(/<li>\s*<span>[—•]<\/span>\s*/g, '<li>');   // la puce du texte d'origine, en double avec celle de la liste
   c = c.replace(/(<h2[^>]*>)<span>(§[^<]*)<\/span>/g, '$1<span class="num">$2</span>');
   c = c.replace(/<p>\s*<span>([A-ZÀ-Ý])<\/span>/, '<p><span class="lettrine">$1</span>');
   const niveau = /<h2[\s>]/.test(c) ? '2' : '3';

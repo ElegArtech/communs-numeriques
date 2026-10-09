@@ -69,6 +69,8 @@ body.lecture{height:auto;overflow:visible}
 .corps-lecture blockquote p{margin:0 0 .6em}
 .corps-lecture ul,.corps-lecture ol{padding-left:1.2em}
 .corps-lecture li{margin-bottom:.5em}
+.corps-lecture li::marker{color:var(--lime)}
+.corps-lecture h5{font:600 1em/1.4 var(--sans);color:var(--ink);margin:1.8em 0 .4em;letter-spacing:0}
 
 /* À retenir, pour aller plus loin, sources */
 .corps-lecture > div + div{margin-top:3em;padding-top:1.4em;border-top:1px solid var(--line)}

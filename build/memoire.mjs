@@ -110,11 +110,40 @@ function rendreFigure(num, legende) {
 </figure>`;
 }
 
+// Intertitre de paragraphe : le PDF le portait en gras, l'extraction n'en garde
+// que le texte. On le reconnaît à sa forme : court, sans ponctuation finale,
+// commençant par une majuscule et suivi d'un paragraphe (pas une référence
+// bibliographique, une adresse ou un débris de tableau).
+function estIntertitre(texte, suivant) {
+  const t = texte.trim();
+  if (!t || t.length > 80 || !suivant || suivant.type !== 'para') return false;
+  if (!/^[A-ZÀ-ÝÉ0-9]/.test(t) || /[.;:!?…»)\],]$/.test(t)) return false;
+  if (/^\[|https?:|URL|[«»]| = /.test(t)) return false;
+  return (t.match(/\(/g) || []).length === (t.match(/\)/g) || []).length;
+}
+
+// Débris de tableau : l'extraction laisse parfois, autour d'un tableau, des
+// lignes de cellules sous forme de paragraphes. Un paragraphe voisin d'un
+// tableau brut (ou d'un autre débris) en est un s'il a l'allure d'un fragment.
+function debris(elements) {
+  const d = new Set(), fragment = (t) => t.length < 80 || /^[a-zà-ÿ(]/.test(t) || !/[.!?»)\]]$/.test(t)
+    || (t.match(/\(/g) || []).length !== (t.match(/\)/g) || []).length;
+  const tabulaire = (j) => elements[j] && (elements[j].type === 'tableau_brut' || d.has(j));
+  for (let encore = true; encore;) {
+    encore = false;
+    elements.forEach((e, i) => {
+      if (e.type === 'para' && !d.has(i) && (tabulaire(i - 1) || tabulaire(i + 1)) && fragment(e.texte.trim())) { d.add(i); encore = true; }
+    });
+  }
+  return d;
+}
+
 function rendreContenu(chapitre, tableaux) {
   const ancres = [];
   const html = [];
+  const ecartes = debris(chapitre.elements);
 
-  for (const e of chapitre.elements) {
+  for (const [i, e] of chapitre.elements.entries()) {
     switch (e.type) {
       case 'titre': {
         const texte = e.numero ? `${e.numero}. ${e.texte}` : e.texte;
@@ -135,6 +164,11 @@ function rendreContenu(chapitre, tableaux) {
         break;
       }
       case 'para':
+        if (ecartes.has(i)) break;   // débris de tableau : la version saisie fait foi
+        if (estIntertitre(e.texte, chapitre.elements[i + 1])) {
+          html.push(`<h5 style="margin:30px 0 8px;font-size:17px;line-height:1.4;font-weight:600;color:${ENCRE}">${refs(e.texte)}</h5>`);
+          break;
+        }
         html.push(`<p style="margin:0 0 20px;font-size:17px;line-height:1.72;color:${ENCRE};text-wrap:pretty">${refs(e.texte)}</p>`);
         break;
       case 'liste':
