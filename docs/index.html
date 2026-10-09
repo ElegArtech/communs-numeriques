@@ -70,16 +70,13 @@ h1 .l span{display:inline-block}
 h1 em{font-style:italic;color:var(--lime);letter-spacing:-.035em}
 .sub{margin-top:clamp(18px,3vh,34px);max-width:38ch;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--muted)}
 .sub b{color:var(--ink);font-weight:500}
-/* Le milieu de la phrase change : un commun, ce qu'il est, qui l'entretient */
+/* Le milieu de la phrase change : un commun, ce qu'il est, qui l'entretient.
+   Sans script, seule la première variante s'affiche ; avec, les lettres
+   basculent comme sur un panneau à palettes avant de se fixer. */
 .rot > span{display:none}
-.rot > span.on,.rot > span.sort{display:inline}
+.rot > span.on{display:inline}
 .rot b{color:var(--ink);font-weight:500}
-@media (prefers-reduced-motion:no-preference){
-  .rot > span.on{animation:apparait .7s ease both}
-  .rot > span.sort{animation:disparait .35s ease forwards}
-}
-@keyframes apparait{from{opacity:0;filter:blur(3px)}to{opacity:1;filter:none}}
-@keyframes disparait{to{opacity:0;filter:blur(3px)}}
+.rot i{font-style:normal;color:var(--lime)}
 
 /* Étiquettes du champ, placées par le script */
 .tag{position:absolute;z-index:0;top:0;left:0;font:italic 400 clamp(17px,1.5vw,22px)/1 var(--serif);color:var(--ink);opacity:0;transition:opacity 1.2s;pointer-events:none;white-space:nowrap}
@@ -286,20 +283,49 @@ body:not([data-mode="commun"]) .tag{opacity:0!important;transition:opacity .4s}
   }
 
   // le milieu de la phrase défile : un commun, ce qu'il est, qui l'entretient
-  var sub = document.getElementById('sub'), rot = [].slice.call(document.getElementById('rot').children), r = 0;
+  var sub = document.getElementById('sub'), boite = document.getElementById('rot');
+  var V = [].slice.call(boite.children).map(function (s) {
+    var b = s.querySelector('b'); return { nom: b.textContent, reste: s.textContent.slice(b.textContent.length) };
+  });
+  boite.innerHTML = '<b></b><span class="on"></span>';
+  var eNom = boite.firstChild, eReste = boite.lastChild, r = 0;
+  eNom.textContent = V[0].nom; eReste.textContent = V[0].reste;
   // la phrase garde la hauteur de sa variante la plus longue : rien ne saute à l'écran
   function hauteur() {
     sub.style.minHeight = ''; var max = 0;
-    rot.forEach(function (s) { rot.forEach(function (x) { x.style.display = x === s ? 'inline' : 'none'; }); max = Math.max(max, sub.offsetHeight); });
-    rot.forEach(function (x) { x.style.display = ''; });
+    V.forEach(function (v) { eNom.textContent = v.nom; eReste.textContent = v.reste; max = Math.max(max, sub.offsetHeight); });
+    eNom.textContent = V[r].nom; eReste.textContent = V[r].reste;
     sub.style.minHeight = max + 'px';
   }
   hauteur(); addEventListener('resize', hauteur);
   if (document.fonts) document.fonts.ready.then(hauteur);
+
+  // panneau à palettes : chaque lettre bascule quelques fois, puis se fixe, de gauche à droite
+  var PALETTES = 'aeonsrucvxz', palettesMaj = 'AEONSRUCVXZ';
+  var echap = function (c) { return c === '<' ? '&lt;' : c === '&' ? '&amp;' : c; };
+  function basculer(el, de, vers, decalage) {
+    var n = Math.max(de.length, vers.length), t0 = performance.now(), fin = [];
+    for (var i = 0; i < n; i++) fin.push(decalage + i * 14 + 120 + Math.random() * 160);
+    (function pas(now) {
+      var t = now - t0, html = '', fini = true;
+      for (var i = 0; i < n; i++) {
+        var c = vers.charAt(i);
+        if (t >= fin[i]) { html += echap(c); continue; }
+        fini = false;
+        if (t < decalage + i * 14) { html += echap(de.charAt(i)); continue; }
+        if (c === ' ' || c === ',' || c === '’' || c === "'") { html += c; continue; }
+        var jeu = c && c === c.toUpperCase() && c !== c.toLowerCase() ? palettesMaj : PALETTES;
+        html += '<i>' + jeu.charAt((Math.random() * jeu.length) | 0) + '</i>';
+      }
+      el.innerHTML = html;
+      if (!fini) requestAnimationFrame(pas); else el.textContent = vers;
+    })(t0);
+  }
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(function () {
-    var x = rot[r]; x.classList.remove('on'); x.classList.add('sort');
-    setTimeout(function () { x.classList.remove('sort'); r = (r + 1) % rot.length; rot[r].classList.add('on'); }, 350);
-  }, 4200);
+    var a = V[r]; r = (r + 1) % V.length; var b = V[r];
+    basculer(eNom, a.nom, b.nom, 0);
+    basculer(eReste, a.reste, b.reste, a.nom.length * 14 * .6);
+  }, 4600);
 })();
 </script>
 </body></html>
