@@ -6,9 +6,18 @@ et le périmètre des licences dans [LICENSING.md](LICENSING.md).
 
 ## Ce qu'il faut savoir avant de toucher au dépôt
 
-Le site est compilé : `src/*.dc.html` → `docs/`. **Ne jamais éditer `docs/`**,
-tout y est écrasé au build suivant. Les modifications se font dans `src/`
-(contenu et mise en page) ou dans `build/` (chaîne de fabrication).
+Le site est compilé en trois étapes, toutes lancées par `npm run build` :
+
+1. `build/compile.mjs` : `src/*.dc.html` → `docs/` (textes, métadonnées, JSON-LD,
+   sitemap, redirections) ;
+2. `build/memoire.mjs` : le mémoire → `docs/memoire/` ;
+3. `build/univers.mjs` : relit ces pages et les réhabille dans le design du site
+   (accueil plein écran, pages de section, pages de lecture, glossaire de A à Z,
+   404), en conservant leur en-tête.
+
+**Ne jamais éditer `docs/`**, tout y est écrasé au build suivant. Les textes se
+modifient dans `src/` ; le design dans `static/univers/`, `src/univers/` et
+`build/univers.mjs`.
 
 Après toute modification :
 
@@ -17,7 +26,7 @@ npm run build && npm run check:repo && npm run serve   # puis, dans un autre ter
 npm run verify
 ```
 
-`npm run verify` doit rester à 17/17. GitHub Actions le relance avant chaque
+`npm run verify` doit rester à 18/18. GitHub Actions le relance avant chaque
 publication, ainsi que le contrôle de cohérence de `docs/`. Il vérifie
 notamment qu'aucune requête
 ne part vers un domaine tiers et que les pages restent lisibles sans
@@ -40,9 +49,18 @@ par `npm run pdf` et contrôlée par `npm run check:pdf` ; les éléments interd
 sont listés dans `build/interdits.mjs`. Le PDF de la version soutenue et les
 sources confidentielles sont hors dépôt, dans `~/Documents/Communs-numeriques-prive/`.
 
-**Le design fait foi.** Les maquettes `.dc.html` sont la référence visuelle.
-Une modification de rendu se fait dans la maquette, pas par du CSS ajouté
-après coup dans le compilateur.
+**Le design fait foi.** La référence visuelle est l'univers du site :
+- `static/univers/champ.js` — le champ de points (trois nuées du commun, et les
+  formes des sections : parcours, collier, grille, fourche, colonne) ;
+- `static/univers/univers.css` et `lecture.css` — pages de section et de lecture ;
+- `static/univers/lecture.js` — marge vivante, plan, bulles de glossaire ;
+- `src/univers/accueil.html` — l'accueil, sur un seul écran ;
+- `build/univers.mjs` — les gabarits de chaque page.
+
+Les maquettes `.dc.html` restent la **source des textes** ; leur mise en forme
+n'est plus publiée. Une modification de rendu se fait dans l'univers, pas dans
+les maquettes. Les pages de section et l'accueil tiennent sur un écran, sans
+défilement ; seules les pages de lecture défilent.
 
 ## Deux types de contenu, deux contrats de lecture
 
@@ -59,25 +77,23 @@ série qui s'allonge. Une notion et un article peuvent traiter du même sujet à
 condition de ne pas dire la même chose : la notion pose le quoi, l'article
 traite le et alors.
 
-Le glossaire porte une ancre `id="g-<slug>"` sur chaque terme. Les notions y
-renvoient avec `<a class="gl" href="Glossaire.dc.html#g-…">`, un souligné
-pointillé qui fonctionne sans JavaScript. Le terme atteint se surligne
-grâce à la règle `p[data-glossterm]:target` de `src/Glossaire.dc.html`.
+Le glossaire porte une ancre `id="g-<slug>"` sur chaque terme de
+`src/Glossaire.dc.html`. Les notions y renvoient avec
+`<a class="gl" href="Glossaire.dc.html#g-…">` ; l'univers transforme ces liens
+en renvois vers `/glossaire/a-z/#<slug>`, soulignés en pointillé, avec la
+définition en bulle au survol.
 
 ## Ajouter une notion au parcours
 
 1. Créer `src/notion-<slug>.dc.html` en copiant une notion existante — le
    gabarit est strictement identique de l'une à l'autre.
-2. Mettre à jour, **dans toutes les notions**, le sommaire de bas de page, les
-   pastilles de progression, la numérotation « Notion N sur 7 » et les liens
-   précédent/suivant. Le parcours est ordonné : une insertion se répercute
-   partout.
-3. Déclarer la page dans `build/site.config.mjs` avec `kind: 'notion'` — c'est
-   ce champ qui produit le JSON-LD `LearningResource` et alimente l'`ItemList`
-   de la page de rubrique.
-4. Ajouter l'entrée dans `src/Comprendre.dc.html` et dans le bloc
-   « Première approche » de `src/Accueil.dc.html`.
-5. `npm run build && npm run verify`, puis ajouter la route à la liste des
+2. Déclarer la page dans `build/site.config.mjs` avec `kind: 'notion'`, **à sa
+   place dans l'ordre du parcours** — c'est cet ordre qui numérote les notions,
+   fixe le nombre de stations du champ et les liens précédent/suivant ; `kind`
+   produit aussi le JSON-LD `LearningResource`.
+3. Ajouter son titre court (étiquette du parcours) dans `COURT`, en tête de
+   `build/univers.mjs`.
+4. `npm run build && npm run verify`, puis ajouter la route à la liste des
    liens contrôlés dans `build/verify.mjs`.
 
 ## Ajouter ou remplacer un article
@@ -86,8 +102,9 @@ grâce à la règle `p[data-glossterm]:target` de `src/Glossaire.dc.html`.
 2. Déclarer la page dans `build/site.config.mjs` : `src`, `route`, `type`,
    `priority`, `section`, et une `desc` de 150-160 caractères qui servira à la
    fois de meta description et de description Open Graph.
-3. Ajouter le lien dans `src/Articles.dc.html` et, si l'article passe à la une,
-   dans `src/Accueil.dc.html`.
+3. Rien d'autre : la page Analyses, le collier du champ et la navigation entre
+   analyses suivent l'ordre de `build/site.config.mjs`. La dernière analyse de
+   la liste est mise en avant.
 4. `npm run build && npm run verify`.
 
 Le sitemap, les métadonnées, le JSON-LD et les URLs propres sont générés :
@@ -112,18 +129,22 @@ rétablit un `robots.txt` ouvert avec le lien vers le sitemap.
 
 ## Palette
 
+Le site est sombre ; les variables sont dans `static/univers/univers.css`.
+
 | | | |
 |---|---|---|
-| encre | `#1E2A23` | texte principal, filets |
-| fond | `#FAFAF6` | fond de page |
-| accent | `#127552` | liens, italiques de titre |
-| texte secondaire | `#4A5850` · `#5A685F` | chapôs, légendes |
-| filets clairs | `#D8DDD3` · `#EAEDE6` | séparateurs |
+| fond | `#08130E` | fond de page |
+| encre | `#ECF1EA` | texte principal |
+| lime | `#C9F27B` | accent : intersections du champ, liens actifs, titres en italique |
+| texte secondaire | `#9DB0A4` | chapôs, descriptions |
+| texte discret | `#6F8578` | numéros, mentions (4,6:1 sur le fond, minimum AA) |
+| filets | `rgba(236,241,234,.14)` | séparateurs |
 
-Les gris `#8A968D`, `#9AA79B` et `#B9C4B6` sont **sous le seuil WCAG AA** sur
-le fond `#FAFAF6` (2,9:1, 2,4:1 et 1,7:1 pour un minimum de 4,5:1). Ne pas les
-utiliser pour du texte porteur de sens — uniquement pour des filets ou des
-éléments décoratifs.
+Ne pas descendre sous `#6F8578` pour du texte sur le fond sombre. La « lecture
+claire » des pages de lecture repasse en encre `#1E2A23` sur `#F6F4EC`, accent
+`#127552`, et ne mémorise rien chez le lecteur. L'édition PDF reprend la palette
+claire. Les gris `#8A968D`, `#9AA79B` et `#B9C4B6`, sous le seuil WCAG AA sur
+fond clair, restent interdits en couleur de texte (contrôlé par `verify.mjs`).
 
 Typographie : Instrument Serif pour les titres, Instrument Sans pour le texte.
 

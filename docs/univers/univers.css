@@ -1,0 +1,112 @@
+/* Univers — styles partagés des pages intérieures.
+   Un écran, deux zones : à gauche le propos, à droite la scène où le champ prend forme. */
+:root{
+  --bg:#08130E; --bg-2:#0E2219; --ink:#ECF1EA; --muted:#9DB0A4; --faint:#6F8578;
+  --line:rgba(236,241,234,.14); --lime:#C9F27B; --glass:rgba(10,24,18,.78);
+  --serif:'Instrument Serif',Georgia,serif; --sans:'Instrument Sans',system-ui,sans-serif;
+  --pad:clamp(18px,3.2vw,48px); --ease:cubic-bezier(.2,.7,0,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+html{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.5 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:1.5px solid var(--lime);outline-offset:4px;border-radius:2px}
+
+.stage{position:relative;height:100svh;min-height:600px;display:grid;grid-template-rows:auto 1fr;isolation:isolate;overflow:clip}
+.bg{position:absolute;inset:0;z-index:-2;background:radial-gradient(60% 70% at 70% 45%,#123526 0%,transparent 70%),radial-gradient(40% 50% at 5% 100%,#0F271C 0%,transparent 70%),var(--bg)}
+canvas.champ{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* En-tête : la marque, les quatre sections, chacune avec la forme qu'elle prend */
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:clamp(16px,2.2vw,26px) var(--pad);position:relative;z-index:5}
+.brand{display:flex;align-items:center;gap:12px;font:400 21px/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
+.brand svg{width:22px;height:22px}
+.sections{display:flex;gap:4px;align-items:center}
+.sections a{display:flex;align-items:center;gap:9px;padding:9px 14px;border-radius:99px;font-size:14.5px;color:var(--muted);transition:color .3s,background .3s}
+.sections a svg{width:16px;height:16px;opacity:.7;transition:opacity .3s}
+.sections a:hover{color:var(--ink);background:rgba(236,241,234,.06)}
+.sections a[aria-current]{color:var(--ink);background:rgba(201,242,123,.1)}
+.sections a[aria-current] svg{opacity:1;color:var(--lime)}
+.sections .sep{width:1px;height:18px;background:var(--line);margin:0 6px}
+@media (max-width:980px){.sections a span{display:none}.sections a{padding:10px}}
+
+/* Mise en page : propos à gauche, scène à droite */
+.vue{display:grid;grid-template-columns:minmax(340px,.82fr) 1.18fr;min-height:0}
+.propos{padding:clamp(8px,2vh,28px) var(--pad) clamp(20px,3vh,40px);display:flex;flex-direction:column;min-height:0;position:relative}
+.propos::before{content:"";position:absolute;inset:-10% -12% -10% -30%;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,rgba(8,19,14,.78),rgba(8,19,14,0))}
+.scene{position:relative;min-height:0}
+
+.kicker{display:flex;align-items:center;gap:12px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.kicker b{color:var(--lime);font-weight:600}
+.kicker::before{content:"";width:28px;height:1px;background:var(--lime)}
+h1{margin:clamp(10px,1.8vh,20px) 0 clamp(8px,1.4vh,16px);font:400 clamp(38px,min(4.6vw,8vh),76px)/.92 var(--serif);letter-spacing:-.035em;text-wrap:balance}
+h1 em{color:var(--lime)}
+.chapo{color:var(--muted);font-size:clamp(15.5px,1.15vw,17.5px);max-width:42ch;text-wrap:pretty}
+
+/* Liste synchronisée avec la scène */
+.liste{list-style:none;margin:clamp(14px,2.6vh,30px) 0 0;padding:0;border-top:1px solid var(--line);min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.liste li{border-bottom:1px solid var(--line)}
+.liste a{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:baseline;padding:clamp(5px,1.05vh,13px) 4px;position:relative;transition:color .3s,padding .4s var(--ease)}
+.liste a::before{content:"";position:absolute;left:-14px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:var(--lime);transform:scale(0);transition:transform .35s var(--ease)}
+.liste .n{font:500 12px/1 var(--sans);letter-spacing:.1em;color:var(--faint);transition:color .3s}
+.liste .t{font:400 clamp(16.5px,min(1.45vw,2.5vh),22px)/1.15 var(--serif);letter-spacing:-.01em;color:var(--muted);transition:color .3s}
+.liste .t small{display:block;font:500 11.5px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
+.liste .m{font-size:12.5px;color:var(--faint);white-space:nowrap}
+.liste a.actif,.liste a:hover,.liste a:focus-visible{padding-left:14px}
+.liste a.actif::before,.liste a:hover::before,.liste a:focus-visible::before{transform:none}
+.liste a.actif .t,.liste a:hover .t{color:var(--ink)}
+.liste a.actif .n{color:var(--lime)}
+
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(14px,2.4vh,26px)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:99px;font:600 14.5px/1 var(--sans);transition:background .3s,color .3s,box-shadow .3s}
+.btn.plein{background:var(--lime);color:var(--bg)}
+.btn.plein:hover{background:var(--ink)}
+.btn.trait{box-shadow:inset 0 0 0 1px var(--line);color:var(--ink)}
+.btn.trait:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+
+/* La carte : ce que montre l'ancre mise en avant */
+.carte{position:absolute;z-index:3;width:min(360px,80%);padding:20px 22px 20px;border-radius:16px;background:var(--glass);border:1px solid var(--line);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);transition:opacity .4s,transform .5s var(--ease)}
+.carte .sur{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin:0}
+.carte h2{margin:8px 0 10px;font:400 clamp(22px,1.8vw,28px)/1.1 var(--serif);letter-spacing:-.015em}
+.carte p{margin:0;color:var(--muted);font-size:15px;line-height:1.5}
+.carte .lien{display:inline-flex;gap:8px;margin-top:14px;font-weight:600;font-size:14px;color:var(--ink);border-bottom:1px solid var(--lime);padding-bottom:2px}
+.carte .lien:hover{color:var(--lime)}
+.carte.change{opacity:0;transform:translateY(6px)}
+
+/* Transitions entre pages */
+.veil{position:fixed;inset:0;z-index:60;background:var(--bg);opacity:0;pointer-events:none;transition:opacity .5s .12s}
+.leaving .veil{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .propos>*{opacity:0;transform:translateY(14px);animation:arrive .9s var(--ease) forwards}
+  .propos>*:nth-child(2){animation-delay:.08s}.propos>*:nth-child(3){animation-delay:.16s}.propos>*:nth-child(4){animation-delay:.24s}.propos>*:nth-child(5){animation-delay:.32s}
+  .carte{animation:arrive 1s .7s var(--ease) both}
+}
+@keyframes arrive{to{opacity:1;transform:none}}
+
+.cur{position:fixed;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border:1px solid rgba(201,242,123,.7);border-radius:50%;pointer-events:none;z-index:50;opacity:0;transition:width .35s,height .35s,margin .35s,background .35s,opacity .3s}
+.cur.on{opacity:1}
+.cur.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(201,242,123,.08)}
+@media (pointer:coarse){.cur{display:none}}
+.cliquable{cursor:pointer}
+
+/* Téléphone et tablette : la scène passe au-dessus, la page peut défiler */
+@media (max-width:860px){
+  .stage{height:auto;min-height:100svh;overflow:visible;overflow-x:clip}
+  .propos::before{inset:-6% 0 -6% 0}
+  .vue{grid-template-columns:1fr;grid-template-rows:42svh auto}
+  .scene{order:-1}
+  .propos{padding-top:6px}
+  .liste{overflow:visible}
+  .carte{display:none}
+  canvas.champ{position:fixed;height:100svh}
+  .bg,.grain{position:fixed}
+}
+@media (max-width:620px){
+  .brand .nom{display:none}
+  .sections .sep,.sections a[href="/a-propos/"]{display:none}
+  .top{padding:14px 16px}
+}

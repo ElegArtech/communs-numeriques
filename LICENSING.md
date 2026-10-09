@@ -14,7 +14,7 @@ conditions, recensées dans [THIRD_PARTY.md](THIRD_PARTY.md).
 | Articles, notions, glossaire et autres textes éditoriaux dans `src/*.dc.html` | [CC BY-SA 4.0](static/licenses/CC-BY-SA-4.0.txt) |
 | Texte public du mémoire : `build/memoire.json`, tableaux de `src/memoire/tableaux/` | CC BY-SA 4.0, sous réserve des éléments tiers cités |
 | Figures originales du mémoire : `src/memoire/figures/*.mmd`, `static/figures/*.svg`, `build/figures-source/*.png` | CC BY-SA 4.0, sous réserve des éléments tiers cités |
-| HTML, CSS et JavaScript originaux des maquettes | MIT ; les textes qu'ils présentent restent sous CC BY-SA 4.0 |
+| HTML, CSS et JavaScript originaux des maquettes et de l'univers (`static/univers/`, `src/univers/`) | MIT ; les textes qu'ils présentent restent sous CC BY-SA 4.0 |
 | Pages compilées de `docs/` | Chaque composante conserve sa licence ; la compilation ne change pas les droits |
 | Polices `static/fonts/*.woff2` et leurs copies dans `docs/fonts/` | SIL Open Font License 1.1, notices propres à chaque famille |
 | Runtime tiers `src/support.js` | Exception : licence de redistribution non identifiée dans l'export ; voir THIRD_PARTY.md |

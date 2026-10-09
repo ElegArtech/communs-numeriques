@@ -1,0 +1,179 @@
+/* Lecture — notions, analyses, chapitres du mémoire.
+   Ici le défilement est légitime : on lit. Le champ se retire dans la marge,
+   où il montre la place du texte dans son ensemble et s'allume au fil de la lecture. */
+html:has(body.lecture){height:auto;overflow:visible}
+body.lecture{height:auto;overflow:visible}
+.lecture .fond{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.lecture .fond .bg,.lecture .fond .grain{position:absolute}
+.lecture canvas.champ{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1}
+.lecture .top{position:relative}
+
+.progres{position:fixed;top:0;left:0;right:0;height:2px;z-index:40;pointer-events:none}
+.progres span{display:block;height:100%;background:var(--lime);transform-origin:0 50%;transform:scaleX(0)}
+@supports (animation-timeline: scroll()){.progres span{animation:remplir linear both;animation-timeline:scroll(root)}}
+@keyframes remplir{to{transform:scaleX(1)}}
+
+.lire{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,700px) minmax(180px,230px);justify-content:center;gap:clamp(28px,4vw,72px);padding:0 var(--pad) 0}
+
+/* La marge : le champ y dessine la place du texte */
+.rail{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:24px 0 28px}
+.rail-scene{flex:1;min-height:0}
+.rail-info{padding-top:14px;border-top:1px solid var(--line)}
+.rail-info .pos{margin:0;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.rail-info .tit{margin:6px 0 14px;font:400 19px/1.2 var(--serif);color:var(--ink)}
+.rail-info nav{display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+.rail-info nav a{color:var(--muted);display:flex;gap:8px;transition:color .2s}
+.rail-info nav a:hover{color:var(--ink)}
+.rail-info nav a span{color:var(--faint);flex:none}
+
+/* Le texte */
+.texte{padding:clamp(28px,6vh,64px) 0 clamp(60px,10vh,120px);min-width:0}
+.texte .kicker{margin-bottom:18px}
+.texte h1{font-size:clamp(40px,4.4vw,64px);line-height:1;margin:0 0 26px;max-width:18ch}
+.phrase{margin:0 0 26px;padding:20px 24px;border:1px solid rgba(201,242,123,.35);border-radius:14px;background:rgba(201,242,123,.05)}
+.phrase span{display:block;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:8px}
+.phrase p{margin:0;font:400 clamp(21px,1.8vw,25px)/1.35 var(--serif);color:var(--ink)}
+.chapo-lecture{margin:0 0 26px;font:italic 400 clamp(21px,1.8vw,25px)/1.4 var(--serif);color:var(--muted)}
+.signature{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13.5px;color:var(--faint);padding-bottom:28px;margin-bottom:36px;border-bottom:1px solid var(--line)}
+.signature b{color:var(--muted);font-weight:500}
+
+.corps-lecture{font-size:clamp(17.5px,1.25vw,19px);line-height:1.75;color:#D9E2DB}
+.corps-lecture p{margin:0 0 1.15em}
+.corps-lecture strong,.corps-lecture b{color:var(--ink);font-weight:600}
+.corps-lecture em{font-style:italic}
+.corps-lecture a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(201,242,123,.5);text-underline-offset:3px}
+.corps-lecture a:hover{text-decoration-color:var(--lime)}
+.corps-lecture a[href^="/glossaire/"]{text-decoration:underline dotted;text-decoration-color:var(--lime);text-decoration-thickness:1.5px;cursor:help}
+.corps-lecture h2,.corps-lecture h3,.corps-lecture h4{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:-.015em;scroll-margin-top:40px;text-wrap:balance}
+.corps-lecture h2{font-size:clamp(28px,2.4vw,36px);line-height:1.12;margin:2.2em 0 .7em;padding-top:.9em;border-top:1px solid var(--line)}
+.corps-lecture h2 .num{display:block;font:600 11.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:12px}
+.corps-lecture h2 span:empty{display:none}
+.corps-lecture h3{font-size:clamp(23px,1.9vw,28px);line-height:1.2;margin:1.9em 0 .5em}
+.corps-lecture h4{font-size:21px;margin:1.6em 0 .4em}
+
+/* lettrine du premier paragraphe */
+.corps-lecture .lettrine{float:left;font:400 4.4em/.8 var(--serif);color:var(--lime);margin:.08em .12em 0 0}
+
+/* encadrés et grilles du corps */
+.corps-lecture > div > div:not(:has(> div)):not(:has(> span)){margin:0}
+.corps-lecture > div > div{margin:1.6em 0;padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:rgba(236,241,234,.03)}
+.corps-lecture > div > div > span:first-child{display:block;font:600 11.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
+.corps-lecture > div > div > p:last-child{margin-bottom:0}
+.corps-lecture > div > div:has(> div){display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;padding:0;border:0;background:none}
+.corps-lecture > div > div > div{padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:rgba(236,241,234,.03);font-size:15.5px;line-height:1.55}
+.corps-lecture > div > div > div > span{display:block}
+.corps-lecture > div > div > div > span:first-child{font:600 11px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:6px}
+.corps-lecture > div > div > div > span:nth-child(2):not(:last-child){font:400 21px/1.15 var(--serif);color:var(--ink);margin-bottom:8px}
+.corps-lecture > div > div > div:has(> span:nth-child(2):last-child){display:grid;grid-template-columns:28px 1fr;gap:8px}
+.corps-lecture blockquote{margin:1.8em 0;padding:4px 0 4px 24px;border-left:2px solid var(--lime);font:italic 400 clamp(21px,1.7vw,24px)/1.45 var(--serif);color:var(--ink)}
+.corps-lecture blockquote p{margin:0 0 .6em}
+.corps-lecture ul,.corps-lecture ol{padding-left:1.2em}
+.corps-lecture li{margin-bottom:.5em}
+
+/* À retenir, pour aller plus loin, sources */
+.corps-lecture > div + div{margin-top:3em;padding-top:1.4em;border-top:1px solid var(--line)}
+.corps-lecture > div + div > span:first-child{display:block;font:600 11.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.corps-lecture > div + div ol{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.corps-lecture > div + div ol li{display:grid;grid-template-columns:36px 1fr;gap:10px;margin:0;font:400 20px/1.35 var(--serif);color:var(--ink)}
+.corps-lecture > div + div ol li > span:first-child{font:600 12px/1.9 var(--sans);color:var(--lime)}
+.corps-lecture > div + div > div{display:grid;gap:8px;padding:0;border:0;background:none;margin:0}
+.corps-lecture > div + div a[href^="/glossaire/"]{text-decoration:none;cursor:pointer}
+.corps-lecture > div + div > div > a{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:baseline;padding:14px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;transition:border-color .25s,background .25s}
+.corps-lecture > div + div > div > a:hover{border-color:var(--lime);background:rgba(201,242,123,.05)}
+.corps-lecture > div + div > div > a span:first-child{font:600 11px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.corps-lecture > div + div > div > a span:nth-child(2){font:400 19px/1.25 var(--serif)}
+.corps-lecture > div + div > div > a span:last-child{color:var(--lime)}
+.corps-lecture > div + div > ul{list-style:none;padding:0;font-size:14px;line-height:1.6;color:var(--muted);columns:2;column-gap:28px}
+.corps-lecture > div + div > ul li{break-inside:avoid;margin-bottom:8px}
+.corps-lecture > div + div > p{font-size:14px;color:var(--faint)}
+
+/* Mémoire : références d'entretien, figures et tableaux sur papier */
+.corps-lecture .ref{font-size:.78em;color:var(--faint);white-space:nowrap}
+.corps-lecture .ref--ent{color:var(--lime);background:rgba(201,242,123,.08);padding:1px 6px;border-radius:4px}
+.corps-lecture figure{margin:2em 0;padding:22px;background:#F4F2EA;color:#1E2A23;border-radius:14px;overflow-x:auto}
+.corps-lecture figure svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.corps-lecture figcaption{font:500 13px/1.5 var(--sans);color:#4A5850;margin-top:12px}
+.corps-lecture table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.5;margin:1.6em 0;display:block;overflow-x:auto}
+.corps-lecture th,.corps-lecture td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.corps-lecture th{font-weight:600;color:var(--ink);font-size:13px;letter-spacing:.02em}
+
+/* Suite de la lecture */
+.suite{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:64px}
+.suite a{display:block;padding:20px 22px;border:1px solid var(--line);border-radius:14px;transition:border-color .25s,background .25s}
+.suite a:hover{border-color:var(--lime);background:rgba(201,242,123,.05)}
+.suite small{display:block;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.suite b{font:400 22px/1.2 var(--serif)}
+.suite .nx{text-align:right;grid-column:2}
+
+/* Plan de la page */
+.plan{position:sticky;top:0;height:100vh;padding:clamp(28px,6vh,64px) 0 28px;display:flex;flex-direction:column;font-size:14px}
+.plan p{margin:0 0 12px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.plan ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line);overflow-y:auto;scrollbar-width:none}
+.plan a{display:block;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--faint);line-height:1.35;transition:color .2s,border-color .2s}
+.plan a:hover{color:var(--ink)}
+.plan a.ici{color:var(--ink);border-left-color:var(--lime)}
+.outils{margin-top:auto;padding-top:20px;display:grid;gap:8px}
+.outils button,.outils a{display:flex;align-items:center;gap:10px;background:none;border:1px solid var(--line);border-radius:99px;padding:9px 14px;font-size:13px;color:var(--muted);cursor:pointer;transition:color .2s,border-color .2s}
+.outils button:hover,.outils a:hover{color:var(--ink);border-color:var(--ink)}
+
+/* Bulle de glossaire */
+.bulle{position:fixed;z-index:30;max-width:340px;padding:16px 18px;border-radius:14px;background:var(--glass);border:1px solid rgba(201,242,123,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 24px 50px -24px rgba(0,0,0,.7);pointer-events:none;opacity:0;transform:translateY(6px);transition:opacity .2s,transform .3s var(--ease)}
+.bulle.on{opacity:1;transform:none}
+.bulle b{display:block;font:400 21px/1.15 var(--serif);color:var(--lime);margin-bottom:6px}
+.bulle span{font-size:14.5px;line-height:1.5;color:#D9E2DB}
+
+/* Lecture claire : pour les longues lectures */
+body.clair{--ink:#1E2A23;--muted:#4A5850;--faint:#5A685F;--line:rgba(30,42,35,.16);--glass:rgba(250,250,246,.92);background:#F6F4EC;color:#1E2A23}
+body.clair .bg{background:radial-gradient(60% 70% at 15% 30%,#E6EEE6 0%,transparent 70%),#F6F4EC}
+body.clair canvas.champ{filter:invert(1) hue-rotate(180deg) saturate(1.4);opacity:.85}
+body.clair .grain{opacity:.04}
+body.clair .corps-lecture{color:#24312A}
+body.clair .phrase{border-color:rgba(18,117,82,.35);background:rgba(18,117,82,.05)}
+body.clair{--lime:#127552}
+body.clair .corps-lecture a[href^="/glossaire/"]{text-decoration-color:#127552}
+body.clair .bulle span{color:#24312A}
+body.clair .cur{border-color:rgba(18,117,82,.6)}
+
+@media (max-width:1180px){.lire{grid-template-columns:minmax(190px,230px) minmax(0,700px)}.plan{display:none}}
+@media (max-width:860px){
+  .lire{grid-template-columns:1fr;padding:0 18px}
+  .rail{display:none}
+  .lecture canvas.champ{opacity:.35}
+  .suite{grid-template-columns:1fr}.suite .nx{grid-column:1}
+  .corps-lecture > div + div > ul{columns:1}
+  .corps-lecture > div + div > div > a{grid-template-columns:1fr auto}
+  .corps-lecture > div + div > div > a span:first-child{grid-column:1/-1}
+}
+/* tableaux posés sur le papier des figures */
+.corps-lecture figure table{margin:0;color:#24312A}
+.corps-lecture figure th{color:#1E2A23;border-bottom:1.5px solid rgba(30,42,35,.35)}
+.corps-lecture figure td{border-bottom:1px solid rgba(30,42,35,.14)}
+.corps-lecture figure strong,.corps-lecture figure b{color:#1E2A23}
+
+/* Listes de définitions (pages légales) */
+.corps-lecture dl{margin:1.2em 0 1.6em;display:grid;grid-template-columns:minmax(140px,200px) 1fr;gap:10px 24px;font-size:16px}
+.corps-lecture dt{color:var(--faint);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding-top:3px}
+.corps-lecture dd{margin:0;color:var(--ink)}
+.a-valider{position:relative;margin:1.6em 0;padding:18px 22px;border:1px dashed var(--lime);border-radius:14px}
+.corps-lecture .a-valider > span:first-child{display:inline-block;margin:0;font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--lime);padding:5px 8px;border-radius:5px}
+.a-valider h3{margin-top:.7em!important}
+
+/* Glossaire de A à Z */
+.lexique .lettre{margin-top:2.2em}
+.lexique .lettre h2{font-size:clamp(54px,6vw,84px);line-height:1;margin:0 0 .3em;padding-top:.3em;color:var(--lime)}
+.lexique .lettre dl{display:block;margin:0}
+.lexique .entree{display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:6px 24px;padding:16px 0 16px 14px;margin-left:-14px;border-top:1px solid var(--line);border-left:2px solid transparent;scroll-margin-top:30vh;transition:border-color .3s,background .3s}
+.lexique .entree dt{font:400 22px/1.2 var(--serif);color:var(--ink);text-transform:none;letter-spacing:-.01em;padding:0}
+.lexique .entree dd{font-size:16px;line-height:1.6;color:var(--muted)}
+.lexique .entree.ici{border-left-color:var(--lime)}
+.lexique .entree.ici dd,.lexique .entree:target dd{color:var(--ink)}
+.lexique .entree:target{background:rgba(201,242,123,.06)}
+.lexique .plan ol{display:grid;grid-template-columns:repeat(4,1fr);border:0;gap:2px}
+.lexique .plan a{padding:6px 0;margin:0;border:0;text-align:center;border-radius:6px;font-weight:600}
+.lexique .plan a.ici{background:var(--lime);color:var(--bg)}
+
+/* Pied discret des pages de lecture */
+.pied{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--faint)}
+.pied a{margin-left:18px;color:var(--faint)}
+.pied a:hover{color:var(--ink)}
+@media (max-width:860px){.corps-lecture dl,.lexique .entree{grid-template-columns:1fr}.pied a{margin:0 16px 0 0}}

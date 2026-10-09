@@ -15,14 +15,17 @@ de l'administration » (Executive Master 2 MSIC, soutenu le 10 juillet 2025).
 
 ## Fonctionnement
 
-Les maquettes Claude Design de `src/` sont compilées en HTML statique dans
-`docs/`. GitHub Actions reconstruit et vérifie le site avant de le transmettre
-à GitHub Pages. Les pages publiées restent lisibles sans JavaScript ; les
+Les textes de `src/` (maquettes Claude Design et mémoire) sont compilés en HTML
+statique dans `docs/`, puis réhabillés dans le design du site : un champ de
+points vivant, une accueil sur un seul écran, des pages de section et des pages
+de lecture. GitHub Actions reconstruit et vérifie le site avant de le
+transmettre à GitHub Pages. Les pages publiées restent lisibles sans JavaScript ; les
 polices et ressources sont hébergées sur le même domaine.
 
 ```text
 src/*.dc.html + static/ ── build/compile.mjs ──▶ docs/
 build/memoire.json + tableaux + figures ── build/memoire.mjs ──▶ docs/memoire/
+docs/ + src/univers/ + static/univers/ ── build/univers.mjs ──▶ docs/ (design final)
 ```
 
 `docs/` reste versionné pour rendre les changements publiés vérifiables.
@@ -52,7 +55,7 @@ depuis le même dossier :
 npm run verify
 ```
 
-Les **17 contrôles navigateur** couvrent notamment l'absence de requêtes
+Les **18 contrôles navigateur** couvrent notamment l'absence de requêtes
 externes sur les pages échantillonnées, la lecture sans JavaScript, le
 glossaire, les liens, les redirections et les pages du mémoire. Le contrôle
 des contrastes détecte les trois gris interdits de la charte ; il ne constitue
@@ -73,7 +76,7 @@ et la régénération des figures utilisent le navigateur.
 | `npm run browser:install` | Installer le navigateur compatible pour les tests et les figures |
 | `npm run build` | Reconstruire tout `docs/` avec les données et figures enregistrées |
 | `npm run serve` | Servir uniquement `docs/` sur la boucle locale, port 8900 |
-| `npm run verify` | Exécuter les 17 contrôles, serveur local requis |
+| `npm run verify` | Exécuter les 18 contrôles, serveur local requis |
 | `npm run check:repo` | Vérifier les exclusions de fichiers privés, notices et configuration après le build |
 | `npm run check:generated` | Vérifier que `docs/` correspond au dernier commit, après un build |
 | `npm run figures` | Régénérer les quatre SVG du mémoire ; lancer ensuite le build |

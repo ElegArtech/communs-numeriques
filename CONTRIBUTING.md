@@ -42,8 +42,9 @@ La publication n'a lieu que depuis `main`, après réussite du job de vérificat
   développent une analyse. Conserver ces deux contrats de lecture.
 - Aucune ressource chargée depuis un domaine tiers dans le site publié.
 - Préserver la lecture sans JavaScript et l'accès au clavier.
-- Les maquettes sont la référence visuelle : ajuster `src/` pour changer le
-  rendu, plutôt que masquer un écart dans le compilateur.
+- L'univers est la référence visuelle (`static/univers/`, `src/univers/`,
+  `build/univers.mjs`) ; les maquettes `src/*.dc.html` restent la source des
+  textes.
 - Conserver le domaine, les anciennes redirections, les fichiers de validation
   et le choix d'indexation dans la configuration centralisée.
 

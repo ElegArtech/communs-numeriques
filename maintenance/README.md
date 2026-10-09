@@ -40,7 +40,7 @@ sur son runner éphémère, uniquement pour les pages locales du projet.
 2. `npm run build` reconstruit `docs/`.
 3. `npm run check:repo` contrôle les chemins sensibles, les notices et les
    fichiers nécessaires à la publication.
-4. `npm run serve`, puis `npm run verify` dans un second terminal : 17 contrôles.
+4. `npm run serve`, puis `npm run verify` dans un second terminal : 18 contrôles.
 5. Relire les pages concernées dans le navigateur, puis le diff Git.
 6. Commiter les sources et leur sortie générée. Après le commit,
    `npm run build && npm run check:generated` doit réussir.
@@ -97,7 +97,7 @@ déclenchement manuel. Il :
 1. installe les versions verrouillées ;
 2. recompile et vérifie que `docs/` correspond au commit ;
 3. vérifie les protections du dépôt, les notices, et l'édition PDF publiée (`npm run check:pdf`) ;
-4. sert le site localement et exécute les 17 contrôles navigateur ;
+4. sert le site localement et exécute les 18 contrôles navigateur ;
 5. uniquement sur `main` du dépôt d'origine, transmet `docs/` à GitHub Pages
    après réussite de toutes les étapes précédentes.
 

@@ -24,13 +24,15 @@ try {
   const page = await browser.newPage();
   const external = new Set();
   page.on('request', r => {
-    const h = new URL(r.url()).hostname;
+    const u = new URL(r.url());
+    if (u.protocol === 'data:' || u.protocol === 'blob:') return;   // ressources intégrées : aucune sortie réseau
+    const h = u.hostname;
     if (h !== 'localhost' && h !== '127.0.0.1') external.add(h);
   });
   for (const route of ['/', '/articles/', '/la-recherche/', '/glossaire/', '/a-propos/',
                        '/mentions-legales/', '/confidentialite/',
                        '/articles/gouvernance-ostrom/', '/articles/maintenance-communs-numeriques/', '/comprendre/',
-                       '/comprendre/qui-decide/']) {
+                       '/comprendre/qui-decide/', '/glossaire/a-z/', '/memoire/introduction/']) {
     await page.goto(BASE + route, { waitUntil: 'networkidle0' });
   }
   ok('Aucune requête vers un domaine tiers', external.size === 0,
@@ -43,16 +45,14 @@ try {
   const page = await browser.newPage();
   await page.goto(BASE + '/glossaire/', { waitUntil: 'networkidle0' });
   const total = await page.$$eval('[data-glossterm]', els => els.length);
-  await page.type('[data-ref="filterRef"]', 'ostrom');
+  await page.type('#q', 'ostrom');
   await new Promise(r => setTimeout(r, 250));
-  const after = await page.$$eval('[data-glossterm]',
-    els => els.filter(e => e.style.display !== 'none').length);
+  const after = await page.$$eval('[data-glossterm]', els => els.filter(e => !e.hidden).length);
   // Accent-insensible : « legitimite » doit retrouver « légitimité »
-  await page.$eval('[data-ref="filterRef"]', el => { el.value = ''; });
-  await page.type('[data-ref="filterRef"]', 'legitimite');
+  await page.$eval('#q', el => { el.value = ''; });
+  await page.type('#q', 'legitimite');
   await new Promise(r => setTimeout(r, 250));
-  const accent = await page.$$eval('[data-glossterm]',
-    els => els.filter(e => e.style.display !== 'none').length);
+  const accent = await page.$$eval('[data-glossterm]', els => els.filter(e => !e.hidden).length);
   ok('Filtre du glossaire actif', after > 0 && after < total,
      `${total} termes → ${after} pour « ostrom »`);
   ok('Filtre insensible aux accents', accent > 0,
@@ -65,28 +65,27 @@ try {
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 900 });
   await page.goto(BASE + '/articles/gouvernance-ostrom/', { waitUntil: 'networkidle0' });
-  const before = await page.$eval('[data-ref="barRef"]', el => el.style.width);
+  const before = await page.$eval('#progres span', el => el.dataset.valeur || '0');
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await new Promise(r => setTimeout(r, 400));
-  const after = await page.$eval('[data-ref="barRef"]', el => parseFloat(el.style.width));
-  ok('Barre de progression de lecture', after > 90, `${before || '0%'} → ${after.toFixed(0)}%`);
+  const after = await page.$eval('#progres span', el => parseFloat(el.dataset.valeur));
+  ok('Barre de progression de lecture', after > 90, `${before}% → ${after.toFixed(0)}%`);
   await page.close();
 }
 
-/* ── Compteurs animés ─────────────────────────────────────────────────────── */
+/* ── Les portes de l'accueil réorganisent le champ ────────────────────────── */
 {
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 900 });
   await page.goto(BASE + '/', { waitUntil: 'networkidle0' });
-  await page.evaluate(() => {
-    const el = document.querySelector('[data-ref="statEntretiens"]');
-    el.scrollIntoView({ block: 'center' });
-  });
-  await new Promise(r => setTimeout(r, 1800));
-  const vals = await page.evaluate(() =>
-    ['statEntretiens', 'statCas', 'statCadres', 'statVoies']
-      .map(n => document.querySelector(`[data-ref="${n}"]`).textContent.trim()));
-  ok('Compteurs à leur valeur finale', vals.join(',') === '13,9,3,2', vals.join(' · '));
+  const formes = [];
+  for (const d of await page.$$('.door')) {
+    await d.hover();
+    await new Promise(r => setTimeout(r, 150));
+    formes.push(await page.evaluate(() => document.body.dataset.mode));
+  }
+  const attendu = ['parcours', 'collier', 'grille', 'fourche'];
+  ok('Les portes réorganisent le champ', formes.join(',') === attendu.join(','), formes.join(' · '));
   await page.close();
 }
 
@@ -97,13 +96,13 @@ try {
   await page.goto(BASE + '/', { waitUntil: 'networkidle0' });
   await new Promise(r => setTimeout(r, 500));
   const painted = await page.evaluate(() => {
-    const c = document.querySelector('[data-ref="dotsRef"]');
+    const c = document.querySelector('canvas.champ, #c');
     if (!c || !c.width) return false;
-    const d = c.getContext('2d').getImageData(0, 0, c.width, Math.min(200, c.height)).data;
+    const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data;
     for (let i = 3; i < d.length; i += 4) if (d[i] > 0) return true;
     return false;
   });
-  ok('Motif de points dessiné sur le canvas', painted);
+  ok('Champ de points dessiné sur le canvas', painted);
   await page.close();
 }
 
@@ -111,13 +110,13 @@ try {
 {
   const page = await browser.newPage();
   await page.setJavaScriptEnabled(false);
-  await page.goto(BASE + '/', { waitUntil: 'domcontentloaded' });
+  await page.goto(BASE + '/comprendre/qui-decide/', { waitUntil: 'domcontentloaded' });
   const words = await page.evaluate(() => document.body.innerText.trim().split(/\s+/).length);
-  const stats = await page.evaluate(() =>
-    ['statEntretiens', 'statCas', 'statCadres', 'statVoies']
-      .map(n => document.querySelector(`[data-ref="${n}"]`).textContent.trim()).join(','));
   ok('Page lisible sans JavaScript', words > 300, `${words} mots rendus`);
-  ok('Chiffres présents sans JavaScript', stats === '13,9,3,2', stats);
+  await page.goto(BASE + '/', { waitUntil: 'domcontentloaded' });
+  const portes = await page.$$eval('.door', els => els.filter(e => e.offsetHeight > 0 && e.getAttribute('href')).length);
+  const titre = await page.$eval('h1', el => el.innerText.replace(/\s+/g, ' ').trim());
+  ok('Accueil navigable sans JavaScript', portes === 4 && /communs/i.test(titre), `${portes} portes · « ${titre} »`);
   await page.close();
 }
 
@@ -172,7 +171,7 @@ try {
 /* ── L'accueil n'a pas été écrasé par une redirection ─────────────────────── */
 {
   const html = await (await fetch(BASE + '/')).text();
-  ok("Page d'accueil intacte", html.includes('Les Communs <em') && !html.includes('http-equiv="refresh"'),
+  ok("Page d'accueil intacte", html.includes('Les communs') && html.includes('numériques</em>') && !html.includes('http-equiv="refresh"'),
      `${(html.length / 1024).toFixed(1)} Ko`);
 }
 
@@ -210,9 +209,17 @@ try {
     if (h.length > 1) h[h.length - 1].scrollIntoView({ block: 'center' });
   });
   await new Promise(r => setTimeout(r, 600));
-  const actif = await page.$$eval('.memoire-sommaire a.actif', els => els.length);
+  const actif = await page.$$eval('.plan a.ici', els => els.length);
   ok('Sommaire latéral qui suit la lecture', actif === 1, `${actif} entrée surlignée`);
   await page.close();
+}
+
+/* ── Glossaire de A à Z : toutes les définitions ──────────────────────────── */
+{
+  const grille = await (await fetch(BASE + '/glossaire/')).text();
+  const az = await (await fetch(BASE + '/glossaire/a-z/')).text();
+  const nGrille = (grille.match(/data-glossterm=/g) || []).length, nAz = (az.match(/class="entree"/g) || []).length;
+  ok('Glossaire de A à Z complet', nAz > 0 && nAz === nGrille, `${nAz} définitions pour ${nGrille} mots`);
 }
 
 /* ── Contraste : aucun gris sous le seuil WCAG AA en couleur de texte ─────── */
