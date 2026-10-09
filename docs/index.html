@@ -70,11 +70,16 @@ h1 .l span{display:inline-block}
 h1 em{font-style:italic;color:var(--lime);letter-spacing:-.035em}
 .sub{margin-top:clamp(18px,3vh,34px);max-width:38ch;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--muted)}
 .sub b{color:var(--ink);font-weight:500}
-.rot{display:inline-grid;justify-items:start;vertical-align:bottom;overflow:hidden;height:1.5em;color:var(--ink);transition:width .7s cubic-bezier(.2,.7,0,1)}
-.rot span{white-space:nowrap}
-.rot span{grid-area:1/1;transition:transform .7s cubic-bezier(.2,.7,0,1),opacity .7s}
-.rot span:not(.on){transform:translateY(110%);opacity:0}
-.rot span.out{transform:translateY(-110%);opacity:0}
+/* Le milieu de la phrase change : un commun, ce qu'il est, qui l'entretient */
+.rot > span{display:none}
+.rot > span.on,.rot > span.sort{display:inline}
+.rot b{color:var(--ink);font-weight:500}
+@media (prefers-reduced-motion:no-preference){
+  .rot > span.on{animation:apparait .7s ease both}
+  .rot > span.sort{animation:disparait .35s ease forwards}
+}
+@keyframes apparait{from{opacity:0;filter:blur(3px)}to{opacity:1;filter:none}}
+@keyframes disparait{to{opacity:0;filter:blur(3px)}}
 
 /* Étiquettes du champ, placées par le script */
 .tag{position:absolute;z-index:0;top:0;left:0;font:italic 400 clamp(17px,1.5vw,22px)/1 var(--serif);color:var(--ink);opacity:0;transition:opacity 1.2s;pointer-events:none;white-space:nowrap}
@@ -166,7 +171,7 @@ body:not([data-mode="commun"]) .tag{opacity:0!important;transition:opacity .4s}
   <main class="hero" id="contenu">
     <p class="kicker">Revue · recherche &amp; vulgarisation</p>
     <h1><span class="l"><span>Les communs</span></span><span class="l"><span><em>numériques</em></span></span></h1>
-    <p class="sub">Des ressources que personne ne possède seul, comme <span class="rot" id="rot"><span class="on">Wikipédia</span><span>OpenStreetMap</span><span>Linux</span><span>Debian</span><span>la Base Adresse Nationale</span></span>, entretenues par <b>celles et ceux qui s'en servent</b>, selon leurs propres règles.</p>
+    <p class="sub" id="sub">Des ressources que personne ne possède seul, comme <span class="rot" id="rot"><span class="on"><b>Wikipédia</b>, une encyclopédie écrite et relue par ses bénévoles</span><span><b>OpenStreetMap</b>, une carte du monde tenue à jour par ses contributeurs</span><span><b>Linux</b>, un noyau développé surtout par des salariés de nombreuses entreprises</span><span><b>Debian</b>, une distribution maintenue par une communauté de bénévoles</span><span><b>Wikidata</b>, une base de connaissances que chacun peut compléter</span><span><b>la Base Adresse Nationale</b>, les adresses de France tenues avec les communes</span></span>, selon leurs propres règles.</p>
   </main>
 
   <span class="tag" id="tA" aria-hidden="true">une ressource<small>code · données · savoirs</small></span>
@@ -280,15 +285,21 @@ body:not([data-mode="commun"]) .tag{opacity:0!important;transition:opacity .4s}
     }, 3600);
   }
 
-  // exemples qui défilent dans la phrase
-  var boite = document.getElementById('rot'), rot = boite.children, r = 0;
-  var largeur = function () { boite.style.width = rot[r].offsetWidth + 'px'; };
-  largeur(); addEventListener('resize', largeur);
+  // le milieu de la phrase défile : un commun, ce qu'il est, qui l'entretient
+  var sub = document.getElementById('sub'), rot = [].slice.call(document.getElementById('rot').children), r = 0;
+  // la phrase garde la hauteur de sa variante la plus longue : rien ne saute à l'écran
+  function hauteur() {
+    sub.style.minHeight = ''; var max = 0;
+    rot.forEach(function (s) { rot.forEach(function (x) { x.style.display = x === s ? 'inline' : 'none'; }); max = Math.max(max, sub.offsetHeight); });
+    rot.forEach(function (x) { x.style.display = ''; });
+    sub.style.minHeight = max + 'px';
+  }
+  hauteur(); addEventListener('resize', hauteur);
+  if (document.fonts) document.fonts.ready.then(hauteur);
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(function () {
-    var x = rot[r]; x.classList.remove('on'); x.classList.add('out');
-    setTimeout(function () { x.classList.remove('out'); }, 700);
-    r = (r + 1) % rot.length; rot[r].classList.add('on'); largeur();
-  }, 2600);
+    var x = rot[r]; x.classList.remove('on'); x.classList.add('sort');
+    setTimeout(function () { x.classList.remove('sort'); r = (r + 1) % rot.length; rot[r].classList.add('on'); }, 350);
+  }, 4200);
 })();
 </script>
 </body></html>
