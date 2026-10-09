@@ -52,27 +52,27 @@ export const chapitres = [
     resume: "Articles, ouvrages, rapports, législation, thèses, documentation de terrain et webographie." },
 
   { cle: 'Annexe 1', slug: 'annexes/1-glossaire', partie: 'Annexes',
-    titre: 'Annexe 1 — Glossaire',
+    titre: 'Annexe 1. Glossaire',
     resume: "Les notions employées dans le mémoire, définies." },
   { cle: 'Annexe 2', slug: 'annexes/2-limites-methodologiques', partie: 'Annexes',
-    titre: 'Annexe 2 — Limites méthodologiques et contremesures',
+    titre: 'Annexe 2. Limites méthodologiques et contremesures',
     resume: "Chaque limite reconnue du dispositif d'enquête et la parade mise en œuvre.",
     // Les annexes 2 et 5 sont composées de tableaux, qui ne portent pas de
     // légende « Tableau N » dans le mémoire : on les place explicitement.
     tableauxApres: { 'tableau-des-limites-methodologiques-et-contremesures': 'A2' } },
   { cle: 'Annexe 3', slug: 'annexes/3-guide-entretien', partie: 'Annexes',
-    titre: "Annexe 3 — Guide d'entretien semi-directif",
+    titre: "Annexe 3. Guide d'entretien semi-directif",
     resume: "La trame des treize entretiens conduits entre mai et juin 2025." },
   { cle: 'Annexe 4', slug: 'annexes/4-grille-de-codage', partie: 'Annexes',
-    titre: 'Annexe 4 — Grille de codage',
+    titre: 'Annexe 4. Grille de codage',
     resume: "Le codebook : familles de codes, définitions et règles d'application." },
   { cle: 'Annexe 5', slug: 'annexes/5-matrices-de-codage', partie: 'Annexes',
-    titre: 'Annexe 5 — Matrices de codage inter-cas',
+    titre: 'Annexe 5. Matrices de codage inter-cas',
     resume: "Intensité de chaque code dans chacun des treize entretiens.",
     tableauxApres: { 'matrice-codes-saillants': 'A5-1',
                      'frequence-des-codes-dans-les-codes-saillants': 'A5-2' } },
   { cle: 'Annexe 6', slug: 'annexes/6-audit-trail', partie: 'Annexes',
-    titre: 'Annexe 6 — Audit trail',
+    titre: 'Annexe 6. Audit trail',
     resume: "Le journal des décisions de recherche, de la conception du protocole à la clôture de l'analyse." },
 ];
 
@@ -83,4 +83,12 @@ export const parties = [
   { nom: 'Partie II', libelle: 'Cadre méthodologique de la recherche' },
   { nom: 'Partie III', libelle: 'Analyse des résultats empiriques et discussion' },
   { nom: 'Annexes', libelle: null },
+];
+
+// Corrections appliquées au texte extrait, pour survivre à une réextraction :
+// le site n'emploie pas de tiret cadratin.
+export const corrections = [
+  [/is dead\s*\u2014\s*long live/g, 'is dead: long live'],
+  [/26 mars 2025\.\s*\u2014\s*Voiron/g, '26 mars 2025. Voiron'],
+  [/26 mars 2025\.\s*\u2014\s*24 p\./g, '26 mars 2025, 24 p.'],
 ];

@@ -1,4 +1,4 @@
-// Configuration du site — source unique de vérité pour les URLs et métadonnées.
+// Configuration du site : source unique de vérité pour les URLs et métadonnées.
 
 export const site = {
   domain: 'communs-numeriques.fr',
@@ -26,7 +26,7 @@ export const site = {
 // 2026) → nouvelles routes. Le contenu de ces pages n'ayant pas été archivé, la
 // correspondance est établie par proximité de sujet ; les pages sans équivalent
 // pointent vers la liste des articles.
-// Note : pas d'entrée pour /index.html — GitHub Pages sert cette adresse
+// Note : pas d'entrée pour /index.html, car GitHub Pages sert cette adresse
 // depuis le même fichier que /, une redirection y serait une boucle.
 export const redirects = {
   '/apropos.html': '/a-propos/',
@@ -138,7 +138,7 @@ export const pages = [
     kind: 'notion',
     priority: '0.8',
     section: 'Économie',
-    desc: "Gratuit à l'usage n'est pas gratuit à produire. Temps salarié, dons, subventions, services, mutualisation — et la maintenance, toujours sous-financée.",
+    desc: "Gratuit à l'usage n'est pas gratuit à produire. Temps salarié, dons, subventions, services, mutualisation, et la maintenance, toujours sous-financée.",
   },
   {
     src: 'notion-trois-communs-trois-modeles.dc.html',
@@ -182,7 +182,7 @@ export const pages = [
     type: 'article',
     priority: '0.8',
     section: 'Théorie',
-    desc: "Comment une pratique nouvelle devient une évidence : habitualisation, objectivation, sédimentation — le parcours par lequel une innovation cesse d'être discutée pour devenir la norme.",
+    desc: "Comment une pratique nouvelle devient une évidence : habitualisation, objectivation, sédimentation : le parcours par lequel une innovation cesse d'être discutée pour devenir la norme.",
   },
   {
     src: 'article-gouvernance-ostrom.dc.html',
@@ -190,7 +190,7 @@ export const pages = [
     type: 'article',
     priority: '0.8',
     section: 'Gouvernance',
-    desc: "Les huit principes d'Elinor Ostrom appliqués aux communs numériques : frontières, règles locales, surveillance, sanctions graduées — et le travail de maintien permanent que Wikipédia et OpenStreetMap rendent visible.",
+    desc: "Les huit principes d'Elinor Ostrom appliqués aux communs numériques : frontières, règles locales, surveillance, sanctions graduées, et le travail de maintien permanent que Wikipédia et OpenStreetMap rendent visible.",
   },
   {
     src: 'article-neuf-initiatives.dc.html',

@@ -38,7 +38,7 @@ function chapitre(ch) {
   c = c.replace(/<span style="color:#5A685F">(\[[^\]]*\])<\/span>/g, '<span class="ref">$1</span>');
   c = c.split(/(<svg[\s\S]*?<\/svg>)/).map((x, i) => (i % 2 ? x : x.replace(/\s(style|class)="[^"]*"/g, ''))).join('');
   c = c.replace(/href="\/(?!\/)/g, `href="${site.origin}/`);
-  c = c.replace(/<li>\s*<span>[—•]<\/span>\s*/g, '<li>');   // une seule puce
+  c = c.replace(/<li>\s*<span>[\u2014•]<\/span>\s*/g, '<li>');   // une seule puce
   return { titre, corps: c };
 }
 
@@ -54,7 +54,7 @@ function document() {
     const { titre, corps: c } = chapitre(ch);
     const p = parties.find((x) => x.nom === ch.partie);
     if (ch.partie !== partie && ch.partie) {
-      sommaire.push(`<li class="partie">${echapper(ch.partie)}${p && p.libelle ? ` — ${echapper(p.libelle)}` : ''}</li>`);
+      sommaire.push(`<li class="partie">${echapper(ch.partie)}${p && p.libelle ? ` : ${echapper(p.libelle)}` : ''}</li>`);
     }
     partie = ch.partie;
     sommaire.push(`<li><a href="#${ch.slug.replace(/\//g, '-')}">${echapper(titre)}</a></li>`);
@@ -68,7 +68,7 @@ function document() {
   const polices = (nom, style, fichier) => `@font-face{font-family:'${nom}';font-style:${style};font-weight:400 700;src:url('${pathToFileURL(join(ROOT, 'static', 'fonts', fichier)).href}') format('woff2')}`;
 
   return `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
-<title>Les facteurs d'institutionnalisation des communs numériques au sein de l'administration — version publique</title>
+<title>Les facteurs d'institutionnalisation des communs numériques au sein de l'administration · version publique</title>
 <meta name="author" content="${site.author}">
 <style>
 ${polices('Instrument Sans', 'normal', 'instrument-sans-normal-latin.woff2')}
@@ -95,6 +95,9 @@ a{color:inherit;text-decoration:none}
 .avertissement h2{font-size:22pt;margin:0 0 6mm}
 .avertissement .cadre{border:1px solid ${ACCENT};border-left:3px solid ${ACCENT};padding:6mm 7mm;margin-bottom:8mm}
 .avertissement p{margin:0 0 3.5mm;text-align:left}
+.avertissement ul{margin:0 0 3.5mm;padding-left:5mm}
+.avertissement li{margin-bottom:2mm;text-align:left}
+.avertissement li::marker{color:${ACCENT}}
 .avertissement .fin{font-size:9pt;color:${SECOND}}
 
 .sommaire{break-after:page}
@@ -146,9 +149,11 @@ a{color:inherit;text-decoration:none}
   <h2>À propos de cette édition</h2>
   <div class="cadre">
     <p><b>Ce document est le reflet de la version du mémoire publiée sur ${site.domain}.</b> Il n'est pas la version soutenue le 10 juillet 2025, dont il diffère sur trois points :</p>
-    <p>— les retranscriptions des treize entretiens (pages 125 à 206 de la version soutenue) n'y figurent pas ;</p>
-    <p>— les personnes interrogées y sont anonymisées : leurs fonctions et leurs organisations ne sont pas diffusées, conformément aux engagements pris auprès d'elles ;</p>
-    <p>— la mise en forme et la pagination sont propres à cette édition.</p>
+    <ul>
+      <li>les retranscriptions des treize entretiens (pages 125 à 206 de la version soutenue) n'y figurent pas ;</li>
+      <li>les personnes interrogées y sont anonymisées : leurs fonctions et leurs organisations ne sont pas diffusées, conformément aux engagements pris auprès d'elles ;</li>
+      <li>la mise en forme et la pagination sont propres à cette édition.</li>
+    </ul>
   </div>
   <p>Les chercheuses et chercheurs qui auraient besoin d'éléments complémentaires dans le cadre de leurs travaux peuvent contacter l'auteur : ${site.email}.</p>
   <p>Pour citer ce travail : Berge A., <i>Les facteurs d'institutionnalisation des communs numériques au sein de l'administration</i>, mémoire d'Executive Master 2 MSIC, dir. M. Liottier, soutenu le 10 juillet 2025.</p>
@@ -178,7 +183,7 @@ try {
     outline: true, tagged: true, displayHeaderFooter: true,
     headerTemplate: '<span></span>',
     footerTemplate: `<div style="width:100%;padding:0 20mm;font:7.5pt sans-serif;color:#5A685F;display:flex;justify-content:space-between">
-      <span>Les facteurs d'institutionnalisation des communs numériques — version publique</span>
+      <span>Les facteurs d'institutionnalisation des communs numériques · version publique</span>
       <span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
   });
 } finally {
@@ -193,4 +198,4 @@ if (trouves.length) {
   console.error(`✗ Le PDF contient des éléments identifiants : ${trouves.join(' · ')}`);
   process.exit(1);
 }
-console.log(`✓ ${NOM} : ${pages} pages, aucun élément identifiant — build/tmp/, à relire, puis copier dans static/ pour publier`);
+console.log(`✓ ${NOM} : ${pages} pages, aucun élément identifiant, dans build/tmp/ : à relire, puis copier dans static/ pour publier`);

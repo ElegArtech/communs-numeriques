@@ -1,4 +1,4 @@
-/* Lecture — notions, analyses, chapitres du mémoire.
+/* Lecture : notions, analyses, chapitres du mémoire.
    Ici le défilement est légitime : on lit. Le champ se retire dans la marge,
    où il montre la place du texte dans son ensemble et s'allume au fil de la lecture. */
 html:has(body.lecture){height:auto;overflow:visible}

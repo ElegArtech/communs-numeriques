@@ -1,4 +1,4 @@
-/* Univers — styles partagés des pages intérieures.
+/* Univers : styles partagés des pages intérieures.
    Un écran, deux zones : à gauche le propos, à droite la scène où le champ prend forme. */
 :root{
   --bg:#08130E; --bg-2:#0E2219; --ink:#ECF1EA; --muted:#9DB0A4; --faint:#6F8578;

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Univers — dernière étape du build.
+/* Univers : dernière étape du build.
  *
  *   compile.mjs + memoire.mjs   →  pages de contenu dans docs/ (textes, métadonnées)
  *   univers.mjs                 →  les mêmes adresses, dans le design du site
@@ -58,11 +58,11 @@ const COURT = {
 const CAS = [
   ['La Suite Numérique', 'National · Logiciels', 0, "Portée par la DINUM depuis 2023 : des outils collaboratifs libres (Tchap, Docs…) en alternative souveraine aux suites américaines."],
   ['CAFData', 'National · Données', 0, "Le portail open data de la CNAF : plus de 1 700 séries statistiques sur les prestations familiales, réutilisables sans restriction."],
-  ['CNAM — Open First', 'National · Politique logicielle', 0, "Depuis 2017, le schéma directeur de l'Assurance Maladie privilégie standards ouverts et logiciels libres pour s'affranchir des GAFAM."],
+  ['CNAM (Open First)', 'National · Politique logicielle', 0, "Depuis 2017, le schéma directeur de l'Assurance Maladie privilégie standards ouverts et logiciels libres pour s'affranchir des GAFAM."],
   ['ADULLACT', 'Inter-organisations · Logiciels mutualisés', 1, "Fondée en 2002 autour d'un slogan devenu doctrine : « L'argent public ne doit payer qu'une fois ». Forge et logiciels métiers pour les collectivités."],
   ['SITIV', 'Territorial · Opérateur mutualisé', 1, "Syndicat intercommunal lyonnais : son programme « Territoire Numérique Ouvert » équipe plus de 40 collectivités en services libres."],
   ["Ville d'Échirolles", 'Territorial · Politique publique', 1, "Depuis 2021, le schéma directeur « Échirolles Numérique Libre » planifie la migration quasi complète du SI municipal vers le libre."],
-  ['Ville de Brest', 'Territorial · Communs de connaissance', 1, "Dès les années 1990 : points d'accès publics à Internet, plateforme @-brest, wiki local — le numérique comme outil d'inclusion et de lien social."],
+  ['Ville de Brest', 'Territorial · Communs de connaissance', 1, "Dès les années 1990 : points d'accès publics à Internet, plateforme @-brest, wiki local. Le numérique comme outil d'inclusion et de lien social."],
   ['Fabrique des Mobilités', 'Sectoriel · Données & méthode', 1, "Née en 2015 avec l'appui de l'ADEME : une structure hybride qui fait coopérer institutions, entreprises et citoyens autour de la mobilité durable."],
   ['France Numérique Libre', 'Inter-organisations · Communauté de pratique', 1, "Lancé en 2025 : un réseau ascendant de responsables informatiques publics engagés dans le libre, né d'un collectif local grenoblois."],
 ].map(([nom, type, voie, texte]) => ({ nom, type, voie, texte }));
@@ -87,7 +87,7 @@ const ANALYSES = PAGES.filter((p) => /^\/articles\/[^/]+\/$/.test(p.route)).map(
 });
 const TERMES = [...lire('glossaire').matchAll(/<p id="g-([^"]+)" data-glossterm="([^"]+)"[^>]*>([\s\S]*?)<\/p>/g)].map(([, id, k, inner]) => {
   const t = nettoyer((inner.match(/<(b|strong|dfn|span)[^>]*>([\s\S]*?)<\/\1>/) || [, , ''])[2]);
-  let d = nettoyer(inner).slice(t.length).replace(/^[\s:—–.-]+/, '');
+  let d = nettoyer(inner).slice(t.length).replace(/^[\s:\u2014\u2013.-]+/, '');
   return { id, t, k, d: d.charAt(0).toUpperCase() + d.slice(1) };
 });
 const DONNEES = { notions: NOTIONS, analyses: ANALYSES, termes: TERMES, cas: CAS, voies: VOIES };
@@ -96,11 +96,11 @@ if (!NOTIONS.length || !ANALYSES.length || !TERMES.length) throw new Error('Univ
 /* ── 3. Corps des pages de lecture, relus avant d'être remplacés ───────────── */
 function rhabiller(src) {
   let c = (src.match(/<article[^>]*>([\s\S]*?)<\/article>/) || src.match(/<main[^>]*>([\s\S]*?)<\/main>/))[1];
-  c = c.replace(/<span style="color:#5A685F">\[(ENT-[^\]]*)\]<\/span>/g, '<span class="ref ref--ent" title="Entretien — retranscription confidentielle">$1</span>')
+  c = c.replace(/<span style="color:#5A685F">\[(ENT-[^\]]*)\]<\/span>/g, '<span class="ref ref--ent" title="Entretien, retranscription confidentielle">$1</span>')
        .replace(/<span style="color:#5A685F">(\[[^\]]*\])<\/span>/g, '<span class="ref">$1</span>');
   c = c.split(/(<svg[\s\S]*?<\/svg>)/).map((x, i) => (i % 2 ? x : x.replace(/\s(style|class|style-hover)="[^"]*"/g, ''))).join('');
   c = c.replace(/href="\/glossaire\/#g-([a-z0-9-]+)"/g, 'href="/glossaire/a-z/#$1"');
-  c = c.replace(/<li>\s*<span>[—•]<\/span>\s*/g, '<li>');   // la puce du texte d'origine, en double avec celle de la liste
+  c = c.replace(/<li>\s*<span>[\u2014•]<\/span>\s*/g, '<li>');   // la puce du texte d'origine, en double avec celle de la liste
   c = c.replace(/(<h2[^>]*>)<span>(§[^<]*)<\/span>/g, '$1<span class="num">$2</span>');
   c = c.replace(/<p>\s*<span>([A-ZÀ-Ý])<\/span>/, '<p><span class="lettrine">$1</span>');
   const niveau = /<h2[\s>]/.test(c) ? '2' : '3';
@@ -124,7 +124,7 @@ for (const r of ['mentions-legales', 'confidentialite']) {
 }
 const TETES = {};
 for (const r of ['/', '/comprendre/', '/articles/', '/glossaire/', '/la-recherche/', '/memoire/', '/a-propos/', ...Object.keys(SOURCES)]) TETES[r] = tete(r);
-TETES['/glossaire/a-z/'] = tete('/glossaire/', { 'https://communs-numeriques.fr/glossaire/': 'https://communs-numeriques.fr/glossaire/a-z/', 'Glossaire — ': 'Glossaire de A à Z — ' });
+TETES['/glossaire/a-z/'] = tete('/glossaire/', { 'https://communs-numeriques.fr/glossaire/': 'https://communs-numeriques.fr/glossaire/a-z/', 'Glossaire · ': 'Glossaire de A à Z · ' });
 const tete404 = readFileSync(join(DOCS, '404.html'), 'utf8').match(/<head>([\s\S]*?)<\/head>/)[1]
   .replace(/<style[\s\S]*?<\/style>/g, '').replace(/<link[^>]*rel="stylesheet"[^>]*>/g, '').replace(/<meta name="theme-color"[^>]*>/, '<meta name="theme-color" content="#08130E">');
 
@@ -139,7 +139,7 @@ const ICONES = {
 function entete(courant) {
   const c = (k) => (k === courant ? ' aria-current="page"' : '');
   return `<header class="top">
-    <a class="brand" href="/" data-sortie aria-label="Les Communs Numériques — accueil"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="7" cy="8" r="5.2" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="15" cy="8" r="5.2" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="11" cy="14.5" r="5.2" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="11" cy="10.4" r="1.7" fill="#C9F27B"/></svg><span class="nom">Les Communs Numériques</span></a>
+    <a class="brand" href="/" data-sortie aria-label="Les Communs Numériques, accueil"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="7" cy="8" r="5.2" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="15" cy="8" r="5.2" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="11" cy="14.5" r="5.2" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="11" cy="10.4" r="1.7" fill="#C9F27B"/></svg><span class="nom">Les Communs Numériques</span></a>
     <nav class="sections" aria-label="Sections">
       <a href="/comprendre/" data-sortie${c('comprendre')}>${ICONES.comprendre}<span>Comprendre</span></a>
       <a href="/articles/" data-sortie${c('analyses')}>${ICONES.analyses}<span>Analyses</span></a>
@@ -360,7 +360,7 @@ const pageRecherche = (route) => section({
     <section class="propos" id="propos">
       <p class="kicker"><b>04</b> Recherche</p>
       <h1>La recherche <em>derrière le site.</em></h1>
-      <p class="chapo">Un mémoire soutenu en 2025 : neuf initiatives publiques, treize entretiens, et une question — pourquoi certains communs s'ancrent-ils dans l'administration quand d'autres restent des expérimentations ?</p>
+      <p class="chapo">Un mémoire soutenu en 2025 : neuf initiatives publiques, treize entretiens, et une question : pourquoi certains communs s'ancrent-ils dans l'administration quand d'autres restent des expérimentations ?</p>
       <div class="voies">
         <div><p class="v">Appropriation <span>l'administration pilote</span></p><div class="puces">${CAS.map(puce).filter((_, i) => CAS[i].voie === 0).join('')}</div></div>
         <div><p class="v">Relation <span>elle contribue sans gouverner</span></p><div class="puces">${CAS.map(puce).filter((_, i) => CAS[i].voie === 1).join('')}</div></div>
@@ -427,7 +427,7 @@ main.vue{position:relative}
       <h1>Mettre la recherche <em>en partage.</em></h1>
       <div class="mots-propos">
         <p>Ce site prolonge un travail de recherche mené par <b>${site.author}</b> dans le cadre de l'Executive Master 2 « Management des Systèmes d'Information et de Connaissance » (MSIC), et soutenu le 10 juillet 2025 sous la direction de Miguel Liottier : une enquête sur les facteurs qui permettent aux communs numériques de s'ancrer durablement dans l'administration publique.</p>
-        <p>Un objet d'étude consacré au partage aurait mal supporté de rester enfermé dans un PDF. D'où cette revue en ligne, qui poursuit deux ambitions : rendre le sujet accessible — par des articles courts, sourcés, didactiques — et mettre le travail de recherche lui-même à disposition de celles et ceux qu'il peut servir : décideurs publics, DSI, chercheurs, étudiants, praticiens du logiciel libre.</p>
+        <p>Un objet d'étude consacré au partage aurait mal supporté de rester enfermé dans un PDF. D'où cette revue en ligne, qui poursuit deux ambitions : rendre le sujet accessible (par des articles courts, sourcés, didactiques) et mettre le travail de recherche lui-même à disposition de celles et ceux qu'il peut servir : décideurs publics, DSI, chercheurs, étudiants, praticiens du logiciel libre.</p>
         <p>Dans l'esprit du sujet, les contenus du site sont partagés sous licence ${site.licence} : vous pouvez les reprendre, les citer et les adapter, à condition d'en mentionner la source et de partager aux mêmes conditions. Les retranscriptions des entretiens de recherche, confidentielles, ne sont en revanche pas publiées, et les personnes interrogées sont anonymisées.</p>
       </div>
       <p class="legal"><a href="/mentions-legales/" data-sortie>Mentions légales</a><a href="/confidentialite/" data-sortie>Confidentialité</a><span>© 2026 ${site.author} · ${site.licence}</span></p>
@@ -438,7 +438,7 @@ main.vue{position:relative}
     <article class="carte" id="carte">
       <p class="sur">Contact</p>
       <h2>Écrire, échanger, collaborer</h2>
-      <p>Le site a vocation à s'enrichir : remarques, désaccords et propositions d'échange sont bienvenus. Institutionnels, chercheurs, praticiens — pour une intervention ou une collaboration, écrivez-moi, réponse assurée.</p>
+      <p>Le site a vocation à s'enrichir : remarques, désaccords et propositions d'échange sont bienvenus. Institutionnels, chercheurs, praticiens : pour une intervention ou une collaboration, écrivez-moi, réponse assurée.</p>
       <ul class="contacts">
         <li><span>Écrire</span><a href="mailto:${site.email}">${site.email}</a></li>
         <li><span>Suivre</span><a href="${site.linkedin}" rel="noopener">LinkedIn ↗</a></li>
@@ -565,7 +565,7 @@ ANALYSES.forEach((a, k) => {
       signature: `<span><b>${site.author}</b> · 2025</span><span>Les références <span class="ref ref--ent" style="font-size:11px">ENT-00X</span> renvoient aux entretiens, dont les retranscriptions restent confidentielles.</span>`,
       corps, plan, planNom: 'Dans ce chapitre', prec: lien(k - 1), suiv: lien(k + 1),
       outils: `<a href="${site.pdf}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg>PDF · version publique</a>`,
-      lecture: { forme: 'colonne', rang: k, colonne, groupes, liens: chapitres.map((x) => '/memoire/' + x.slug + '/'), etiquettes: chapitres.map((x) => x.titre.replace(/^Annexe \d — /, '')) },
+      lecture: { forme: 'colonne', rang: k, colonne, groupes, liens: chapitres.map((x) => '/memoire/' + x.slug + '/'), etiquettes: chapitres.map((x) => x.titre.replace(/^Annexe \d\. /, '')) },
     });
   });
 }
@@ -636,7 +636,7 @@ ${SCRIPTS}
 
 /* ── 8. Écriture ───────────────────────────────────────────────────────────── */
 mkdirSync(join(DOCS, 'univers'), { recursive: true });
-writeFileSync(join(DOCS, 'univers', 'donnees.js'), `/* Données de l'univers — générées par build/univers.mjs à partir des pages compilées. */\nwindow.DONNEES = ${JSON.stringify(DONNEES)};\n`);
+writeFileSync(join(DOCS, 'univers', 'donnees.js'), `/* Données de l'univers, générées par build/univers.mjs à partir des pages compilées. */\nwindow.DONNEES = ${JSON.stringify(DONNEES)};\n`);
 ecrire('/', accueil);
 ecrire('/comprendre/', pageComprendre);
 ecrire('/articles/', pageAnalyses);
@@ -647,5 +647,12 @@ ecrire('/a-propos/', pageAPropos);
 for (const [r, h] of Object.entries(pagesLecture)) ecrire(r, h);
 ecrire('404.html', page404);
 
+// Garde-fou : le site n'emploie pas de tiret cadratin (dans le texte visible).
+{
+  const pages = ['/', '/comprendre/', '/articles/', '/glossaire/', '/la-recherche/', '/a-propos/', ...Object.keys(pagesLecture)];
+  const fautives = pages.filter((r) => /\u2014/.test(readFileSync(join(DOCS, r, 'index.html'), 'utf8')
+    .replace(/<(script|style|svg)[\s\S]*?<\/\1>/g, '').replace(/<[^>]+>/g, ' ')));
+  if (fautives.length) console.warn(`  ! tiret cadratin dans : ${fautives.join(', ')}`);
+}
 console.log(`\n  Univers : accueil, 5 pages de section, ${Object.keys(pagesLecture).length} pages de lecture, 404`
   + ` · ${NOTIONS.length} notions · ${ANALYSES.length} analyses · ${TERMES.length} mots du glossaire\n`);

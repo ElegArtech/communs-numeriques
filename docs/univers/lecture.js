@@ -1,4 +1,4 @@
-/* Lecture — relie le texte au champ de la marge.
+/* Lecture : relie le texte au champ de la marge.
    La page fournit window.LECTURE : forme, rang du texte, liens, étiquettes. */
 (function () {
   'use strict';

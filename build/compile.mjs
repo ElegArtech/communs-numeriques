@@ -127,7 +127,7 @@ function jsonLd(page, title) {
   // autant que des articles : le double type le dit aux moteurs.
   if (page.kind === 'notion') {
     return { ...base, '@type': ['Article', 'LearningResource'],
-      headline: title.replace(/ — .*$/, ''), description: page.desc,
+      headline: title.replace(/ · .*$/, ''), description: page.desc,
       url: site.origin + page.route, articleSection: page.section,
       learningResourceType: 'Notion introductive', educationalLevel: 'Débutant',
       publisher: { '@type': 'Person', name: site.author } };
@@ -135,14 +135,14 @@ function jsonLd(page, title) {
   // La page de rubrique décrit le parcours comme une liste ordonnée.
   if (page.kind === 'parcours') {
     const etapes = pages.filter(p => p.kind === 'notion');
-    return { ...base, '@type': 'ItemList', name: title.replace(/ — .*$/, ''),
+    return { ...base, '@type': 'ItemList', name: title.replace(/ · .*$/, ''),
       description: page.desc, url: site.origin + page.route,
       numberOfItems: etapes.length, itemListOrder: 'ItemListOrderAscending',
       itemListElement: etapes.map((p, i) => ({ '@type': 'ListItem', position: i + 1,
         url: site.origin + p.route, name: p.section })) };
   }
   if (page.type === 'article') {
-    return { ...base, '@type': 'Article', headline: title.replace(/ — .*$/, ''),
+    return { ...base, '@type': 'Article', headline: title.replace(/ · .*$/, ''),
       description: page.desc, url: site.origin + page.route,
       ...(page.datePublished ? { datePublished: page.datePublished } : {}),
       articleSection: page.section, publisher: { '@type': 'Person', name: site.author } };
@@ -153,7 +153,7 @@ function jsonLd(page, title) {
       description: page.desc, license: site.licenceUrl,
       author: { '@type': 'Person', name: site.author, url: site.linkedin } };
   }
-  return { ...base, '@type': 'WebPage', name: title.replace(/ — .*$/, ''),
+  return { ...base, '@type': 'WebPage', name: title.replace(/ · .*$/, ''),
     description: page.desc, url: site.origin + page.route };
 }
 
@@ -255,7 +255,7 @@ writeFileSync(join(OUT, '.nojekyll'), '');
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page introuvable — ${site.name}</title>
+<title>Page introuvable · ${site.name}</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/fonts/fonts.css">
@@ -315,7 +315,7 @@ for (const [ancienne, nouvelle] of Object.entries(redirects)) {
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Page déplacée — ${esc(site.name)}</title>
+<title>Page déplacée · ${esc(site.name)}</title>
 <link rel="canonical" href="${cible}">
 <meta name="robots" content="noindex, follow">
 <meta http-equiv="refresh" content="0; url=${nouvelle}">

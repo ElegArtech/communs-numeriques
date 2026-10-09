@@ -1,4 +1,4 @@
-/* Champ — le fond vivant partagé par toutes les pages.
+/* Champ : le fond vivant partagé par toutes les pages.
    Des points qui prennent une forme (les trois nuées du commun, un parcours,
    un collier, une grille, une fourche) et qu'une page peut piloter : changer de
    forme, mettre une ancre en avant, filtrer une grille. Aucun module externe. */

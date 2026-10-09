@@ -17,7 +17,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site } from './site.config.mjs';
-import { racine, chapitres, parties } from './memoire.config.mjs';
+import { racine, chapitres, parties, corrections } from './memoire.config.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..');
@@ -89,7 +89,7 @@ function rendreTableau(t) {
     </table>
   </div>
   <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:${SECONDAIRE}">
-    <span style="font-weight:600;color:${ENCRE}">${String(t.num).startsWith('A') ? 'Tableau' : 'Tableau ' + t.num}</span> — ${refs(t.legende)}
+    <span style="font-weight:600;color:${ENCRE}">${String(t.num).startsWith('A') ? 'Tableau' : 'Tableau ' + t.num}</span>. ${refs(t.legende)}
     ${t.note ? `<span style="display:block;margin-top:6px;font-style:italic">${refs(t.note)}</span>` : ''}
   </figcaption>
 </figure>`;
@@ -105,7 +105,7 @@ function rendreFigure(num, legende) {
     <div style="min-width:min(100%,520px)">${svg}</div>
   </div>
   <figcaption style="margin-top:14px;font-size:13px;line-height:1.55;color:${SECONDAIRE}">
-    <span style="font-weight:600;color:${ENCRE}">Figure ${num}</span> — ${refs(legende)}
+    <span style="font-weight:600;color:${ENCRE}">Figure ${num}</span>. ${refs(legende)}
   </figcaption>
 </figure>`;
 }
@@ -174,7 +174,7 @@ function rendreContenu(chapitre, tableaux) {
       case 'liste':
         html.push(`<ul style="margin:0 0 24px;padding-left:1.4em;list-style:none">${e.items.map(i =>
           `<li style="position:relative;margin:0 0 12px;font-size:17px;line-height:1.7;color:${ENCRE}">`
-          + `<span style="position:absolute;left:-1.4em;color:${ACCENT}">—</span>${refs(i)}</li>`).join('')}</ul>`);
+          + `<span style="position:absolute;left:-1.4em;color:${ACCENT}">•</span>${refs(i)}</li>`).join('')}</ul>`);
         break;
       case 'figure':
         html.push(rendreFigure(e.num, e.legende));
@@ -243,7 +243,7 @@ function gabarit({ titre, description, url, corps, entete, pied, styles }) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(titre)} — Le mémoire — ${esc(site.name)}</title>
+<title>${esc(titre)} · Le mémoire · ${esc(site.name)}</title>
 <meta name="description" content="${esc(description)}">
 <meta name="author" content="${esc(site.author)}">
 ${site.noindex ? '<meta name="robots" content="noindex, nofollow">' : '<meta name="robots" content="index, follow">'}
@@ -251,7 +251,7 @@ ${site.noindex ? '<meta name="robots" content="noindex, nofollow">' : '<meta nam
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="${esc(site.name)}">
 <meta property="og:locale" content="${site.locale}">
-<meta property="og:title" content="${esc(titre)} — Le mémoire">
+<meta property="og:title" content="${esc(titre)} · Le mémoire">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${site.origin}/og-image.png">
@@ -293,6 +293,10 @@ ${pied}
 /* ── 5. Exécution ─────────────────────────────────────────────────────────── */
 
 const elements = JSON.parse(readFileSync(join(ROOT, 'build', 'memoire.json'), 'utf8'));
+for (const e of elements) {
+  for (const k of ['texte', 'legende']) if (e[k]) for (const [motif, par] of corrections) e[k] = e[k].replace(motif, par);
+  if (e.items) e.items = e.items.map((t) => corrections.reduce((x, [motif, par]) => x.replace(motif, par), t));
+}
 const tableaux = JSON.parse(readFileSync(
   join(ROOT, 'src', 'memoire', 'tableaux', 'tableaux.json'), 'utf8'));
 
@@ -447,7 +451,7 @@ const corpsIndex = `
     <p style="margin:0 0 28px;font-size:17px;line-height:1.7;color:${ENCRE};max-width:66ch;text-wrap:pretty">
       Texte intégral de la version publique, en lecture libre : ${pages.length} chapitres,
       ${motsTotal.toLocaleString('fr-FR')} mots, ${tableaux.length} tableaux et 4 figures.
-      Les retranscriptions des treize entretiens, confidentielles, n'y figurent pas —
+      Les retranscriptions des treize entretiens, confidentielles, n'y figurent pas,
       conformément aux engagements pris auprès des personnes interrogées.</p>
     <div style="display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center">
       <a href="${racine}${pages[0].slug}/" style="display:inline-block;background:${ENCRE};color:${FOND};
