@@ -1,0 +1,71 @@
+flowchart LR
+  subgraph CADRES["CADRES THÉORIQUES"]
+    TNI["<b>Théorie néo-institutionnelle</b><br/>DiMaggio et Powell, 1983<br/>Scott, 2014"]
+    TTI["<b>Théorie du travail institutionnel</b><br/>Lawrence et Suddaby, 2006<br/>Ben Slimane, 2019"]
+    OST["<b>Gouvernance des communs</b><br/>Ostrom, 1990<br/>Hess et Ostrom, 2007"]
+  end
+
+  subgraph APPORTS["APPORTS DE CHAQUE THÉORIE"]
+    ATNI["<b>Apports TNI</b><br/>Pressions structurelles<br/>Légitimité institutionnelle<br/>Isomorphisme organisationnel"]
+    ATTI["<b>Apports TTI</b><br/>Agentivité des acteurs<br/>Stratégies de changement<br/>Entrepreneurs institutionnels"]
+    AOST["<b>Apports Ostrom</b><br/>Gouvernance collective<br/>Auto-organisation<br/>Gestion des ressources"]
+  end
+
+  subgraph LIMITES["LIMITES SPÉCIFIQUES"]
+    LTNI["<b>Limites TNI</b><br/>Vision déterministe<br/>Sous-estime l'agentivité<br/>Ignore la gouvernance interne"]
+    LTTI["<b>Limites TTI</b><br/>Focus individuel<br/>Sous-estime les contraintes<br/>Peu sur les ressources"]
+    LOST["<b>Limites Ostrom</b><br/>Ignore les contraintes de l'administration<br/>Contexte non bureaucratique<br/>Peu sur l'institutionnalisation"]
+  end
+
+  subgraph PHENO["PHÉNOMÈNE À ÉTUDIER"]
+    PH["<b>Institutionnalisation<br/>des communs numériques<br/>dans l'administration publique</b>"]
+  end
+
+  subgraph ENJEUX["ENJEUX CONCEPTUELS NON RÉSOLUS"]
+    Q1["Comment les pressions institutionnelles<br/>influencent-elles l'adoption des communs ?"]
+    Q2["Quel rôle des entrepreneurs<br/>dans la création de nouvelles pratiques ?"]
+    Q3["Comment adapter la gouvernance ostromienne<br/>au contexte bureaucratique ?"]
+    QC["<b>Quels facteurs permettent l'ancrage durable<br/>des communs dans l'administration ?</b>"]
+  end
+
+  subgraph INTEG["NÉCESSITÉ D'INTÉGRATION"]
+    MN["<b>Approche multi-niveaux</b><br/>Macro : pressions structurelles<br/>Méso : travail institutionnel<br/>Micro : gouvernance des communs"]
+    CI["<b>Cadre intégré</b><br/>pour saisir la complexité<br/>du phénomène étudié"]
+  end
+
+  TNI --> ATNI
+  TTI --> ATTI
+  OST --> AOST
+  TNI --> LTNI
+  TTI --> LTTI
+  OST --> LOST
+
+  ATNI --> PH
+  ATTI --> PH
+  AOST --> PH
+
+  LTNI --> Q1
+  LTTI --> Q2
+  LOST --> Q3
+
+  Q1 --> QC
+  Q2 --> QC
+  Q3 --> QC
+  PH --> QC
+  QC --> MN
+  MN --> CI
+
+  class TNI,TTI,OST cadre
+  class ATNI,ATTI,AOST apport
+  class LTNI,LTTI,LOST limite
+  class PH pheno
+  class Q1,Q2,Q3 question
+  class QC centrale
+  class MN,CI integ
+  classDef cadre    fill:#FFFFFF,stroke:#1E2A23,stroke-width:1.2px,color:#1E2A23
+  classDef apport   fill:#FFFFFF,stroke:#127552,stroke-width:1.2px,color:#1E2A23
+  classDef limite   fill:#FFFFFF,stroke:#B4433A,stroke-width:1.2px,color:#1E2A23
+  classDef pheno    fill:#F7E2E0,stroke:#B4433A,stroke-width:1.4px,color:#1E2A23
+  classDef question fill:#FFFFFF,stroke:#8A6D1F,stroke-width:1.2px,color:#1E2A23
+  classDef centrale fill:#FBF3DE,stroke:#8A6D1F,stroke-width:1.6px,color:#1E2A23
+  classDef integ    fill:#E3EFE6,stroke:#127552,stroke-width:1.4px,color:#1E2A23

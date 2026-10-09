@@ -1,0 +1,78 @@
+flowchart TB
+  subgraph DECL["Facteurs déclencheurs"]
+    direction LR
+    LEAD["Leadership<br/>entrepreneurial"]
+    ISO["Pression<br/>isomorphique"]
+    CRISE["Crise / Opportunité<br/>externe"]
+    RESS["Ressources<br/>disponibles"]
+  end
+
+  subgraph TRANS["Mécanismes de transition"]
+    direction LR
+    TIC["Travail institutionnel<br/>de création"]
+    TID["Travail institutionnel<br/>de disruption"]
+    TIM["Travail institutionnel<br/>de maintien"]
+  end
+
+  subgraph RISQ["Risques de régression"]
+    direction LR
+    DEC["Découplage"]
+    CAP["Captation par<br/>acteurs privés"]
+    FRAG["Fragmentation<br/>communautaire"]
+  end
+
+  EME["Emergence"]
+  SR{"Seuil de<br/>reconnaissance"}
+  LEG["Légitimation"]
+  ARR["Arrêt"]
+  SMC{"Seuil de montée<br/>en charge"}
+  DIFF["Diffusion"]
+  REG["Régression vers<br/>émergence"]
+  SI{"Seuil<br/>d'institutionnalisation"}
+  ANC["Ancrage"]
+  EC{"Évolution<br/>continue"}
+  PAT["Patrimonialisation"]
+  OBS["Obsolescence"]
+  NC["Nouveau cycle"]
+  FRA["Fragilisation"]
+
+  LEAD --> EME
+  EME --> SR
+  SR -->|"Portage politique"| LEG
+  SR -->|"Abandon politique"| ARR
+  LEG --> SMC
+  SMC -->|"Ressources pérennes"| DIFF
+  SMC -->|"Résistances internes"| REG
+  DIFF --> SI
+  SI -->|"Routinisation"| ANC
+  ANC --> EC
+  EC --> PAT
+  EC -->|"Inadaptation"| OBS
+  EC -->|"Innovation"| NC
+  NC --> EME
+  DIFF -->|"Changement politique<br/>Obsolescence technologique"| FRA
+
+  LEAD -.-> SR
+  ISO -.-> SR
+  CRISE -.-> SMC
+  RESS -.-> ANC
+  TIC -.-> LEG
+  TID -.-> SI
+  TIM -.-> ANC
+  SI -.-> NC
+  DEC -.-> FRA
+  CAP -.-> FRA
+  FRAG -.-> FRA
+
+  class EME,ANC vert
+  class LEG,DIFF jaune
+  class ARR,REG,FRA rouge
+  class NC violet
+  class SR,SMC,SI,EC seuil
+  class PAT,OBS,LEAD,ISO,CRISE,RESS,TIC,TID,TIM,DEC,CAP,FRAG neutre
+  classDef vert    fill:#E3EFE6,stroke:#127552,stroke-width:1.4px,color:#1E2A23
+  classDef jaune   fill:#FBF3DE,stroke:#8A6D1F,stroke-width:1.4px,color:#1E2A23
+  classDef rouge   fill:#F7E2E0,stroke:#B4433A,stroke-width:1.4px,color:#1E2A23
+  classDef violet  fill:#EDE7F3,stroke:#6B5B9A,stroke-width:1.4px,color:#1E2A23
+  classDef seuil   fill:#FFFFFF,stroke:#1E2A23,stroke-width:1.2px,color:#1E2A23
+  classDef neutre  fill:#FFFFFF,stroke:#5A685F,stroke-width:1.1px,color:#1E2A23

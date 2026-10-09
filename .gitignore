@@ -1,0 +1,26 @@
+# ─── Sources confidentielles ────────────────────────────────────────────────
+# Les retranscriptions d'entretiens ne doivent JAMAIS être publiées.
+# Elles vivent hors du dépôt : ~/Documents/Communs-numeriques-prive/
+# Ces règles sont une seconde barrière, au cas où un fichier reviendrait ici.
+Communs-numeriques-prive/
+Memoire-sources-privees/
+*CONFIDENTIEL*
+memoire_text.txt
+*retranscription*
+*Retranscription*
+MEMOIRE_COMMUNS_NUMERIQUES/
+uploads/
+*-206p*
+
+# ─── Artefacts d'outillage ──────────────────────────────────────────────────
+.thumbnail
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# ─── Build ──────────────────────────────────────────────────────────────────
+build/preview-*.png
+build/tmp/

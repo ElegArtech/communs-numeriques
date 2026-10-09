@@ -1,0 +1,54 @@
+flowchart TB
+  CTX["<b>Contexte institutionnel</b><br/>Pression coercitive<br/>Pression mimétique<br/>Pression normative"]
+  DECL["<b>Déclencheur</b><br/>Insatisfaction de l'existant<br/>Contraintes budgétaires<br/>Crise ou opportunité<br/>Volonté politique"]
+  MOD{"<b>Modèle</b>"}
+
+  APP["<b>Voie Appropriation</b><br/>État pilotage<br/>Gouvernance centralisée<br/>Budget public"]
+  REL["<b>Voie Relation</b><br/>État contributeur<br/>Gouvernance partagée<br/>Financement hybride"]
+  TIA["<b>Travail institutionnel<br/>Appropriation</b><br/>Création centrée<br/>Maintien contrôle<br/>Disruption frontale"]
+  TIR["<b>Travail institutionnel<br/>Relation</b><br/>Création réseau<br/>Maintien animation<br/>Disruption marginale"]
+
+  PH["<b>Phases temporelles</b>"]
+  EME["Emergence"]
+  LEG["Légitimation"]
+  DIF["Diffusion"]
+  ANC["<b>Ancrage</b>"]
+
+  TG{"<b>Type de<br/>gouvernance</b>"}
+  GOL["<b>Gouvernance Ostrom limitée</b><br/>Frontières floues<br/>Choix non collectif<br/>Surveillance centralisée"]
+  GOC["<b>Gouvernance Ostrom complète</b><br/>Huit principes appliqués<br/>Auto-organisation<br/>Résolution des conflits"]
+  RA["<b>Résultats appropriation</b><br/>Contrôle garanti<br/>Souveraineté<br/>Risque d'enfermement"]
+  RR["<b>Résultats relation</b><br/>Innovation<br/>Mutualisation<br/>Résolution des conflits"]
+  CVP["<b>Création de valeur publique</b>"]
+  AC["<b>Amélioration continue</b>"]
+
+  CTX --> DECL --> MOD
+  MOD -->|"Contrôle direct"| APP
+  MOD -->|"Partenariat"| REL
+  APP --> TIA
+  REL --> TIR
+  TIA --> PH
+  TIR --> PH
+  PH --> EME --> LEG --> DIF --> ANC
+  ANC --> TG
+  TG -->|"Appropriation"| GOL
+  TG -->|"Relation"| GOC
+  GOL --> RA
+  GOC --> RR
+  RA --> CVP
+  RR --> CVP
+  CVP --> AC
+  AC -.->|"Adaptation"| MOD
+
+  class APP,TIA,GOL,RA appro
+  class REL,TIR,GOC,RR rela
+  class ANC,CVP vert
+  class AC orange
+  class MOD,TG seuil
+  class CTX,DECL,PH,EME,LEG,DIF neutre
+  classDef appro  fill:#FBF3DE,stroke:#8A6D1F,stroke-width:1.3px,color:#1E2A23
+  classDef rela   fill:#EDE7F3,stroke:#6B5B9A,stroke-width:1.3px,color:#1E2A23
+  classDef vert   fill:#E3EFE6,stroke:#127552,stroke-width:1.4px,color:#1E2A23
+  classDef orange fill:#FBE7D8,stroke:#B4692A,stroke-width:1.4px,color:#1E2A23
+  classDef seuil  fill:#FFFFFF,stroke:#1E2A23,stroke-width:1.3px,color:#1E2A23
+  classDef neutre fill:#FFFFFF,stroke:#5A685F,stroke-width:1.1px,color:#1E2A23
