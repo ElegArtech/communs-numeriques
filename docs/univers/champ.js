@@ -250,7 +250,14 @@
     }
 
     function boucle(now) { horloge = now; image(now, now); requestAnimationFrame(boucle); }
-    function figer() { var now = performance.now(); depuis = now - 2000; for (var s = 0; s < 170; s++) image(horloge + s * 16, now); }
+    // Mouvement réduit : on fait avancer les points jusqu'à leur forme sans rien dessiner, puis on
+    // peint une seule image. Dessiner les 170 étapes d'affilée gelait Firefox plusieurs minutes.
+    function pas(t) {
+      fondu += ((forme === 'commun' && !sortie ? 1 : 0) - fondu) * .06;
+      ancres();
+      for (var i = 0; i < pts.length; i++) viser(pts[i], t);
+    }
+    function figer() { var now = performance.now(), s; depuis = now - 2000; for (s = 0; s < 169; s++) pas(horloge + s * 16); image(horloge + s * 16, now); }
 
     // ── API ──
     var api = {
